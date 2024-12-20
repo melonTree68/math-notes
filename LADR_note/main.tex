@@ -1,0 +1,331 @@
+\documentclass{tufte-handout}
+\usepackage[english]{babel} % English language
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{bm}
+\usepackage{pgf,tikz}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{enumerate,enumitem}
+\usepackage{fancyhdr} % custom headers and footers
+\usepackage{ragged2e}
+\usepackage{sectsty} % Allow customizing section commands
+% \usepackage{lmodern} % Return to CMU Serif
+
+
+% ---------- Preamble ----------
+\pagestyle{fancyplain} % Make all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header
+\fancyfoot[L]{}
+\fancyfoot[C]{}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+\allowdisplaybreaks
+\geometry{
+	left=13mm, % left margin
+	textwidth=130mm, % main text block
+	marginparsep=8mm, % gutter between main text block and margin notes
+	marginparwidth=55mm % width of margin notes
+}
+\setlist[enumerate]{
+	label=(\alph*),
+	leftmargin=2.5em,
+	topsep=0.5em,
+	itemsep=0em,
+}
+\def \v {\vspace{0.2cm}}
+\allsectionsfont{\normalfont \bfseries} % Make all sections centered, the default font and small caps
+
+
+% ---------- Theorem Environments ----------
+\theoremstyle{plain} % default
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{props}[thm]{Propositions}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{quest}[thm]{Question}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{defns}[thm]{Definitions}
+\newtheorem{exmp}[thm]{Example}
+\newtheorem{exmps}[thm]{Examples}
+\newtheorem{notn}[thm]{Notation}
+\newtheorem{notns}[thm]{Notations}
+\newtheorem{exer}[thm]{Exercise}
+
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{rems}[thm]{Remarks}
+\newtheorem{warn}[thm]{Warning}
+\newtheorem{sch}[thm]{Scholium}
+
+
+% ---------- Symbol Macros ----------
+\newcommand{\bra}[1]{\mathopen{}\left(#1\right)}
+\newcommand{\sbra}[1]{\mathopen{}\left[#1\right]}
+\newcommand{\cbra}[1]{\mathopen{}\left\{#1\right\}}
+\newcommand{\rest}[2]{\mathopen{}\left.#1\right|_{#2}}
+\renewcommand{\phi}{\varphi}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\mL}{\mathcal{L}}
+\newcommand{\mM}{\mathcal{M}}
+\newcommand{\mP}{\mathcal{P}}
+\newcommand{\zero}{\mathbf{0}}
+\newcommand{\U}{\bm{U}}
+\newcommand{\V}{\bm{V}}
+\newcommand{\W}{\bm{W}}
+\renewcommand{\u}{\bm{u}}
+\renewcommand{\v}{\bm{v}}
+\newcommand{\w}{\bm{w}}
+\newcommand{\x}{\bm{x}}
+
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\spn}{span}
+\DeclareMathOperator{\im}{im}
+% \DeclareMathOperator{\ker}{ker} % already existed
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\rank}{rank}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\inp}[2]{\left\langle #1, #2 \right\rangle}
+
+
+% ---------- Title Section ----------
+\title{	
+	\normalfont\normalsize 
+	{\itshape Linear Algebra Done Right} \\ [0pt]
+	\huge Notes -- Linear Algebra
+}
+\author{Zhijie Chen}
+\date{\vspace{-5pt}\normalsize\today}
+
+
+\begin{document}
+
+
+\justifying
+\maketitle
+\tableofcontents
+\newpage
+
+
+\section{Prerequisites}
+We declare several notations below for convenience and clarity.
+\begin{notns}[Basic notations]
+	\phantom{linebreak}
+
+    \begin{itemize}
+        \item $\F$ denotes a number field (often $\R$ or $\C$).
+        \item $\U$, $\V$, $\W$ denotes vector spaces (usually over scalar field $\F$).
+        \item $\V^S$ denotes the set of functions from a nonempty set $S$ to $\V$.
+    \end{itemize}
+\end{notns}
+
+
+\section{Vector Spaces}
+\begin{defn}
+	The complexification of $\V$, denoted by $\V_\C$, equals $\V\times\V$ with normal addition and real scalar multiplication for product space. But we write an element $(u,v)$ of $\V_\C$ as $u+iv$. Complex scalar multiplication is defined by
+	\[(a+bi)(\u+i\v)=(a\u-b\v)+i(a\v+b\u)\]
+	for all $a,b\in\R$ and all $\u,\v\in\V$.\footnote{Think of $\V$ as a subset of $\V_\C$ by identifying $\u\in\V$ with $\u+i0$. The construction of $\V_\C$ from $\V$ can then be thought of as generalizing the construction of $\C^n$ from $\R^n$.}
+\end{defn}
+
+\begin{lem}[Linear dependence lemma]
+	Suppose $\v_1,\dots,\v_m$ is a linearly dependent set in $\V$. Then there exists $k\in\{1,2,\dots,m\}$ s.t.
+	\[\v_k\in\spn\cbra{\v_1,\dots,\v_m}.\]
+	Further more, removing the $k^\text{th}$ term from the list does not change the span.\footnote{The lemma lays the foundation for a series of basic results for vector spaces.}
+\end{lem}
+
+\begin{thm}
+	Any two bases of a finite-dimensional vector space have the same length.\footnote{This proposition ensures that \emph{dimension} is well-defined.}
+\end{thm}
+\begin{proof}
+	Suppose $\V$ is finite-dimensional. Let $B_1$ and $B_2$ be two bases of $\V$. Considering $B_1$ as an independent set and $B_2$ as a spanning set leads to $\#B_1\leq\#B_2$. Interchanging the roles of $B_1$ and $B_2$ and we have $\#B_2\leq\#B_1$. Thus $\#B_1=\#B_2$.
+\end{proof}
+
+
+\section{Linear Maps}
+\subsection{Kernal and Image of Linear Maps}
+\begin{exer}
+	Suppose $\U$ and $\V$ are finite-dimensional and $S\in\mL\bra{\V,\W}$ and $T\in\mL\bra{\U,\V}$. Prove that
+	\[\dim\ker ST \leq \dim\ker S + \dim\ker T.\]
+\end{exer}
+\begin{proof}
+	Restrict to $Z=\ker ST$. By the fundamental theorem of linear maps,
+	\begin{align*}
+		\dim Z & = \dim T(Z) + \dim\ker \rest{T}{Z} \\
+		& \leq \dim T(Z) + \dim\ker T \\
+		& = \dim ST(Z) + \dim\ker \rest{S}{T(Z)} + \dim\ker T \\
+		& \leq \dim\ker S + \dim\ker T.
+	\end{align*}
+\end{proof}
+
+\begin{cor}[Sylvester's rank inequality]
+	Suppose $A\in\F^{m,n}$ and $B\in\F^{n,p}$ are two matrices. Then\footnote{There is a slicker proof for this inequality using block matrices. But the proof here using linear maps is more informative.}
+	\[\rank A+\rank B-n\leq\rank\bra{AB}.\]
+\end{cor}
+
+\subsection{Products and Quotients of Vector Spaces}
+\begin{lem}\label{lem: direct sum and product space}
+	Suppose $\V_1,\dots,\V_m$ are subspaces of $\V$.\footnote{Note that $\V$ does not have to be finite-dimensional. Recall that $\V_1+\cdots+\V_m$ is a direct sum if and only if the only way to write $\zero$ as a sum of $\v_1+\cdots+\v_m$, where each $\v_k\in\V_k$, is by taking each $\v_k$ equal to $\zero$.} Define a linear map $\Gamma: \V_1\times\cdots\times\V_m \to \V_1+\cdots+\V_m$ by
+	\[\Gamma\bra{\v_1,\dots,\v_m} = \v_1+\cdots+\v_m.\]
+	Then $\V_1+\cdots+\V_m$ is a direct sum if and only if $\Gamma$ is injective.
+\end{lem}
+
+\begin{thm}
+	Suppose $\V$ is finite-dimensional and $\V_1,\dots,\V_m$ are subspaces of $\V$. Then $\V_1+\cdots+\V_m$ is a direct sum if and only $\dim\bra{\V_1+\cdots+\V_m} = \dim\V_1+\cdots+\dim\V_m$.
+\end{thm}
+\begin{proof}
+	Recall Lemma~\ref{lem: direct sum and product space}. Because $\Gamma$ is surjective, by the fundamental theorem of linear maps, $\V_1+\cdots+\V_m$ is a direct sum if and only if $\dim\bra{\V_1+\cdots+\V_m} = \dim\bra{\V_1\times\cdots\times\V_m} = \dim\V_1+\cdots+\dim\V_m$.
+\end{proof}
+
+\begin{notn}
+	Suppose $T\in\mL\bra{\V,\W}$. Define $\tilde{T}: \V+\ker\V \to \V$ by
+	\[\tilde{T}\bra{\v+\ker T}=T\v.\]
+\end{notn}
+
+\begin{exer}
+	Suppose $\V_1,\dots,\V_m$ are vector spaces. Prove that $\mL\bra{\V_1\times\cdots\times\V_m,\W}$ and $\mL\bra{\V_1,\W}\times\cdots\times\mL\bra{\V_m,\W}$ are isomorphic vector spaces. 
+\end{exer}
+\begin{proof}
+	We construct an isomorphism $T$ between the two vector spaces.
+	
+	For every $\Gamma\in\mL\bra{\V_1\times\cdots\times\V_m,\W}$, define $\phi_i:\V_i\to\W$ for each $i\in\cbra{1,\dots,m}$ by
+	\[\phi_i\bra{\v_i}=\Gamma\bra{\zero,\dots,\v_i,\dots,\zero}\]
+	with $\v_i$ in the $i^\text{th}$ slot and $\zero$ in all other slots. It can be verified that $\phi_i\in\mL\bra{\V_i,\W}$.
+
+	Let $T\bra{\Gamma}=\bra{\phi_1,\dots,\phi_m}$. It can be verified that $T$ is a linear map. We prove $T$ is an isomorphism by constructing its inverse linear map $S$.
+
+	For every $\bra{\phi_1,\dots,\phi_m}\in\mL\bra{\V_1,\W}\times\cdots\times\mL\bra{\V_m,\W}$, let
+	\[S\bra{\phi_1,\dots,\phi_m}\bra{\v_1,\dots,\v_m}=\phi_1\bra{\v_1}+\cdots+\phi_m\bra{\v_m}.\]
+	
+	It can be shown that $S$ is a linear map, and that $S\circ T=I$ and $T\circ S=I$, where $I$ is the identity operator on the proper vector space. That proves $T$ is indeed an isomorphism between the two vector spaces, as desired.
+\end{proof}
+
+\begin{thm}\label{thm: test for translate}
+	A nonempty subset $A$ of $\V$ is a translate of some subspace of $\V$ if and only if $\lambda\v+\bra{1-\lambda}\w\in A$ for all $\v,\w\in A$ and all $\lambda\in\F$.
+\end{thm}
+
+\begin{exer}
+	Suppose $A_1=\v+\U_1$ and $A_2=\w+\U_2$ for some $\v,\w\in\V$ and some subspaces $\U_1$, $\U_2$ of $\V$. Prove that $A_1\cap A_2$ is either the empty set or a translate of some subspace of $\V$.\footnote{Recall Theorem~\ref{thm: test for translate}.}
+\end{exer}
+
+\begin{prop}\label{prop: direct sum from quotient space}
+	Suppose $\U$ is a subspace of $\V$ and $\v_1+\U,\dots,\v_m+\U$ is a basis of $\V/\U$ and $\u_1,\dots,\u_n$ is a basis of $\U$. Then $\v_1,\dots,\v_m,\u_1,\dots,\u_n$ is a basis of $\V$. In other words, $\V=\spn\cbra{\v_1,\dots,\v_m}\oplus\U$.\footnote{$\V=\spn\cbra{\v_1,\dots,\v_m}\oplus\U$ still holds without the hypothesis that $\U$ is finite-dimensional.}
+\end{prop}
+
+\begin{exer}
+	Suppose $\U$ is a subspace of $\V$ s.t. $\V/\U$ is finite-dimensional.
+	\begin{enumerate}
+		\item Show that if $\W$ is a finite-dimensional subspace of $\V$ and $\V=\U+\W$, then $\dim\W\geq\dim\V/\U$.
+		\item Prove that there exists a finite-dimensional subspace $\W$ of $\V$ s.t. $\dim\W=\dim\V/\U$ and $\V=\U\oplus\W$.
+	\end{enumerate}
+\end{exer}
+\begin{proof}
+	Let $\overline{\w}_1+\U,\dots,\overline{\w}_m+\U$ be a basis of $\V/\U$. Then by Proposition~\ref{prop: direct sum from quotient space}, we have $\V=\spn\cbra{\overline{\w}_1,\dots,\overline{\w}_m}\oplus\U$. Let $\W_0=\spn\cbra{\overline{\w}_1,\dots,\overline{\w}_m}$, then $\V=\U\oplus\W_0$, as desired.
+
+	Now we prove that for each subspace $\W$ of $\V$ s.t. $\V=\U+\W$, we have $\dim\W\geq m=\dim\V/\U$.
+	
+	For each $\overline{\w}_i\in\V$ above, by definition we have $\overline{\w}_i=\u_i+\w_i$ for some $\u_i\in\U$ and $\w_i\in\W$. It can be shown from the linear independence of $\overline{\w}_1+\U,\dots,\overline{\w}_m+\U$ that $\overline{\w}_1-\u_1,\dots,\overline{\w}_m-\u_m$ are independent vectors in $\W$. Hence $\dim\W\geq m$.
+\end{proof}
+
+
+\subsection{Duality}
+\begin{thm}
+	Suppose $\V$ and $\W$ are finite-dimensional and $T\in\mL\bra{\V,\W}$. Then
+	\begin{center}
+	$T$ is surjective $\iff$ $T'$ is injective \quad and \quad $T$ is injective $\iff$ $T'$ is surjective.\footnote{This result can be useful because sometimes it is easier to verify that $T'$ is injective (surjective) than to show directly that $T$ is surjective (injective).}
+	\end{center}
+\end{thm}
+
+\begin{prop}\label{prop: relation between subspace and annihilator}
+	Suppose $\V$ is finite-dimensional and $\U$ is a subspace of $\V$. Then\footnote{The proposition can be easily verified from definition. But it can be useful.}
+	\[\U=\cbra{\v\in\V:\phi(\v)=\zero\,\text{ for every }\,\phi\in\U^0}.\]
+\end{prop}
+
+\begin{exer}
+	Suppose $\V$ is finite-dimensional and $\U$ and $\W$ are subspaces of $\V$.
+	\begin{enumerate}
+		\item Prove that $\W^0\subseteq\U^0$ if and only if $\U\subseteq\W$.
+		\item Prove that $\W^0=\U^0$ if and only if $\U=\W$.\footnote{Recall Proposition~\ref{prop: relation between subspace and annihilator}.}
+	\end{enumerate}
+\end{exer}
+
+\begin{exer}
+	Suppose $\V$ is finite-dimensional and $\U$ and $\W$ are subspaces of $\V$.\
+	\begin{enumerate}
+		\item Prove that $\bra{\U+\W}^0=\U^0\cap\W^0$.
+		\item Prove that $\bra{\U\cap\W}^0=\U^0+\W^0$.
+	\end{enumerate}
+\end{exer}
+
+\begin{lem}\label{lem: matrix of dual basis}
+	Suppose $\V$ is finite-dimensional. $\v_1,\dots,\v_n$ is a basis of $\V$. Then $\phi_1,\dots,\phi_n\in\V'$ is the dual basis of $\v_1,\dots,\v_n$ if and only if
+	\[\begin{bmatrix}
+		\mM\bra{\phi_1}\\
+		\vdots\\
+		\mM\bra{\phi_n}\\
+	\end{bmatrix}=I\]
+	where $\mM\bra{\phi_i}$ is the $1\times n$ matrix of $\phi_i$ with respect to basis $\v_1,\dots\v_n$ of $\V$ for each $i\in\cbra{1,\dots,n}$.
+\end{lem}
+
+\begin{exer}
+	Suppose $\V$ is finite-dimensional and $\phi_1,\dots,\phi_n$ is a basis of $\V'$. Prove that there exists a basis of $\V$ whose dual basis is $\phi_1,\dots,\phi_n$.
+\end{exer}
+\begin{proof}
+	We start from an arbitrary basis $\u_1,\dots,\u_n$ of $\V$. Let $\psi_1,\dots,\psi_n$ be its dual basis. In this proof, we take standard basis $e_1,\dots,e_n$ as the basis of $\F^n$.
+	
+	Define $S,T\in\mL\bra{\V,\F^n}$ by
+	\[T(\v)=\bra{\phi_1(\v),\dots,\phi_n(\v)},S(\v)=\bra{\psi_1(\v),\dots,\psi_n(\v)}.\]
+	Then by Lemma~\ref{lem: matrix of dual basis}, $\mM\bra{S,\bra{\u_1,\dots,\u_n}}=I$.
+	
+	Let $A$ be the change of basis matrix from $\psi$'s to $\phi$'s, i.e.,
+	\[A=\mM\bra{I,\bra{\psi_1,\dots,\psi_n},\bra{\phi_1,\dots,\phi_n}}.\]
+	Then by the definition of change of basis matrix, we have
+	\begin{align*}
+		&\mM\bra{T,\bra{\u_1,\dots,\u_n}}=\begin{bmatrix}
+			\mM\bra{\phi_1,\bra{\u_1,\dots,\u_n}}\\
+			\vdots\\
+			\mM\bra{\phi_n,\bra{\u_1,\dots,\u_n}}\\
+		\end{bmatrix}\\\\
+		=&A^\intercal\begin{bmatrix}
+			\mM\bra{\psi_1,\bra{\u_1,\dots,\u_n}}\\
+			\vdots\\
+			\mM\bra{\psi_n,\bra{\u_1,\dots,\u_n}}\\
+		\end{bmatrix}=A^\intercal\mM\bra{S,\bra{\u_1,\dots,\u_n}}=A^\intercal.
+	\end{align*}
+
+	Consider basis $\overline{\v}_1,\dots,\overline{\v}_n$ of $\V$ s.t. the change of basis matrix from $\v$'s to $\overline{\v}$'s is $A^\intercal$. Thus
+	\[\mM\bra{T,\bra{\overline{\v}_1,\dots,\overline{\v}_n}}=\mM\bra{T,\bra{\v_1,\dots,\v_n}}\mM\bra{I,\bra{\overline{\v}_1,\dots,\overline{\v}_n},\bra{\v_1,\dots,\v_n}}=I.\]
+	Then by Lemma~\ref{lem: matrix of dual basis}, the dual basis of $\overline{\v}_1,\dots,\overline{\v}_n$ is precisely $\phi_1,\dots,\phi_n$, as desired.
+\end{proof}
+
+
+\section{Polynomials}
+\begin{thm}[Division algorithm for polynomials]
+	Suppose that $p,s\in\mP(\F)$, with $s\neq0$. Then there exist unique polynomials $q,r\in\mP(\F)$ s.t. $p=sq+r$.\footnote{The division algorithm for polynomials can be proved without using any linear algebra. This proof makes a nice use of a basis of $\mP_n(\F)$.}
+\end{thm}
+\begin{proof}
+	Let $n=\deg p$ and $m=\deg s$. The case where $n<m$ is trivial. Thus we now assume that $n\geq m$.
+
+	The list
+	\[1,z,\dots,z^{m-1},s,zs,\dots,z^{n-m}s\]
+	is linearly independent in $\mP_n(\F)$. And it also has length $n+1$. Hence the list is a basis of $\mP_n(\F)$.
+
+	Because $p\in\mP_n(\F)$, there exist unique constants $a_0,\dots,a_{m-1},b_0,\dots,b_{n-m}\in\F$ s.t.
+	\begin{align*}
+		p&=a_0+a_1z+\cdots+a_{m-1}z^{m-1}+b_0s+b_1zs+\cdots+b_{n-m}z^{n-m}s\\
+		&=\underbrace{\bra{a_0+a_1z+\cdots+a_{m-1}z^{m-1}}}_q+s\underbrace{\bra{b_0+b_1z+\cdots+b_{n-m}z^{n-m}}}_r
+	\end{align*}
+\end{proof}
+
+\end{document}
