@@ -1,0 +1,474 @@
+\documentclass[11pt,a4paper]{ctexart}
+\usepackage{newtxtext}
+\usepackage{geometry}
+\usepackage[dvipsnames,svgnames]{xcolor}
+\usepackage[strict]{changepage}
+\usepackage{framed}
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{extarrows}
+\usepackage{thmtools}
+\usepackage{bm}
+\usepackage{pgf,tikz}
+\usepackage{enumerate,enumitem}
+\usepackage{fancyhdr}
+\usepackage{titling}
+\usepackage{etoolbox}
+\usepackage{ragged2e}
+\usepackage{sectsty}
+\usepackage{titlesec}
+
+
+% ---------- Preamble ----------
+\pagestyle{fancyplain} % Make all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header
+\fancyfoot[L]{}
+\fancyfoot[C]{}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\geometry{
+	textwidth=170mm,
+    top=25mm,
+    bottom=25mm,
+}
+\definecolor{formalshade}{rgb}{0.95,0.95,1}
+\setlist[enumerate]{
+	label=\textnormal{(\arabic*)},
+	leftmargin=2.5em,
+	topsep=0.5em,
+	itemsep=0em,
+}
+\everymath{\displaystyle}
+
+
+% ---------- Theorem environments ----------
+\newenvironment{formal}{%
+\def\FrameCommand{%
+\hspace{1pt}%
+{\color{DarkBlue}\vrule width 2pt}%
+{\color{formalshade}\vrule width 4pt}%
+\colorbox{formalshade}%
+}%
+\MakeFramed{\advance\hsize-\width\FrameRestore}%
+\noindent\hspace{-4.55pt}% disable indenting first paragraph
+\begin{adjustwidth}{}{7pt}%
+\vspace{2pt}\vspace{2pt}%
+}
+{%
+\vspace{2pt}\end{adjustwidth}\endMakeFramed%
+}
+
+\declaretheoremstyle[
+    spaceabove=\topsep,spacebelow=\topsep,
+    headfont=\bfseries,headpunct={},
+    notefont=\bfseries,notebraces={(}{)},
+    bodyfont=\itshape,
+    postheadspace=1em,
+]{thmseries}
+\declaretheoremstyle[
+    spaceabove=\topsep,spacebelow=\topsep,
+    headfont=\bfseries,headpunct={},
+    notefont=\bfseries,notebraces={(}{)},
+    bodyfont=\upshape,
+    postheadspace=1em,
+]{exerseries}
+
+\theoremstyle{thmseries} % default
+\newtheorem{thm}{定理}[section]
+\newtheorem{cor}{推论}[section]
+\newtheorem{prop}{命题}[section]
+\newtheorem{lem}{引理}[section]
+
+\theoremstyle{exerseries}
+\newtheorem{defn}{定义}[section]
+\newtheorem{exer}{习题}[section]
+\newtheorem*{rem}{注}
+
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+  \pushQED{\qed}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item[\hskip\labelsep
+        \itshape
+    #1\@addpunct{}]\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+}
+\makeatother
+
+\newenvironment{sol}{\begin{proof}[\bfseries\upshape 解\quad]}{\end{proof}}
+\newenvironment{pf}{\begin{proof}[\bfseries\upshape 证\quad]}{\end{proof}}
+
+
+% ---------- Symbol Macros ----------
+% period: ．
+\newcommand{\bra}[1]{\mathopen{}\left(#1\right)}
+\newcommand{\sbra}[1]{\mathopen{}\left[#1\right]}
+\newcommand{\cbra}[1]{\mathopen{}\left\{#1\right\}}
+\newcommand{\rest}[2]{\mathopen{}\left.#1\right|_{#2}}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\newcommand{\dnei}{\overset{\circ}{U}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\d}{\mathrm{d}}
+\newcommand{\e}{\mathrm{e}}
+\def \nti {\mathnormal{n}\to\infty}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\DeclareMathOperator{\llim}{\underset{\nti}{\underline{\lim}}}
+\DeclareMathOperator{\ulim}{\underset{\nti}{\overline{\lim}}}
+
+
+% ---------- Title Section ----------
+\setlength{\droptitle}{-7em}
+\pretitle{
+	\begin{flushleft}
+	\normalfont\normalsize
+	数学分析习题课讲义（上册）\\
+	\vspace{0.3em}
+	\huge\bfseries
+}
+\posttitle{\end{flushleft}}
+\preauthor{\vspace{-1.5em}\begin{flushleft}}
+\postauthor{\end{flushleft}}
+\predate{\vspace{-1.7em}\begin{flushleft}\normalsize}
+\postdate{\end{flushleft}}
+\title{一元微积分学笔记}
+\author{陈志杰}
+\date{\today}
+
+
+\begin{document}
+\titlespacing{\subsection}{0pt}{1.5em}{*1}
+\maketitle
+\thispagestyle{empty}
+\tableofcontents
+\justifying
+\newpage
+
+
+\section{实数系的基本定理}
+\begin{exer}
+	设$f$在开区间$I$上连续．且于每一点$x\in I$处取到极值．求证：$f$为$I$上的常值函数．
+\end{exer}
+\begin{pf}
+	用反证法．假设$f(a_0)<f(b_0)$．因为$f\in C(I)$，$\exists\,\xi\in[a_0,b_0],\,f(\xi)=\frac{f(a_0)+f(b_0)}{2}$．如果$\xi\leq\frac{a_0+b_0}{2}$，取$\eta\in[a_0,\xi],\,f(\eta)=\frac{f(a_0)+f(\xi)}{2}$，令$[a_1,b_1]=[\eta,\xi]\subseteq[a_0,b_0]$．其余情况同理．重复此过程，得到一列闭区间套收缩至$\xi$，可以证明$\xi$不是极值点，矛盾．
+\end{pf}
+\begin{rem}
+	通过Bolzano二分法将整体性质继承至局部，引发矛盾．
+\end{rem}
+
+下题是Lebesgue方法在连续函数中的应用．
+\begin{exer}
+	设$f$在$[0,1]$上满足以下条件：(1) $f(0)>0,\,f(1)<0$；(2) $\exists\,g\in C[0,1]$，使得$f+g$在$[0,1]$上单调递增．求证：$f$在$[0,1]$中有零点．
+\end{exer}
+\begin{pf}
+	设$E=\cbra{x\in[0,1]\,\middle\vert\,f(x)>0},\,\sup E=b\in[0,1]$．
+	
+	假设$f(b)>0$，则$b<1$．因为$\forall\,x>b,\,f(x)\leq0$，且$f+g$单调递增，所以$g$在$U_+(b)$一定不连续，矛盾．$f(b)<0$时同理矛盾．于是$f(b)=0$．
+\end{pf}
+\begin{rem}
+	Lebesgue方法将局部性质推广至整体．它聚焦于``函数在什么地方失去了这个整体性质''，并通过研究该处的局部性质引发矛盾．
+\end{rem}
+
+以下加强形式的有限开覆盖定理有时更为有用．
+\begin{thm}[加强形式的有限开覆盖定理]
+	$\{\mathcal{O}_n\}$是$[a,b]$的一个开覆盖，则$\exists\,\delta>0$（称作开覆盖的Lebesgue数），使得$\forall\,x',x''\in[a,b]$，只要$x'-x''<\delta$，就存在开覆盖中的一个开区间，它覆盖$x',x''$．
+\end{thm}
+
+\begin{exer}
+	用有限开覆盖定理证明Cantor定理：如果$f\in C[a,b]$，则$f\in U.C.[a,b]$．
+\end{exer}
+\begin{pf}
+	对任意取定的正数$\epsilon,\,\forall\,x\in[a,b],\,\exists\,\delta_x$，使得$\forall\,x'\in U(x,\delta_x),\,\left|f(x')-f(x)\right|<\epsilon$．则$\{U(x,\delta_x)\}$形成了$[a,b]$的一个开覆盖．由加强形式的有限开覆盖定理，$\exists\,\delta>0$，使得$\forall\,x',x''\in[a,b]$，只要$|x'-x''|<\delta$，就有$\left|f(x')-f(x'')\right|<\epsilon$．
+\end{pf}
+
+\begin{lem}
+	每个数列都有单调子列．
+\end{lem}
+\begin{pf}
+	记数列$\{a_n\}$中的项$a_m$具有性质M，如果$\forall\,n>m,\,a_n\leq a_m$．分类讨论具有性质M的项数量是否有限．
+\end{pf}
+\begin{rem}
+	从这一引理出发可以由单调有界收敛定理得到B-W定理．
+\end{rem}
+
+\begin{cor}
+	一个数列有收敛子列的充分必要条件是它不是无穷大量．
+\end{cor}
+
+以下压缩映射原理是证明迭代数列收敛的实用工具．
+\begin{prop}[压缩映射原理]
+	称$f$是$[a,b]$上的一个压缩映射，如果$f\bra{[a,b]}\subseteq[a,b]$，且$\exists\,0<k<1$，使得$\forall\,x,y\in[a,b],\,|f(x)-f(y)|\leq k|x-y|$．
+
+	设$f$是$[a,b]$上的一个压缩映射，则：
+	\begin{enumerate}
+		\item $f$在$[a,b]$中存在唯一不动点$\xi$．
+		\item 由任何初始值$a_0\in[a,b]$和递推公式$a_{n+1}=f(a_n)$生成的数列$\{a_n\}$一定收敛于$\xi$．
+		\item 成立事后估计$|a_n-\xi|\leq\frac{k}{1-k}|a_n-a_{n-1}|$和先验估计$|a_n-\xi|\leq\frac{k^n}{1-k}|a_1-a_0|$．
+	\end{enumerate}
+\end{prop}
+\begin{pf}
+	$|a_{n+p}-a_n|\leq k|a_{n+p-1}-a_{n-1}\leq\cdots\leq k^n|a_p-a_0|\leq k^n(b-a)$．由Cauchy收敛准则，$\{a_n\}$收敛．记其极限为$\xi\in[a,b]$．由$|f(a_n)-f(\xi)|\leq k|a_n-\xi|$，$f(a_n)$收敛于$f(\xi)$．代入$a_{n+1}=f(a_n)$，得到$f(\xi)=\xi$．
+
+	假设$f$有不动点$\eta$，则$|\xi-\eta|=|f(\xi)-f(\eta)|\leq k|\xi-\eta|$，于是$\eta=\xi$，即$f$有唯一不动点．
+
+	估计式代入易证．
+\end{pf}
+
+\begin{exer}
+	数列$\{a_n\}$由$a_1=1$和$a_{n+1}=f(a_n)=1+\frac{1}{a_n}$生成．求证$\{a_n\}$收敛，并求其极限．
+\end{exer}
+\begin{pf}
+	易证$n\geq2$时$a_n\in[1.5,2]$．$f\bra{[1.5,2]}\subseteq[1.5,2]$．且$\forall\,x,y\in[1,5.2]$，成立
+	\[|f(x)-f(y)|=\frac{|x-y|}{xy}\leq\frac{1}{1.5^2}|x-y|.\]
+	于是压缩映射原理保证了$\{a_n\}$收敛于其唯一不动点$\frac{1+\sqrt{5}}{2}$．
+\end{pf}
+
+
+\section{数列与函数极限}
+\subsection{数列极限}
+\begin{exer}
+	求证：数列$a_n=1+\frac{1}{2^p}+\cdots+\frac{1}{n^p}$（$p>1$）收敛．
+\end{exer}
+\begin{pf}
+	\begin{align*}
+		a_{2n}&=\bra{1+\frac{1}{3^p}+\cdots+\frac{1}{\bra{2n-1}^p}}+\bra{\frac{1}{2^p}+\frac{1}{4^p}+\cdots+\frac{1}{\bra{2n}^p}}\\
+		&<1+\bra{\frac{1}{2^p}+\frac{1}{4^p}+\cdots+\frac{1}{\bra{2n}^p}}+\bra{\frac{1}{2^p}+\frac{1}{4^p}+\cdots+\frac{1}{\bra{2n}^p}}\\
+		&\leq1+2\cdot2^{-p}\cdot\bra{1+\frac{1}{2^p}+\cdots+\frac{1}{n^p}}\\
+		&=1+2^{1-p}a_n.
+	\end{align*}
+	于是$a_n<a_{2n}<1+2^{1-p}a_n$，得$a_n<\frac{1}{1-2^{1-p}}$．由单调有界收敛定理，$\{a_n\}$收敛．
+\end{pf}
+
+
+\begin{exer}
+    设$A_n=\sum_{k=1}^{n}a_k$，数列$A_n$收敛．$\{p_n\}$为单调增加的正数数列，且为正无穷大量．求证：
+    \[\lim_{\nti}\frac{p_1a_1+\cdots+p_na_n}{p_n}=0.\]
+\end{exer}
+\begin{pf}
+    由Abel变换，
+    \[\text{原式}=\lim_{\nti}\frac{p_nA_n+\sum_{k=1}^{n-1}\sbra{(p_k-p_{k+1})A_k}}{p_n}\xlongequal{\text{Stolz定理}}\lim_{\nti}\bra{A_n+\frac{(p_n-p_{n+1})A_n}{p_{n+1}-p_n}}=0.\]
+\end{pf}
+
+
+\subsection{数列的上下极限}
+\begin{thm}[上下极限的等价定义]
+仅叙述上极限有关性质，下极限同理．
+\begin{enumerate}
+	\item $\ulim x_n$为$\cbra{x_n}$的最大极限点．
+	\item $\ulim x_n=\lim_{n\to\infty}\sup_{k\geq n}\{x_k\}.$
+	\item $b\in\R$是$\cbra{x_n}$的上极限的充分必要条件是：$\forall\,\epsilon>0,\,U\bra{b,\epsilon}$内含有$\{x_n\}$的无穷多项，且$\exists\,N\in\N$，使得$\forall\,n>N,\,x_n<b+\epsilon$．
+\end{enumerate}
+\end{thm}
+
+以下结论是使用上下极限工具的主要手段．假设以下所有四则运算（在$\overline{\R}$中）均有意义．
+\begin{thm}
+	\[\llim x_n+\llim y_n\leq\llim\bra{x_n+y_n}\leq\llim x_n+\ulim y_n\leq\ulim\bra{x_n+y_n}\leq\ulim x_n+\ulim y_n\]
+	当$\{y_n\}$收敛时，
+	\[\llim\bra{x_n+y_n}=\llim x_n+\lim y_n\qquad\ulim\bra{x_n+y_n}=\ulim x_n+\lim y_n\]
+\end{thm}
+
+\begin{exer}
+	$y_n=x_n+2x_{n+1}$．已知$\{y_n\}$收敛，求证：$\{x_n\}$也收敛．
+\end{exer}
+\begin{pf}
+	先证明$\{x_n\}$有界．设$|y_n|<M$且$|x_1|<M$．由$|x_{n+1}|=\frac{1}{2}|y_n-x_n|\leq\frac{1}{2}|y_n|+\frac{1}{2}|x_n|$，归纳地，$|x_n|<M$．
+
+	对$2x_{n+1}=y_n-x_n$左右两边同时取上下极限．
+	\[2\llim x_n=\lim_{\nti}y_n+\ulim x_n\qquad2\ulim x_n=\lim_{\nti}y_n+\llim x_n\]
+	解得$\llim x_n=\ulim x_n$，即$\{x_n\}$收敛．
+\end{pf}
+
+\begin{exer}
+	若对于$\{a_n\}$的每个子列$\cbra{a_{n_k}}$都有$\lim_{k\to\infty}\frac{a_{n_1}+a_{n_2}+\cdots+a_{n_k}}{k}=a$，求证：$\lim_{\nti}a_n=a$．
+\end{exer}
+\begin{pf}
+	考虑$\{a_n\}$的收敛子列，得到$\llim a_n=\ulim a_n=a$．
+\end{pf}
+
+\begin{exer}
+	设$\{x_n\}$为正数数列，求证$\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}\geq1$．
+\end{exer}
+\begin{pf}
+	用反证法．假设$\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}=b<1$．于是对$\epsilon=\frac{1-b}{2},\,\exists\,N\in\N$，使得$\forall\,n>N,\,\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}<1$，即$\frac{x_{n+1}}{n+1}<\frac{x_n}{n}-\frac{1}{n+1}$．$x_n>0$与调和级数的发散性矛盾．
+\end{pf}
+
+
+\section{连续函数}
+\begin{thm}
+	有界开区间$(a,b)$上的连续函数$f$在$(a,b)$上一致连续的充分必要条件是存在两个有限的单侧极限$f(a^+)$和$f(b^-)$．当$(a,b)$是无界区间时，充分性依然成立．
+\end{thm}
+\begin{pf}
+	充分性显然．必要性用Cauchy收敛准则易证．
+\end{pf}
+\begin{rem}
+	对可导函数来说，以下条件依次减弱．Lipshitz条件$>$导数有界$>$一致连续．
+\end{rem}
+
+\begin{prop}
+	单调函数的间断点为跳跃间断点．
+\end{prop}
+
+以下两题的证明体现了``证明满足某性质的点有至多可数个''的常用方法．
+\begin{prop}
+	单调函数的间断点至多为可数个．
+\end{prop}
+\begin{pf}
+	易证对单调递增函数$f$的间断点$x_1<x_2$，有$f(x_1^-)<f(x_1^+)\leq f(x_2^-)<f(x_2^+)$．于是$f$的每个不同间断点$x$都可以用不同的有理数$q\in\bra{f(x^-),f(x^+)}$标记．由于$\Q$是可数集，间断点个数也至多可数．
+\end{pf}
+
+\begin{exer}
+	设$f$在$[a,b]$上处处有极限．求证：
+	\begin{enumerate}
+		\item $\forall\,\epsilon>0,\,[a,b]$中使得$|\lim_{t\to x}f(t)-f(x)|>\epsilon$的点至多有有限个．
+		\item $f$在$[a,b]$中至多有可数个间断点．
+	\end{enumerate}
+\end{exer}
+\begin{pf}
+	对任意取定的$\epsilon>0$，$\forall\,x\in[a,b],\,\exists\,\delta_x$，使得$\forall\,x-\delta_x<y<x+\delta_x,\,|f(y)-\lim_{t\to x}f(t)|\leq\epsilon$．由保号性，$|\lim_{t\to y}f(t)-\lim_{t\to x}f(t)|\leq\epsilon$．于是$\forall\,y\in\dnei(x,\delta_x),\,|\lim_{t\to y}f(t)-f(y)|\leq2\epsilon$．即每个$U(x,\delta_x)$中至多有一个满足要求的点．由有限开覆盖定理，这样的点至多有有限个．
+
+	对(2)，取$\epsilon_n=\frac{1}{n}$，可数个有限集的并是可数集．
+\end{pf}
+\begin{rem}
+	证明满足某性质的点有至多可数个的常用方法：
+	\begin{enumerate}
+		\item 用可数集（例如$\Q$）唯一标记它．
+		\item 将其表示为可数个可数集的并（例如$E=\bigcup_{n\in \N}E_{\frac{1}{n}}$）．这种方法对零测集的证明也适用．
+	\end{enumerate}
+\end{rem}
+
+\begin{exer}
+	设$f$在区间$I$内只有可去间断点．定义$g(x)=\lim_{t\to x}f(t),\,x\in I$．求证：$g\in C(I)$．
+\end{exer}
+\begin{pf}
+	对任意取定的$x_0\in I$，$\forall \epsilon>0$，
+
+	$\exists\,\delta>0$，使得$\forall\, x\in U(x_0,2\delta),\,|f(x)-g(x_0)|<\epsilon$．$\forall\,x\in U(x_0,\delta)$，又$\exists\,\eta>0$，使得$\forall\,y\in U(x,\eta),\,|f(y)-g(x)|<\epsilon$．于是可以取$y\in U(x,\eta)\cap U(x_0,2\delta)$，使得以下不等式成立：
+
+	\[|f(y)-g(x_0)|<\epsilon\qquad|f(y)-g(x)|<\epsilon.\]
+
+	于是$|g(x)-g(x_0)|<2\epsilon,\,\forall\,x\in U(x_0,\delta)$．即$g$在$I$上连续．
+\end{pf}
+\begin{rem}
+	当出现极限套极限时，常用手段是在邻近的两点的两个邻域中取中介点，连接两个极限值．
+\end{rem}
+
+\begin{exer}
+	设$f$在区间$I$上满足带指数的Lipshitz条件，即$\exists\,M>0,\,\alpha>0$，使得$\forall\,x,y\in I$，成立$|f(x)-f(y)|\leq M|x-y|^\alpha$．求证：若$\alpha>1$，则$f$在$I$上是常值函数．
+\end{exer}
+\begin{pf}
+	注意到幂函数$x^\alpha$的下凸性，考虑将$[a,b]$等分为$n$个小区间，分别利用条件并相加，使不等式右边随$n$的增大而缩紧．
+\end{pf}
+
+\begin{exer}
+
+\end{exer}
+
+
+\section{一元微分学}
+\subsection{导数与微分}
+以下增强的无穷小增量公式在证明链式求导法则与反函数求导法则时很方便．
+\begin{thm}[加强形式的无穷小增量公式]
+	设$f$在$x_0$处可导，则成立以下公式：
+	\[\Delta y=f'(x_0)\Delta x+\omega(x)\Delta x.\]
+	其中$\lim_{x\to x_0}\omega(x)=\omega(x_0)=0$．
+\end{thm}
+
+\begin{thm}
+	设$x=\phi(y)$在$U(y_0)$上是严格单调的连续函数，且$\phi'(y_0)\neq0$．若$y=f(x)$是$x=\phi(y)$的反函数，则$f(x)$在$x_0=\phi(y_0)$处可导，且
+	\[f'(x_0)=\frac{1}{\phi'(y_0)}.\]
+\end{thm}
+\begin{pf}
+	\[x-x_0=\bra{\phi'(y_0)+\omega(y)}(y-y_0),\]
+	其中$\lim_{y\to y_0}\omega(y)=\omega(y_0)=0$．
+	代入$y=f(x)$，由保号性，$U(y_0)$内$\phi'(y_0)+\omega(y)\neq0$．
+	\[\frac{\Delta y}{\Delta x}=\frac{f(x)-f(x_0)}{x-x_0}=\frac{1}{\phi'(y_0)+\omega(y)}.\]
+	令$\Delta x\to0$，即得结论．
+\end{pf}
+
+\begin{prop}
+	$f(x)=\left\{\begin{aligned}
+		&\e^{-\frac{1}{x^2}}&,x\neq0\\
+		&0&,x=0\\
+	\end{aligned}\right.$在$0$处的任意阶导数为$0$．定义$g(x)=\left\{\begin{aligned}
+		&\e^{-\frac{1}{x^2}}&,x>0\\
+		&0&,x\leq0\\
+	\end{aligned}\right.$，则$f(x)=\frac{g(x)}{g(x)+g(1-x)}$是$\R$上无限次可微的函数，且$x\leq0$时$f(x)\equiv0$，$x\geq1$时$f(x)\equiv1$．
+\end{prop}
+
+\begin{exer}
+	设$f(0)=0,\,f'(0)$存在，求$\lim_{\nti}x_n$，其中
+	\[x_n=f\bra{\frac{1}{n^2}}+f\bra{\frac{2}{n^2}}+\cdots+f\bra{\frac{n}{n^2}}.\]
+\end{exer}
+\begin{sol}
+	用无穷小增量公式，答案为$\frac{1}{2}f'(0)$．
+\end{sol}
+
+\begin{exer}
+	求数列极限：
+	\begin{enumerate}
+		\item $\lim_{\nti}\bra{\sin\frac{1}{n^2}+\sin\frac{2}{n^2}+\cdots+\sin\frac{n}{n^2}}.$
+		\item $\lim_{\nti}\sbra{\bra{1+\frac{1}{n^2}}\bra{1+\frac{2}{n^2}}\cdots\bra{1+\frac{n}{n^2}}}.$
+	\end{enumerate}
+\end{exer}
+\begin{sol}
+	用无穷小增量公式．
+\end{sol}
+
+\begin{exer}
+	设$f(x)=x^n\ln x$，求$\lim_{\nti}\frac{1}{n!}f^{(n)}(\frac{1}{n})$.
+\end{exer}
+\begin{sol}
+	由Leibniz公式，
+	\begin{align*}
+		f^{(n)}(x)&=n!\ln x+n!\sum_{k=1}^{n}\binom{n}{k}\frac{(-1)^{k-1}}{k}\\
+		&=n!\ln x+n!\sum_{k=1}^{n}\binom{n}{k}\int_{0}^{1}(-t)^{k-1}\d t\\
+		&=n!\ln x+n!\int_{0}^{1}\sum_{k=1}^{n}\binom{n}{k}(-t)^{k-1}\d t\\
+		&=n!\ln x+n!\int_{0}^{1}\frac{1-(1-t)^n}{t}\d t\\
+		&=n!\ln x+n!\sum_{k=1}^{n}\frac{1}{k}.\\
+	\end{align*}
+	故$\lim_{\nti}\frac{1}{n!}f^{(n)}(\frac{1}{n})=\lim_{\nti}\bra{1+\frac{1}{2}+\cdots+\frac{1}{n}-\ln n}=\gamma.$
+\end{sol}
+
+
+\subsection{微分中值定理与Taylor公式}
+以下几题使用待定常数法构造Rolle定理的辅助函数．核心是将区间一端$b$替换为变元，使辅助函数在$a,\,b,$任意选定的内点$x$处具有良好性质，例如函数值为0，一阶导数值为0．
+\begin{exer}
+	\phantom{linebreak}
+	\begin{enumerate}
+		\item 设$f$在$[a,b]$三阶可导，且有$f(a)=f'(a)=f(b)=0$，求证：$\forall\,x\in[a,b],\,\exists\,\xi\in(a,b),$
+		\[f(x)=\frac{f'''(\xi)}{3!}(x-a)^2(x-b).\]
+		\item 设$f$在$[a,b]$三阶可导，求证：$\exists\,\xi\in(a,b),$
+		\[f(b)=f(a)+\frac{1}{2}(b-a)[f'(a)+f'(b)]-\frac{1}{12}(b-a)^3f'''(\xi).\]
+		\item 设$f$在$[a,b]$二阶可导，求证：$\forall\,c\in[a,b],\,\exists\,\xi\in(a,b),$
+		\[\frac{1}{2}f''(\xi)=\frac{f(a)}{(a-b)(a-c)}+\frac{f(b)}{(b-c)(b-a)}+\frac{f(c)}{(c-a)(c-b)}.\]
+	\end{enumerate}
+\end{exer}
+\begin{pf}
+	以下均设所求证的$\xi$的导数值为$\lambda$．对$g(t)$反复使用Rolle定理即得结论．
+	\begin{enumerate}
+		\item \[g(t)=f(t)-\frac{\lambda}{6}(t-a)^2(t-b).\]
+		\item \[g(x)=f(x)-f(a)-\frac{1}{2}(x-a)\sbra{f'(a)+f'(x)}+\frac{\lambda}{12}(x-a)^3.\]
+		\item \[g(x)=f(a)(x-b)+f(b)(a-x)+f(x)(b-a)-\frac{\lambda}{2}(a-b)(b-x)(x-a).\]
+	\end{enumerate}
+\end{pf}
+
+
+\section{不定积分}
+
+
+\section{定积分与一元积分学的应用}
+
+
+\section{广义积分}
+
+
+\section{数项级数}
+
+
+\end{document}
