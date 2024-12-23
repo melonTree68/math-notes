@@ -156,7 +156,7 @@
 	设$f$在开区间$I$上连续．且于每一点$x\in I$处取到极值．求证：$f$为$I$上的常值函数．
 \end{exer}
 \begin{pf}
-	用反证法．假设$f(a_0)<f(b_0)$．因为$f\in C(I)$，$\exists\,\xi\in[a_0,b_0],\,f(\xi)=\frac{f(a_0)+f(b_0)}{2}$．如果$\xi\leq\frac{a_0+b_0}{2}$，取$\eta\in[a_0,\xi],\,f(\eta)=\frac{f(a_0)+f(\xi)}{2}$，令$[a_1,b_1]=[\eta,\xi]\subseteq[a_0,b_0]$．其余情况同理．重复此过程，得到一列闭区间套收缩至$\xi$，可以证明$\xi$不是极值点，矛盾．
+	用反证法．假设$f(a_0)<f(b_0)$．因为$f\in C(I),\,\exists\,\xi\in[a_0,b_0],\,f(\xi)=\frac{f(a_0)+f(b_0)}{2}$．如果$\xi\leq\frac{a_0+b_0}{2}$，取$\eta\in[a_0,\xi],\,f(\eta)=\frac{f(a_0)+f(\xi)}{2}$，令$[a_1,b_1]=[\eta,\xi]\subseteq[a_0,b_0]$．其余情况同理．重复此过程，得到一列闭区间套收缩至$\xi$，可以证明$\xi$不是极值点，矛盾．
 \end{pf}
 \begin{rem}
 	通过Bolzano二分法将整体性质继承至局部，引发矛盾．
@@ -183,9 +183,6 @@
 \begin{exer}
 	用有限开覆盖定理证明Cantor定理：如果$f\in C[a,b]$，则$f\in U.C.[a,b]$．
 \end{exer}
-\begin{pf}
-	对任意取定的正数$\epsilon,\,\forall\,x\in[a,b],\,\exists\,\delta_x$，使得$\forall\,x'\in U(x,\delta_x),\,\left|f(x')-f(x)\right|<\epsilon$．则$\{U(x,\delta_x)\}$形成了$[a,b]$的一个开覆盖．由加强形式的有限开覆盖定理，$\exists\,\delta>0$，使得$\forall\,x',x''\in[a,b]$，只要$|x'-x''|<\delta$，就有$\left|f(x')-f(x'')\right|<\epsilon$．
-\end{pf}
 
 \begin{lem}
 	每个数列都有单调子列．
@@ -213,20 +210,16 @@
 	\end{enumerate}
 \end{prop}
 \begin{pf}
-	$|a_{n+p}-a_n|\leq k|a_{n+p-1}-a_{n-1}\leq\cdots\leq k^n|a_p-a_0|\leq k^n(b-a)$．由Cauchy收敛准则，$\{a_n\}$收敛．记其极限为$\xi\in[a,b]$．由$|f(a_n)-f(\xi)|\leq k|a_n-\xi|$，$f(a_n)$收敛于$f(\xi)$．代入$a_{n+1}=f(a_n)$，得到$f(\xi)=\xi$．
+	$|a_{n+p}-a_n|\leq k|a_{n+p-1}-a_{n-1}|\leq\cdots\leq k^n|a_p-a_0|\leq k^n(b-a)$．由Cauchy收敛准则，$\{a_n\}$收敛．记其极限为$\xi\in[a,b]$．由$|f(a_n)-f(\xi)|\leq k|a_n-\xi|,\,f(a_n)$收敛于$f(\xi)$．代入$a_{n+1}=f(a_n)$，得到$f(\xi)=\xi$．
 
-	假设$f$有不动点$\eta$，则$|\xi-\eta|=|f(\xi)-f(\eta)|\leq k|\xi-\eta|$，于是$\eta=\xi$，即$f$有唯一不动点．
-
-	估计式代入易证．
+	不动点唯一性与估计式易证．
 \end{pf}
 
 \begin{exer}
 	数列$\{a_n\}$由$a_1=1$和$a_{n+1}=f(a_n)=1+\frac{1}{a_n}$生成．求证$\{a_n\}$收敛，并求其极限．
 \end{exer}
 \begin{pf}
-	易证$n\geq2$时$a_n\in[1.5,2]$．$f\bra{[1.5,2]}\subseteq[1.5,2]$．且$\forall\,x,y\in[1,5.2]$，成立
-	\[|f(x)-f(y)|=\frac{|x-y|}{xy}\leq\frac{1}{1.5^2}|x-y|.\]
-	于是压缩映射原理保证了$\{a_n\}$收敛于其唯一不动点$\frac{1+\sqrt{5}}{2}$．
+	用压缩映射原理．
 \end{pf}
 
 
@@ -365,14 +358,10 @@
 	注意到幂函数$x^\alpha$的下凸性，考虑将$[a,b]$等分为$n$个小区间，分别利用条件并相加，使不等式右边随$n$的增大而缩紧．
 \end{pf}
 
-\begin{exer}
-
-\end{exer}
-
 
 \section{一元微分学}
 \subsection{导数与微分}
-以下增强的无穷小增量公式在证明链式求导法则与反函数求导法则时很方便．
+以下加强的无穷小增量公式在证明链式求导法则与反函数求导法则时很方便．
 \begin{thm}[加强形式的无穷小增量公式]
 	设$f$在$x_0$处可导，则成立以下公式：
 	\[\Delta y=f'(x_0)\Delta x+\omega(x)\Delta x.\]
@@ -398,7 +387,7 @@
 	\end{aligned}\right.$在$0$处的任意阶导数为$0$．定义$g(x)=\left\{\begin{aligned}
 		&\e^{-\frac{1}{x^2}}&,x>0\\
 		&0&,x\leq0\\
-	\end{aligned}\right.$，则$f(x)=\frac{g(x)}{g(x)+g(1-x)}$是$\R$上无限次可微的函数，且$x\leq0$时$f(x)\equiv0$，$x\geq1$时$f(x)\equiv1$．
+	\end{aligned}\right.$，则$f(x)=\frac{g(x)}{g(x)+g(1-x)}$是$\R$上无限次可导的函数，且$x\leq0$时$f(x)\equiv0,\,x\geq1$时$f(x)\equiv1$．
 \end{prop}
 
 \begin{exer}
@@ -430,9 +419,20 @@
 		&=n!\ln x+n!\sum_{k=1}^{n}\binom{n}{k}\int_{0}^{1}(-t)^{k-1}\d t\\
 		&=n!\ln x+n!\int_{0}^{1}\sum_{k=1}^{n}\binom{n}{k}(-t)^{k-1}\d t\\
 		&=n!\ln x+n!\int_{0}^{1}\frac{1-(1-t)^n}{t}\d t\\
-		&=n!\ln x+n!\sum_{k=1}^{n}\frac{1}{k}.\\
+		&=n!\ln x+n!\sum_{k=1}^{n}\frac{1}{k}.
 	\end{align*}
 	故$\lim_{\nti}\frac{1}{n!}f^{(n)}(\frac{1}{n})=\lim_{\nti}\bra{1+\frac{1}{2}+\cdots+\frac{1}{n}-\ln n}=\gamma.$
+\end{sol}
+
+\begin{exer}
+	计算$f(x)=\arcsin x$的Maclaurin公式直到$x^5$项．
+\end{exer}
+\begin{sol}
+	本题有多种出于不同思路的解法．
+	\begin{enumerate}
+		\item 求导一次，用广义二项式定理展开．
+		\item 利用$f$是奇函数，对各项待定系数，利用$\sin(\arcsin x)\equiv x$与$\sin x$的Maclaurin公式计算．
+	\end{enumerate}
 \end{sol}
 
 
@@ -458,11 +458,237 @@
 	\end{enumerate}
 \end{pf}
 
+下一题的核心步骤是代数技巧：如果$\frac{a}{b}<\frac{c}{d},\,0<b<c$，则$\frac{a}{b}<\frac{c}{d}<\frac{c-a}{d-b}$．
+\begin{exer}
+	设$f\in C[a,b],\,f'(a)=f'(b)$．求证：$\exists\,\xi\in(a,b),$
+	\[f'(\xi)=\frac{f(\xi)-f(a)}{\xi-a}.\]
+\end{exer}
+\begin{pf}
+	即证辅助函数$g(x)=\frac{f(x)-f(a)}{x-a}$有零点．反证假设其没有零点，由Darboux定理，不妨设$g$严格单调递增．$\forall\,x\in(a,b),$
+	\[f'(a)<\frac{f(x)-f(a)}{x-a}<\frac{f(b)-f(a)}{b-a}<\frac{f(b)-f(x)}{b-x}.\]
+	令$x\to b$，即得矛盾．
+\end{pf}
+\begin{rem}
+	辅助函数往往唯一，只要找出即可．如果没有发现显然的方法使用Rolle定理，应毫不犹豫地用Darboux定理反证．
+\end{rem}
+
+\begin{exer}[Schwarz定理]
+	定义广义二阶导数
+	\[f^{[2]}(x)=\lim_{h\to0^+}\frac{f(x+h)-2f(x)+f(x-h)}{h^2}.\]
+	若$f\in C[a,b],\,f^{[2]}(x)\equiv0$，求证：$f$为线性函数．
+\end{exer}
+\begin{pf}
+	注意到加一个线性函数不改变广义二阶导数，正如其不改变二阶导数一样．先用反证法证明：如果$\forall\,x\in[a,b],\,f^{[2]}(x)>0$，则$f$下凸．
+
+	假设存在$A(x_1,f(x_1)),\,B(x_2,f(x_2)),\,C(x_3,f(x_3)),\,x_1<x_2<x_3$，使得$f(x_2)>g(x_2)$，其中$g(x)$是过$A,\,C$的线性函数．考虑$F=f-g$，其最大值在$\xi\in(a,b)$处取到，则$f^{[2]}(\xi)\leq0$，矛盾．
+
+	于是$\forall\,\epsilon>0,\,f(x)+\epsilon x^2$下凸．由定义得$f$下凸，同理$f$上凸，于是$f$为线性函数．
+\end{pf}
+\begin{rem}
+	广义二阶导数的形式提示了应当考虑凹凸性．
+
+	证明线性函数可以从既是下凸函数又是上凸函数的角度入手．
+\end{rem}
+
+
+\subsection{单侧导数的若干性质}
+以下仅陈述右侧导数相关性质，左侧导数同理．
+\begin{lem}[Fermat引理]
+	设$f$在其极大值点$x_0$处右侧可导，则$f_+'(x_0)\leq0$．
+\end{lem}
+
+\begin{thm}[单调性]
+	设$f\in C[a,b],$在$(a,b)$上右侧可导．若$f_+'(x)>0$恒成立，则$f$在$[a,b]$上严格单调递增．若$f_+'(x)\geq0$恒成立，则$f$在$[a,b]$上单调递增．
+\end{thm}
+
+\begin{thm}
+	设$f\in C[a,b],$在$(a,b)$上右侧可导．若$f_+'(x)\equiv0$，则$f\equiv C$．
+\end{thm}
+
+\begin{thm}
+	设$f\in C[a,b],$在$(a,b)$上右侧可导．若$f_+'(x)\in C[a,b],$则$f\in C^1[a,b],\,f'=f_+'$.
+\end{thm}
+\begin{pf}
+	考虑$G(x)=\int_{a}^{x}f_+'(t)\d t$．因为$\bra{f(x)-G(x)}_+'\equiv0,$所以$f(x)=G(x)+C$．
+\end{pf}
+
+\begin{thm}[Rolle中值定理]
+	设$f\in C[a,b],$在$(a,b)$上右侧可导，且$f(a)=f(b)$，则$\exists\,\xi_1,\xi_2\in(a,b),$
+	\[f_+'(\xi_1)\leq0,\qquad f_+'(\xi_2)\geq0.\]
+\end{thm}
+
+\begin{thm}[Lagrange中值定理]
+	设$f\in C[a,b],$在$(a,b)$上右侧可导，则$\exists\,\xi_1,\xi_2\in(a,b),$
+	\[f_+'(\xi_1)\leq\frac{f(b)-f(a)}{b-a}\leq f_+'(\xi_2).\]
+\end{thm}
+
+\begin{thm}
+	设$f\in C[a,b],$在$(a,b)$上右侧可导，则$f$在$(a,b)$上（严格）下凸的充分必要条件是$f_+'(x)$（严格）单调递增．
+\end{thm}
+
+
+\subsection{不等式}
+\begin{exer}
+	证明H\"older不等式与Minkowski不等式．
+\end{exer}
+\begin{pf}
+	可以利用广义AM-GM不等式来证明H\"older不等式，利用H\"older不等式来证明Minkowski不等式．这里提供利用凸性与Jensen不等式的证法，利用凸性的证法可以证明$0<p<1$时Minkowski不等式反向成立．
+
+	对H\"older不等式，考虑下凸函数$f(u)=u^p$．
+	\[\lambda_k=\frac{y_k^q}{\sum y_i^q},\quad u_k=x_ky_k^{1-q}.\]
+
+	对Minkowski不等式，考虑下凸函数$f(u)=\bra{1-u^{\frac{1}{p}}}^p$．
+	\[\lambda_k=\frac{(x_k+y_k)^p}{\sum(x_i+y_i)^p},\quad u_k=\bra{\frac{x_k}{x_k+y_k}}^p.\]
+\end{pf}
+
 
 \section{不定积分}
+以下几题利用了配对积分法．遇到难以积出的积分（特别是$\sin x$与$\cos x$的线性组合）时应当想到这种方法，联想与原积分相关的更简单的积分．
+\begin{exer}
+	计算$\int\frac{\d x}{1+x^4}$．
+\end{exer}
+\begin{sol}
+	考虑如下两个积分．
+	\[\int\frac{1+x^2}{1+x^4}\,\d x=\int\frac{1+\frac{1}{x^2}}{x^2+\frac{1}{x^2}}\,\d x=\int\frac{\d\bra{x-\frac{1}{x}}}{\bra{x-\frac{1}{x}}^2+2}.\]
+	\[\int\frac{1-x^2}{1+x^4}\,\d x=\int\frac{1-\frac{1}{x^2}}{x^2+\frac{1}{x^2}}\,\d x=\int\frac{\d\bra{x+\frac{1}{x}}}{\bra{x+\frac{1}{x}}^2-2}.\]
+\end{sol}
+
+\begin{exer}
+	计算$\int\frac{b\sin x+a\cos x}{a\sin x+b\cos x}\,\d x$．
+\end{exer}
+\begin{sol}
+	分别计算以$b\sin x-a\cos x$与$a\sin x+b\cos x$为分子的积分．
+\end{sol}
+
+下题体现出利用二倍角公式降幂扩角的重要性．
+\begin{exer}
+	计算$\int \sin^4x\,\d x$．
+\end{exer}
+
+\begin{exer}
+	计算$\int\arctan\sqrt{\frac{a-x}{a+x}}\,\d x$．
+\end{exer}
+\begin{sol}
+	令$x=a\cos t$，利用半角公式．也可以直接使用分部积分法．
+\end{sol}
 
 
 \section{定积分与一元积分学的应用}
+\begin{defn}
+	函数$f$在$U(x_0,\delta)$上的振幅$\omega_f(x,\delta)=\sup_{x\in U(x_0,\delta)}\cbra{f(x)}-\inf_{x\in U(x_0,\delta)}\cbra{f(x)}$．
+	
+	函数$f$在$x_0$处的振幅$\omega_f(x)=\lim_{\delta\to 0}\omega_f(x,\delta)$．
+\end{defn}
+
+\begin{prop}
+	$f$在$x_0$处连续的充分必要条件是$\omega_f(x_0)=0$．
+\end{prop}
+
+\begin{thm}[Lebesgue定理]
+	设$f$在$[a,b]$上有界．则$f\in R[a,b]$的充分必要条件是$f$的不连续点的集合$D(f)$零测（$f$在$[a,b]$上几乎处处连续）．
+\end{thm}
+\begin{pf}
+	先证必要性．只需证$\forall\,n\in\N,\,D_\frac{1}{n}=\cbra{x\in[a,b]\,\middle\vert\,\omega(x)>\frac{1}{n}}$零测．因为$f\in R[a,b],\,\forall\,\epsilon>0,\,\exists$分割$P,$使得$\sum_P\omega_i\Delta x_i<\frac{\epsilon}{n}$．记$\Lambda=\cbra{i\,\middle\vert\,(x_{i-1},x_i)\cap D_\frac{1}{n}\neq\emptyset},$则$\frac{1}{n}\sum_{i\in\Lambda}\Delta x_i<\sum_{i\in\Lambda}\omega_i\Delta x_i<\frac{\epsilon}{n}$．再用总长度可以任意小的区间覆盖$x_0,\dots,x_n$，即证得$D_\frac{1}{n}$零测．
+
+	再证充分性．对任意$\epsilon>0$，先用总长度小于$\epsilon$的至多可数个开区间覆盖$D(f)$．对每个连续点取一个邻域，使得邻域内振幅不超过$\epsilon$．每个连续点的邻域和覆盖$D(f)$的开区间构成了$[a,b]$的一个开覆盖．应用加强形式的有限开覆盖定理，得到Lebesgue数$\delta$．取分割$P,\,\norm{P}<\delta$即证．
+\end{pf}
+
+\begin{thm}[推广形式的Riemann引理]
+	$f\in R[a,b],\,g$是可积的以$T$为周期的周期函数．则
+	\[\lim_{p\to\infty}\int_{a}^{b}f(x)g(px)\,\d x=\frac{1}{T}\int_{0}^{T}g(x)\,\d x\int_{a}^{b}f(x)\,\d x.\]
+\end{thm}
+\begin{pf}
+	遵循$f$是常值函数$\to f$是阶梯函数$\to f$是可积函数的顺序推广．
+\end{pf}
+\begin{rem}
+	这种逼近可积函数的方式值得学习．
+\end{rem}
+
+
+\subsection{可积性条件与定积分的性质}
+\begin{exer}
+	设$f$在$[a,b]$上的每一点处的极限都存在且为$0$，求证：$f\in R[a,b],\,\int_{a}^{b}f=0$．
+\end{exer}
+\begin{pf}
+	断言：$\forall\,\epsilon>0,$使得$|f(x)|>\epsilon$的点$x$至多只有有限个．否则由聚点原理，这与聚点处极限为0矛盾．
+\end{pf}
+
+以下结论不难证得，但具有启发性．
+\begin{prop}
+	设$f\in R[a,b],\,\int_{a}^{b}f(x)\,\d x>0$．则有$[c,d]\subseteq[a,b]$和$\mu>0,$使得区间$[c,d]$上成立$f(x)\geq\mu$．
+\end{prop}
+
+\begin{exer}
+	设$[a,b]$上处处大于$0$的函数$f\in R[a,b]$，则有$\int_{a}^{b}f>0.$
+\end{exer}
+\begin{pf}
+	用反证法．假设$\int_{a}^{b}f=0$．于是$\forall\,\epsilon>0,\,\int_{a}^{b}[\epsilon-f(x)]\,\d x>0$．利用上一命题，用闭区间套定理将$\int_{a_n}^{b_n}f=0$继承到局部，引发矛盾．
+\end{pf}
+
+
+\subsection{定积分的计算}
+下题也可以用与Euler积分类似的方法解出，但以下展现的处理极限不存在的方法值得学习．
+\begin{exer}
+	计算$\int_{0}^{\pi/2}\sin x\ln\sin x\,\d x$．
+\end{exer}
+\begin{sol}
+	\[\left.I=\int_{0}^{\pi/2}\ln\sin x\,\d(-\cos x)=-\cos x\ln\sin x\right|_{0^+}^{\pi/2}.\]
+	第一项极限不存在，因此不能解决问题．但如果将$\d(-\cos x)$改成$\d(1-\cos x)$即可通过等价无穷小解决问题．
+\end{sol}
+
+\begin{exer}[Dirichlet积分]
+	定义$D_n(x)=\frac{\sin\frac{(2n+1)x}{2}}{2\sin\frac{x}{2}}$．计算$\int_{0}^{\pi}D_n(x)\,\d x$．
+\end{exer}
+\begin{sol}
+	考虑三角恒等式
+	\[\sin\frac{(2n+1)x}{2}=2\sin\frac{x}{2}\bra{\frac{1}{2}+\sum_{k=1}^{n}\cos kx}.\]
+	答案为$\frac{\pi}{2}$．
+\end{sol}
+
+\begin{exer}[Fejér积分]
+	求证：$\int_{0}^{\pi/2}\bra{\frac{\sin nx}{\sin x}}^2=\frac{n\pi}{2}$．
+\end{exer}
+\begin{pf}
+	用数学归纳法与上题的三角恒等式．
+\end{pf}
+
+\begin{exer}
+	设$F(x)=\int_{0}^{x}\sin\frac{1}{t}\,\d t,$求$F'(0)$．
+\end{exer}
+\begin{sol}
+	\begin{align*}
+		F(x)&=\int_{0}^{x}t^2\,\d\cos\frac{1}{t}\\
+		&=x^2\cos\frac{1}{x}-\int_{0}^{x}2t\cos\frac{1}{t}\,\d t.
+	\end{align*}
+	即可解决被积函数不连续的问题，答案为$0$．
+\end{sol}
+
+\begin{exer}[积分的连续性命题]
+	设$f\in R[a-\delta,b+\delta],\,\delta>0$．求证：
+	\[\lim_{h\to0}\int_{a}^{b}|f(x+h)-f(x)|\,\d x=0.\]
+\end{exer}
+\begin{pf}
+	对任意取定的$\epsilon>0,\,\exists$等距分割$P,\,\sum_{P}\omega_i\Delta x_i<\epsilon$．取$|h|<\norm{P},$则有
+	$I=\sum_{P}\int_{x_{i-1}}^{x_i}|f(x+h)-f(x)|\,\d x,$其中每个$x+h$与$x$都落在同一或相邻小区间内，使积分的值得到控制．
+\end{pf}
+
+\begin{exer}
+	计算$B(m,n)=\sum_{k=0}^{n}\binom{n}{k}\frac{(-1)^k}{m+k+1}$．
+\end{exer}
+\begin{sol}
+	应当从$\frac{(-1)^k}{m+k+1}$的形式联想到幂函数从$0$到$1$的积分．
+\end{sol}
+
+\begin{exer}
+	求证：$\lambda<1$时，$\lim_{R\to\infty}R^\lambda\int_{0}^{\pi/2}\e^{-R\sin\theta}\,\d\theta=0$．
+\end{exer}
+\begin{pf}
+	用Jordan不等式将难以处理的$\sin x$转换为$x$．
+\end{pf}
+\begin{rem}
+	用Jordan不等式处理$\sin x$的技巧在广义积分的线性夹逼中更加有用．
+\end{rem}
+
 
 
 \section{广义积分}
