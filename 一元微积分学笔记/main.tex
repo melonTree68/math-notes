@@ -152,9 +152,9 @@
 
 
 \section{实数系的基本定理}
-实数系基本定理的使用有其显著动机，例如：
+实数系基本定理的使用有其显著动机, 例如：
 \begin{enumerate}
-	\item Lebesgue方法将局部性质推广至整体．它聚焦于``函数在什么地方失去了这个整体性质''，并通过研究该处的局部性质引出矛盾．
+	\item Lebesgue方法将局部性质推广至整体．它聚焦于``函数在什么地方失去了这个整体性质'', 并通过研究该处的局部性质引出矛盾．
 	\item Bolzano二分法等闭区间套定理的使用将整体性质继承至局部．
 	\item 有限开覆盖定理将局部性质推广至整体．
 \end{enumerate}
@@ -163,32 +163,32 @@
 	设$f$在开区间$I$上连续．且于每一点$x\in I$处取到极值．求证：$f$为$I$上的常值函数．
 \end{exer}
 \begin{pf}
-	用反证法．假设$f(a_0)<f(b_0)$．因为$f\in C(I),\,\exists\,\xi\in[a_0,b_0],\,f(\xi)=(f(a_0)+f(b_0))/2$．如果$\xi\leq(a_0+b_0)/2$，取$\eta\in[a_0,\xi],\,f(\eta)=(f(a_0)+f(\xi))/2$，令$[a_1,b_1]=[\eta,\xi]\subseteq[a_0,b_0]$．其余情况同理．重复此过程，得到一列闭区间套收缩至$\xi$，可以证明$\xi$不是极值点，矛盾．
+	用反证法．假设$f(a_0)<f(b_0)$．因为$f\in C(I),\,\exists\,\xi\in[a_0,b_0],\,f(\xi)=(f(a_0)+f(b_0))/2$．如果$\xi\leq(a_0+b_0)/2$, 取$\eta\in[a_0,\xi],\,f(\eta)=(f(a_0)+f(\xi))/2$, 令$[a_1,b_1]=[\eta,\xi]\subseteq[a_0,b_0]$．其余情况同理．重复此过程, 得到一列闭区间套收缩至$\xi$, 可以证明$\xi$不是极值点, 矛盾．
 \end{pf}
 
 \begin{exer}
-	设$f$在$[0,1]$上满足以下条件：(1) $f(0)>0,\,f(1)<0$；(2) $\exists\,g\in C[0,1]$，使得$f+g$在$[0,1]$上单调递增．求证：$f$在$[0,1]$中有零点．
+	设$f$在$[0,1]$上满足以下条件：(1) $f(0)>0,\,f(1)<0$；(2) $\exists\,g\in C[0,1]$, 使得$f+g$在$[0,1]$上单调递增．求证：$f$在$[0,1]$中有零点．
 \end{exer}
 \begin{pf}
 	设$E=\cbra{x\in[0,1]\,\middle\vert\,f(x)>0},\,\sup E=b\in[0,1]$．
 	
-	假设$f(b)>0$，则$b<1$．因为$\forall\,x>b,\,f(x)\leq0$，且$f+g$单调递增，所以$g$在$U_+(b)$一定不连续，矛盾．$f(b)<0$时同理矛盾．于是$f(b)=0$．
+	假设$f(b)>0$, 则$b<1$．因为$\forall\,x>b,\,f(x)\leq0$, 且$f+g$单调递增, 所以$g$在$U_+(b)$一定不连续, 矛盾．$f(b)<0$时同理矛盾．于是$f(b)=0$．
 \end{pf}
 
 以下加强形式的有限开覆盖定理有时更为有用．
 \begin{thm}[加强形式的有限开覆盖定理]
-	$\{\mathcal{O}_n\}$是$[a,b]$的一个开覆盖，则$\exists\,\delta>0$（称作开覆盖的Lebesgue数），使得$\forall\,x',x''\in[a,b]$，只要$x'-x''<\delta$，就存在开覆盖中的一个开区间，它覆盖$x',x''$．
+	$\{\mathcal{O}_n\}$是$[a,b]$的一个开覆盖, 则$\exists\,\delta>0$（称作开覆盖的Lebesgue数）, 使得$\forall\,x',x''\in[a,b]$, 只要$x'-x''<\delta$, 就存在开覆盖中的一个开区间, 它覆盖$x',x''$．
 \end{thm}
 
 \begin{exer}
-	用有限开覆盖定理证明Cantor定理：如果$f\in C[a,b]$，则$f\in U.C.[a,b]$．
+	用有限开覆盖定理证明Cantor定理：如果$f\in C[a,b]$, 则$f\in U.C.[a,b]$．
 \end{exer}
 
 \begin{lem}
 	每个数列都有单调子列．
 \end{lem}
 \begin{pf}
-	记数列$\{a_n\}$中的项$a_m$具有性质M，如果$\forall\,n>m,\,a_n\leq a_m$．分类讨论具有性质M的项数量是否有限．
+	记数列$\{a_n\}$中的项$a_m$具有性质M, 如果$\forall\,n>m,\,a_n\leq a_m$．分类讨论具有性质M的项数量是否有限．
 \end{pf}
 \begin{rem}
 	从这一引理出发可以由单调有界收敛定理得到B-W定理．
@@ -200,9 +200,9 @@
 
 以下压缩映射原理是处理迭代数列的实用工具．
 \begin{prop}[压缩映射原理]
-	称$f$是$[a,b]$上的一个压缩映射，如果$f\bra{[a,b]}\subseteq[a,b]$，且$\exists\,0<k<1$，使得$\forall\,x,y\in[a,b],\,|f(x)-f(y)|\leq k|x-y|$．
+	称$f$是$[a,b]$上的一个压缩映射, 如果$f\bra{[a,b]}\subseteq[a,b]$, 且$\exists\,0<k<1$, 使得$\forall\,x,y\in[a,b],\,|f(x)-f(y)|\leq k|x-y|$．
 
-	设$f$是$[a,b]$上的一个压缩映射，则：
+	设$f$是$[a,b]$上的一个压缩映射, 则：
 	\begin{enumerate}
 		\item $f$在$[a,b]$中存在唯一不动点$\xi$．
 		\item 由任何初始值$a_0\in[a,b]$和递推公式$a_{n+1}=f(a_n)$生成的数列$\{a_n\}$一定收敛于$\xi$．
@@ -210,13 +210,13 @@
 	\end{enumerate}
 \end{prop}
 \begin{pf}
-	$|a_{n+p}-a_n|\leq k|a_{n+p-1}-a_{n-1}|\leq\cdots\leq k^n|a_p-a_0|\leq k^n(b-a)$．由Cauchy收敛准则，$\{a_n\}$收敛．记其极限为$\xi\in[a,b]$．由$|f(a_n)-f(\xi)|\leq k|a_n-\xi|,\,f(a_n)$收敛于$f(\xi)$．代入$a_{n+1}=f(a_n)$，得到$f(\xi)=\xi$．
+	$|a_{n+p}-a_n|\leq k|a_{n+p-1}-a_{n-1}|\leq\cdots\leq k^n|a_p-a_0|\leq k^n(b-a)$．由Cauchy收敛准则, $\{a_n\}$收敛．记其极限为$\xi\in[a,b]$．由$|f(a_n)-f(\xi)|\leq k|a_n-\xi|,\,f(a_n)$收敛于$f(\xi)$．代入$a_{n+1}=f(a_n)$, 得到$f(\xi)=\xi$．
 
 	不动点唯一性与估计式易证．
 \end{pf}
 
 \begin{exer}
-	数列$\{a_n\}$由$a_1=1$和$a_{n+1}=f(a_n)=1+\frac{1}{a_n}$生成．求证$\{a_n\}$收敛，并求其极限．
+	数列$\{a_n\}$由$a_1=1$和$a_{n+1}=f(a_n)=1+\frac{1}{a_n}$生成．求证$\{a_n\}$收敛, 并求其极限．
 \end{exer}
 \begin{pf}
 	用压缩映射原理．
@@ -235,79 +235,79 @@
 		&\leq1+2\cdot2^{-p}\cdot\bra{1+\frac{1}{2^p}+\cdots+\frac{1}{n^p}}\\
 		&=1+2^{1-p}a_n.
 	\end{align*}
-	于是$a_n<a_{2n}<1+2^{1-p}a_n$，得$a_n<\frac{1}{1-2^{1-p}}$．由单调有界收敛定理，$\{a_n\}$收敛．
+	于是$a_n<a_{2n}<1+2^{1-p}a_n$, 得$a_n<\frac{1}{1-2^{1-p}}$．由单调有界收敛定理, $\{a_n\}$收敛．
 \end{pf}
 
 
 \begin{exer}
-    设$A_n=\sum_{k=1}^{n}a_k$，数列$A_n$收敛．$\{p_n\}$为单调增加的正数数列，且为正无穷大量．求证：
+    设$A_n=\sum_{k=1}^{n}a_k$, 数列$A_n$收敛．$\{p_n\}$为单调增加的正数数列, 且为正无穷大量．求证：
     \[\lim_{\nti}\frac{p_1a_1+\cdots+p_na_n}{p_n}=0.\]
 \end{exer}
 \begin{pf}
-    由Abel变换，
+    由Abel变换, 
     \[\text{原式}=\lim_{\nti}\frac{p_nA_n+\sum_{k=1}^{n-1}\sbra{(p_k-p_{k+1})A_k}}{p_n}\xlongequal{\text{Stolz定理}}\lim_{\nti}\bra{A_n+\frac{(p_n-p_{n+1})A_n}{p_{n+1}-p_n}}=0.\]
 \end{pf}
 
 
 \subsection{数列的上下极限}
 \begin{thm}[上下极限的等价定义]
-仅叙述上极限有关性质，下极限同理．
+仅叙述上极限有关性质, 下极限同理．
 \begin{enumerate}
 	\item $\ulim x_n$为$\cbra{x_n}$的最大极限点．
 	\item $\ulim x_n=\lim_{n\to\infty}\sup_{k\geq n}\{x_k\}.$
-	\item $b\in\R$是$\cbra{x_n}$的上极限的充分必要条件是：$\forall\,\epsilon>0,\,U\bra{b,\epsilon}$内含有$\{x_n\}$的无穷多项，且$\exists\,N\in\N$，使得$\forall\,n>N,\,x_n<b+\epsilon$．
+	\item $b\in\R$是$\cbra{x_n}$的上极限的充分必要条件是：$\forall\,\epsilon>0,\,U\bra{b,\epsilon}$内含有$\{x_n\}$的无穷多项, 且$\exists\,N\in\N$, 使得$\forall\,n>N,\,x_n<b+\epsilon$．
 \end{enumerate}
 \end{thm}
 
 以下结论是使用上下极限工具的主要手段．假设以下所有四则运算（在$\overline{\R}$中）均有意义．
 \begin{thm}
 	\[\llim x_n+\llim y_n\leq\llim\bra{x_n+y_n}\leq\llim x_n+\ulim y_n\leq\ulim\bra{x_n+y_n}\leq\ulim x_n+\ulim y_n\]
-	当$\{y_n\}$收敛时，
+	当$\{y_n\}$收敛时, 
 	\[\llim\bra{x_n+y_n}=\llim x_n+\lim_{\nti} y_n\qquad\ulim\bra{x_n+y_n}=\ulim x_n+\lim_{\nti} y_n\]
 \end{thm}
 
 \begin{exer}
-	$y_n=x_n+2x_{n+1}$．已知$\{y_n\}$收敛，求证：$\{x_n\}$也收敛．
+	$y_n=x_n+2x_{n+1}$．已知$\{y_n\}$收敛, 求证：$\{x_n\}$也收敛．
 \end{exer}
 \begin{pf}
-	先证明$\{x_n\}$有界．设$|y_n|<M$且$|x_1|<M$．由$|x_{n+1}|=\frac{1}{2}|y_n-x_n|\leq\frac{1}{2}|y_n|+\frac{1}{2}|x_n|$，归纳地，$|x_n|<M$．
+	先证明$\{x_n\}$有界．设$|y_n|<M$且$|x_1|<M$．由$|x_{n+1}|=\frac{1}{2}|y_n-x_n|\leq\frac{1}{2}|y_n|+\frac{1}{2}|x_n|$, 归纳地, $|x_n|<M$．
 
 	对$2x_{n+1}=y_n-x_n$左右两边同时取上下极限．
 	\[2\llim x_n=\lim_{\nti}y_n+\ulim x_n\qquad2\ulim x_n=\lim_{\nti}y_n+\llim x_n\]
-	解得$\llim x_n=\ulim x_n$，即$\{x_n\}$收敛．
+	解得$\llim x_n=\ulim x_n$, 即$\{x_n\}$收敛．
 \end{pf}
 
 \begin{exer}
-	若对于$\{a_n\}$的每个子列$\cbra{a_{n_k}}$都有$\lim_{k\to\infty}\frac{a_{n_1}+a_{n_2}+\cdots+a_{n_k}}{k}=a$，求证：$\lim_{\nti}a_n=a$．
+	若对于$\{a_n\}$的每个子列$\cbra{a_{n_k}}$都有$\lim_{k\to\infty}\frac{a_{n_1}+a_{n_2}+\cdots+a_{n_k}}{k}=a$, 求证：$\lim_{\nti}a_n=a$．
 \end{exer}
 \begin{pf}
-	考虑$\{a_n\}$的收敛子列，得到$\llim a_n=\ulim a_n=a$．
+	考虑$\{a_n\}$的收敛子列, 得到$\llim a_n=\ulim a_n=a$．
 \end{pf}
 
 \begin{exer}
-	设$\{x_n\}$为正数数列，求证$\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}\geq1$．
+	设$\{x_n\}$为正数数列, 求证$\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}\geq1$．
 \end{exer}
 \begin{pf}
-	用反证法．假设$\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}=b<1$．于是对$\epsilon=\frac{1-b}{2},\,\exists\,N\in\N$，使得$\forall\,n>N,\,\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}<1$，即$\frac{x_{n+1}}{n+1}<\frac{x_n}{n}-\frac{1}{n+1}$．$x_n>0$与调和级数的发散性矛盾．
+	用反证法．假设$\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}=b<1$．于是对$\epsilon=\frac{1-b}{2},\,\exists\,N\in\N$, 使得$\forall\,n>N,\,\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}<1$, 即$\frac{x_{n+1}}{n+1}<\frac{x_n}{n}-\frac{1}{n+1}$．$x_n>0$与调和级数的发散性矛盾．
 \end{pf}
 
 \begin{exer}
 	设$\{a_n\}$为正数数列．求证：$\ulim \sqrt[n]{a_n}\leq1$的充分必要条件是$\forall\,l>1,\,\lim_{\nti}\frac{a_n}{l^n}=0$．
 \end{exer}
 \begin{rem}
-	上下极限是一个数，应当充分利用它和已知数的大小关系．例如假设$\llim x_n=b<1$时，应当考虑$b$和$1$的空隙；另一题中的$l$也是如此．
+	上下极限是一个数, 应当充分利用它和已知数的大小关系．例如假设$\llim x_n=b<1$时, 应当考虑$b$和$1$的空隙；另一题中的$l$也是如此．
 \end{rem}
 
 
 \section{连续函数}
 \begin{thm}
-	有界开区间$(a,b)$上的连续函数$f$在$(a,b)$上一致连续的充分必要条件是存在两个有限的单侧极限$f(a^+)$和$f(b^-)$．当$(a,b)$是无界区间时，充分性依然成立．
+	有界开区间$(a,b)$上的连续函数$f$在$(a,b)$上一致连续的充分必要条件是存在两个有限的单侧极限$f(a^+)$和$f(b^-)$．当$(a,b)$是无界区间时, 充分性依然成立．
 \end{thm}
 \begin{pf}
 	充分性显然．必要性用Cauchy收敛准则易证．
 \end{pf}
 \begin{rem}
-	对可导函数来说，以下条件依次减弱．Lipshitz条件$>$导数有界$>$一致连续．
+	对可导函数来说, 以下条件依次减弱．Lipshitz条件$>$导数有界$>$一致连续．
 \end{rem}
 
 \begin{prop}
@@ -319,7 +319,7 @@
 	单调函数的间断点至多为可数个．
 \end{prop}
 \begin{pf}
-	易证对单调递增函数$f$的间断点$x_1<x_2$，有$f(x_1^-)<f(x_1^+)\leq f(x_2^-)<f(x_2^+)$．于是$f$的每个不同间断点$x$都可以用不同的有理数$q\in\bra{f(x^-),f(x^+)}$标记．由于$\Q$是可数集，间断点个数也至多可数．
+	易证对单调递增函数$f$的间断点$x_1<x_2$, 有$f(x_1^-)<f(x_1^+)\leq f(x_2^-)<f(x_2^+)$．于是$f$的每个不同间断点$x$都可以用不同的有理数$q\in\bra{f(x^-),f(x^+)}$标记．由于$\Q$是可数集, 间断点个数也至多可数．
 \end{pf}
 
 \begin{exer}
@@ -330,9 +330,9 @@
 	\end{enumerate}
 \end{exer}
 \begin{pf}
-	对任意取定的$\epsilon>0$，$\forall\,x\in[a,b],\,\exists\,\delta_x$，使得$\forall\,x-\delta_x<y<x+\delta_x,\,|f(y)-\lim_{t\to x}f(t)|\leq\epsilon$．由保号性，$|\lim_{t\to y}f(t)-\lim_{t\to x}f(t)|\leq\epsilon$．于是$\forall\,y\in\dnei(x,\delta_x),\,|\lim_{t\to y}f(t)-f(y)|\leq2\epsilon$．即每个$U(x,\delta_x)$中至多有一个满足要求的点．由有限开覆盖定理，这样的点至多有有限个．
+	对任意取定的$\epsilon>0$, $\forall\,x\in[a,b],\,\exists\,\delta_x$, 使得$\forall\,x-\delta_x<y<x+\delta_x,\,|f(y)-\lim_{t\to x}f(t)|\leq\epsilon$．由保号性, $|\lim_{t\to y}f(t)-\lim_{t\to x}f(t)|\leq\epsilon$．于是$\forall\,y\in\dnei(x,\delta_x),\,|\lim_{t\to y}f(t)-f(y)|\leq2\epsilon$．即每个$U(x,\delta_x)$中至多有一个满足要求的点．由有限开覆盖定理, 这样的点至多有有限个．
 
-	对(2)，取$\epsilon_n=1/n$，可数个有限集的并是可数集．
+	对(2), 取$\epsilon_n=1/n$, 可数个有限集的并是可数集．
 \end{pf}
 \begin{rem}
 	证明满足某性质的点有至多可数个的常用方法：
@@ -346,23 +346,23 @@
 	设$f$在区间$I$内只有可去间断点．定义$g(x)=\lim_{t\to x}f(t),\,x\in I$．求证：$g\in C(I)$．
 \end{exer}
 \begin{pf}
-	对任意取定的$x_0\in I$，$\forall \epsilon>0$，
+	对任意取定的$x_0\in I$, $\forall \epsilon>0$, 
 
-	$\exists\,\delta>0$，使得$\forall\, x\in U(x_0,2\delta),\,|f(x)-g(x_0)|<\epsilon$．$\forall\,x\in U(x_0,\delta)$，又$\exists\,\eta>0$，使得$\forall\,y\in U(x,\eta),\,|f(y)-g(x)|<\epsilon$．于是可以取$y\in U(x,\eta)\cap U(x_0,2\delta)$，使得以下不等式成立：
+	$\exists\,\delta>0$, 使得$\forall\, x\in U(x_0,2\delta),\,|f(x)-g(x_0)|<\epsilon$．$\forall\,x\in U(x_0,\delta)$, 又$\exists\,\eta>0$, 使得$\forall\,y\in U(x,\eta),\,|f(y)-g(x)|<\epsilon$．于是可以取$y\in U(x,\eta)\cap U(x_0,2\delta)$, 使得以下不等式成立：
 
 	\[|f(y)-g(x_0)|<\epsilon\qquad|f(y)-g(x)|<\epsilon.\]
 
 	于是$|g(x)-g(x_0)|<2\epsilon,\,\forall\,x\in U(x_0,\delta)$．即$g$在$I$上连续．
 \end{pf}
 \begin{rem}
-	当出现极限套极限时，常用手段是在邻近的两点的两个邻域中取中介点，连接两个极限值．
+	当出现极限套极限时, 常用手段是在邻近的两点的两个邻域中取中介点, 连接两个极限值．
 \end{rem}
 
 \begin{exer}
-	设$f$在区间$I$上满足带指数的Lipshitz条件，即$\exists\,M>0,\,\alpha>0$，使得$\forall\,x,y\in I$，成立$|f(x)-f(y)|\leq M|x-y|^\alpha$．求证：若$\alpha>1$，则$f$在$I$上是常值函数．
+	设$f$在区间$I$上满足带指数的Lipshitz条件, 即$\exists\,M>0,\,\alpha>0$, 使得$\forall\,x,y\in I$, 成立$|f(x)-f(y)|\leq M|x-y|^\alpha$．求证：若$\alpha>1$, 则$f$在$I$上是常值函数．
 \end{exer}
 \begin{pf}
-	注意到幂函数$x^\alpha$的下凸性，考虑将$[a,b]$等分为$n$个小区间，分别利用条件并相加，使不等式右边随$n$的增大而缩紧．
+	注意到幂函数$x^\alpha$的下凸性, 考虑将$[a,b]$等分为$n$个小区间, 分别利用条件并相加, 使不等式右边随$n$的增大而缩紧．
 \end{pf}
 
 
@@ -370,21 +370,21 @@
 \subsection{导数与微分}
 以下加强的无穷小增量公式在证明链式求导法则与反函数求导法则时很方便．
 \begin{thm}[加强形式的无穷小增量公式]
-	设$f$在$x_0$处可导，则成立以下公式：
+	设$f$在$x_0$处可导, 则成立以下公式：
 	\[\Delta y=f'(x_0)\Delta x+\omega(x)\Delta x.\]
 	其中$\lim_{x\to x_0}\omega(x)=\omega(x_0)=0$．
 \end{thm}
 
 \begin{thm}
-	设$x=\phi(y)$在$U(y_0)$上是严格单调的连续函数，且$\phi'(y_0)\neq0$．若$y=f(x)$是$x=\phi(y)$的反函数，则$f(x)$在$x_0=\phi(y_0)$处可导，且
+	设$x=\phi(y)$在$U(y_0)$上是严格单调的连续函数, 且$\phi'(y_0)\neq0$．若$y=f(x)$是$x=\phi(y)$的反函数, 则$f(x)$在$x_0=\phi(y_0)$处可导, 且
 	\[f'(x_0)=\frac{1}{\phi'(y_0)}.\]
 \end{thm}
 \begin{pf}
 	\[x-x_0=\bra{\phi'(y_0)+\omega(y)}(y-y_0),\]
 	其中$\lim_{y\to y_0}\omega(y)=\omega(y_0)=0$．
-	代入$y=f(x)$，由保号性，$U(y_0)$内$\phi'(y_0)+\omega(y)\neq0$．
+	代入$y=f(x)$, 由保号性, $U(y_0)$内$\phi'(y_0)+\omega(y)\neq0$．
 	\[\frac{\Delta y}{\Delta x}=\frac{f(x)-f(x_0)}{x-x_0}=\frac{1}{\phi'(y_0)+\omega(y)}.\]
-	令$\Delta x\to0$，即得结论．
+	令$\Delta x\to0$, 即得结论．
 \end{pf}
 
 \begin{prop}
@@ -394,15 +394,15 @@
 	\end{aligned}\right.$在$0$处的任意阶导数为$0$．定义$g(x)=\left\{\begin{aligned}
 		&\e^{-\frac{1}{x^2}}&,x>0\\
 		&0&,x\leq0\\
-	\end{aligned}\right.$，则$f(x)=\frac{g(x)}{g(x)+g(1-x)}$是$\R$上无限次可导的函数，且$x\leq0$时$f(x)\equiv0,\,x\geq1$时$f(x)\equiv1$．
+	\end{aligned}\right.$, 则$f(x)=\frac{g(x)}{g(x)+g(1-x)}$是$\R$上无限次可导的函数, 且$x\leq0$时$f(x)\equiv0,\,x\geq1$时$f(x)\equiv1$．
 \end{prop}
 
 \begin{exer}
-	设$f(0)=0,\,f'(0)$存在，求$\lim_{\nti}x_n$，其中
+	设$f(0)=0,\,f'(0)$存在, 求$\lim_{\nti}x_n$, 其中
 	\[x_n=f\bra{\frac{1}{n^2}}+f\bra{\frac{2}{n^2}}+\cdots+f\bra{\frac{n}{n^2}}.\]
 \end{exer}
 \begin{sol}
-	用无穷小增量公式，答案为$\frac{1}{2}f'(0)$．
+	用无穷小增量公式, 答案为$\frac{1}{2}f'(0)$．
 \end{sol}
 
 \begin{exer}
@@ -417,10 +417,10 @@
 \end{sol}
 
 \begin{exer}
-	设$f(x)=x^n\ln x$，求$\lim_{\nti}\frac{1}{n!}f^{(n)}(\frac{1}{n})$.
+	设$f(x)=x^n\ln x$, 求$\lim_{\nti}\frac{1}{n!}f^{(n)}(\frac{1}{n})$.
 \end{exer}
 \begin{sol}
-	由Leibniz公式，
+	由Leibniz公式, 
 	\begin{align*}
 		f^{(n)}(x)&=n!\ln x+n!\sum_{k=1}^{n}\binom{n}{k}\frac{(-1)^{k-1}}{k}\\
 		&=n!\ln x+n!\sum_{k=1}^{n}\binom{n}{k}\int_{0}^{1}(-t)^{k-1}\d t\\
@@ -437,22 +437,22 @@
 \begin{sol}
 	本题有多种出于不同思路的解法．
 	\begin{enumerate}
-		\item 求导一次，用广义二项式定理展开．
-		\item 利用$f$是奇函数，对各项待定系数，利用$\sin(\arcsin x)\equiv x$与$\sin x$的Maclaurin公式计算．
+		\item 求导一次, 用广义二项式定理展开．
+		\item 利用$f$是奇函数, 对各项待定系数, 利用$\sin(\arcsin x)\equiv x$与$\sin x$的Maclaurin公式计算．
 	\end{enumerate}
 \end{sol}
 
 
 \subsection{微分中值定理与Taylor公式}
-以下几题使用待定常数法构造Rolle定理的辅助函数．核心是将区间一端$b$替换为变元，使辅助函数在$a,\,b,$任意选定的内点$x$处具有良好性质，例如函数值为0，一阶导数值为0．
+以下几题使用待定常数法构造Rolle定理的辅助函数．核心是将区间一端$b$替换为变元, 使辅助函数在$a,\,b,$任意选定的内点$x$处具有良好性质, 例如函数值为0, 一阶导数值为0．
 \begin{exer}
 	\phantom{linebreak}
 	\begin{enumerate}
-		\item 设$f$在$[a,b]$三阶可导，且有$f(a)=f'(a)=f(b)=0$，求证：$\forall\,x\in[a,b],\,\exists\,\xi\in(a,b),$
+		\item 设$f$在$[a,b]$三阶可导, 且有$f(a)=f'(a)=f(b)=0$, 求证：$\forall\,x\in[a,b],\,\exists\,\xi\in(a,b),$
 		\[f(x)=\frac{f'''(\xi)}{3!}(x-a)^2(x-b).\]
-		\item 设$f$在$[a,b]$三阶可导，求证：$\exists\,\xi\in(a,b),$
+		\item 设$f$在$[a,b]$三阶可导, 求证：$\exists\,\xi\in(a,b),$
 		\[f(b)=f(a)+\frac{1}{2}(b-a)[f'(a)+f'(b)]-\frac{1}{12}(b-a)^3f'''(\xi).\]
-		\item 设$f$在$[a,b]$二阶可导，求证：$\forall\,c\in[a,b],\,\exists\,\xi\in(a,b),$
+		\item 设$f$在$[a,b]$二阶可导, 求证：$\forall\,c\in[a,b],\,\exists\,\xi\in(a,b),$
 		\[\frac{1}{2}f''(\xi)=\frac{f(a)}{(a-b)(a-c)}+\frac{f(b)}{(b-c)(b-a)}+\frac{f(c)}{(c-a)(c-b)}.\]
 	\end{enumerate}
 \end{exer}
@@ -465,31 +465,31 @@
 	\end{enumerate}
 \end{pf}
 
-下一题的核心步骤是代数技巧：如果$\frac{a}{b}<\frac{c}{d},\,0<b<c$，则$\frac{a}{b}<\frac{c}{d}<\frac{c-a}{d-b}$．
+下一题的核心步骤是代数技巧：如果$\frac{a}{b}<\frac{c}{d},\,0<b<c$, 则$\frac{a}{b}<\frac{c}{d}<\frac{c-a}{d-b}$．
 \begin{exer}
 	设$f\in C[a,b],\,f'(a)=f'(b)$．求证：$\exists\,\xi\in(a,b),$
 	\[f'(\xi)=\frac{f(\xi)-f(a)}{\xi-a}.\]
 \end{exer}
 \begin{pf}
-	即证辅助函数$g(x)=\frac{f(x)-f(a)}{x-a}$有零点．反证假设其没有零点，由Darboux定理，不妨设$g$严格单调递增．$\forall\,x\in(a,b),$
+	即证辅助函数$g(x)=\frac{f(x)-f(a)}{x-a}$有零点．反证假设其没有零点, 由Darboux定理, 不妨设$g$严格单调递增．$\forall\,x\in(a,b),$
 	\[f'(a)<\frac{f(x)-f(a)}{x-a}<\frac{f(b)-f(a)}{b-a}<\frac{f(b)-f(x)}{b-x}.\]
-	令$x\to b$，即得矛盾．
+	令$x\to b$, 即得矛盾．
 \end{pf}
 \begin{rem}
-	辅助函数往往唯一，只要找出即可．如果没有发现显然的方法使用Rolle定理，应毫不犹豫地用Darboux定理反证．
+	辅助函数往往唯一, 只要找出即可．如果没有发现显然的方法使用Rolle定理, 应毫不犹豫地用Darboux定理反证．
 \end{rem}
 
 \begin{exer}[Schwarz定理]
 	定义广义二阶导数
 	\[f^{[2]}(x)=\lim_{h\to0^+}\frac{f(x+h)-2f(x)+f(x-h)}{h^2}.\]
-	若$f\in C[a,b],\,f^{[2]}(x)\equiv0$，求证：$f$为线性函数．
+	若$f\in C[a,b],\,f^{[2]}(x)\equiv0$, 求证：$f$为线性函数．
 \end{exer}
 \begin{pf}
-	注意到加一个线性函数不改变广义二阶导数，正如其不改变二阶导数一样．先用反证法证明：如果$\forall\,x\in[a,b],\,f^{[2]}(x)>0$，则$f$下凸．
+	注意到加一个线性函数不改变广义二阶导数, 正如其不改变二阶导数一样．先用反证法证明：如果$\forall\,x\in[a,b],\,f^{[2]}(x)>0$, 则$f$下凸．
 
-	假设存在$A(x_1,f(x_1)),\,B(x_2,f(x_2)),\,C(x_3,f(x_3)),\,x_1<x_2<x_3$，使得$f(x_2)>g(x_2)$，其中$g(x)$是过$A,\,C$的线性函数．考虑$F=f-g$，其最大值在$\xi\in(a,b)$处取到，则$f^{[2]}(\xi)\leq0$，矛盾．
+	假设存在$A(x_1,f(x_1)),\,B(x_2,f(x_2)),\,C(x_3,f(x_3)),\,x_1<x_2<x_3$, 使得$f(x_2)>g(x_2)$, 其中$g(x)$是过$A,\,C$的线性函数．考虑$F=f-g$, 其最大值在$\xi\in(a,b)$处取到, 则$f^{[2]}(\xi)\leq0$, 矛盾．
 
-	于是$\forall\,\epsilon>0,\,f(x)+\epsilon x^2$下凸．由定义得$f$下凸，同理$f$上凸，于是$f$为线性函数．
+	于是$\forall\,\epsilon>0,\,f(x)+\epsilon x^2$下凸．由定义得$f$下凸, 同理$f$上凸, 于是$f$为线性函数．
 \end{pf}
 \begin{rem}
 	广义二阶导数的形式提示了应当考虑凹凸性．
@@ -499,17 +499,17 @@
 
 
 \subsection{单侧导数的若干性质}
-以下仅陈述右侧导数相关性质，左侧导数同理．
+以下仅陈述右侧导数相关性质, 左侧导数同理．
 \begin{lem}[Fermat引理]
-	设$f$在其极大值点$x_0$处右侧可导，则$f_+'(x_0)\leq0$．
+	设$f$在其极大值点$x_0$处右侧可导, 则$f_+'(x_0)\leq0$．
 \end{lem}
 
 \begin{thm}[单调性]
-	设$f\in C[a,b],$在$(a,b)$上右侧可导．若$f_+'(x)>0$恒成立，则$f$在$[a,b]$上严格单调递增．若$f_+'(x)\geq0$恒成立，则$f$在$[a,b]$上单调递增．
+	设$f\in C[a,b],$在$(a,b)$上右侧可导．若$f_+'(x)>0$恒成立, 则$f$在$[a,b]$上严格单调递增．若$f_+'(x)\geq0$恒成立, 则$f$在$[a,b]$上单调递增．
 \end{thm}
 
 \begin{thm}
-	设$f\in C[a,b],$在$(a,b)$上右侧可导．若$f_+'(x)\equiv0$，则$f\equiv C$．
+	设$f\in C[a,b],$在$(a,b)$上右侧可导．若$f_+'(x)\equiv0$, 则$f\equiv C$．
 \end{thm}
 
 \begin{thm}
@@ -520,17 +520,17 @@
 \end{pf}
 
 \begin{thm}[Rolle中值定理]
-	设$f\in C[a,b],$在$(a,b)$上右侧可导，且$f(a)=f(b)$，则$\exists\,\xi_1,\xi_2\in(a,b),$
+	设$f\in C[a,b],$在$(a,b)$上右侧可导, 且$f(a)=f(b)$, 则$\exists\,\xi_1,\xi_2\in(a,b),$
 	\[f_+'(\xi_1)\leq0,\qquad f_+'(\xi_2)\geq0.\]
 \end{thm}
 
 \begin{thm}[Lagrange中值定理]
-	设$f\in C[a,b],$在$(a,b)$上右侧可导，则$\exists\,\xi_1,\xi_2\in(a,b),$
+	设$f\in C[a,b],$在$(a,b)$上右侧可导, 则$\exists\,\xi_1,\xi_2\in(a,b),$
 	\[f_+'(\xi_1)\leq\frac{f(b)-f(a)}{b-a}\leq f_+'(\xi_2).\]
 \end{thm}
 
 \begin{thm}
-	设$f\in C[a,b],$在$(a,b)$上右侧可导，则$f$在$(a,b)$上（严格）下凸的充分必要条件是$f_+'(x)$（严格）单调递增．
+	设$f\in C[a,b],$在$(a,b)$上右侧可导, 则$f$在$(a,b)$上（严格）下凸的充分必要条件是$f_+'(x)$（严格）单调递增．
 \end{thm}
 
 
@@ -539,18 +539,18 @@
 	证明H\"older不等式与Minkowski不等式．
 \end{exer}
 \begin{pf}
-	可以利用广义AM-GM不等式来证明H\"older不等式，利用H\"older不等式来证明Minkowski不等式．这里提供利用凸性与Jensen不等式的证法，利用凸性的证法可以证明$0<p<1$时Minkowski不等式反向成立．
+	可以利用广义AM-GM不等式来证明H\"older不等式, 利用H\"older不等式来证明Minkowski不等式．这里提供利用凸性与Jensen不等式的证法, 利用凸性的证法可以证明$0<p<1$时Minkowski不等式反向成立．
 
-	对H\"older不等式，考虑下凸函数$f(u)=u^p$．
+	对H\"older不等式, 考虑下凸函数$f(u)=u^p$．
 	\[\lambda_k=\frac{y_k^q}{\sum y_i^q},\quad u_k=x_ky_k^{1-q}.\]
 
-	对Minkowski不等式，考虑下凸函数$f(u)=\bra{1-u^{\frac{1}{p}}}^p$．
+	对Minkowski不等式, 考虑下凸函数$f(u)=\bra{1-u^{\frac{1}{p}}}^p$．
 	\[\lambda_k=\frac{(x_k+y_k)^p}{\sum(x_i+y_i)^p},\quad u_k=\bra{\frac{x_k}{x_k+y_k}}^p.\]
 \end{pf}
 
 
 \section{不定积分}
-以下几题利用了配对积分法．遇到难以积出的积分（特别是$\sin x$与$\cos x$的线性组合）时应当想到这种方法，联想与原积分相关的更简单的积分．
+以下几题利用了配对积分法．遇到难以积出的积分（特别是$\sin x$与$\cos x$的线性组合）时应当想到这种方法, 联想与原积分相关的更简单的积分．
 \begin{exer}
 	计算$\int\frac{\d x}{1+x^4}$．
 \end{exer}
@@ -576,7 +576,7 @@
 	计算$\int\arctan\sqrt{\frac{a-x}{a+x}}\,\d x$．
 \end{exer}
 \begin{sol}
-	令$x=a\cos t$，利用半角公式．也可以直接使用分部积分法．
+	令$x=a\cos t$, 利用半角公式．也可以直接使用分部积分法．
 \end{sol}
 
 
@@ -595,9 +595,9 @@
 	设$f$在$[a,b]$上有界．则$f\in R[a,b]$的充分必要条件是$f$的不连续点的集合$D(f)$零测（$f$在$[a,b]$上几乎处处连续）．
 \end{thm}
 \begin{pf}
-	先证必要性．只需证$\forall\,n\in\N,\,D_\frac{1}{n}=\cbra{x\in[a,b]\,\middle\vert\,\omega(x)>\frac{1}{n}}$零测．因为$f\in R[a,b],\,\forall\,\epsilon>0,\,\exists$分割$P,$使得$\sum_P\omega_i\Delta x_i<\frac{\epsilon}{n}$．记$\Lambda=\cbra{i\,\middle\vert\,(x_{i-1},x_i)\cap D_\frac{1}{n}\neq\emptyset},$则$\frac{1}{n}\sum_{i\in\Lambda}\Delta x_i<\sum_{i\in\Lambda}\omega_i\Delta x_i<\frac{\epsilon}{n}$．再用总长度可以任意小的区间覆盖$x_0,\dots,x_n$，即证得$D_\frac{1}{n}$零测．
+	先证必要性．只需证$\forall\,n\in\N,\,D_\frac{1}{n}=\cbra{x\in[a,b]\,\middle\vert\,\omega(x)>\frac{1}{n}}$零测．因为$f\in R[a,b],\,\forall\,\epsilon>0,\,\exists$分割$P,$使得$\sum_P\omega_i\Delta x_i<\frac{\epsilon}{n}$．记$\Lambda=\cbra{i\,\middle\vert\,(x_{i-1},x_i)\cap D_\frac{1}{n}\neq\emptyset},$则$\frac{1}{n}\sum_{i\in\Lambda}\Delta x_i<\sum_{i\in\Lambda}\omega_i\Delta x_i<\frac{\epsilon}{n}$．再用总长度可以任意小的区间覆盖$x_0,\dots,x_n$, 即证得$D_\frac{1}{n}$零测．
 
-	再证充分性．对任意$\epsilon>0$，先用总长度小于$\epsilon$的至多可数个开区间覆盖$D(f)$．对每个连续点取一个邻域，使得邻域内振幅不超过$\epsilon$．每个连续点的邻域和覆盖$D(f)$的开区间构成了$[a,b]$的一个开覆盖．应用加强形式的有限开覆盖定理，得到Lebesgue数$\delta$．取分割$P,\,\norm{P}<\delta$即证．
+	再证充分性．对任意$\epsilon>0$, 先用总长度小于$\epsilon$的至多可数个开区间覆盖$D(f)$．对每个连续点取一个邻域, 使得邻域内振幅不超过$\epsilon$．每个连续点的邻域和覆盖$D(f)$的开区间构成了$[a,b]$的一个开覆盖．应用加强形式的有限开覆盖定理, 得到Lebesgue数$\delta$．取分割$P,\,\norm{P}<\delta$即证．
 \end{pf}
 
 \begin{thm}[推广形式的Riemann引理]
@@ -614,33 +614,33 @@
 
 \subsection{可积性条件与定积分的性质}
 \begin{exer}
-	设$f$在$[a,b]$上的每一点处的极限都存在且为$0$，求证：$f\in R[a,b],\,\int_{a}^{b}f=0$．
+	设$f$在$[a,b]$上的每一点处的极限都存在且为$0$, 求证：$f\in R[a,b],\,\int_{a}^{b}f=0$．
 \end{exer}
 \begin{pf}
-	断言：$\forall\,\epsilon>0,$使得$|f(x)|>\epsilon$的点$x$至多只有有限个．否则由聚点原理，这与聚点处极限为0矛盾．
+	断言：$\forall\,\epsilon>0,$使得$|f(x)|>\epsilon$的点$x$至多只有有限个．否则由聚点原理, 这与聚点处极限为0矛盾．
 \end{pf}
 
-以下结论不难证得，但具有启发性．
+以下结论不难证得, 但具有启发性．
 \begin{prop}
 	设$f\in R[a,b],\,\int_{a}^{b}f(x)\,\d x>0$．则有$[c,d]\subseteq[a,b]$和$\mu>0,$使得区间$[c,d]$上成立$f(x)\geq\mu$．
 \end{prop}
 
 \begin{exer}
-	设$[a,b]$上处处大于$0$的函数$f\in R[a,b]$，则有$\int_{a}^{b}f>0.$
+	设$[a,b]$上处处大于$0$的函数$f\in R[a,b]$, 则有$\int_{a}^{b}f>0.$
 \end{exer}
 \begin{pf}
-	用反证法．假设$\int_{a}^{b}f=0$．于是$\forall\,\epsilon>0,\,\int_{a}^{b}[\epsilon-f(x)]\,\d x>0$．利用上一命题，用闭区间套定理将$\int_{a_n}^{b_n}f=0$继承到局部，引出矛盾．
+	用反证法．假设$\int_{a}^{b}f=0$．于是$\forall\,\epsilon>0,\,\int_{a}^{b}[\epsilon-f(x)]\,\d x>0$．利用上一命题, 用闭区间套定理将$\int_{a_n}^{b_n}f=0$继承到局部, 引出矛盾．
 \end{pf}
 
 
 \subsection{定积分的计算}
-下题也可以用与Euler积分类似的方法解出，但以下展现的处理极限不存在的方法值得学习．
+下题也可以用与Euler积分类似的方法解出, 但以下展现的处理极限不存在的方法值得学习．
 \begin{exer}
 	计算$\int_{0}^{\pi/2}\sin x\ln\sin x\,\d x$．
 \end{exer}
 \begin{sol}
 	\[\left.I=\int_{0}^{\pi/2}\ln\sin x\,\d(-\cos x)=-\cos x\ln\sin x\right|_{0^+}^{\pi/2}.\]
-	第一项极限不存在，因此不能解决问题．但如果将$\d(-\cos x)$改成$\d(1-\cos x)$即可通过等价无穷小解决问题．
+	第一项极限不存在, 因此不能解决问题．但如果将$\d(-\cos x)$改成$\d(1-\cos x)$即可通过等价无穷小解决问题．
 \end{sol}
 
 \begin{exer}[Dirichlet积分]
@@ -667,7 +667,7 @@
 		F(x)&=\int_{0}^{x}t^2\,\d\cos\frac{1}{t}\\
 		&=x^2\cos\frac{1}{x}-\int_{0}^{x}2t\cos\frac{1}{t}\,\d t.
 	\end{align*}
-	即可解决被积函数不连续的问题，答案为$0$．
+	即可解决被积函数不连续的问题, 答案为$0$．
 \end{sol}
 \begin{rem}
 	这种处理$\int_{0}^{x}\sin\frac{1}{t}$或$\int_{0}^{x}\cos\frac{1}{t}$的方式值得记住．
@@ -679,7 +679,7 @@
 \end{exer}
 \begin{pf}
 	对任意取定的$\epsilon>0,\,\exists$等距分割$P,\,\sum_{P}\omega_i\Delta x_i<\epsilon$．取$|h|<\norm{P},$则有
-	$I=\sum_{P}\int_{x_{i-1}}^{x_i}|f(x+h)-f(x)|\,\d x,$其中每个$x+h$与$x$都落在同一或相邻小区间内，使积分的值得到控制．
+	$I=\sum_{P}\int_{x_{i-1}}^{x_i}|f(x+h)-f(x)|\,\d x,$其中每个$x+h$与$x$都落在同一或相邻小区间内, 使积分的值得到控制．
 \end{pf}
 
 \begin{exer}
@@ -690,7 +690,7 @@
 \end{sol}
 
 \begin{exer}
-	求证：$\lambda<1$时，$\lim_{R\to\infty}R^\lambda\int_{0}^{\pi/2}\e^{-R\sin\theta}\,\d\theta=0$．
+	求证：$\lambda<1$时, $\lim_{R\to\infty}R^\lambda\int_{0}^{\pi/2}\e^{-R\sin\theta}\,\d\theta=0$．
 \end{exer}
 \begin{pf}
 	用Jordan不等式将难以处理的$\sin x$转换为$x$．
