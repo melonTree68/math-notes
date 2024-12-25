@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.12.6)  25 DEC 2024 16:22
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.12.6)  25 DEC 2024 17:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -980,14 +980,14 @@ Requested font "SimSun/OT:script=hani;language=dflt;" at 8.0pt
  -> C:/Windows/fonts/simsun.ttc
 Requested font "SimSun/OT:script=hani;language=dflt;" at 6.0pt
  -> C:/Windows/fonts/simsun.ttc
- [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] (./main.aux) ) 
+ [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 23425 strings out of 476683
- 538586 string characters out of 5807575
+ 23428 strings out of 476683
+ 538660 string characters out of 5807575
  1874012 words of memory out of 5000000
- 43195 multiletter control sequences out of 15000+600000
+ 43198 multiletter control sequences out of 15000+600000
  521662 words of font info for 101 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,14n,99p,1189b,459s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (12 pages).
+Output written on main.pdf (13 pages).

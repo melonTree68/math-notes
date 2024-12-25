@@ -167,7 +167,7 @@
 \end{pf}
 
 \begin{exer}
-	设$f$在$[0,1]$上满足以下条件：(1) $f(0)>0,\,f(1)<0$；(2) $\exists\,g\in C[0,1]$, 使得$f+g$在$[0,1]$上单调递增．求证：$f$在$[0,1]$中有零点．
+	设$f$在$[0,1]$上满足以下条件：(1) $f(0)>0,\,f(1)<0$; (2) $\exists\,g\in C[0,1]$, 使得$f+g$在$[0,1]$上单调递增．求证：$f$在$[0,1]$中有零点．
 \end{exer}
 \begin{pf}
 	设$E=\cbra{x\in[0,1]\,\middle\vert\,f(x)>0},\,\sup E=b\in[0,1]$．
@@ -295,7 +295,7 @@
 	设$\{a_n\}$为正数数列．求证：$\ulim \sqrt[n]{a_n}\leq1$的充分必要条件是$\forall\,l>1,\,\lim_{\nti}\frac{a_n}{l^n}=0$．
 \end{exer}
 \begin{rem}
-	上下极限是一个数, 应当充分利用它和已知数的大小关系．例如假设$\llim x_n=b<1$时, 应当考虑$b$和$1$的空隙；另一题中的$l$也是如此．
+	上下极限是一个数, 应当充分利用它和已知数的大小关系．例如假设$\llim x_n=b<1$时, 应当考虑$b$和$1$的空隙; 另一题中的$l$也是如此．
 \end{rem}
 
 
@@ -349,7 +349,6 @@
 	对任意取定的$x_0\in I$, $\forall \epsilon>0$, 
 
 	$\exists\,\delta>0$, 使得$\forall\, x\in U(x_0,2\delta),\,|f(x)-g(x_0)|<\epsilon$．$\forall\,x\in U(x_0,\delta)$, 又$\exists\,\eta>0$, 使得$\forall\,y\in U(x,\eta),\,|f(y)-g(x)|<\epsilon$．于是可以取$y\in U(x,\eta)\cap U(x_0,2\delta)$, 使得以下不等式成立：
-
 	\[|f(y)-g(x_0)|<\epsilon\qquad|f(y)-g(x)|<\epsilon.\]
 
 	于是$|g(x)-g(x_0)|<2\epsilon,\,\forall\,x\in U(x_0,\delta)$．即$g$在$I$上连续．
@@ -495,11 +494,23 @@
 	广义二阶导数的形式提示了应当考虑凹凸性．
 
 	证明线性函数可以从既是下凸函数又是上凸函数的角度入手．
+	
+	这种利用$\epsilon$处理边界的方式是一种范式．
 \end{rem}
+
+\begin{exer}
+	设$f$在$(a,b)$上任意阶可导, 且$\forall\,n\in\N,\,f^{(n)}(x)\geq0,\,|f(x)|\leq M$．求证：$\forall\,x\in(a,b),\,r>0,\,x+r\in(a,b)$, 成立关于导数的估计式：
+	\[f^{(n)}(x)\leq\frac{2Mn!}{r^n},\,\forall\,n\in\N.\]
+\end{exer}
+
+\begin{exer}[Bernstein定理]
+	设$f$在$(a,b)$上任意阶可导, 且$\forall\,n\in\N,\,f^{(n)}(x)\geq0$．求证：$\forall\,x_0\in(a,b),\,\exists\,r>0$, 使得当$x\in[x_0-r,x_0+r]\subseteq(a,b)$时, 成立
+	\[f(x)=\lim_{\nti}\sum_{k=0}^{n}\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k.\]
+\end{exer}
 
 
 \subsection{单侧导数的若干性质}
-以下仅陈述右侧导数相关性质, 左侧导数同理．
+以下定理具有启发性, 有时能带来出其不意的方便．仅陈述右侧导数相关性质, 左侧导数同理．
 \begin{lem}[Fermat引理]
 	设$f$在其极大值点$x_0$处右侧可导, 则$f_+'(x_0)\leq0$．
 \end{lem}
@@ -533,19 +544,17 @@
 	设$f\in C[a,b],$在$(a,b)$上右侧可导, 则$f$在$(a,b)$上（严格）下凸的充分必要条件是$f_+'(x)$（严格）单调递增．
 \end{thm}
 
-
-\subsection{不等式}
+下一题用定义证明计算量非常大．但上述定理可以直接证得．
 \begin{exer}
-	证明H\"older不等式与Minkowski不等式．
+	设$a<b<c<d$, 求证：若$f$在$[a,c],\,[b,d]$上下凸, 则$f$在$[a,d]$上下凸．
+\end{exer}
+
+\begin{exer}
+	设$f$在$(a,b)$上下凸, 求证：$f_-'(x)$和$f_+'(x)$在任意$[c,d]\subseteq(a,b)$上可积, 且成立Newton-Leibniz公式
+	\[f(d)-f(c)=\int_{c}^{d}f_-'(x)\,\d x=\int_{c}^{d}f_+'(x)\,\d x.\]
 \end{exer}
 \begin{pf}
-	可以利用广义AM-GM不等式来证明H\"older不等式, 利用H\"older不等式来证明Minkowski不等式．这里提供利用凸性与Jensen不等式的证法, 利用凸性的证法可以证明$0<p<1$时Minkowski不等式反向成立．
-
-	对H\"older不等式, 考虑下凸函数$f(u)=u^p$．
-	\[\lambda_k=\frac{y_k^q}{\sum y_i^q},\quad u_k=x_ky_k^{1-q}.\]
-
-	对Minkowski不等式, 考虑下凸函数$f(u)=\bra{1-u^{\frac{1}{p}}}^p$．
-	\[\lambda_k=\frac{(x_k+y_k)^p}{\sum(x_i+y_i)^p},\quad u_k=\bra{\frac{x_k}{x_k+y_k}}^p.\]
+	用单侧导数的Lagrange定理．
 \end{pf}
 
 
@@ -580,7 +589,8 @@
 \end{sol}
 
 
-\section{定积分与一元积分学的应用}
+\section{定积分}
+\subsection{重要定理}
 \begin{defn}
 	函数$f$在$U(x_0,\delta)$上的振幅$\omega_f(x,\delta)=\sup_{x\in U(x_0,\delta)}\cbra{f(x)}-\inf_{x\in U(x_0,\delta)}\cbra{f(x)}$．
 	
@@ -611,8 +621,15 @@
 	这种逼近可积函数的方式值得学习．
 \end{rem}
 
+\begin{thm}
+	设$f,g\in R[a,b],\,\xi$和$\xi'$是分割$P$的两个介点集, 则
+	\[\lim_{\norm{P}\to0}\sum_{P}f(\xi_k)g(\xi'_k)\Delta x_k=\int_{a}^{b}fg.\]
+	更进一步, 设$m_k(f)\leq\mu_k\leq M_k(f),\,m_k(g)\leq\nu_k\leq M_k(g)$, 则
+	\[\lim_{\norm{P}\to0}\sum_{P}\mu_k\nu_k\Delta x_k=\int_{a}^{b}fg.\]
+\end{thm}
 
-\subsection{可积性条件与定积分的性质}
+
+\subsection{习题}
 \begin{exer}
 	设$f$在$[a,b]$上的每一点处的极限都存在且为$0$, 求证：$f\in R[a,b],\,\int_{a}^{b}f=0$．
 \end{exer}
@@ -631,10 +648,20 @@
 \begin{pf}
 	用反证法．假设$\int_{a}^{b}f=0$．于是$\forall\,\epsilon>0,\,\int_{a}^{b}[\epsilon-f(x)]\,\d x>0$．利用上一命题, 用闭区间套定理将$\int_{a_n}^{b_n}f=0$继承到局部, 引出矛盾．
 \end{pf}
+\begin{rem}
+	这种利用$\epsilon$处理边界的方式是一种范式．
+\end{rem}
 
+\begin{exer}[积分的连续性命题]
+	设$f\in R[a-\delta,b+\delta],\,\delta>0$．求证：
+	\[\lim_{h\to0}\int_{a}^{b}|f(x+h)-f(x)|\,\d x=0.\]
+\end{exer}
+\begin{pf}
+	对任意取定的$\epsilon>0,\,\exists$等距分割$P,\,\sum_{P}\omega_i\Delta x_i<\epsilon$．取$|h|<\norm{P},$则有
+	$I=\sum_{P}\int_{x_{i-1}}^{x_i}|f(x+h)-f(x)|\,\d x,$其中每个$x+h$与$x$都落在同一或相邻小区间内, 使积分的值得到控制．
+\end{pf}
 
-\subsection{定积分的计算}
-下题也可以用与Euler积分类似的方法解出, 但以下展现的处理极限不存在的方法值得学习．
+下题可以用与Euler积分类似的方法解出, 但以下展现的处理极限不存在的方法值得学习．
 \begin{exer}
 	计算$\int_{0}^{\pi/2}\sin x\ln\sin x\,\d x$．
 \end{exer}
@@ -655,10 +682,8 @@
 \begin{exer}[Fejér积分]
 	求证：$\int_{0}^{\pi/2}\bra{\frac{\sin nx}{\sin x}}^2=\frac{n\pi}{2}$．
 \end{exer}
-\begin{pf}
-	用数学归纳法与上题的三角恒等式．
-\end{pf}
 
+下题中处理$\int_{0}^{x}\sin\frac{1}{t}$的方式是一种范式．
 \begin{exer}
 	设$F(x)=\int_{0}^{x}\sin\frac{1}{t}\,\d t,$求$F'(0)$．
 \end{exer}
@@ -669,18 +694,17 @@
 	\end{align*}
 	即可解决被积函数不连续的问题, 答案为$0$．
 \end{sol}
-\begin{rem}
-	这种处理$\int_{0}^{x}\sin\frac{1}{t}$或$\int_{0}^{x}\cos\frac{1}{t}$的方式值得记住．
-\end{rem}
 
-\begin{exer}[积分的连续性命题]
-	设$f\in R[a-\delta,b+\delta],\,\delta>0$．求证：
-	\[\lim_{h\to0}\int_{a}^{b}|f(x+h)-f(x)|\,\d x=0.\]
+\begin{exer}
+	求证：$m<2$时, $\lim_{x\to0^+}\frac{1}{x^m}\int_{0}^{x}\sin\frac{1}{t}\,\d t=0$．
 \end{exer}
-\begin{pf}
-	对任意取定的$\epsilon>0,\,\exists$等距分割$P,\,\sum_{P}\omega_i\Delta x_i<\epsilon$．取$|h|<\norm{P},$则有
-	$I=\sum_{P}\int_{x_{i-1}}^{x_i}|f(x+h)-f(x)|\,\d x,$其中每个$x+h$与$x$都落在同一或相邻小区间内, 使积分的值得到控制．
-\end{pf}
+
+\begin{exer}
+	设$f\in C[0,1]$, 计算$\lim_{\nti}\int_{0}^{1}nx^nf(x)\,\d x$．
+\end{exer}
+\begin{sol}
+	$f$的性态未知, 因此先观察其余部分, 注意到$nx^n$积分为$1$．分段控制方法需要$1$处被积函数值为$1$, 因此考虑$\lim_{\nti}\int_{0}^{1}nx^n\bra{f(x)-f(1)}$．
+\end{sol}
 
 \begin{exer}
 	计算$B(m,n)=\sum_{k=0}^{n}\binom{n}{k}\frac{(-1)^k}{m+k+1}$．
@@ -689,16 +713,60 @@
 	应当从$\frac{(-1)^k}{m+k+1}$的形式联想到幂函数从$0$到$1$的积分．
 \end{sol}
 
+
+\section{不等式}
+\subsection{微分学不等式}
+以下Jordan不等式的证明非常简单, 但它的作用十分强大, 能将复杂式子中难以处理的$\sin x$放缩为线性函数．
+\begin{thm}[Jordan不等式]
+	设$0\leq x\leq\frac{\pi}{2}$, 则成立不等式$\frac{2}{\pi}x\leq\sin x\leq x$．
+\end{thm}
+
+可以利用广义AM-GM不等式来证明H\"older不等式, 利用H\"older不等式来证明Minkowski不等式．这里提供利用凸性与Jensen不等式的证法, 利用凸性的证法可以证明$0<p<1$时Minkowski不等式反向成立．
+\begin{exer}
+	证明H\"older不等式与Minkowski不等式．
+\end{exer}
+\begin{pf}
+	对H\"older不等式, 考虑下凸函数$f(u)=u^p$．
+	\[\lambda_k=\frac{y_k^q}{\sum y_i^q},\quad u_k=x_ky_k^{1-q}.\]
+
+	对Minkowski不等式, 考虑下凸函数$f(u)=\bra{1-u^{\frac{1}{p}}}^p$．
+	\[\lambda_k=\frac{(x_k+y_k)^p}{\sum(x_i+y_i)^p},\quad u_k=\bra{\frac{x_k}{x_k+y_k}}^p.\]
+\end{pf}
+
+
+\subsection{积分学不等式}
+积分学经典不等式的证明一般有两种方法：(1) 使用与离散形式相同的思路; (2) 对离散形式取极限．
+\begin{thm}[Jensen不等式]
+	设$f,p\in R[a,b],\,p\geq0,\,\int_{a}^{b}p>0$．则当$\phi$是$f$值域上的下凸函数时, 成立不等式（上凸则不等式反向）
+	\[\phi\bra{\frac{\int_{a}^{b}p(x)f(x)\,\d x}{\int_{a}^{b}p(x)\,\d x}}\leq\frac{\int_{a}^{b}p(x)\bra{\phi(f(x))}\d x}{\int_{a}^{b}p(x)\,\d x}.\]
+\end{thm}
+
+Jensen不等式包含了很多不等式．例如
+\[\phi\bra{\frac{1}{b-a}\int_{a}^{b}f(x)\,\d x}\leq\frac{1}{b-a}\int_{a}^{b}\phi(f(x))\,\d x.\]
+\[\ln\bra{\frac{1}{b-a}\int_{a}^{b}f(x)\,\d x}\geq\frac{1}{b-a}\int_{a}^{b}\ln(f(x))\,\d x.\]
+当遇到不等式时, 应当观察其中形式相似的部分, 并寻找凸函数．
+
+\begin{exer}
+	若$f$在$[0,1]$上上凸, 求证：$\forall\,n\in\N,$
+	\[\int_{0}^{1}f(x^n)\,\d x\leq f\bra{\frac{1}{n+1}}.\]
+\end{exer}
+
+\begin{exer}
+	设非负函数$f\in R[a,b],\,\int_{a}^{b}f=1,\,k\in\R$, 求证：
+	\[\bra{\int_{a}^{b}f(x)\cos kx\,\d x}^2+\bra{\int_{a}^{b}f(x)\sin kx\,\d x}^2\leq1.\]
+\end{exer}
+\begin{pf}
+	这里的凸函数是$\phi(x)=x^2$．
+\end{pf}
+
+下题的启示是，
+
 \begin{exer}
 	求证：$\lambda<1$时, $\lim_{R\to\infty}R^\lambda\int_{0}^{\pi/2}\e^{-R\sin\theta}\,\d\theta=0$．
 \end{exer}
 \begin{pf}
 	用Jordan不等式将难以处理的$\sin x$转换为$x$．
 \end{pf}
-\begin{rem}
-	用Jordan不等式处理$\sin x$的技巧在广义积分的线性夹逼中更加有用．
-\end{rem}
-
 
 
 \section{广义积分}
