@@ -156,7 +156,7 @@
 	设$f$在开区间$I$上连续．且于每一点$x\in I$处取到极值．求证：$f$为$I$上的常值函数．
 \end{exer}
 \begin{pf}
-	用反证法．假设$f(a_0)<f(b_0)$．因为$f\in C(I),\,\exists\,\xi\in[a_0,b_0],\,f(\xi)=\frac{f(a_0)+f(b_0)}{2}$．如果$\xi\leq\frac{a_0+b_0}{2}$，取$\eta\in[a_0,\xi],\,f(\eta)=\frac{f(a_0)+f(\xi)}{2}$，令$[a_1,b_1]=[\eta,\xi]\subseteq[a_0,b_0]$．其余情况同理．重复此过程，得到一列闭区间套收缩至$\xi$，可以证明$\xi$不是极值点，矛盾．
+	用反证法．假设$f(a_0)<f(b_0)$．因为$f\in C(I),\,\exists\,\xi\in[a_0,b_0],\,f(\xi)=(f(a_0)+f(b_0))/2$．如果$\xi\leq(a_0+b_0)/2$，取$\eta\in[a_0,\xi],\,f(\eta)=(f(a_0)+f(\xi))/2$，令$[a_1,b_1]=[\eta,\xi]\subseteq[a_0,b_0]$．其余情况同理．重复此过程，得到一列闭区间套收缩至$\xi$，可以证明$\xi$不是极值点，矛盾．
 \end{pf}
 \begin{rem}
 	通过Bolzano二分法将整体性质继承至局部，引发矛盾．
@@ -198,7 +198,7 @@
 	一个数列有收敛子列的充分必要条件是它不是无穷大量．
 \end{cor}
 
-以下压缩映射原理是证明迭代数列收敛的实用工具．
+以下压缩映射原理是处理迭代数列的实用工具．
 \begin{prop}[压缩映射原理]
 	称$f$是$[a,b]$上的一个压缩映射，如果$f\bra{[a,b]}\subseteq[a,b]$，且$\exists\,0<k<1$，使得$\forall\,x,y\in[a,b],\,|f(x)-f(y)|\leq k|x-y|$．
 
@@ -226,7 +226,7 @@
 \section{数列与函数极限}
 \subsection{数列极限}
 \begin{exer}
-	求证：数列$a_n=1+\frac{1}{2^p}+\cdots+\frac{1}{n^p}$（$p>1$）收敛．
+	求证：数列$a_n=1+\frac{1}{2^p}+\cdots+\frac{1}{n^p}\,(p>1)$收敛．
 \end{exer}
 \begin{pf}
 	\begin{align*}
@@ -263,7 +263,7 @@
 \begin{thm}
 	\[\llim x_n+\llim y_n\leq\llim\bra{x_n+y_n}\leq\llim x_n+\ulim y_n\leq\ulim\bra{x_n+y_n}\leq\ulim x_n+\ulim y_n\]
 	当$\{y_n\}$收敛时，
-	\[\llim\bra{x_n+y_n}=\llim x_n+\lim y_n\qquad\ulim\bra{x_n+y_n}=\ulim x_n+\lim y_n\]
+	\[\llim\bra{x_n+y_n}=\llim x_n+\lim_{\nti} y_n\qquad\ulim\bra{x_n+y_n}=\ulim x_n+\lim_{\nti} y_n\]
 \end{thm}
 
 \begin{exer}
@@ -290,6 +290,13 @@
 \begin{pf}
 	用反证法．假设$\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}=b<1$．于是对$\epsilon=\frac{1-b}{2},\,\exists\,N\in\N$，使得$\forall\,n>N,\,\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}<1$，即$\frac{x_{n+1}}{n+1}<\frac{x_n}{n}-\frac{1}{n+1}$．$x_n>0$与调和级数的发散性矛盾．
 \end{pf}
+
+\begin{exer}
+	设$\{a_n\}$为正数数列．求证：$\ulim \sqrt[n]{a_n}\leq1$的充分必要条件是$\forall\,l>1,\,\lim_{\nti}\frac{a_n}{l^n}=0$．
+\end{exer}
+\begin{rem}
+	上下极限是一个数，应当充分利用它和已知数的大小关系．例如假设$\llim x_n=b<1$时，应当考虑$b$和$1$的空隙；另一题中的$l$也是如此．
+\end{rem}
 
 
 \section{连续函数}
@@ -325,7 +332,7 @@
 \begin{pf}
 	对任意取定的$\epsilon>0$，$\forall\,x\in[a,b],\,\exists\,\delta_x$，使得$\forall\,x-\delta_x<y<x+\delta_x,\,|f(y)-\lim_{t\to x}f(t)|\leq\epsilon$．由保号性，$|\lim_{t\to y}f(t)-\lim_{t\to x}f(t)|\leq\epsilon$．于是$\forall\,y\in\dnei(x,\delta_x),\,|\lim_{t\to y}f(t)-f(y)|\leq2\epsilon$．即每个$U(x,\delta_x)$中至多有一个满足要求的点．由有限开覆盖定理，这样的点至多有有限个．
 
-	对(2)，取$\epsilon_n=\frac{1}{n}$，可数个有限集的并是可数集．
+	对(2)，取$\epsilon_n=1/n$，可数个有限集的并是可数集．
 \end{pf}
 \begin{rem}
 	证明满足某性质的点有至多可数个的常用方法：
@@ -662,6 +669,9 @@
 	\end{align*}
 	即可解决被积函数不连续的问题，答案为$0$．
 \end{sol}
+\begin{rem}
+	这种处理$\int_{0}^{x}\sin\frac{1}{t}$或$\int_{0}^{x}\cos\frac{1}{t}$的方式值得记住．
+\end{rem}
 
 \begin{exer}[积分的连续性命题]
 	设$f\in R[a-\delta,b+\delta],\,\delta>0$．求证：
