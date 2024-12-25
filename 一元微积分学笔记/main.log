@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.12.6)  25 DEC 2024 00:44
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.12.6)  25 DEC 2024 16:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -956,11 +956,11 @@ Requested font "cmr6" at 6.0pt
 
 ]
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/it' will be
-(Font)              scaled to size 10.95pt on input line 158.
+(Font)              scaled to size 10.95pt on input line 165.
 Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.95pt
  -> c:/texlive/2023/texmf-dist/fonts/opentype/public/newtx/TeXGyreTermesX-Italic.otf
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/it' will be
-(Font)              scaled to size 10.95pt on input line 158.
+(Font)              scaled to size 10.95pt on input line 165.
 Requested font "[TeXGyreTermesX-BoldItalic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.95pt
  -> c:/texlive/2023/texmf-dist/fonts/opentype/public/newtx/TeXGyreTermesX-BoldItalic.otf
 Requested font "KaiTi/OT:script=hani;language=dflt;" at 10.95pt
