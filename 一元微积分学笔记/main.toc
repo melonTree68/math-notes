@@ -5,15 +5,15 @@
 \contentsline {section}{\numberline {3}连续函数}{4}{section.3}%
 \contentsline {section}{\numberline {4}一元微分学}{5}{section.4}%
 \contentsline {subsection}{\numberline {4.1}导数与微分}{5}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}微分中值定理与Taylor公式}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.2}微分中值定理与Taylor公式}{6}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}单侧导数的性质}{8}{subsection.4.3}%
-\contentsline {section}{\numberline {5}不定积分}{9}{section.5}%
+\contentsline {section}{\numberline {5}不定积分}{8}{section.5}%
 \contentsline {section}{\numberline {6}定积分}{9}{section.6}%
 \contentsline {subsection}{\numberline {6.1}积分学的重要定理}{9}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}定积分的性质}{10}{subsection.6.2}%
 \contentsline {subsection}{\numberline {6.3}定积分的计算}{11}{subsection.6.3}%
 \contentsline {subsection}{\numberline {6.4}积分估计}{12}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}积分学的其他应用}{13}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.5}积分学的其他应用}{12}{subsection.6.5}%
 \contentsline {section}{\numberline {7}不等式}{13}{section.7}%
 \contentsline {subsection}{\numberline {7.1}微分学重要不等式}{13}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}Jensen不等式}{13}{subsection.7.2}%
@@ -21,6 +21,6 @@
 \contentsline {subsection}{\numberline {7.4}Jordan不等式}{14}{subsection.7.4}%
 \contentsline {section}{\numberline {8}广义积分}{15}{section.8}%
 \contentsline {subsection}{\numberline {8.1}广义积分与和式极限}{15}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}广义积分的敛散性判别法}{16}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.2}广义积分的敛散性判别法}{15}{subsection.8.2}%
 \contentsline {subsection}{\numberline {8.3}广义积分的计算}{16}{subsection.8.3}%
-\contentsline {section}{\numberline {9}数项级数}{16}{section.9}%
+\contentsline {section}{\numberline {9}数项级数}{17}{section.9}%
