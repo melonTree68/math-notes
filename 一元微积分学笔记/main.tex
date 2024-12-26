@@ -10,11 +10,13 @@
 \usepackage{bm}
 \usepackage{pgf,tikz}
 \usepackage{enumerate,enumitem}
+\usepackage{multicol}
 \usepackage{fancyhdr}
 \usepackage{titling}
 \usepackage{etoolbox}
 \usepackage{ragged2e}
 \usepackage{sectsty}
+\usepackage{hyperref}
 \usepackage{titlesec}
 
 
@@ -152,7 +154,7 @@
 
 
 \section{实数系的基本定理}
-实数系基本定理的使用有其显著动机, 例如：
+实数系基本定理的使用有其显著动机, 在观察题干时应当向这方面思考, 例如：
 \begin{enumerate}
 	\item Lebesgue方法将局部性质推广至整体．它聚焦于``函数在什么地方失去了这个整体性质'', 并通过研究该处的局部性质引出矛盾．
 	\item Bolzano二分法等闭区间套定理的使用将整体性质继承至局部．
@@ -245,7 +247,7 @@
 \end{exer}
 \begin{pf}
     由Abel变换, 
-    \[\text{原式}=\lim_{\nti}\frac{p_nA_n+\sum_{k=1}^{n-1}\sbra{(p_k-p_{k+1})A_k}}{p_n}\xlongequal{\text{Stolz定理}}\lim_{\nti}\bra{A_n+\frac{(p_n-p_{n+1})A_n}{p_{n+1}-p_n}}=0.\]
+    \[\text{原式}=\lim_{\nti}\frac{p_nA_n+\sum_{k=1}^{n-1}\sbra{(p_k-p_{k+1})A_k}}{p_n}\xlongequal{\text{Stolz定理}}\lim_{\nti}\bra{A_n+\frac{(p_n-p_{n+1})A_n}{p_{n+1}-p_n}}=0.\qedhere\]
 \end{pf}
 
 
@@ -277,6 +279,7 @@
 	解得$\llim x_n=\ulim x_n$, 即$\{x_n\}$收敛．
 \end{pf}
 
+判别数列敛散时, 可以考虑使用上下极限工具．
 \begin{exer}
 	若对于$\{a_n\}$的每个子列$\cbra{a_{n_k}}$都有$\lim_{k\to\infty}\frac{a_{n_1}+a_{n_2}+\cdots+a_{n_k}}{k}=a$, 求证：$\lim_{\nti}a_n=a$．
 \end{exer}
@@ -284,6 +287,7 @@
 	考虑$\{a_n\}$的收敛子列, 得到$\llim a_n=\ulim a_n=a$．
 \end{pf}
 
+以下两题充分利用了上下极限是一个定数这一事实．
 \begin{exer}
 	设$\{x_n\}$为正数数列, 求证$\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}\geq1$．
 \end{exer}
@@ -295,7 +299,7 @@
 	设$\{a_n\}$为正数数列．求证：$\ulim \sqrt[n]{a_n}\leq1$的充分必要条件是$\forall\,l>1,\,\lim_{\nti}\frac{a_n}{l^n}=0$．
 \end{exer}
 \begin{rem}
-	上下极限是一个数, 应当充分利用它和已知数的大小关系．例如假设$\llim x_n=b<1$时, 应当考虑$b$和$1$的空隙; 另一题中的$l$也是如此．
+	上下极限是一个定数, 应当充分利用它和已知数的大小关系．例如假设$\llim x_n=b<1$时, 应当考虑$b$和$1$的空隙; 另一题中的$l$也是如此．
 \end{rem}
 
 
@@ -342,27 +346,14 @@
 	\end{enumerate}
 \end{rem}
 
-\begin{exer}
-	设$f$在区间$I$内只有可去间断点．定义$g(x)=\lim_{t\to x}f(t),\,x\in I$．求证：$g\in C(I)$．
-\end{exer}
-\begin{pf}
-	对任意取定的$x_0\in I$, $\forall \epsilon>0$, 
-
-	$\exists\,\delta>0$, 使得$\forall\, x\in U(x_0,2\delta),\,|f(x)-g(x_0)|<\epsilon$．$\forall\,x\in U(x_0,\delta)$, 又$\exists\,\eta>0$, 使得$\forall\,y\in U(x,\eta),\,|f(y)-g(x)|<\epsilon$．于是可以取$y\in U(x,\eta)\cap U(x_0,2\delta)$, 使得以下不等式成立：
-	\[|f(y)-g(x_0)|<\epsilon\qquad|f(y)-g(x)|<\epsilon.\]
-
-	于是$|g(x)-g(x_0)|<2\epsilon,\,\forall\,x\in U(x_0,\delta)$．即$g$在$I$上连续．
-\end{pf}
-\begin{rem}
-	当出现极限套极限时, 常用手段是在邻近的两点的两个邻域中取中介点, 连接两个极限值．
-\end{rem}
-
+以下两题的关键在于注意到指数高于$1$的幂函数的下凸性, 于是考虑将$[a,b]$等分为$n$个小区间, 分别利用条件并相加, 使不等式右边随$n$的增大而缩紧．
 \begin{exer}
 	设$f$在区间$I$上满足带指数的Lipshitz条件, 即$\exists\,M>0,\,\alpha>0$, 使得$\forall\,x,y\in I$, 成立$|f(x)-f(y)|\leq M|x-y|^\alpha$．求证：若$\alpha>1$, 则$f$在$I$上是常值函数．
 \end{exer}
-\begin{pf}
-	注意到幂函数$x^\alpha$的下凸性, 考虑将$[a,b]$等分为$n$个小区间, 分别利用条件并相加, 使不等式右边随$n$的增大而缩紧．
-\end{pf}
+
+\begin{exer}
+	设$f\in C[a,b]$, 且$\exists\,M,\,\eta\in\R^+$, 使得$\forall\,[\alpha,\beta]\subseteq[a,b]$, 恒有$\left|\int_{\alpha}^{\beta}f(x)\,\d x\right|\leq M(\beta-\alpha)^{1+\eta}$．求证：$f\equiv0$．
+\end{exer}
 
 
 \section{一元微分学}
@@ -401,14 +392,16 @@
 	\[x_n=f\bra{\frac{1}{n^2}}+f\bra{\frac{2}{n^2}}+\cdots+f\bra{\frac{n}{n^2}}.\]
 \end{exer}
 \begin{sol}
-	用无穷小增量公式, 答案为$\frac{1}{2}f'(0)$．
+	注意到每一项的自变量都离$0$很近, 于是用无穷小增量公式, 答案为$\frac{1}{2}f'(0)$．
 \end{sol}
 
 \begin{exer}
 	求数列极限：
 	\begin{enumerate}
-		\item $\lim_{\nti}\bra{\sin\frac{1}{n^2}+\sin\frac{2}{n^2}+\cdots+\sin\frac{n}{n^2}}.$
-		\item $\lim_{\nti}\sbra{\bra{1+\frac{1}{n^2}}\bra{1+\frac{2}{n^2}}\cdots\bra{1+\frac{n}{n^2}}}.$
+		\begin{multicols}{2}
+			\item $\lim_{\nti}\bra{\sin\frac{1}{n^2}+\sin\frac{2}{n^2}+\cdots+\sin\frac{n}{n^2}}.$
+			\item $\lim_{\nti}\sbra{\bra{1+\frac{1}{n^2}}\bra{1+\frac{2}{n^2}}\cdots\bra{1+\frac{n}{n^2}}}.$
+		\end{multicols}
 	\end{enumerate}
 \end{exer}
 \begin{sol}
@@ -437,7 +430,7 @@
 	本题有多种出于不同思路的解法．
 	\begin{enumerate}
 		\item 求导一次, 用广义二项式定理展开．
-		\item 利用$f$是奇函数, 对各项待定系数, 利用$\sin(\arcsin x)\equiv x$与$\sin x$的Maclaurin公式计算．
+		\item 利用$f$是奇函数, 对各项待定系数, 利用$\sin(\arcsin x)\equiv x$与$\sin x$的Maclaurin公式计算．\qedhere
 	\end{enumerate}
 \end{sol}
 
@@ -456,11 +449,11 @@
 	\end{enumerate}
 \end{exer}
 \begin{pf}
-	以下均设所求证的$\xi$的导数值为$\lambda$．对$g(t)$反复使用Rolle定理即得结论．
+	以下均设所求证的$\xi$的导数值为$\lambda$．对$g$反复使用Rolle定理即得结论．
 	\begin{enumerate}
 		\item \[g(t)=f(t)-\frac{\lambda}{6}(t-a)^2(t-b).\]
 		\item \[g(x)=f(x)-f(a)-\frac{1}{2}(x-a)\sbra{f'(a)+f'(x)}+\frac{\lambda}{12}(x-a)^3.\]
-		\item \[g(x)=f(a)(x-b)+f(b)(a-x)+f(x)(b-a)-\frac{\lambda}{2}(a-b)(b-x)(x-a).\]
+		\item \[g(x)=f(a)(x-b)+f(b)(a-x)+f(x)(b-a)-\frac{\lambda}{2}(a-b)(b-x)(x-a).\qedhere\]
 	\end{enumerate}
 \end{pf}
 
@@ -484,15 +477,9 @@
 	若$f\in C[a,b],\,f^{[2]}(x)\equiv0$, 求证：$f$为线性函数．
 \end{exer}
 \begin{pf}
-	注意到加一个线性函数不改变广义二阶导数, 正如其不改变二阶导数一样．先用反证法证明：如果$\forall\,x\in[a,b],\,f^{[2]}(x)>0$, 则$f$下凸．
-
-	假设存在$A(x_1,f(x_1)),\,B(x_2,f(x_2)),\,C(x_3,f(x_3)),\,x_1<x_2<x_3$, 使得$f(x_2)>g(x_2)$, 其中$g(x)$是过$A,\,C$的线性函数．考虑$F=f-g$, 其最大值在$\xi\in(a,b)$处取到, 则$f^{[2]}(\xi)\leq0$, 矛盾．
-
-	于是$\forall\,\epsilon>0,\,f(x)+\epsilon x^2$下凸．由定义得$f$下凸, 同理$f$上凸, 于是$f$为线性函数．
+	广义二阶导数的形式提示了可能与凸性相关．先用反证法证明：如果$\forall\,x\in[a,b],\,f^{[2]}(x)>0$, 则$f$下凸．于是$\forall\,\epsilon>0,\,f(x)+\epsilon x^2$下凸．由定义得$f$下凸, 同理$f$上凸, 于是$f$为线性函数．
 \end{pf}
 \begin{rem}
-	广义二阶导数的形式提示了应当考虑凹凸性．
-
 	证明线性函数可以从既是下凸函数又是上凸函数的角度入手．
 	
 	这种利用$\epsilon$处理边界的方式是一种范式．
@@ -509,7 +496,7 @@
 \end{exer}
 
 
-\subsection{单侧导数的若干性质}
+\subsection{单侧导数的性质}
 以下定理具有启发性, 有时能带来出其不意的方便．仅陈述右侧导数相关性质, 左侧导数同理．
 \begin{lem}[Fermat引理]
 	设$f$在其极大值点$x_0$处右侧可导, 则$f_+'(x_0)\leq0$．
@@ -554,19 +541,19 @@
 	\[f(d)-f(c)=\int_{c}^{d}f_-'(x)\,\d x=\int_{c}^{d}f_+'(x)\,\d x.\]
 \end{exer}
 \begin{pf}
-	用单侧导数的Lagrange定理．
+	用单侧导数的Lagrange中值定理．
 \end{pf}
 
 
 \section{不定积分}
-以下几题利用了配对积分法．遇到难以积出的积分（特别是$\sin x$与$\cos x$的线性组合）时应当想到这种方法, 联想与原积分相关的更简单的积分．
+以下两题利用了配对积分法．遇到难以积出的积分时应当想到这种方法, 联想与原积分相关的更简单的积分．特殊的例子有$\sin x,\cos x$的线性组合, 以及$1,x^2,x^4$的线性组合．
 \begin{exer}
 	计算$\int\frac{\d x}{1+x^4}$．
 \end{exer}
 \begin{sol}
 	考虑如下两个积分．
 	\[\int\frac{1+x^2}{1+x^4}\,\d x=\int\frac{1+\frac{1}{x^2}}{x^2+\frac{1}{x^2}}\,\d x=\int\frac{\d\bra{x-\frac{1}{x}}}{\bra{x-\frac{1}{x}}^2+2}.\]
-	\[\int\frac{1-x^2}{1+x^4}\,\d x=\int\frac{1-\frac{1}{x^2}}{x^2+\frac{1}{x^2}}\,\d x=\int\frac{\d\bra{x+\frac{1}{x}}}{\bra{x+\frac{1}{x}}^2-2}.\]
+	\[\int\frac{1-x^2}{1+x^4}\,\d x=\int\frac{1-\frac{1}{x^2}}{x^2+\frac{1}{x^2}}\,\d x=\int\frac{\d\bra{x+\frac{1}{x}}}{\bra{x+\frac{1}{x}}^2-2}.\qedhere\]
 \end{sol}
 
 \begin{exer}
@@ -590,7 +577,7 @@
 
 
 \section{定积分}
-\subsection{重要定理}
+\subsection{积分学的重要定理}
 \begin{defn}
 	函数$f$在$U(x_0,\delta)$上的振幅$\omega_f(x,\delta)=\sup_{x\in U(x_0,\delta)}\cbra{f(x)}-\inf_{x\in U(x_0,\delta)}\cbra{f(x)}$．
 	
@@ -615,7 +602,7 @@
 	\[\lim_{p\to\infty}\int_{a}^{b}f(x)g(px)\,\d x=\frac{1}{T}\int_{0}^{T}g(x)\,\d x\int_{a}^{b}f(x)\,\d x.\]
 \end{thm}
 \begin{pf}
-	遵循$f$是常值函数$\to f$是阶梯函数$\to f$是可积函数的顺序推广．
+	按照$f$是常值函数$\to f$是阶梯函数$\to f$是可积函数的顺序逐步推广．
 \end{pf}
 \begin{rem}
 	这种逼近可积函数的方式值得学习．
@@ -629,7 +616,7 @@
 \end{thm}
 
 
-\subsection{习题}
+\subsection{定积分的性质}
 \begin{exer}
 	设$f$在$[a,b]$上的每一点处的极限都存在且为$0$, 求证：$f\in R[a,b],\,\int_{a}^{b}f=0$．
 \end{exer}
@@ -637,9 +624,9 @@
 	断言：$\forall\,\epsilon>0,$使得$|f(x)|>\epsilon$的点$x$至多只有有限个．否则由聚点原理, 这与聚点处极限为0矛盾．
 \end{pf}
 
-以下结论不难证得, 但具有启发性．
+以下结论不难证得, 但具有启发性．上题也可以用它证明．
 \begin{prop}
-	设$f\in R[a,b],\,\int_{a}^{b}f(x)\,\d x>0$．则有$[c,d]\subseteq[a,b]$和$\mu>0,$使得区间$[c,d]$上成立$f(x)\geq\mu$．
+	设$f\in R[a,b],\,\int_{a}^{b}f>0$．则有$[c,d]\subseteq[a,b]$和$\mu>0,$使得区间$[c,d]$上成立$f(x)\geq\mu$．
 \end{prop}
 
 \begin{exer}
@@ -657,11 +644,22 @@
 	\[\lim_{h\to0}\int_{a}^{b}|f(x+h)-f(x)|\,\d x=0.\]
 \end{exer}
 \begin{pf}
+	从极限过程的顺序上看, Riemann和式的极限在$h\to0$之前．所以必须先取定分割．
+	
 	对任意取定的$\epsilon>0,\,\exists$等距分割$P,\,\sum_{P}\omega_i\Delta x_i<\epsilon$．取$|h|<\norm{P},$则有
 	$I=\sum_{P}\int_{x_{i-1}}^{x_i}|f(x+h)-f(x)|\,\d x,$其中每个$x+h$与$x$都落在同一或相邻小区间内, 使积分的值得到控制．
 \end{pf}
 
-下题可以用与Euler积分类似的方法解出, 但以下展现的处理极限不存在的方法值得学习．
+\begin{exer}
+	设$f\in C[0,1]$, 计算$\lim_{\nti}\int_{0}^{1}nx^nf(x)\,\d x$．
+\end{exer}
+\begin{sol}
+	$f$的性态未知, 因此先观察其余部分, 注意到$nx^n$的定积分为$1$．分段控制方法需要$1$处被积函数值为$1$, 因此考虑$\lim_{\nti}\int_{0}^{1}nx^n\bra{f(x)-f(1)}$．答案为$f(1)$．
+\end{sol}
+
+
+\subsection{定积分的计算}
+下题也可以用与Euler积分类似的方法解出, 但以下解法中展现的处理极限不存在的方法值得学习．
 \begin{exer}
 	计算$\int_{0}^{\pi/2}\sin x\ln\sin x\,\d x$．
 \end{exer}
@@ -670,13 +668,13 @@
 	第一项极限不存在, 因此不能解决问题．但如果将$\d(-\cos x)$改成$\d(1-\cos x)$即可通过等价无穷小解决问题．
 \end{sol}
 
-\begin{exer}[Dirichlet积分]
+\begin{exer}[Dirichlet核]
 	定义$D_n(x)=\frac{\sin\frac{(2n+1)x}{2}}{2\sin\frac{x}{2}}$．计算$\int_{0}^{\pi}D_n(x)\,\d x$．
 \end{exer}
 \begin{sol}
 	考虑三角恒等式
 	\[\sin\frac{(2n+1)x}{2}=2\sin\frac{x}{2}\bra{\frac{1}{2}+\sum_{k=1}^{n}\cos kx}.\]
-	答案为$\frac{\pi}{2}$．
+	答案为$\frac{\pi}{2}$．也可以使用归纳法．
 \end{sol}
 
 \begin{exer}[Fejér积分]
@@ -700,27 +698,70 @@
 \end{exer}
 
 \begin{exer}
-	设$f\in C[0,1]$, 计算$\lim_{\nti}\int_{0}^{1}nx^nf(x)\,\d x$．
-\end{exer}
-\begin{sol}
-	$f$的性态未知, 因此先观察其余部分, 注意到$nx^n$积分为$1$．分段控制方法需要$1$处被积函数值为$1$, 因此考虑$\lim_{\nti}\int_{0}^{1}nx^n\bra{f(x)-f(1)}$．
-\end{sol}
-
-\begin{exer}
 	计算$B(m,n)=\sum_{k=0}^{n}\binom{n}{k}\frac{(-1)^k}{m+k+1}$．
 \end{exer}
 \begin{sol}
-	应当从$\frac{(-1)^k}{m+k+1}$的形式联想到幂函数从$0$到$1$的积分．
+	观察$\frac{(-1)^k}{m+k+1}$的形式, 自然想到幂函数从$0$到$1$的定积分．
+\end{sol}
+
+
+\subsection{积分估计}
+以下两题中分部积分法的使用值得学习．
+\begin{exer}
+	设$f$在$[a,b]$上二阶可导, $f(a)=f(b)=0,\,|f''(x)\leq M$．求证：$\left|\int_{a}^{b}f(x)\,\d x\right|\leq\frac{M}{12}(b-a)^3$．	
+\end{exer}
+\begin{pf}
+	\begin{align*}
+		\int_{a}^{b}f(x)\,\d x&=\int_{a}^{b}f(x)\,\d\bra{x-\frac{a+b}{2}}\\
+		&=\left.\bra{x-\frac{a+b}{2}}f(x)\right|_a^b-\int_{a}^{b}\bra{x-\frac{a+b}{2}}f'(x)\,\d x\\
+		&=-\frac{1}{2}\int_{a}^{b}f'(x)\,\d[(x-a)(x-b)]\\
+		&=\left.-\frac{1}{2}(x-a)(x-b)f'(x)\right|_a^b+\frac{1}{2}\int_{a}^{b}(x-a)(x-b)f''(x)\,\d x
+	\end{align*}
+	\[\left|\int_{a}^{b}f(x)\,\d x\right|\leq-\frac{M}{2}\int_{a}^{b}(x-a)(x-b)\,\d x=\frac{M}{12}(b-a)^3.\qedhere\]
+\end{pf}
+
+\begin{exer}
+	设$f\in D[a,b],\,f(a)=f(b)=0,\,|f'(x)\leq M$．求证：$\left|\int_{a}^{b}f(x)\,\d x\right|\leq\frac{M}{4}(b-a)^2$．
+\end{exer}
+
+以下两题给出了梯形公式误差估计．证明可以使用积分学手段：分部积分法（Euler-Maclaurin公式的低阶情况）．也可以使用微分学手段, 即待定常数法和Rolle定理, 它们的差异不是本质的．中矩形公式和Simpson公式的证明可以使用相同方法．
+\begin{exer}
+	设$f\in C^2[0,h]$．求证：$\exists\,\xi\in[0,h]$, 使得$\int_{0}^{h}f(x)\,\d x=\frac{h}{2}[f(0)+f(h)]-\frac{1}{12}f''(\xi)h^3$．
+\end{exer}
+\begin{pf}
+	反复使用分部积分法．
+	\begin{align*}
+		\int_{0}^{h}f(x)\,\d x&=\int_{0}^{h}f(x)\,\d\bra{x-\frac{h}{2}}\\
+		&=\left.f(x)\bra{x-\frac{h}{2}}\right|_0^h-\int_{0}^{h}f'(x)\bra{x-\frac{h}{2}}\,\d x\\
+		&=\frac{h}{2}[f(0)+f(h)]-\frac{1}{2}\int_{0}^{h}f'(x)\d[x(x-h)]\\
+		&=\frac{h}{2}[f(0)+f(h)]+\frac{1}{2}\int_{0}^{h}x(x-h)f''(x)\,\d x\\
+		&=\frac{h}{2}[f(0)+f(h)]+\frac{1}{2}f''(\xi)\int_{0}^{h}x(x-h)\,\d x.\qedhere
+	\end{align*}
+\end{pf}
+
+
+\subsection{积分学的其他应用}
+利用定积分求数列极限时, 应当积极考虑用Taylor公式分离出主要部分, 以及用夹逼定理去除形式上无关紧要的部分．
+\begin{exer}
+	计算极限
+	\[\lim_{\nti}\sbra{\bra{1+\frac{1}{n}}\sin\frac{\pi}{n^2}+\bra{1+\frac{2}{n}}\sin\frac{2\pi}{n^2}+\cdots+\bra{1+\frac{n}{n}}\sin\frac{n\pi}{n^2}}.\]
+\end{exer}
+\begin{sol}
+	将$\sin\frac{k\pi}{n^2}$ Taylor展开．
+\end{sol}
+
+\begin{exer}
+	计算极限
+	\[\lim_{\nti}\sbra{\frac{\sin(\pi/n)}{n+1}+\frac{\sin(2\pi/n)}{n+1/2}+\cdots+\frac{\sin\pi}{n+1/n}}.\]
+\end{exer}
+\begin{sol}
+	观察形式, 注意到将分母分别放缩至$n$和$n+1$不影响本质, 然后用夹逼定理．
 \end{sol}
 
 
 \section{不等式}
-\subsection{微分学不等式}
-以下Jordan不等式的证明非常简单, 但它的作用十分强大, 能将复杂式子中难以处理的$\sin x$放缩为线性函数．
-\begin{thm}[Jordan不等式]
-	设$0\leq x\leq\frac{\pi}{2}$, 则成立不等式$\frac{2}{\pi}x\leq\sin x\leq x$．
-\end{thm}
-
+积分学重要不等式的证明一般有两种方法：(1) 使用与离散形式相同的思路; (2) 对离散形式取极限．
+\subsection{微分学重要不等式}
 可以利用广义AM-GM不等式来证明H\"older不等式, 利用H\"older不等式来证明Minkowski不等式．这里提供利用凸性与Jensen不等式的证法, 利用凸性的证法可以证明$0<p<1$时Minkowski不等式反向成立．
 \begin{exer}
 	证明H\"older不等式与Minkowski不等式．
@@ -734,14 +775,14 @@
 \end{pf}
 
 
-\subsection{积分学不等式}
-积分学经典不等式的证明一般有两种方法：(1) 使用与离散形式相同的思路; (2) 对离散形式取极限．
+\subsection{Jensen不等式}
+Jensen不等式的积分形式可以对离散形式取极限证得, 其中$p$类比为离散形式中的权重．
 \begin{thm}[Jensen不等式]
-	设$f,p\in R[a,b],\,p\geq0,\,\int_{a}^{b}p>0$．则当$\phi$是$f$值域上的下凸函数时, 成立不等式（上凸则不等式反向）
+	设$f,p\in R[a,b],\,p\geq0,\,\int_{a}^{b}p>0$．则当$\phi$是$f$值域上的下凸函数时, 成立不等式
 	\[\phi\bra{\frac{\int_{a}^{b}p(x)f(x)\,\d x}{\int_{a}^{b}p(x)\,\d x}}\leq\frac{\int_{a}^{b}p(x)\bra{\phi(f(x))}\d x}{\int_{a}^{b}p(x)\,\d x}.\]
 \end{thm}
 
-Jensen不等式包含了很多不等式．例如
+Jensen不等式包含了很多不等式．例如（$\phi$为下凸函数）
 \[\phi\bra{\frac{1}{b-a}\int_{a}^{b}f(x)\,\d x}\leq\frac{1}{b-a}\int_{a}^{b}\phi(f(x))\,\d x.\]
 \[\ln\bra{\frac{1}{b-a}\int_{a}^{b}f(x)\,\d x}\geq\frac{1}{b-a}\int_{a}^{b}\ln(f(x))\,\d x.\]
 当遇到不等式时, 应当观察其中形式相似的部分, 并寻找凸函数．
@@ -750,27 +791,125 @@ Jensen不等式包含了很多不等式．例如
 	若$f$在$[0,1]$上上凸, 求证：$\forall\,n\in\N,$
 	\[\int_{0}^{1}f(x^n)\,\d x\leq f\bra{\frac{1}{n+1}}.\]
 \end{exer}
+\begin{pf}
+	观察$1/(n+1)$的形式, 自然想到幂函数的定积分．
+\end{pf}
 
 \begin{exer}
 	设非负函数$f\in R[a,b],\,\int_{a}^{b}f=1,\,k\in\R$, 求证：
 	\[\bra{\int_{a}^{b}f(x)\cos kx\,\d x}^2+\bra{\int_{a}^{b}f(x)\sin kx\,\d x}^2\leq1.\]
 \end{exer}
 \begin{pf}
-	这里的凸函数是$\phi(x)=x^2$．
+	观察形式, 自然希望将平方挪到三角函数上．于是用Jensen不等式, 这里的凸函数是$\phi(x)=x^2$．
 \end{pf}
 
-下题的启示是，
+\subsection{Schwarz不等式}
+\begin{exer}
+	设$f\in C^1[a,b],\,f(a)=0$．求证：
+	\[\int_{a}^{b}f^2(x)\,\d x\leq\frac{(b-a)^2}{2}\int_{a}^{b}(f'(x))^2-\frac{1}{2}\int_{a}^{b}(f'(x))^2(x-a)^2\,\d x.\]
+\end{exer}
+\begin{pf}
+	观察条件$f\in C^1[a,b]$, 自然想到变限积分函数．$\int_{a}^{b} f^2$难以处理, 于是先用Schwarz不等式估计$f^2$, 再两边积分．
+	\[f^2(x)=\bra{\int_{a}^{x}f'(t)\,\d t}^2\leq(x-a)\int_{a}^{x}(f'(t))^2\,\d t\]
+	\begin{align*}
+		\int_{a}^{b}f^2(x)\,\d x&\leq\frac{1}{2}\int_{a}^{b}\bra{\int_{a}^{x}(f'(t))^2\,\d t}\,\d(x-a)^2\\
+		&=\frac{(b-a)^2}{2}\int_{a}^{b}(f'(t))^2\,\d t-\frac{1}{2}\int_{a}^{b}(x-a)^2(f'(x))^2\,\d x.
+	\end{align*}
+\end{pf}
+
+
+\subsection{Jordan不等式}
+以下Jordan不等式的证明非常简单, 但它的作用十分强大, 能将复杂式子中难以处理的$\sin x$放缩为线性函数．
+\begin{thm}[Jordan不等式]
+	设$0\leq x\leq\frac{\pi}{2}$, 则成立不等式$\frac{2}{\pi}x\leq\sin x\leq x$．
+\end{thm}
 
 \begin{exer}
 	求证：$\lambda<1$时, $\lim_{R\to\infty}R^\lambda\int_{0}^{\pi/2}\e^{-R\sin\theta}\,\d\theta=0$．
 \end{exer}
 \begin{pf}
-	用Jordan不等式将难以处理的$\sin x$转换为$x$．
+	用Jordan不等式将难以处理的$\sin x$放缩为$x$．
 \end{pf}
+
+\begin{exer}
+	判别广义积分$\int_{0}^{+\infty}\frac{1}{x}\e^{\cos x}\sin(\sin x)\,\d x$的敛散性．
+\end{exer}
+\begin{sol}
+	由Dirichlet判别法易证其收敛．由Jordan不等式, 通过以下估计证得其条件收敛．
+	\[\frac{1}{x}\e^{\cos x}\sin|\sin x|\geq\frac{2}{\pi\e}\frac{|\sin x|}{x}.\qedhere\]
+\end{sol}
+
+\begin{exer}
+	判别广义积分$\int_{0}^{+\infty}\frac{x\,\d x}{1+x^4\sin^2x}$的敛散性．
+\end{exer}
+\begin{sol}
+	观察被积函数的形式, 注意到多数情况下分母阶数高于分子, 故被积函数值趋于$0$．而在$\sin x=0$时被积函数值为$x$．于是自然想到将积分拆分为长为$\pi$的区间, 保留$\sin x$而将其余部分放缩, 再使用对称性与Jordan不等式．经过尝试发现估算积分值的上界不可行, 于是转而估算下界．证得其发散．
+	\begin{align*}
+		I_k&=\int_{(k-1)\pi}^{k\pi}\frac{x\,\d x}{1+x^4\sin^2x}\geq(k-1)\pi\int_{(k-1)\pi}^{k\pi}\frac{\d x}{1+k^4\pi^4\sin^2x}\\
+		&=2(k-1)\pi\int_{0}^{\pi/2}\frac{\d x}{1+k^4\pi^4\sin^2x}\geq2(k-1)\pi\int_{0}^{\pi/2}\frac{\d x}{1+k^4\pi^4x^2}\\
+		&=\frac{2(k-1)\pi}{k^2\pi^2}\int_{0}^{k^2\pi^3/2}\frac{\d x}{1+x^2}\,\sim\,\frac{1}{k}\quad(k\to\infty).\qedhere
+	\end{align*}
+\end{sol}
 
 
 \section{广义积分}
+\subsection{广义积分与和式极限}
+广义积分虽然是通过对常义积分取极限得到, 它在被积函数单调的情况下也有可能从积分和式的极限得到．
+\begin{exer}
+	设$f$在$(0,1)$单调, 瑕积分$\int_{0}^{1}f$收敛．求证：
+	\[\lim_{\nti}\frac{1}{n}\sbra{f\bra{\frac{1}{n}}+f\bra{\frac{2}{n}}+\cdots+f\bra{\frac{n-1}{n}}}=\int_{0}^{1}f(x)\,\d x.\]
+\end{exer}
+\begin{pf}
+	不妨设$f$单调递增．将以下不等式的中间部分理解为阶梯函数的定积分．则由保号性, 成立
+	\[\int_{0}^{1-\frac{1}{n}}f(x)\,\d x\leq\frac{1}{n}\sbra{f\bra{\frac{1}{n}}+f\bra{\frac{2}{n}}+\cdots+f\bra{\frac{n-1}{n}}}\leq\int_{\frac{1}{n}}^{1}f(x)\,\d x.\]
+	令$n\to\infty$即证．
+\end{pf}
 
+\begin{exer}
+	设$f$在$[0,+\infty)$上单调, $\int_{0}^{+\infty}f$收敛, 求证：
+	\[\lim_{h\to0^+}h\sum_{n=1}^{\infty}f(nh)=\int_{0}^{+\infty}f(x)\,\d x.\]
+\end{exer}
+\begin{pf}
+	不妨设$f$单调递减大于$0$．用有限的积分限代替奇点, 得到不等式
+	\[\int_{h}^{(n+1)h}f(x)\,\d x\leq\sum_{k=1}^{n}hf(kh)\leq\int_{0}^{nh}f(x)\,\d x.\]
+	令$n\to+\infty$, 再令$h\to0^+$即证．
+\end{pf}
+
+
+\subsection{广义积分的敛散性判别法}
+广义积分敛散性判别的本质是对被积函数作为无穷小量或无穷大量估阶．因此不应吝啬先用Taylor公式进行估计, 从而找到合适的指数$p$, 再用Cauchy判别法．
+\begin{exer}
+	判别以下广义积分的敛散性．
+	\begin{enumerate}
+		\begin{multicols}{2}
+			\item $\int_{1}^{+\infty}\ln\bra{\cos\frac{1}{x}+\sin\frac{1}{x}}\,\d x$．
+			\item $\int_{0}^{+\infty}\sbra{\frac{1}{\sqrt{x}}-\sqrt{\ln\bra{1+\frac{1}{x}}}\,}\,\d x$．
+		\end{multicols}
+	\end{enumerate}
+\end{exer}
+
+Dirichlet和Abel判别法难以判别广义积分发散．比较判别法无法处理的情况下, 应当考虑定义或者Cauchy收敛准则．后者的作用是强大的．
+\begin{exer}
+	判别广义积分$\int_{0}^{+\infty}x^p\e^{\sin x}\sin 2x\,\d x\,(p\geq0)$的敛散性．
+\end{exer}
+\begin{sol}
+	显然先考虑证明其发散．被积函数不保号, 应当考虑Cauchy收敛准则, 于是尝试寻找一列被积函数定号的区间．自然想到将$x^p$与$\e^{\sin x}$放缩为常数, 于是取$[k\pi+\pi/6,k\pi+\pi/4]$, 因为$k\to\infty$的过程中区间上的积分不趋于$0$, 所以广义积分发散．
+\end{sol}
+
+
+\subsection{广义积分的计算}
+常规的定积分方法仍然适用．但广义积分中更应当考虑对称性．下题中的倒代换是处理$0$到$+\infty$的广义积分的一种手段, 它也是一种对称性方法．
+\begin{exer}
+	计算广义积分$\int_{0}^{+\infty}\frac{x\ln x}{1+x^2}\,\d x$．
+\end{exer}
+\begin{sol}
+	显然该广义积分收敛．观察形式, 容易想到分部积分, 但尝试后发现不可行．于是考虑拆分为$0$到$1$的积分与$1$到$+\infty$的积分．作倒代换, 得到
+	\[\int_{1}^{+\infty}\frac{\ln x}{1+x^2}\,\d x=-\int_{0}^{1}\frac{\ln x}{1+x^2}\,\d x.\]
+	于是答案为$0$．
+\end{sol}
+\begin{rem}
+	如果作代换$x=\tan t$, 就容易发现此处倒代换的本质是$\ln\tan x$关于$[0,\pi/2]$的区间中点为奇函数．
+\end{rem}
 
 \section{数项级数}
 
