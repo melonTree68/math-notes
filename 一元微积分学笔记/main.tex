@@ -177,33 +177,34 @@
 	假设$f(b)>0$, 则$b<1$．因为$\forall\,x>b,\,f(x)\leq0$, 且$f+g$单调递增, 所以$g$在$U_+(b)$一定不连续, 矛盾．$f(b)<0$时同理矛盾．于是$f(b)=0$．
 \end{pf}
 
-以下加强形式的有限开覆盖定理有时更为有用．
 \begin{thm}[加强形式的有限开覆盖定理]
 	$\{\mathcal{O}_n\}$是$[a,b]$的一个开覆盖, 则$\exists\,\delta>0$（称作开覆盖的Lebesgue数）, 使得$\forall\,x',x''\in[a,b]$, 只要$x'-x''<\delta$, 就存在开覆盖中的一个开区间, 它覆盖$x',x''$．
 \end{thm}
 
-\begin{exer}
-	用有限开覆盖定理证明Cantor定理：如果$f\in C[a,b]$, 则$f\in U.C.[a,b]$．
-\end{exer}
+% \begin{exer}
+% 	用有限开覆盖定理证明Cantor定理：如果$f\in C[a,b]$, 则$f\in U.C.[a,b]$．
+% \end{exer}
 
 \begin{lem}
 	每个数列都有单调子列．
 \end{lem}
-\begin{pf}
-	记数列$\{a_n\}$中的项$a_m$具有性质M, 如果$\forall\,n>m,\,a_n\leq a_m$．分类讨论具有性质M的项数量是否有限．
-\end{pf}
-\begin{rem}
-	从这一引理出发可以由单调有界收敛定理得到B-W定理．
-\end{rem}
+% \begin{pf}
+% 	记数列$\{a_n\}$中的项$a_m$具有性质M, 如果$\forall\,n>m,\,a_n\leq a_m$．分类讨论具有性质M的项数量是否有限．
+% \end{pf}
+% \begin{rem}
+% 	从这一引理出发可以由单调有界收敛定理得到B-W定理．
+% \end{rem}
 
 \begin{cor}
 	一个数列有收敛子列的充分必要条件是它不是无穷大量．
 \end{cor}
 
 以下压缩映射原理是处理迭代数列的实用工具．
-\begin{prop}[压缩映射原理]
+\begin{defn}
 	称$f$是$[a,b]$上的一个压缩映射, 如果$f\bra{[a,b]}\subseteq[a,b]$, 且$\exists\,0<k<1$, 使得$\forall\,x,y\in[a,b],\,|f(x)-f(y)|\leq k|x-y|$．
+\end{defn}
 
+\begin{prop}[压缩映射原理]
 	设$f$是$[a,b]$上的一个压缩映射, 则：
 	\begin{enumerate}
 		\item $f$在$[a,b]$中存在唯一不动点$\xi$．
@@ -215,25 +216,25 @@
 	$|a_{n+p}-a_n|\leq k|a_{n+p-1}-a_{n-1}|\leq\cdots\leq k^n|a_p-a_0|\leq k^n(b-a)$．由Cauchy收敛准则, $\{a_n\}$收敛．记其极限为$\xi\in[a,b]$．由$|f(a_n)-f(\xi)|\leq k|a_n-\xi|,\,f(a_n)$收敛于$f(\xi)$．代入$a_{n+1}=f(a_n)$, 得到$f(\xi)=\xi$．不动点唯一性与估计式易证．
 \end{pf}
 
-\begin{exer}
-	数列$\{a_n\}$由$a_1=1$和$a_{n+1}=f(a_n)=1+\frac{1}{a_n}$生成．求证$\{a_n\}$收敛, 并求其极限．
-\end{exer}
+% \begin{exer}
+% 	数列$\{a_n\}$由$a_1=1$和$a_{n+1}=f(a_n)=1+\frac{1}{a_n}$生成．求证$\{a_n\}$收敛, 并求其极限．
+% \end{exer}
 
 
 \section{数列与函数极限}
 \subsection{数列极限}
-\begin{exer}
-	求证：数列$a_n=1+\frac{1}{2^p}+\cdots+\frac{1}{n^p}\,(p>1)$收敛．
-\end{exer}
-\begin{pf}
-	\begin{align*}
-		a_{2n}&=\bra{1+\frac{1}{3^p}+\cdots+\frac{1}{\bra{2n-1}^p}}+\bra{\frac{1}{2^p}+\frac{1}{4^p}+\cdots+\frac{1}{\bra{2n}^p}}\\
-		&<1+\bra{\frac{1}{2^p}+\frac{1}{4^p}+\cdots+\frac{1}{\bra{2n}^p}}+\bra{\frac{1}{2^p}+\frac{1}{4^p}+\cdots+\frac{1}{\bra{2n}^p}}\\
-		&\leq1+2\cdot2^{-p}\cdot\bra{1+\frac{1}{2^p}+\cdots+\frac{1}{n^p}}\\
-		&=1+2^{1-p}a_n.
-	\end{align*}
-	于是$a_n<a_{2n}<1+2^{1-p}a_n$, 得$a_n<\frac{1}{1-2^{1-p}}$．由单调有界收敛定理, $\{a_n\}$收敛．
-\end{pf}
+% \begin{exer}
+% 	求证：数列$a_n=1+\frac{1}{2^p}+\cdots+\frac{1}{n^p}\,(p>1)$收敛．
+% \end{exer}
+% \begin{pf}
+% 	\begin{align*}
+% 		a_{2n}&=\bra{1+\frac{1}{3^p}+\cdots+\frac{1}{\bra{2n-1}^p}}+\bra{\frac{1}{2^p}+\frac{1}{4^p}+\cdots+\frac{1}{\bra{2n}^p}}\\
+% 		&<1+\bra{\frac{1}{2^p}+\frac{1}{4^p}+\cdots+\frac{1}{\bra{2n}^p}}+\bra{\frac{1}{2^p}+\frac{1}{4^p}+\cdots+\frac{1}{\bra{2n}^p}}\\
+% 		&\leq1+2\cdot2^{-p}\cdot\bra{1+\frac{1}{2^p}+\cdots+\frac{1}{n^p}}\\
+% 		&=1+2^{1-p}a_n.
+% 	\end{align*}
+% 	于是$a_n<a_{2n}<1+2^{1-p}a_n$, 得$a_n<\frac{1}{1-2^{1-p}}$有界．
+% \end{pf}
 
 
 \begin{exer}
@@ -241,20 +242,20 @@
     \[\lim_{\nti}\frac{p_1a_1+\cdots+p_na_n}{p_n}=0.\]
 \end{exer}
 \begin{pf}
-    由Abel变换, 
+    由Abel引理, 
     \[\text{原式}=\lim_{\nti}\frac{p_nA_n+\sum_{k=1}^{n-1}\sbra{(p_k-p_{k+1})A_k}}{p_n}\xlongequal{\text{Stolz定理}}\lim_{\nti}\bra{A_n+\frac{(p_n-p_{n+1})A_n}{p_{n+1}-p_n}}=0.\qedhere\]
 \end{pf}
 
 
 \subsection{数列的上下极限}
-% \begin{thm}[上下极限的等价定义]
-% 仅叙述上极限有关性质, 下极限同理．
-% \begin{enumerate}
-% 	\item $\ulim x_n$为$\cbra{x_n}$的最大极限点．
-% 	\item $\ulim x_n=\lim_{n\to\infty}\sup_{k\geq n}\{x_k\}.$
-% 	\item $b\in\R$是$\cbra{x_n}$的上极限的充分必要条件是：$\forall\,\epsilon>0,\,U\bra{b,\epsilon}$内含有$\{x_n\}$的无穷多项, 且$\exists\,N\in\N$, 使得$\forall\,n>N,\,x_n<b+\epsilon$．
-% \end{enumerate}
-% \end{thm}
+\begin{thm}[上下极限的等价定义]
+仅叙述上极限有关性质, 下极限同理．
+\begin{enumerate}
+	\item $\ulim x_n$为$\cbra{x_n}$的最大极限点．
+	\item $\ulim x_n=\lim_{n\to\infty}\sup_{k\geq n}\{x_k\}.$
+	\item $b\in\R$是$\cbra{x_n}$的上极限的充分必要条件是：$\forall\,\epsilon>0,\,U\bra{b,\epsilon}$内含有$\{x_n\}$的无穷多项, 且$\exists\,N\in\N$, 使得$\forall\,n>N,\,x_n<b+\epsilon$．
+\end{enumerate}
+\end{thm}
 
 以下结论是使用上下极限工具的主要手段．假设以下所有四则运算（在$\overline{\R}$中）均有意义．
 \begin{thm}
@@ -272,17 +273,17 @@
 	对$2x_{n+1}=y_n-x_n$左右两边同时取上下极限, 解得$\llim x_n=\ulim x_n$, 即$\{x_n\}$收敛．
 \end{pf}
 
-判别数列敛散时, 可以考虑使用上下极限工具．
-\begin{exer}
-	若对于$\{a_n\}$的每个子列$\cbra{a_{n_k}}$都有$\lim_{k\to\infty}\frac{a_{n_1}+a_{n_2}+\cdots+a_{n_k}}{k}=a$, 求证：$\lim_{\nti}a_n=a$．
-\end{exer}
-\begin{pf}
-	考虑$\{a_n\}$的收敛子列, 得到$\llim a_n=\ulim a_n=a$．
-\end{pf}
+% 判别数列敛散时, 可以考虑使用上下极限工具．
+% \begin{exer}
+% 	若对于$\{a_n\}$的每个子列$\cbra{a_{n_k}}$都有$\lim_{k\to\infty}\frac{a_{n_1}+a_{n_2}+\cdots+a_{n_k}}{k}=a$, 求证：$\lim_{\nti}a_n=a$．
+% \end{exer}
+% \begin{pf}
+% 	考虑$\{a_n\}$的收敛子列, 得到$\llim a_n=\ulim a_n=a$．
+% \end{pf}
 
 以下两题充分利用了上下极限是一个定数这一事实．
 \begin{exer}
-	设$\{x_n\}$为正数数列, 求证$\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}\geq1$．
+	设$\{x_n\}$为正数数列, 求证：$\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}\geq1$．
 \end{exer}
 \begin{pf}
 	用反证法．假设$\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}=b<1$．于是对$\epsilon=\frac{1-b}{2},\,\exists\,N\in\N$, 使得$\forall\,n>N,\,\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}<1$, 即$\frac{x_{n+1}}{n+1}<\frac{x_n}{n}-\frac{1}{n+1}$．$x_n>0$与调和级数的发散性矛盾．
@@ -304,9 +305,9 @@
 	对可导函数来说, 以下条件依次减弱．Lipshitz条件$>$导数有界$>$一致连续．
 \end{rem}
 
-\begin{prop}
-	单调函数的间断点为跳跃间断点．
-\end{prop}
+% \begin{prop}
+% 	单调函数的间断点为跳跃间断点．
+% \end{prop}
 
 以下两题的证明体现了``证明满足某性质的点有至多可数个''的常用方法．
 \begin{prop}
@@ -336,7 +337,7 @@
 	\end{enumerate}
 \end{rem}
 
-以下两题的关键在于注意到指数高于$1$的幂函数的下凸性, 于是考虑将$[a,b]$等分为$n$个小区间, 分别利用条件并相加, 使不等式右边随$n$的增大而缩紧．
+以下两题的关键在于注意到指数高于$1$的幂函数的下凸性, 于是考虑将$[a,b]$等分为$n$个小区间, 分别利用条件并相加, 使不等式右边随$n$的增大而收紧．
 \begin{exer}
 	设$f$在区间$I$上满足带指数的Lipshitz条件, 即$\exists\,M>0,\,\alpha>0$, 使得$\forall\,x,y\in I$, 成立$|f(x)-f(y)|\leq M|x-y|^\alpha$．求证：若$\alpha>1$, 则$f$在$I$上是常值函数．
 \end{exer}
@@ -386,7 +387,7 @@
 \end{sol}
 
 \begin{exer}
-	求数列极限：
+	求数列极限．
 	\begin{enumerate}
 		\begin{multicols}{2}
 			\item $\lim_{\nti}\bra{\sin\frac{1}{n^2}+\sin\frac{2}{n^2}+\cdots+\sin\frac{n}{n^2}}.$
@@ -550,17 +551,17 @@
 	分别计算以$b\sin x-a\cos x$与$a\sin x+b\cos x$为分子的积分．
 \end{sol}
 
-下题体现出利用二倍角公式降幂扩角的重要性．
+下题体现出利用二倍角公式降幂扩角的实用性．
 \begin{exer}
 	计算$\int \sin^4x\,\d x$．
 \end{exer}
 
-\begin{exer}
-	计算$\int\arctan\sqrt{\frac{a-x}{a+x}}\,\d x$．
-\end{exer}
-\begin{sol}
-	令$x=a\cos t$, 利用半角公式．也可以直接使用分部积分法．
-\end{sol}
+% \begin{exer}
+% 	计算$\int\arctan\sqrt{\frac{a-x}{a+x}}\,\d x$．
+% \end{exer}
+% \begin{sol}
+% 	令$x=a\cos t$, 利用半角公式．也可以直接使用分部积分法．
+% \end{sol}
 
 
 \section{定积分}
@@ -584,8 +585,8 @@
 	再证充分性．对任意$\epsilon>0$, 先用总长度小于$\epsilon$的至多可数个开区间覆盖$D(f)$．对每个连续点取一个邻域, 使得邻域内振幅不超过$\epsilon$．每个连续点的邻域和覆盖$D(f)$的开区间构成了$[a,b]$的一个开覆盖．应用加强形式的有限开覆盖定理, 得到Lebesgue数$\delta$．取分割$P,\,\norm{P}<\delta$即证．
 \end{pf}
 
-\begin{thm}[推广形式的Riemann引理]
-	$f\in R[a,b],\,g$是可积的以$T$为周期的周期函数．则
+\begin{thm}[Riemann引理]
+	$f\in R[a,b],\,g$是以$T$为周期的周期函数, 且$g\in R[0,T]$．则
 	\[\lim_{p\to\infty}\int_{a}^{b}f(x)g(px)\,\d x=\frac{1}{T}\int_{0}^{T}g(x)\,\d x\int_{a}^{b}f(x)\,\d x.\]
 \end{thm}
 
@@ -622,7 +623,7 @@
 	设$[a,b]$上处处大于$0$的函数$f\in R[a,b]$, 求证：$\int_{a}^{b}f>0.$
 \end{exer}
 \begin{pf}
-	用反证法．假设$\int_{a}^{b}f=0$．于是$\forall\,\epsilon>0,\,\int_{a}^{b}[\epsilon-f(x)]\,\d x>0$．利用上一命题, 用闭区间套定理将$\int_{a_n}^{b_n}f=0$继承到局部, 引出矛盾．
+	用反证法．假设$\int_{a}^{b}f=0$．于是$\forall\,\epsilon>0,\,\int_{a}^{b}[\epsilon-f(x)]\,\d x>0$．利用上一命题, 用闭区间套定理, 取$\epsilon_n=1/n$, 将$\int_{a_n}^{b_n}f=0$继承到局部, 引出矛盾．
 \end{pf}
 \begin{rem}
 	这种利用$\epsilon$处理边界的方式是一种范式．
@@ -648,12 +649,12 @@
 
 
 \subsection{定积分的计算}
-下题也可以用与Euler积分类似的方法解出, 但以下解法中展现的处理极限不存在的方法值得学习．
+下题也可以用对称性方法解出, 但以下解法中展现的处理极限不存在的方法值得学习．
 \begin{exer}
 	计算$\int_{0}^{\pi/2}\sin x\ln\sin x\,\d x$．
 \end{exer}
 \begin{sol}
-	\[\left.I=\int_{0}^{\pi/2}\ln\sin x\,\d(-\cos x)=-\cos x\ln\sin x\right|_{0^+}^{\pi/2}.\]
+	\[\left.I=\int_{0}^{\pi/2}\ln\sin x\,\d(-\cos x)=-\cos x\ln\sin x\right|_{0^+}^{\pi/2}+\int_{0}^{\pi/2}\cos x\,\d\ln\sin x.\]
 	第一项极限不存在, 因此不能解决问题．但如果将$\d(-\cos x)$改成$\d(1-\cos x)$即可通过等价无穷小解决问题．
 \end{sol}
 
@@ -693,11 +694,19 @@
 	观察$\frac{(-1)^k}{m+k+1}$的形式, 自然想到幂函数从$0$到$1$的定积分．
 \end{sol}
 
+变限积分函数的引入带来了新的凑微分的可能性．
+\begin{exer}
+	设$f$在$[0,1]$上非负连续, 且$f^2(t)\leq1+2\int_{0}^{t}f(s)\,\d s$．求证：$f(t)\leq1+t$．
+\end{exer}
+\begin{pf}
+	观察形式, $f^2$难以处理, 并且自然想到引入变限积分函数．在条件的两边开根号, 将右边除到左边再两边积分即证．
+\end{pf}
+
 
 \subsection{积分估计}
 以下两题中分部积分法的使用值得学习．
 \begin{exer}
-	设$f$在$[a,b]$上二阶可导, $f(a)=f(b)=0,\,|f''(x)\leq M$．求证：$\left|\int_{a}^{b}f(x)\,\d x\right|\leq\frac{M}{12}(b-a)^3$．	
+	设$f$在$[a,b]$上二阶可导, $f(a)=f(b)=0,\,|f''(x)|\leq M$．求证：$\left|\int_{a}^{b}f(x)\,\d x\right|\leq\frac{M}{12}(b-a)^3$．	
 \end{exer}
 \begin{pf}
 	\begin{align*}
@@ -713,7 +722,7 @@
 	设$f\in D[a,b],\,f(a)=f(b)=0,\,|f'(x)\leq M$．求证：$\left|\int_{a}^{b}f(x)\,\d x\right|\leq\frac{M}{4}(b-a)^2$．
 \end{exer}
 
-以下两题给出了梯形公式误差估计．证明可以使用积分学手段：分部积分法（Euler-Maclaurin公式的低阶情况）．也可以使用微分学手段, 即待定常数法和Rolle定理, 它们的差异不是本质的．中矩形公式和Simpson公式的证明可以使用相同方法．
+下题给出了梯形公式的误差估计．证明可以使用积分学手段：分部积分法（Euler-Maclaurin公式的低阶情况）．也可以使用微分学手段, 即待定常数法和Rolle定理．它们的差异不是本质的．中矩形公式和Simpson公式的证明可以使用相同方法．
 \begin{exer}
 	设$f\in C^2[0,h]$．求证：$\exists\,\xi\in[0,h]$, 使得$\int_{0}^{h}f(x)\,\d x=\frac{h}{2}[f(0)+f(h)]-\frac{1}{12}f''(\xi)h^3$．
 \end{exer}
@@ -750,7 +759,7 @@
 
 \section{不等式}
 积分学重要不等式的证明一般有两种方法：(1) 使用与离散形式相同的思路; (2) 对离散形式取极限．
-\subsection{微分学重要不等式}
+\subsection{若干重要不等式}
 可以利用广义AM-GM不等式来证明H\"older不等式, 利用H\"older不等式来证明Minkowski不等式．这里提供利用凸性与Jensen不等式的证法, 利用凸性的证法可以证明$0<p<1$时Minkowski不等式反向成立．
 \begin{exer}
 	证明H\"older不等式与Minkowski不等式．
@@ -762,6 +771,12 @@
 	对Minkowski不等式, 考虑下凸函数$f(u)=\bra{1-u^{\frac{1}{p}}}^p$．
 	\[\lambda_k=\frac{(x_k+y_k)^p}{\sum(x_i+y_i)^p},\quad u_k=\bra{\frac{x_k}{x_k+y_k}}^p.\qedhere\]
 \end{pf}
+
+以下Hadamard不等式有显著的几何直观．两侧的不等式实际上都是下凸的充分必要条件．
+\begin{thm}[Hadamard不等式]
+	设$f$为$(a,b)$上的下凸函数．则$\forall\,x_1,x_2\in(a,b)$, 成立不等式
+	\[f\bra{\frac{x_1+x_2}{2}}\leq\frac{1}{x_2-x_1}\int_{x_1}^{x_2}f(t)\,\d t\leq\frac{f(x_1)+f(x_2)}{2}.\]
+\end{thm}
 
 
 \subsection{Jensen不等式}
@@ -802,6 +817,13 @@ Jensen不等式包含了很多不等式．例如（$\phi$为下凸函数）
 	\[f^2(x)=\bra{\int_{a}^{x}f'(t)\,\d t}^2\leq(x-a)\int_{a}^{x}(f'(t))^2\,\d t.\qedhere\]
 \end{pf}
 
+\begin{exer}
+	设$f$在$[a,+\infty)$上平方可积．求证：积分$\int_{a}^{+\infty}\frac{f(x)}{x}\,\d x$收敛．
+\end{exer}
+\begin{pf}
+	观察形式, 平方可积的条件自然联想到Schwarz不等式．
+\end{pf}
+
 
 \subsection{Jordan不等式}
 以下Jordan不等式的证明非常简单, 但它的作用十分强大, 能将复杂式子中难以处理的$\sin x$放缩为线性函数．
@@ -838,6 +860,15 @@ Jensen不等式包含了很多不等式．例如（$\phi$为下凸函数）
 
 
 \section{广义积分}
+一些积分学中的重要定理在广义积分中有其推广形式．
+\begin{thm}[广义积分的Riemann引理]
+	设$f$在$[a,+\infty)$上绝对可积．$g$是以$T$为周期的周期函数, 且$g\in R[0,T]$．则
+	\[\lim_{p\to\infty}\int_{a}^{+\infty}f(x)g(px)\,\d x=\frac{1}{T}\int_{0}^{T}g(x)\,\d x\int_{a}^{+\infty}f(x)\,\d x.\]
+\end{thm}
+
+广义积分的Riemann引理用分段估计的方式证明．对瑕积分也有积分第二中值定理, 证明方式与定积分中相同．
+
+
 \subsection{广义积分与和式极限}
 广义积分虽然是通过对常义积分取极限得到, 它在被积函数单调的情况下也有可能从积分和式的极限得到．
 \begin{exer}
@@ -874,6 +905,9 @@ Jensen不等式包含了很多不等式．例如（$\phi$为下凸函数）
 		\end{multicols}
 	\end{enumerate}
 \end{exer}
+
+值得注意的是, $\lim_{x\to+\infty}\frac{f(x)}{g(x)}=l\in\R$并不能推出二者同敛散．如果添加$f,g$均不变号的条件则可以．反例如下．此时应当用Taylor公式估计．
+\[\int_{1}^{+\infty}\ln\bra{1+\frac{\sin x}{x^\frac{1}{2}}}\,\d x.\]
 
 Dirichlet和Abel判别法难以判别广义积分发散．比较判别法无法处理的情况下, 应当考虑定义或者Cauchy收敛准则．后者的作用是强大的．
 \begin{exer}
@@ -951,18 +985,42 @@ Dirichlet和Abel判别法难以判别广义积分发散．比较判别法无法�
 	求证：$\int_{0}^{+\infty}\frac{\sin x}{x}\,\d x=\frac{\pi}{2}$．
 \end{exer}
 \begin{pf}
-	回想Dirichlet核, 二者的差异在于积分限和分母．于是考虑线性换元将无穷限积分转化为常义积分, 并对二者作差．
+	回想Dirichlet核, 二者的差异在于积分限和分母．于是考虑线性换元将无穷限积分转化为常义积分与数列极限, 并对二者作差．
 	\[\int_{0}^{+\infty}\frac{\sin x}{x}\,\d x=\lim_{\nti}\int_{0}^{\pi}\frac{\sin(n+\frac{1}{2})x}{x}\,\d x.\]
 	\[\frac{1}{x}-\frac{1}{2\sin\frac{x}{2}}=O(x)\quad(x\to0).\]
 	于是上式中的函数Riemann可积．与$\sin(n+\frac{1}{2})x$相乘, 自然使用Riemann引理, 即证．
 \end{pf}
 
 \begin{exer}[Euler-Poisson积分]
-	求证：
+	求证：$\int_{0}^{+\infty}\e^{-t^2}\,\d t=\frac{\sqrt{\pi}}{2}$．
 \end{exer}
+\begin{pf}
+	指数函数和无穷限都难以处理．考虑用极限逼近指数函数, 并通过数列极限逼近无穷限积分．于是考虑以下积分, 积分上限不难通过定义域想到．
+	\[I_n=\int_{0}^{\sqrt{n}}\bra{1-\frac{t^2}{n}}^n\,\d t\xlongequal{t=\sqrt{n}\sin x}\sqrt{n}\int_{0}^{\pi/2}\cos^{2n+1}x\,\d x\to\frac{\sqrt{\pi}}{2}\quad(\nti).\]
+	等式右端已经得到, 自然考虑将二者作差．只需证
+	\[\lim_{\nti}\int_{0}^{\sqrt{n}}\sbra{\e^{-t^2}-\bra{1-\frac{t^2}{n}}^n}\,\d t=0.\]
+	用如下不等式即证．
+	\[0\leq\e^{-x}-\bra{1-\frac{x}{n}}^n\leq\frac{x^2}{n}\e^{-x}.\qedhere\]
+\end{pf}
 
 
-\section{数项级数}
+\subsection{无穷限积分的特殊性质}
+不同于数项级数, $\int_{a}^{+\infty}f$收敛不仅不能推出$f(+\infty)=0$, $f(+\infty)$完全可以不存在, 甚至有极限点为$+\infty$．但关于无穷限积分在无穷远处的性质, 仍有一些结论．
+\begin{exer}
+	设无穷限积分$\int_{a}^{+\infty}f$收敛, 且$\lim_{x\to+\infty}f(x)$有意义．求证：$f(+\infty)=0$．
+\end{exer}
+\begin{exer}
+	设无穷限积分$\int_{a}^{+\infty}f$收敛, 且$f$单调．求证：$\lim_{x\to+\infty}xf(x)=0$．
+\end{exer}
+\begin{pf}
+	不妨设$f$单调递减．观察结论形式, 于是考虑$x$充分大时, $0\leq xf(2x)\leq\int_{x}^{2x}f(t)\,\d t$任意小．
+\end{pf}
+\begin{exer}
+	设无穷限积分$\int_{a}^{+\infty}f$收敛, 且$f\in U.C.[a,+\infty)$．求证：$\lim_{x\to+\infty}f(x)=0$．
+\end{exer}
+\begin{rem}
+	当$f\in C[a,+\infty)$时, $f(+\infty)=0$与$f\in U.C.[a,+\infty)$是等价的．
+\end{rem}
 
 
 \end{document}
