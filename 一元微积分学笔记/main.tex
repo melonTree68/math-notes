@@ -763,14 +763,16 @@
 \begin{thm}[质心公式]
 	设密度均匀的平面图形分布在$x=a,\,x=b$和$y=c,\,y=d$之间, 且$\forall\,x_0\in[a,b],\,y_0\in[c,d]$, 直线$x=x_0$和$y=y_0$截得的线段长度为$s(x_0)$和$t(y_0)$．则图形的质心的坐标为
 	\[x_c=\frac{\int_{a}^{b}xs(x)\,\d x}{\int_{a}^{b}s(x)\,\d x},\qquad y_c=\frac{\int_{c}^{d}yt(y)\,\d y}{\int_{c}^{d}t(y)\,\d y}.\]
+	而密度均匀的分段光滑曲线$y=f(x)\,(a\leq x\leq b)$的质心的坐标为
+	\[x_c=\frac{\int_{a}^{b}x\sqrt{1+f'^2(x)}\,\d x}{\int_{a}^{b}\sqrt{1+f'^2(x)}\,\d x},\qquad y_c=\frac{\int_{a}^{b}f(x)\sqrt{1+f'^2(x)}\,\d x}{\int_{a}^{b}\sqrt{1+f'^2(x)}\,\d x}.\]
 \end{thm}
 
 \begin{thm}[Guldinus定理]
 	\phantom{text}
 
-	Guldinus第一定理：位于右半平面内的平面曲线绕$y$轴旋转一周所产生的旋转曲面的面积等于质心绕$y$轴一周所经过的路程乘以曲线的弧长, 即$S_y=2\pi x_cl$．
+	Guldinus第一定理：位于右半平面内的平面曲线绕$y$轴旋转一周所产生的旋转曲面的面积等于曲线的质心绕$y$轴一周所经过的路程乘以曲线的弧长, 即$S_y=2\pi x_cl$．
 
-	Guldinus第二定理：位于右半平面内的平面图形绕$y$轴旋转一周所产生的旋转立体的体积等于质心绕$y$轴一周所经过的路程乘以图形的面积．即$V_y=2\pi x_cS$．
+	Guldinus第二定理：位于右半平面内的平面图形绕$y$轴旋转一周所产生的旋转立体的体积等于图形的质心绕$y$轴一周所经过的路程乘以图形的面积．即$V_y=2\pi x_cS$．
 \end{thm}
 
 利用定积分求数列极限时, 应当积极考虑用Taylor公式分离出主要部分, 以及用夹逼定理去除形式上无关紧要的部分．
@@ -787,7 +789,7 @@
 	\[\lim_{\nti}\sbra{\frac{\sin(\pi/n)}{n+1}+\frac{\sin(2\pi/n)}{n+1/2}+\cdots+\frac{\sin\pi}{n+1/n}}.\]
 \end{exer}
 \begin{sol}
-	观察形式, 注意到将分母分别放缩至$n$和$n+1$不影响本质, 然后用夹逼定理．
+	观察形式, 注意到将分母分别放缩至$n$和$n+1$不对极限值产生影响, 然后用夹逼定理．
 \end{sol}
 
 以下Wallis公式的形式有时更加便于应用．
@@ -946,7 +948,7 @@ Jensen不等式包含了很多不等式．例如 ($\phi$为下凸函数)
 % 	\end{enumerate}
 % \end{exer}
 
-值得注意的是, $\lim_{x\to+\infty}f(x)/g(x)=l\in\R$并不能推出二者同敛散．如果添加$f,g$均不变号的条件则可以．反例如下．此时应当用Taylor公式估计．
+值得注意的是, $\lim_{x\to+\infty}f(x)/g(x)=l\in\R$并不能推出二者同敛散．如果添加$f,g$均不变号的条件则可以．反例如下, 此时应当用Taylor公式估计．
 \[\int_{1}^{+\infty}\ln\bra{1+\frac{\sin x}{x^\frac{1}{2}}}\,\d x.\]
 
 Dirichlet和Abel判别法难以判别广义积分发散．比较判别法无法处理的情况下, 应当考虑定义或者Cauchy收敛准则．后者的作用是强大的．
@@ -959,13 +961,14 @@ Dirichlet和Abel判别法难以判别广义积分发散．比较判别法无法�
 
 
 \subsection{广义积分的计算}
-常规的定积分方法仍然适用．广义积分中的一些对称性不那么容易注意到, 但相当重要．以下两题中的倒代换是处理$0$到$+\infty$的广义积分的一种手段, 它也是一种对称性方法．
+% 常规的定积分方法仍然适用．
+广义积分中的一些对称性不那么容易注意到．以下两题中的倒代换是处理$0$到$+\infty$的广义积分的一种手段, 它也是一种对称性方法．
 \begin{exer}
 	计算广义积分$\int_{0}^{+\infty}\frac{x\ln x}{1+x^2}\,\d x$．
 \end{exer}
-\begin{sol}
-	显然该广义积分收敛．观察形式, 容易想到分部积分, 但尝试后发现不可行．于是考虑拆分为$0$到$1$的积分与$1$到$+\infty$的积分．作倒代换, 得到答案为$0$．
-\end{sol}
+% \begin{sol}
+% 	显然该广义积分收敛．观察形式, 容易想到分部积分, 但尝试后发现不可行．于是考虑拆分为$0$到$1$的积分与$1$到$+\infty$的积分．作倒代换, 得到答案为$0$．
+% \end{sol}
 \begin{rem}
 	如果作代换$x=\tan t$, 就容易发现此处倒代换的本质是$\ln\tan x$关于$[0,\pi/2]$的区间中点为奇函数．
 \end{rem}
@@ -984,15 +987,15 @@ Dirichlet和Abel判别法难以判别广义积分发散．比较判别法无法�
 	计算以下广义积分．
 	\begin{enumerate}
 		\begin{multicols}{2}
-			\item $\int_{0}^{\pi/2}\frac{\arcsin x}{x}\,\d x$．
-			\item[(3)] $\int_{0}^{\pi/2}\ln\left|\sin^2x-a^2\right|\,\d x\,(a^2\leq 1)$．
-			\item[(2)] $\int_{0}^{\pi/2}x\cot x\,\d x$
+			% \item $\int_{0}^{1}\frac{\arcsin x}{x}\,\d x$．
+			\item $\int_{0}^{\pi/2}x\cot x\,\d x$．
+			\item $\int_{0}^{\pi/2}\ln\left|\sin^2x-a^2\right|\,\d x\,(a^2\leq 1)$．
 		\end{multicols}
 	\end{enumerate}
 \end{exer}
 \begin{sol}
 	\begin{enumerate}
-		\item $I=\int_{0}^{\pi/2}\arcsin x\,\d\ln x$．用分部积分法．
+		% \item $I=\int_{0}^{\pi/2}\arcsin x\,\d\ln x$．用分部积分法．
 		\item $I=\int_{0}^{\pi/2}x\,\d\ln\sin x$．用分部积分法．
 		\item 设$a=\sin\theta$．
 		\[I=\int_{0}^{\pi/2}\ln\left|\sin^2x-\sin^2\theta\right|\,\d x=\int_{0}^{\pi/2}\ln\left|\sin(x+\theta)\sin(x-\theta)\right|\,\d x=-\pi\ln 2.\qedhere\]
