@@ -221,8 +221,8 @@
 % \end{exer}
 
 
-\section{数列与函数极限}
-\subsection{数列极限}
+% \section{数列与函数极限}
+% \subsection{数列极限}
 % \begin{exer}
 % 	求证：数列$a_n=1+\frac{1}{2^p}+\cdots+\frac{1}{n^p}\,(p>1)$收敛．
 % \end{exer}
@@ -237,17 +237,18 @@
 % \end{pf}
 
 
-\begin{exer}
-    设$A_n=\sum_{k=1}^{n}a_k$, 数列$A_n$收敛．$\{p_n\}$为单调增加的正数数列, 且为正无穷大量．求证：
-    \[\lim_{\nti}\frac{p_1a_1+\cdots+p_na_n}{p_n}=0.\]
-\end{exer}
-\begin{pf}
-    由Abel引理, 
-    \[\text{原式}=\lim_{\nti}\frac{p_nA_n+\sum_{k=1}^{n-1}\sbra{(p_k-p_{k+1})A_k}}{p_n}\xlongequal{\text{Stolz定理}}\lim_{\nti}\bra{A_n+\frac{(p_n-p_{n+1})A_n}{p_{n+1}-p_n}}=0.\qedhere\]
-\end{pf}
+% \begin{exer}
+%     设$A_n=\sum_{k=1}^{n}a_k$, 数列$A_n$收敛．$\{p_n\}$为单调增加的正数数列, 且为正无穷大量．求证：
+%     \[\lim_{\nti}\frac{p_1a_1+\cdots+p_na_n}{p_n}=0.\]
+% \end{exer}
+% \begin{pf}
+%     由Abel变换, 
+%     \[\text{原式}=\lim_{\nti}\frac{p_nA_n+\sum_{k=1}^{n-1}\sbra{(p_k-p_{k+1})A_k}}{p_n}\xlongequal{\text{Stolz定理}}\lim_{\nti}\bra{A_n+\frac{(p_n-p_{n+1})A_n}{p_{n+1}-p_n}}=0.\qedhere\]
+% \end{pf}
 
 
-\subsection{数列的上下极限}
+% \subsection{数列的上下极限}
+\section{数列的上下极限}
 \begin{thm}[上下极限的等价定义]
 仅叙述上极限有关性质, 下极限同理．
 \begin{enumerate}
@@ -259,9 +260,14 @@
 
 以下结论是使用上下极限工具的主要手段．假设以下所有四则运算（在$\overline{\R}$中）均有意义．
 \begin{thm}
-	\[\llim x_n+\llim y_n\leq\llim\bra{x_n+y_n}\leq\llim x_n+\ulim y_n\leq\ulim\bra{x_n+y_n}\leq\ulim x_n+\ulim y_n\]
+	\[\llim x_n+\llim y_n\leq\llim\bra{x_n+y_n}\leq
+	\left\{\begin{aligned}
+	&\llim x_n+\ulim y_n\\
+	&\ulim x_n+\llim y_n\\
+	\end{aligned}\right.
+	\leq\ulim\bra{x_n+y_n}\leq\ulim x_n+\ulim y_n.\]
 	当$\{y_n\}$收敛时, 
-	\[\llim\bra{x_n+y_n}=\llim x_n+\lim_{\nti} y_n\qquad\ulim\bra{x_n+y_n}=\ulim x_n+\lim_{\nti} y_n\]
+	\[\llim\bra{x_n+y_n}=\llim x_n+\lim_{\nti} y_n\qquad\ulim\bra{x_n+y_n}=\ulim x_n+\lim_{\nti} y_n.\]
 \end{thm}
 
 \begin{exer}
@@ -281,20 +287,17 @@
 % 	考虑$\{a_n\}$的收敛子列, 得到$\llim a_n=\ulim a_n=a$．
 % \end{pf}
 
-以下两题充分利用了上下极限是一个定数这一事实．
+以下两题体现出：上下极限是一个定数, 应当充分利用它和已知数的大小关系．例如假设$\llim y_n=b<1$时, 应当考虑$b$和$1$的空隙; 另一题中的$l$也是如此．
 \begin{exer}
 	设$\{x_n\}$为正数数列, 求证：$\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}\geq1$．
 \end{exer}
-\begin{pf}
-	用反证法．假设$\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}=b<1$．于是对$\epsilon=\frac{1-b}{2},\,\exists\,N\in\N$, 使得$\forall\,n>N,\,\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}<1$, 即$\frac{x_{n+1}}{n+1}<\frac{x_n}{n}-\frac{1}{n+1}$．$x_n>0$与调和级数的发散性矛盾．
-\end{pf}
+% \begin{pf}
+% 	用反证法．假设$\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}=b<1$．于是对$\epsilon=\frac{1-b}{2},\,\exists\,N\in\N$, 使得$\forall\,n>N,\,\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}<1$, 即$\frac{x_{n+1}}{n+1}<\frac{x_n}{n}-\frac{1}{n+1}$．$x_n>0$与调和级数的发散性矛盾．
+% \end{pf}
 
 \begin{exer}
 	设$\{a_n\}$为正数数列．求证：$\ulim \sqrt[n]{a_n}\leq1$的充分必要条件是$\forall\,l>1,\,\lim_{\nti}\frac{a_n}{l^n}=0$．
 \end{exer}
-\begin{rem}
-	上下极限是一个定数, 应当充分利用它和已知数的大小关系．例如假设$\llim x_n=b<1$时, 应当考虑$b$和$1$的空隙; 另一题中的$l$也是如此．
-\end{rem}
 
 
 \section{连续函数}
@@ -302,7 +305,7 @@
 	有界开区间$(a,b)$上的连续函数$f$在$(a,b)$上一致连续的充分必要条件是存在两个有限的单侧极限$f(a^+)$和$f(b^-)$．当$(a,b)$是无界区间时, 充分性依然成立．
 \end{thm}
 \begin{rem}
-	对可导函数来说, 以下条件依次减弱．Lipshitz条件$>$导数有界$>$一致连续．
+	对可导函数来说, 以下条件依次减弱．Lipshitz条件$=$导数有界$\geq$一致连续．
 \end{rem}
 
 % \begin{prop}
@@ -336,15 +339,6 @@
 		\item 将其表示为可数个可数集的并（例如$E=\bigcup_{n\in \N}E_{\frac{1}{n}}$）．这种方法对零测集的证明也适用．
 	\end{enumerate}
 \end{rem}
-
-以下两题的关键在于注意到指数高于$1$的幂函数的下凸性, 于是考虑将$[a,b]$等分为$n$个小区间, 分别利用条件并相加, 使不等式右边随$n$的增大而收紧．
-\begin{exer}
-	设$f$在区间$I$上满足带指数的Lipshitz条件, 即$\exists\,M>0,\,\alpha>0$, 使得$\forall\,x,y\in I$, 成立$|f(x)-f(y)|\leq M|x-y|^\alpha$．求证：若$\alpha>1$, 则$f$在$I$上是常值函数．
-\end{exer}
-
-\begin{exer}
-	设$f\in C[a,b]$, 且$\exists\,M,\,\eta\in\R^+$, 使得$\forall\,[\alpha,\beta]\subseteq[a,b]$, 恒有$\left|\int_{\alpha}^{\beta}f(x)\,\d x\right|\leq M(\beta-\alpha)^{1+\eta}$．求证：$f\equiv0$．
-\end{exer}
 
 
 \section{一元微分学}
@@ -459,6 +453,27 @@
 	辅助函数往往唯一, 只要找出即可．如果没有发现显然的方法使用Rolle定理, 应毫不犹豫地用Darboux定理反证．
 \end{rem}
 
+\begin{exer}
+	设$f$在$(a,b)$上任意阶可导, 且$\forall\,n\in\N,\,f^{(n)}(x)\geq0,\,|f(x)|\leq M$．求证：$\forall\,x\in(a,b),\,r>0,\,x+r\in(a,b)$, 成立关于导数的估计式：
+	\[f^{(n)}(x)\leq\frac{2Mn!}{r^n},\,\forall\,n\in\N.\]
+\end{exer}
+
+\begin{exer}[Bernstein定理]
+	设$f$在$(a,b)$上任意阶可导, 且$\forall\,n\in\N,\,f^{(n)}(x)\geq0$．求证：$\forall\,x_0\in(a,b),\,\exists\,r>0$, 使得当$x\in[x_0-r,x_0+r]\subseteq(a,b)$时, 成立
+	\[f(x)=\lim_{\nti}\sum_{k=0}^{n}\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k.\]
+\end{exer}
+
+
+\subsection{函数的凸性}
+以下两题的关键在于注意到指数高于$1$的幂函数的下凸性, 于是考虑将$[a,b]$等分为$n$个小区间, 分别利用条件并相加, 使不等式右边随$n$的增大而收紧．
+\begin{exer}
+	设$f$在区间$I$上满足带指数的Lipshitz条件, 即$\exists\,M>0,\,\alpha>0$, 使得$\forall\,x,y\in I$, 成立$|f(x)-f(y)|\leq M|x-y|^\alpha$．求证：若$\alpha>1$, 则$f$在$I$上是常值函数．
+\end{exer}
+
+\begin{exer}
+	设$f\in C[a,b]$, 且$\exists\,M,\,\eta\in\R^+$, 使得$\forall\,[\alpha,\beta]\subseteq[a,b]$, 恒有$\left|\int_{\alpha}^{\beta}f(x)\,\d x\right|\leq M(\beta-\alpha)^{1+\eta}$．求证：$f\equiv0$．
+\end{exer}
+
 \begin{exer}[Schwarz定理]
 	定义广义二阶导数
 	\[f^{[2]}(x)=\lim_{h\to0^+}\frac{f(x+h)-2f(x)+f(x-h)}{h^2}.\]
@@ -472,16 +487,6 @@
 	
 	这种利用$\epsilon$处理边界的方式是一种范式．
 \end{rem}
-
-\begin{exer}
-	设$f$在$(a,b)$上任意阶可导, 且$\forall\,n\in\N,\,f^{(n)}(x)\geq0,\,|f(x)|\leq M$．求证：$\forall\,x\in(a,b),\,r>0,\,x+r\in(a,b)$, 成立关于导数的估计式：
-	\[f^{(n)}(x)\leq\frac{2Mn!}{r^n},\,\forall\,n\in\N.\]
-\end{exer}
-
-\begin{exer}[Bernstein定理]
-	设$f$在$(a,b)$上任意阶可导, 且$\forall\,n\in\N,\,f^{(n)}(x)\geq0$．求证：$\forall\,x_0\in(a,b),\,\exists\,r>0$, 使得当$x\in[x_0-r,x_0+r]\subseteq(a,b)$时, 成立
-	\[f(x)=\lim_{\nti}\sum_{k=0}^{n}\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k.\]
-\end{exer}
 
 
 \subsection{单侧导数的性质}
@@ -565,7 +570,7 @@
 
 
 \section{定积分}
-\subsection{积分学的重要定理}
+\subsection{积分学的若干重要定理}
 \begin{defn}
 	函数$f$在$U(x_0,\delta)$上的振幅$\omega_f(x,\delta)=\sup_{x\in U(x_0,\delta)}\cbra{f(x)}-\inf_{x\in U(x_0,\delta)}\cbra{f(x)}$．
 	
@@ -713,9 +718,8 @@
 		\int_{a}^{b}f(x)\,\d x&=\int_{a}^{b}f(x)\,\d\bra{x-\frac{a+b}{2}}\\
 		&=\left.\bra{x-\frac{a+b}{2}}f(x)\right|_a^b-\int_{a}^{b}\bra{x-\frac{a+b}{2}}f'(x)\,\d x\\
 		&=-\frac{1}{2}\int_{a}^{b}f'(x)\,\d[(x-a)(x-b)]\\
-		&=\left.-\frac{1}{2}(x-a)(x-b)f'(x)\right|_a^b+\frac{1}{2}\int_{a}^{b}(x-a)(x-b)f''(x)\,\d x
+		&=\left.-\frac{1}{2}(x-a)(x-b)f'(x)\right|_a^b+\frac{1}{2}\int_{a}^{b}(x-a)(x-b)f''(x)\,\d x.\qedhere
 	\end{align*}
-	\[\left|\int_{a}^{b}f(x)\,\d x\right|\leq-\frac{M}{2}\int_{a}^{b}(x-a)(x-b)\,\d x=\frac{M}{12}(b-a)^3.\qedhere\]
 \end{pf}
 
 \begin{exer}
@@ -755,6 +759,12 @@
 \begin{sol}
 	观察形式, 注意到将分母分别放缩至$n$和$n+1$不影响本质, 然后用夹逼定理．
 \end{sol}
+
+以下Wallis公式的形式有时更加便于应用．
+\begin{thm}[Wallis公式]
+	$\nti$时, 成立
+	\[\frac{(2n)!!}{(2n-1)!!}\sim\sqrt{\pi n}\qquad\qquad\frac{(n!)^22^{2n}}{(2n)!}\sim\sqrt{\pi n}.\]
+\end{thm}
 
 
 \section{不等式}
@@ -896,17 +906,17 @@ Jensen不等式包含了很多不等式．例如（$\phi$为下凸函数）
 \[\int_{0}^{\infty}\frac{\sin x}{x}|\ln x|^p\,\d x.\]
 
 广义积分敛散性判别的本质是对被积函数作为无穷小量或无穷大量估阶．因此应不吝啬先用Taylor公式进行估计, 从而找到合适的指数$p$, 再用Cauchy判别法．
-\begin{exer}
-	判别以下广义积分的敛散性．
-	\begin{enumerate}
-		\begin{multicols}{2}
-			\item $\int_{1}^{+\infty}\ln\bra{\cos\frac{1}{x}+\sin\frac{1}{x}}\,\d x$．
-			\item $\int_{0}^{+\infty}\sbra{\frac{1}{\sqrt{x}}-\sqrt{\ln\bra{1+\frac{1}{x}}}\,}\,\d x$．
-		\end{multicols}
-	\end{enumerate}
-\end{exer}
+% \begin{exer}
+% 	判别以下广义积分的敛散性．
+% 	\begin{enumerate}
+% 		\begin{multicols}{2}
+% 			\item $\int_{1}^{+\infty}\ln\bra{\cos\frac{1}{x}+\sin\frac{1}{x}}\,\d x$．
+% 			\item $\int_{0}^{+\infty}\sbra{\frac{1}{\sqrt{x}}-\sqrt{\ln\bra{1+\frac{1}{x}}}\,}\,\d x$．
+% 		\end{multicols}
+% 	\end{enumerate}
+% \end{exer}
 
-值得注意的是, $\lim_{x\to+\infty}\frac{f(x)}{g(x)}=l\in\R$并不能推出二者同敛散．如果添加$f,g$均不变号的条件则可以．反例如下．此时应当用Taylor公式估计．
+值得注意的是, $\lim_{x\to+\infty}f(x)/g(x)=l\in\R$并不能推出二者同敛散．如果添加$f,g$均不变号的条件则可以．反例如下．此时应当用Taylor公式估计．
 \[\int_{1}^{+\infty}\ln\bra{1+\frac{\sin x}{x^\frac{1}{2}}}\,\d x.\]
 
 Dirichlet和Abel判别法难以判别广义积分发散．比较判别法无法处理的情况下, 应当考虑定义或者Cauchy收敛准则．后者的作用是强大的．
