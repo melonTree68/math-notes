@@ -130,7 +130,7 @@
 \pretitle{
 	\begin{flushleft}
 	\normalfont\normalsize
-	数学分析习题课讲义（上册）\\
+	数学分析习题课讲义 (上册)\\
 	\vspace{0.3em}
 	\huge\bfseries
 }
@@ -157,7 +157,7 @@
 实数系基本定理的使用有其显著动机, 在观察题干时应当向这方面思考, 例如：
 \begin{enumerate}
 	\item Lebesgue方法将局部性质推广至整体．它聚焦于``函数在什么地方失去了这个整体性质'', 并通过研究该处的局部性质引出矛盾．
-	\item Bolzano二分法等闭区间套定理的使用将整体性质继承至局部．
+	\item 闭区间套定理将整体性质继承至局部．
 	\item 有限开覆盖定理将局部性质推广至整体．
 \end{enumerate}
 
@@ -165,20 +165,18 @@
 	设$f$在开区间$I$上连续．且于每一点$x\in I$处取到极值．求证：$f$为$I$上的常值函数．
 \end{exer}
 \begin{pf}
-	用反证法．假设$f(a_0)<f(b_0)$．因为$f\in C(I),\,\exists\,\xi\in[a_0,b_0],\,f(\xi)=(f(a_0)+f(b_0))/2$．如果$\xi\leq(a_0+b_0)/2$, 取$\eta\in[a_0,\xi],\,f(\eta)=(f(a_0)+f(\xi))/2$, 令$[a_1,b_1]=[\eta,\xi]\subseteq[a_0,b_0]$．其余情况同理．重复此过程, 得到一列闭区间套收缩至$\xi$, 可以证明$\xi$不是极值点, 矛盾．
+	用反证法．假设$f(a_0)<f(b_0)$．$\exists\,\xi\in[a_0,b_0],\,f(\xi)=(f(a_0)+f(b_0))/2$．如果$\xi\leq(a_0+b_0)/2$, 取$\eta\in[a_0,\xi],\,f(\eta)=(f(a_0)+f(\xi))/2$, 令$[a_1,b_1]=[\eta,\xi]\subseteq[a_0,b_0]$．其余情况同理．重复此过程, 得到一列闭区间套收缩至$\xi$, 可以证明$\xi$不是极值点, 矛盾．
 \end{pf}
 
 \begin{exer}
 	设$f$在$[0,1]$上满足以下条件：(1) $f(0)>0,\,f(1)<0$; (2) $\exists\,g\in C[0,1]$, 使得$f+g$在$[0,1]$上单调递增．求证：$f$在$[0,1]$中有零点．
 \end{exer}
 \begin{pf}
-	设$E=\cbra{x\in[0,1]\,\middle\vert\,f(x)>0},\,\sup E=b\in[0,1]$．
-	
-	假设$f(b)>0$, 则$b<1$．因为$\forall\,x>b,\,f(x)\leq0$, 且$f+g$单调递增, 所以$g$在$U_+(b)$一定不连续, 矛盾．$f(b)<0$时同理矛盾．于是$f(b)=0$．
+	设$E=\cbra{x\in[0,1]\,\middle\vert\,f(x)>0},\,\sup E=b\in[0,1]$．$f(b)\neq0$必然导致$f$从正值突跃入负值时, 因$f+g$单调递增而违背$g$的连续性．
 \end{pf}
 
 \begin{thm}[加强形式的有限开覆盖定理]
-	$\{\mathcal{O}_n\}$是$[a,b]$的一个开覆盖, 则$\exists\,\delta>0$（称作开覆盖的Lebesgue数）, 使得$\forall\,x',x''\in[a,b]$, 只要$x'-x''<\delta$, 就存在开覆盖中的一个开区间, 它覆盖$x',x''$．
+	$\{\mathcal{O}_n\}$是$[a,b]$的一个开覆盖, 则$\exists\,\delta>0$ (称作开覆盖的Lebesgue数), 使得$\forall\,x',x''\in[a,b]$, 只要$x'-x''<\delta$, 就存在开覆盖中的一个开区间, 它覆盖$x',x''$．
 \end{thm}
 
 % \begin{exer}
@@ -258,7 +256,7 @@
 \end{enumerate}
 \end{thm}
 
-以下结论是使用上下极限工具的主要手段．假设以下所有四则运算（在$\overline{\R}$中）均有意义．
+以下结论是使用上下极限工具的主要手段．假设以下所有四则运算 (在$\overline{\R}$中) 均有意义．
 \begin{thm}
 	\[\llim x_n+\llim y_n\leq\llim\bra{x_n+y_n}\leq
 	\left\{\begin{aligned}
@@ -266,8 +264,8 @@
 	&\ulim x_n+\llim y_n\\
 	\end{aligned}\right.
 	\leq\ulim\bra{x_n+y_n}\leq\ulim x_n+\ulim y_n.\]
-	当$\{y_n\}$收敛时, 
-	\[\llim\bra{x_n+y_n}=\llim x_n+\lim_{\nti} y_n\qquad\ulim\bra{x_n+y_n}=\ulim x_n+\lim_{\nti} y_n.\]
+	特别地, 当$\{y_n\}$收敛时, 
+	\[\llim\bra{x_n+y_n}=\llim x_n+\lim_{\nti} y_n,\qquad\ulim\bra{x_n+y_n}=\ulim x_n+\lim_{\nti} y_n.\]
 \end{thm}
 
 \begin{exer}
@@ -299,6 +297,25 @@
 	设$\{a_n\}$为正数数列．求证：$\ulim \sqrt[n]{a_n}\leq1$的充分必要条件是$\forall\,l>1,\,\lim_{\nti}\frac{a_n}{l^n}=0$．
 \end{exer}
 
+以下两题中均涉及两个极限过程．所以必须先取定一个极限过程的$\epsilon-N$, 然后在此基础上分析第二个极限过程．
+\begin{exer}
+	设正数数列$\{a_n\}$满足$a_{n+m}\leq a_na_m,\,\forall n,m\in\N$．求证：
+	\[\lim_{\nti}\frac{\ln a_n}{n}=\inf_{n\geq 1}\cbra{\frac{\ln a_n}{n}}.\]
+\end{exer}
+\begin{pf}
+	设所求证等式右端为$\alpha$．观察条件, 条件对$\{a_n\}$的增速作出了限制．为了利用条件控制$\{a_n\}$, 想到取定$N\in\N$, 用$N$的整数倍估计$n$．设$n=mN+r$, 其中$m,r\in\N,\,r<N$．于是$k$只有有限个取值, 可以在$\nti$的过程中被控制．变形得
+	\[\frac{\ln a_n}{n}\leq\frac{mN}{n}\,\frac{\ln a_N}{N}+\frac{\ln a_k}{n}.\]
+	观察形式, 自然想到$\forall\,\epsilon>0$, 取
+	\[\alpha\leq\frac{\ln a_N}{N}<\alpha+\epsilon.\]
+	令$\nti$, 在不等式两边取上极限．
+	\[\ulim\frac{\ln a_n}{n}\leq\alpha+\epsilon.\]
+	结合$\alpha\leq\llim\frac{\ln a_n}{n}$, 得证．
+\end{pf}
+
+\begin{exer}
+	设数列$\{x_n\}$满足$x_n+x_m-1\leq x_{n+m}\leq x_n+x_m+1$．求证：$\frac{x_n}{n}$收敛．
+\end{exer}
+
 
 \section{连续函数}
 \begin{thm}
@@ -317,7 +334,7 @@
 	单调函数的间断点至多为可数个．
 \end{prop}
 \begin{pf}
-	易证对单调递增函数$f$的间断点$x_1<x_2$, 有$f(x_1^-)<f(x_1^+)\leq f(x_2^-)<f(x_2^+)$．于是$f$的每个不同间断点$x$都可以用不同的有理数$q\in\bra{f(x^-),f(x^+)}$标记．由于$\Q$是可数集, 间断点个数也至多可数．
+	易证对单调递增函数$f$的间断点$x_1<x_2$, 有$f(x_1^-)<f(x_1^+)\leq f(x_2^-)<f(x_2^+)$．于是$f$的每个间断点$x$都可以用不同的有理数$q\in\bra{f(x^-),f(x^+)}$标记．由于$\Q$是可数集, 间断点个数也至多可数．
 \end{pf}
 
 \begin{exer}
@@ -335,8 +352,8 @@
 \begin{rem}
 	证明满足某性质的点有至多可数个的常用方法：
 	\begin{enumerate}
-		\item 用可数集（例如$\Q$）唯一标记它．
-		\item 将其表示为可数个可数集的并（例如$E=\bigcup_{n\in \N}E_{\frac{1}{n}}$）．这种方法对零测集的证明也适用．
+		\item 用可数集 (例如$\Q$) 唯一标记它．
+		\item 将其表示为可数个可数集的并 (例如$E=\bigcup_{n\in \N}E_{\frac{1}{n}}$)．这种方法对零测集的证明也适用．
 	\end{enumerate}
 \end{rem}
 
@@ -369,7 +386,7 @@
 	\end{aligned}\right.$在$0$处的任意阶导数为$0$．定义$g(x)=\left\{\begin{aligned}
 		&\e^{-\frac{1}{x^2}}&,x>0\\
 		&0&,x\leq0\\
-	\end{aligned}\right.$, 则$f(x)=\frac{g(x)}{g(x)+g(1-x)}$是$\R$上无限次可导的函数, 且$x\leq0$时$f(x)\equiv0,\,x\geq1$时$f(x)\equiv1$．
+	\end{aligned}\right.$, 则$h(x)=\frac{g(x)}{g(x)+g(1-x)}$是$\R$上无限次可导的函数, 且$x\leq0$时$h\equiv0,\,x\geq1$时$h\equiv1$．
 \end{prop}
 
 \begin{exer}
@@ -420,7 +437,7 @@
 \subsection{微分中值定理与Taylor公式}
 以下几题使用待定常数法构造Rolle定理的辅助函数．核心是将区间一端$b$替换为变元, 使辅助函数在$a,\,b,$任意选定的内点$x$处具有良好性质, 例如函数值为0, 一阶导数值为0．
 \begin{exer}
-	\phantom{linebreak}
+	\phantom{text}
 	\begin{enumerate}
 		\item 设$f$在$[a,b]$三阶可导, 且有$f(a)=f'(a)=f(b)=0$, 求证：$\forall\,x\in[a,b],\,\exists\,\xi\in(a,b),$
 		\[f(x)=\frac{f'''(\xi)}{3!}(x-a)^2(x-b).\]
@@ -521,7 +538,7 @@
 \end{thm}
 
 \begin{thm}
-	设$f\in C[a,b],$在$(a,b)$上右侧可导, 则$f$在$(a,b)$上（严格）下凸的充分必要条件是$f_+'(x)$（严格）单调递增．
+	设$f\in C[a,b],$在$(a,b)$上右侧可导, 则$f$在$(a,b)$上 (严格) 下凸的充分必要条件是$f_+'(x)$ (严格) 单调递增．
 \end{thm}
 
 下一题用定义证明计算量非常大．但上述定理可以直接证得．
@@ -582,7 +599,7 @@
 \end{prop}
 
 \begin{thm}[Lebesgue定理]
-	设$f$在$[a,b]$上有界．则$f\in R[a,b]$的充分必要条件是$f$的不连续点的集合$D(f)$零测（$f$在$[a,b]$上几乎处处连续）．
+	设$f$在$[a,b]$上有界．则$f\in R[a,b]$的充分必要条件是$f$的不连续点的集合$D(f)$零测 ($f$在$[a,b]$上几乎处处连续)．
 \end{thm}
 \begin{pf}
 	先证必要性．只需证$\forall\,n\in\N,\,D_\frac{1}{n}=\cbra{x\in[a,b]\,\middle\vert\,\omega(x)>\frac{1}{n}}$零测．因为$f\in R[a,b],\,\forall\,\epsilon>0,\,\exists$分割$P,$使得$\sum_P\omega_i\Delta x_i<\frac{\epsilon}{n}$．记$\Lambda=\cbra{i\,\middle\vert\,(x_{i-1},x_i)\cap D_\frac{1}{n}\neq\emptyset},$则$\frac{1}{n}\sum_{i\in\Lambda}\Delta x_i<\sum_{i\in\Lambda}\omega_i\Delta x_i<\frac{\epsilon}{n}$．再用总长度可以任意小的区间覆盖$x_0,\dots,x_n$, 即证得$D_\frac{1}{n}$零测．
@@ -607,7 +624,7 @@
 	\[\int_{a}^{x}f(t)\,\d t=F(x)-F(a).\]
 \end{thm}
 \begin{pf}
-	设$F'(t)\neq f(t)$的点为$t_1,\dots,t_m$．$\forall\,\epsilon>0,\,\exists\,\delta>0$, 使得$\forall$分割$P$, 只要$\norm{P}<\delta$, 不论介点集$\{\xi_i\}$如何取, 都有$\left|\sum_P f(\xi_i)\Delta x_i-\int_{a}^{x}f\right|<\epsilon$．将$t_1,\dots,t_m$插入分割$P$中, 新的分点为$\{x'_i\}$．由Lagrange中值定理, 可令$f(\xi_i)=(f(x'_i)-f(x'_{i-1}))/\Delta x_i$, 即证．
+	设$F'(t)\neq f(t)$的点为$t_1,\dots,t_m$．$\forall\,\epsilon>0,\,\exists\,\delta>0$, 使得$\forall$分割$P$, 只要$\norm{P}<\delta$, 不论介点集$\{\xi_i\}$如何取, 都有$\left|\sum_P f(\xi_i)\Delta x_i-\int_{a}^{x}f\right|<\epsilon$．将$t_1,\dots,t_m$加入分割$P$中, 新的分点为$\{x'_i\}$．用Lagrange中值定理取介点集即证．
 \end{pf}
 
 
@@ -616,7 +633,7 @@
 	设$f$在$[a,b]$上的每一点处的极限都存在且为$0$, 求证：$f\in R[a,b],\,\int_{a}^{b}f=0$．
 \end{exer}
 \begin{pf}
-	断言：$\forall\,\epsilon>0,$使得$|f(x)|>\epsilon$的点$x$至多只有有限个．否则由聚点原理, 这与聚点处极限为0矛盾．
+	断言：$\forall\,\epsilon>0,$使得$|f(x)|>\epsilon$的点$x$至多只有有限个．否则由聚点原理, 这与聚点处极限为0矛盾．也可以用有限开覆盖定理．
 \end{pf}
 
 以下结论不难证得, 但具有启发性．上题也可以用它证明．
@@ -722,11 +739,11 @@
 	\end{align*}
 \end{pf}
 
-\begin{exer}
-	设$f\in D[a,b],\,f(a)=f(b)=0,\,|f'(x)\leq M$．求证：$\left|\int_{a}^{b}f(x)\,\d x\right|\leq\frac{M}{4}(b-a)^2$．
-\end{exer}
+% \begin{exer}
+% 	设$f\in D[a,b],\,f(a)=f(b)=0,\,|f'(x)\leq M$．求证：$\left|\int_{a}^{b}f(x)\,\d x\right|\leq\frac{M}{4}(b-a)^2$．
+% \end{exer}
 
-下题给出了梯形公式的误差估计．证明可以使用积分学手段：分部积分法（Euler-Maclaurin公式的低阶情况）．也可以使用微分学手段, 即待定常数法和Rolle定理．它们的差异不是本质的．中矩形公式和Simpson公式的证明可以使用相同方法．
+下题给出了梯形公式的误差估计．证明可以使用积分学手段：分部积分法 (Euler-Maclaurin公式的低阶情况)．也可以使用微分学手段, 即待定常数法和Rolle定理．它们的差异不是本质的．中矩形公式和Simpson公式的证明可以使用相同方法．
 \begin{exer}
 	设$f\in C^2[0,h]$．求证：$\exists\,\xi\in[0,h]$, 使得$\int_{0}^{h}f(x)\,\d x=\frac{h}{2}[f(0)+f(h)]-\frac{1}{12}f''(\xi)h^3$．
 \end{exer}
@@ -743,6 +760,19 @@
 
 
 \subsection{积分学的其他应用}
+\begin{thm}[质心公式]
+	设密度均匀的平面图形分布在$x=a,\,x=b$和$y=c,\,y=d$之间, 且$\forall\,x_0\in[a,b],\,y_0\in[c,d]$, 直线$x=x_0$和$y=y_0$截得的线段长度为$s(x_0)$和$t(y_0)$．则图形的质心的坐标为
+	\[x_c=\frac{\int_{a}^{b}xs(x)\,\d x}{\int_{a}^{b}s(x)\,\d x},\qquad y_c=\frac{\int_{c}^{d}yt(y)\,\d y}{\int_{c}^{d}t(y)\,\d y}.\]
+\end{thm}
+
+\begin{thm}[Guldinus定理]
+	\phantom{text}
+
+	Guldinus第一定理：位于右半平面内的平面曲线绕$y$轴旋转一周所产生的旋转曲面的面积等于质心绕$y$轴一周所经过的路程乘以曲线的弧长, 即$S_y=2\pi x_cl$．
+
+	Guldinus第二定理：位于右半平面内的平面图形绕$y$轴旋转一周所产生的旋转立体的体积等于质心绕$y$轴一周所经过的路程乘以图形的面积．即$V_y=2\pi x_cS$．
+\end{thm}
+
 利用定积分求数列极限时, 应当积极考虑用Taylor公式分离出主要部分, 以及用夹逼定理去除形式上无关紧要的部分．
 \begin{exer}
 	计算极限
@@ -763,7 +793,7 @@
 以下Wallis公式的形式有时更加便于应用．
 \begin{thm}[Wallis公式]
 	$\nti$时, 成立
-	\[\frac{(2n)!!}{(2n-1)!!}\sim\sqrt{\pi n}\qquad\qquad\frac{(n!)^22^{2n}}{(2n)!}\sim\sqrt{\pi n}.\]
+	\[\frac{(2n)!!}{(2n-1)!!}\sim\sqrt{\pi n},\quad\qquad\frac{(n!)^22^{2n}}{(2n)!}\sim\sqrt{\pi n}.\]
 \end{thm}
 
 
@@ -796,7 +826,7 @@ Jensen不等式的积分形式可以对离散形式取极限证得, 其中$p$类
 	\[\phi\bra{\frac{\int_{a}^{b}p(x)f(x)\,\d x}{\int_{a}^{b}p(x)\,\d x}}\leq\frac{\int_{a}^{b}p(x)\bra{\phi(f(x))}\d x}{\int_{a}^{b}p(x)\,\d x}.\]
 \end{thm}
 
-Jensen不等式包含了很多不等式．例如（$\phi$为下凸函数）
+Jensen不等式包含了很多不等式．例如 ($\phi$为下凸函数)
 \[\phi\bra{\frac{1}{b-a}\int_{a}^{b}f(x)\,\d x}\leq\frac{1}{b-a}\int_{a}^{b}\phi(f(x))\,\d x.\]
 \[\ln\bra{\frac{1}{b-a}\int_{a}^{b}f(x)\,\d x}\geq\frac{1}{b-a}\int_{a}^{b}\ln(f(x))\,\d x.\]
 当遇到不等式时, 应当观察其中形式相似的部分, 并寻找凸函数．
@@ -902,7 +932,7 @@ Jensen不等式包含了很多不等式．例如（$\phi$为下凸函数）
 
 
 \subsection{广义积分的敛散性判别法}
-判别广义积分敛散的第一步是找到被积函数所有（可能）的奇点．当指数上出现参数时, 被积函数的零点也可能是奇点．例如以下广义积分所有可能的奇点是$0,1,+\infty$．
+判别广义积分敛散的第一步是找到被积函数所有 (可能) 的奇点．当指数上出现参数时, 被积函数的零点也可能是奇点．例如以下广义积分所有可能的奇点是$0,1,+\infty$．
 \[\int_{0}^{\infty}\frac{\sin x}{x}|\ln x|^p\,\d x.\]
 
 广义积分敛散性判别的本质是对被积函数作为无穷小量或无穷大量估阶．因此应不吝啬先用Taylor公式进行估计, 从而找到合适的指数$p$, 再用Cauchy判别法．
