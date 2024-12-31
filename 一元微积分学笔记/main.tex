@@ -44,21 +44,21 @@
 
 
 % ---------- Theorem environments ----------
-\newenvironment{formal}{%
-\def\FrameCommand{%
-\hspace{1pt}%
-{\color{DarkBlue}\vrule width 2pt}%
-{\color{formalshade}\vrule width 4pt}%
-\colorbox{formalshade}%
-}%
-\MakeFramed{\advance\hsize-\width\FrameRestore}%
-\noindent\hspace{-4.55pt}% disable indenting first paragraph
-\begin{adjustwidth}{}{7pt}%
-\vspace{2pt}\vspace{2pt}%
-}
-{%
-\vspace{2pt}\end{adjustwidth}\endMakeFramed%
-}
+% \newenvironment{formal}{%
+% \def\FrameCommand{%
+% \hspace{1pt}%
+% {\color{DarkBlue}\vrule width 2pt}%
+% {\color{formalshade}\vrule width 4pt}%
+% \colorbox{formalshade}%
+% }%
+% \MakeFramed{\advance\hsize-\width\FrameRestore}%
+% \noindent\hspace{-4.55pt}% disable indenting first paragraph
+% \begin{adjustwidth}{}{7pt}%
+% \vspace{2pt}\vspace{2pt}%
+% }
+% {%
+% \vspace{2pt}\end{adjustwidth}\endMakeFramed%
+% }
 
 \declaretheoremstyle[
     spaceabove=\topsep,spacebelow=\topsep,
@@ -120,7 +120,8 @@
 \renewcommand{\d}{\mathrm{d}}
 \newcommand{\e}{\mathrm{e}}
 \def \nti {\mathnormal{n}\to\infty}
-\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left|#1\right|}
 \DeclareMathOperator{\llim}{\underset{\nti}{\underline{\lim}}}
 \DeclareMathOperator{\ulim}{\underset{\nti}{\overline{\lim}}}
 
@@ -130,7 +131,7 @@
 \pretitle{
 	\begin{flushleft}
 	\normalfont\normalsize
-	数学分析习题课讲义 (上册)\\
+	数学分析习题课讲义\\
 	\vspace{0.3em}
 	\huge\bfseries
 }
