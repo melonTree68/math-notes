@@ -306,7 +306,7 @@
 \begin{pf}
 	设所求证等式右端为$\alpha$．观察条件, 条件对$\{a_n\}$的增速作出了限制．为了利用条件控制$\{a_n\}$, 想到取定$N\in\N$, 用$N$的整数倍估计$n$．设$n=mN+r$, 其中$m,r\in\N,\,r<N$．于是$k$只有有限个取值, 可以在$\nti$的过程中被控制．变形得
 	\[\frac{\ln a_n}{n}\leq\frac{mN}{n}\,\frac{\ln a_N}{N}+\frac{\ln a_k}{n}.\]
-	观察形式, 自然想到$\forall\,\epsilon>0$, 取
+	比较所求证等式与上式, 自然想到$\forall\,\epsilon>0$, 取
 	\[\alpha\leq\frac{\ln a_N}{N}<\alpha+\epsilon.\]
 	令$\nti$, 在不等式两边取上极限．
 	\[\ulim\frac{\ln a_n}{n}\leq\alpha+\epsilon.\]
@@ -314,7 +314,7 @@
 \end{pf}
 
 \begin{exer}
-	设数列$\{x_n\}$满足$x_n+x_m-1\leq x_{n+m}\leq x_n+x_m+1$．求证：$\frac{x_n}{n}$收敛．
+	设数列$\{x_n\}$满足$x_n+x_m-1\leq x_{n+m}\leq x_n+x_m+1$．求证：$\cbra{\frac{x_n}{n}}$收敛．
 \end{exer}
 
 
@@ -659,7 +659,7 @@
 \begin{pf}
 	从极限过程的顺序上看, Riemann和式的极限在$h\to0$之前．所以必须先取定分割．
 	
-	对任意取定的$\epsilon>0,\,\exists$等距分割$P,\,\sum_P \omega_i\Delta x_i<\epsilon$．取$|h|<\norm{P},$则有
+	对任意取定的$\epsilon>0,\,\exists$等距分割$P,\,\sum_P \omega_i\Delta x_i<\epsilon$．任取$0<|h|<\norm{P},$则有
 	$I=\sum_P \int_{x_{i-1}}^{x_i}|f(x+h)-f(x)|\,\d x,$其中每个$x+h$与$x$都落在同一或相邻小区间内, 使积分的值得到控制．
 \end{pf}
 
@@ -667,12 +667,12 @@
 	设$f\in C[0,1]$, 计算$\lim_{\nti}\int_{0}^{1}nx^nf(x)\,\d x$．
 \end{exer}
 \begin{sol}
-	$f$的性态未知, 因此先观察其余部分, 注意到$nx^n$的定积分为$1$．分段控制方法需要$1$处被积函数值为$1$, 因此考虑$\lim_{\nti}\int_{0}^{1}nx^n\bra{f(x)-f(1)}$．答案为$f(1)$．
+	$f$的性态未知, 因此先观察其余部分, 注意到$nx^n$的定积分为$1$．分段控制方法需要$1$处被积函数值为$1$, 因此考虑$\lim_{\nti}\int_{0}^{1}nx^n\bra{f(x)-f(1)}\,\d x$．答案为$f(1)$．
 \end{sol}
 
 
 \subsection{定积分的计算}
-下题也可以用对称性方法解出, 但以下解法中展现的处理极限不存在的方法值得学习．
+下题也可以用对称性方法解出, 但以下解法中处理极限不存在的方法值得学习．
 \begin{exer}
 	计算$\int_{0}^{\pi/2}\sin x\ln\sin x\,\d x$．
 \end{exer}
@@ -722,7 +722,7 @@
 	设$f$在$[0,1]$上非负连续, 且$f^2(t)\leq1+2\int_{0}^{t}f(s)\,\d s$．求证：$f(t)\leq1+t$．
 \end{exer}
 \begin{pf}
-	观察形式, $f^2$难以处理, 并且自然想到引入变限积分函数．在条件的两边开根号, 将右边除到左边再两边积分即证．
+	观察条件的形式, $f^2$难以处理, 并且自然想到引入变限积分函数．在条件的两边开根号, 将右边除到左边再两边积分即证．
 \end{pf}
 
 
@@ -744,7 +744,7 @@
 % 	设$f\in D[a,b],\,f(a)=f(b)=0,\,|f'(x)\leq M$．求证：$\left|\int_{a}^{b}f(x)\,\d x\right|\leq\frac{M}{4}(b-a)^2$．
 % \end{exer}
 
-下题给出了梯形公式的误差估计．证明可以使用积分学手段：分部积分法 (Euler-Maclaurin公式的低阶情况)．也可以使用微分学手段, 即待定常数法和Rolle定理．它们的差异不是本质的．中矩形公式和Simpson公式的证明可以使用相同方法．
+下题给出了梯形公式的误差估计．证明可以使用积分学手段：分部积分法 (Euler-Maclaurin公式)．也可以使用微分学手段, 即待定常数法和Rolle定理．它们的差异不是本质的．中矩形公式和Simpson公式的证明可以使用相同方法．
 \begin{exer}
 	设$f\in C^2[0,h]$．求证：$\exists\,\xi\in[0,h]$, 使得$\int_{0}^{h}f(x)\,\d x=\frac{h}{2}[f(0)+f(h)]-\frac{1}{12}f''(\xi)h^3$．
 \end{exer}
@@ -853,7 +853,7 @@ Jensen不等式包含了很多不等式．例如 ($\phi$为下凸函数)
 \subsection{Schwarz不等式}
 \begin{exer}
 	设$f\in C^1[a,b],\,f(a)=0$．求证：
-	\[\int_{a}^{b}f^2(x)\,\d x\leq\frac{(b-a)^2}{2}\int_{a}^{b}(f'(x))^2-\frac{1}{2}\int_{a}^{b}(f'(x))^2(x-a)^2\,\d x.\]
+	\[\int_{a}^{b}f^2(x)\,\d x\leq\frac{(b-a)^2}{2}\int_{a}^{b}(f'(x))^2\,\d x-\frac{1}{2}\int_{a}^{b}(f'(x))^2(x-a)^2\,\d x.\]
 \end{exer}
 \begin{pf}
 	观察条件$f\in C^1[a,b]$, 自然想到变限积分函数．$\int_{a}^{b} f^2$难以处理, 于是先用Schwarz不等式估计$f^2$, 再两边积分即证．
@@ -938,7 +938,7 @@ Jensen不等式包含了很多不等式．例如 ($\phi$为下凸函数)
 判别广义积分敛散的第一步是找到被积函数所有 (可能) 的奇点．当指数上出现参数时, 被积函数的零点也可能是奇点．例如以下广义积分所有可能的奇点是$0,1,+\infty$．
 \[\int_{0}^{\infty}\frac{\sin x}{x}|\ln x|^p\,\d x.\]
 
-广义积分敛散性判别的本质是对被积函数作为无穷小量或无穷大量估阶．因此应不吝啬先用Taylor公式进行估计, 从而找到合适的指数$p$, 再用Cauchy判别法．
+广义积分敛散性判别的本质是被积函数值的估计．因此应不吝啬先用Taylor公式分析渐近性态, 从而找到合适的指数$p$, 再用Cauchy判别法．
 % \begin{exer}
 % 	判别以下广义积分的敛散性．
 % 	\begin{enumerate}
