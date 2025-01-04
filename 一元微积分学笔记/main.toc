@@ -26,4 +26,4 @@
 \contentsline {section}{\numberline {9}数项级数}{20}{section.9}%
 \contentsline {subsection}{\numberline {9.1}正项级数}{20}{subsection.9.1}%
 \contentsline {subsection}{\numberline {9.2}一般项级数}{21}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}无穷乘积}{23}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.3}无穷乘积}{22}{subsection.9.3}%
