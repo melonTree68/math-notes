@@ -3,7 +3,6 @@
 \usepackage{geometry}
 \usepackage[dvipsnames,svgnames]{xcolor}
 \usepackage[strict]{changepage}
-\usepackage{framed}
 \usepackage{amsmath,amsfonts,amsthm,amssymb}
 \usepackage{extarrows}
 \usepackage{thmtools}
@@ -46,22 +45,6 @@
 
 
 % ---------- Theorem environments ----------
-% \newenvironment{formal}{%
-% \def\FrameCommand{%
-% \hspace{1pt}%
-% {\color{DarkBlue}\vrule width 2pt}%
-% {\color{formalshade}\vrule width 4pt}%
-% \colorbox{formalshade}%
-% }%
-% \MakeFramed{\advance\hsize-\width\FrameRestore}%
-% \noindent\hspace{-4.55pt}% disable indenting first paragraph
-% \begin{adjustwidth}{}{7pt}%
-% \vspace{2pt}\vspace{2pt}%
-% }
-% {%
-% \vspace{2pt}\end{adjustwidth}\endMakeFramed%
-% }
-
 \declaretheoremstyle[
     spaceabove=\topsep,spacebelow=\topsep,
     headfont=\bfseries,headpunct={},
@@ -123,7 +106,7 @@
 \newcommand{\e}{\mathrm{e}}
 \def \nti {\mathnormal{n}\to\infty}
 \def \series {\sum_{n=1}^{\infty}}
-% \def \series {\sum}
+\def \vs {\vspace{-1em}}
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\abs}[1]{\left|#1\right|}
 \DeclareMathOperator{\llim}{\underset{\nti}{\underline{\lim}}}
@@ -159,7 +142,7 @@
 
 
 \section{实数系的基本定理}
-实数系基本定理的使用有其显著动机, 在观察题干时应当向这方面思考, 例如: 
+实数系基本定理的使用有其显著动机, 在观察题干时应当向这方面思考, 例如:
 \begin{enumerate}
 	\item Lebesgue方法将局部性质推广至整体．它聚焦于``函数在什么地方失去了这个整体性质'', 并通过研究该处的局部性质引出矛盾．
 	\item 闭区间套定理将整体性质继承至局部．
@@ -208,7 +191,7 @@
 \end{defn}
 
 \begin{prop}[压缩映射原理]
-	设$f$是$[a,b]$上的一个压缩映射, 则: 
+	设$f$是$[a,b]$上的一个压缩映射, 则:
 	\begin{enumerate}
 		\item $f$在$[a,b]$中存在唯一不动点$\xi$．
 		\item 由任何初始值$a_0\in[a,b]$和递推公式$a_{n+1}=f(a_n)$生成的数列$\{a_n\}$一定收敛于$\xi$．
@@ -241,11 +224,11 @@
 
 
 % \begin{exer}
-%     设$A_n=\sum_{k=1}^{n}a_k$, 数列$A_n$收敛．$\{p_n\}$为单调增加的正数数列, 且为正无穷大量．求证: 
+%     设$A_n=\sum_{k=1}^{n}a_k$, 数列$A_n$收敛．$\{p_n\}$为单调增加的正数数列, 且为正无穷大量．求证:
 %     \[\lim_{\nti}\frac{p_1a_1+\cdots+p_na_n}{p_n}=0.\]
 % \end{exer}
 % \begin{pf}
-%     由Abel变换, 
+%     由Abel变换,
 %     \[\text{原式}=\lim_{\nti}\frac{p_nA_n+\sum_{k=1}^{n-1}\sbra{(p_k-p_{k+1})A_k}}{p_n}\xlongequal{\text{Stolz定理}}\lim_{\nti}\bra{A_n+\frac{(p_n-p_{n+1})A_n}{p_{n+1}-p_n}}=0.\qedhere\]
 % \end{pf}
 
@@ -266,10 +249,10 @@
 	\[\llim x_n+\llim y_n\leq\llim\bra{x_n+y_n}\leq
 	\left\{\begin{aligned}
 	&\llim x_n+\ulim y_n\\
-	&\ulim x_n+\llim y_n\\
+	&\ulim x_n+\llim y_n
 	\end{aligned}\right.
 	\leq\ulim\bra{x_n+y_n}\leq\ulim x_n+\ulim y_n.\]
-	特别地, 当$\{y_n\}$收敛时, 
+	特别地, 当$\{y_n\}$收敛时,
 	\[\llim\bra{x_n+y_n}=\llim x_n+\lim_{\nti} y_n,\qquad\ulim\bra{x_n+y_n}=\ulim x_n+\lim_{\nti} y_n.\]
 \end{thm}
 
@@ -292,7 +275,7 @@
 
 以下两题体现出: 上下极限是一个定数, 应当充分利用它和已知数的大小关系．例如假设$\llim y_n=b<1$时, 应当考虑$b$和$1$的空隙; 另一题中的$l$也是如此．
 \begin{exer}
-	设$\{x_n\}$为正数数列, 求证: $\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}\geq1$．
+	设$\{x_n\}$为正数数列, 求证: $\ulim n\,\bra{\frac{1+x_{n+1}}{x_n}-1}\geq1$．
 \end{exer}
 % \begin{pf}
 % 	用反证法．假设$\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}=b<1$．于是对$\epsilon=\frac{1-b}{2},\,\exists\,N\in\N$, 使得$\forall\,n>N,\,\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}<1$, 即$\frac{x_{n+1}}{n+1}<\frac{x_n}{n}-\frac{1}{n+1}$．$x_n>0$与调和级数的发散性矛盾．
@@ -304,14 +287,13 @@
 
 以下两题中均涉及两个极限过程．所以必须先取定一个极限过程的$\epsilon-N$, 然后在此基础上分析第二个极限过程．
 \begin{exer}
-	设正数数列$\{a_n\}$满足$a_{n+m}\leq a_na_m,\,\forall n,m\in\N$．求证: 
+	设正数数列$\{a_n\}$满足$a_{n+m}\leq a_na_m,\,\forall n,m\in\N$．求证:
 	\[\lim_{\nti}\frac{\ln a_n}{n}=\inf_{n\geq 1}\cbra{\frac{\ln a_n}{n}}.\]
 \end{exer}
 \begin{pf}
 	设所求证等式右端为$\alpha$．观察条件, 条件对$\{a_n\}$的增速作出了限制．为了利用条件控制$\{a_n\}$, 想到取定$N\in\N$, 用$N$的整数倍估计$n$．设$n=mN+r$, 其中$m,r\in\N,\,r<N$．于是$k$只有有限个取值, 可以在$\nti$的过程中被控制．变形得
 	\[\frac{\ln a_n}{n}\leq\frac{mN}{n}\,\frac{\ln a_N}{N}+\frac{\ln a_k}{n}.\]
-	比较所求证等式与上式, 自然想到$\forall\,\epsilon>0$, 取
-	\[\alpha\leq\frac{\ln a_N}{N}<\alpha+\epsilon.\]
+	比较所求证等式与上式, 自然想到$\forall\,\epsilon>0$, 取$\alpha\leq\frac{\ln a_N}{N}<\alpha+\epsilon.$
 	令$\nti$, 在不等式两边取上极限．
 	\[\ulim\frac{\ln a_n}{n}\leq\alpha+\epsilon.\]
 	结合$\alpha\leq\llim\frac{\ln a_n}{n}$, 得证．
@@ -343,7 +325,7 @@
 \end{pf}
 
 \begin{exer}
-	设$f$在$[a,b]$上处处有极限．求证: 
+	设$f$在$[a,b]$上处处有极限．求证:
 	\begin{enumerate}
 		\item $\forall\,\epsilon>0,\,[a,b]$中使得$|\lim_{t\to x}f(t)-f(x)|>\epsilon$的点至多有有限个．
 		\item $f$在$[a,b]$中至多有可数个间断点．
@@ -355,7 +337,7 @@
 	对(2), 取$\epsilon_n=1/n$, 可数个有限集的并是可数集．
 \end{pf}
 \begin{rem}
-	证明满足某性质的点有至多可数个的常用方法: 
+	证明满足某性质的点有至多可数个的常用方法:
 	\begin{enumerate}
 		\item 用可数集 (例如$\Q$) 唯一标记它．
 		\item 将其表示为可数个可数集的并 (例如$E=\bigcup_{n\in \N}E_{\frac{1}{n}}$)．这种方法对零测集的证明也适用．
@@ -367,7 +349,7 @@
 \subsection{导数与微分}
 % 以下加强的无穷小增量公式在证明链式求导法则与反函数求导法则时很方便．
 % \begin{thm}[加强形式的无穷小增量公式]
-% 	设$f$在$x_0$处可导, 则成立以下公式: 
+% 	设$f$在$x_0$处可导, 则成立以下公式:
 % 	\[\Delta y=f'(x_0)\Delta x+\omega(x)\Delta x.\]
 % 	其中$\lim_{x\to x_0}\omega(x)=\omega(x_0)=0$．
 % \end{thm}
@@ -416,7 +398,7 @@
 	设$f(x)=x^n\ln x$, 求$\lim_{\nti}\frac{1}{n!}f^{(n)}(\frac{1}{n})$.
 \end{exer}
 \begin{sol}
-	由Leibniz公式, 
+	由Leibniz公式,
 	\begin{align*}
 		f^{(n)}(x)&=n!\ln x+n!\sum_{k=1}^{n}\binom{n}{k}\frac{(-1)^{k-1}}{k}\\
 		&=n!\ln x+n!\sum_{k=1}^{n}\binom{n}{k}\int_{0}^{1}(-t)^{k-1}\d t\\
@@ -472,11 +454,11 @@
 	令$x\to b$, 即得矛盾．
 \end{pf}
 \begin{rem}
-	辅助函数往往唯一, 只要找出即可．如果没有发现显然的方法使用Rolle定理, 应毫不犹豫地用Darboux定理反证．
+	辅助函数往往唯一, 找出即可．如果没有发现显然的方法使用Rolle定理, 应毫不犹豫地用Darboux定理反证．
 \end{rem}
 
 \begin{exer}
-	设$f$在$(a,b)$上任意阶可导, 且$\forall\,n\in\N,\,f^{(n)}(x)\geq0,\,|f(x)|\leq M$．求证: $\forall\,x\in(a,b),\,r>0,\,x+r\in(a,b)$, 成立关于导数的估计式: 
+	设$f$在$(a,b)$上任意阶可导, 且$\forall\,n\in\N,\,f^{(n)}(x)\geq0,\,|f(x)|\leq M$．求证: $\forall\,x\in(a,b),\,r>0,\,x+r\in(a,b)$, 成立关于导数的估计式:
 	\[f^{(n)}(x)\leq\frac{2Mn!}{r^n},\,\forall\,n\in\N.\]
 \end{exer}
 
@@ -607,7 +589,8 @@
 	设$f$在$[a,b]$上有界．则$f\in R[a,b]$的充分必要条件是$f$的不连续点的集合$D(f)$零测 ($f$在$[a,b]$上几乎处处连续)．
 \end{thm}
 \begin{pf}
-	先证必要性．只需证$\forall\,n\in\N,\,D_\frac{1}{n}=\cbra{x\in[a,b]\,\middle\vert\,\omega(x)>\frac{1}{n}}$零测．因为$f\in R[a,b],\,\forall\,\epsilon>0,\,\exists$分割$P,$使得$\sum_P\omega_i\Delta x_i<\frac{\epsilon}{n}$．记$\Lambda=\cbra{i\,\middle\vert\,(x_{i-1},x_i)\cap D_\frac{1}{n}\neq\emptyset},$则$\frac{1}{n}\sum_{i\in\Lambda}\Delta x_i<\sum_{i\in\Lambda}\omega_i\Delta x_i<\frac{\epsilon}{n}$．再用总长度可以任意小的区间覆盖$x_0,\dots,x_n$, 即证得$D_\frac{1}{n}$零测．
+	\everymath{\textstyle}
+	先证必要性．只需证$\forall\,n\in\N,\,D_{1/n}=\cbra{x\in[a,b]\,\middle\vert\,\omega(x)>\frac{1}{n}}$零测．因为$f\in R[a,b],\,\forall\,\epsilon>0,\,\exists$分割$P,$使得$\sum_P\omega_i\Delta x_i<\epsilon/n$．记$\Lambda=\cbra{i\,\middle\vert\,(x_{i-1},x_i)\cap D_{1/n}\neq\emptyset},$则$\frac{1}{n}\sum_{i\in\Lambda}\Delta x_i<\sum_{i\in\Lambda}\omega_i\Delta x_i<\frac{\epsilon}{n}$．再用总长度可以任意小的区间覆盖$x_0,\dots,x_n$, 即证得$D_{1/n}$零测．
 
 	再证充分性．对任意$\epsilon>0$, 先用总长度小于$\epsilon$的至多可数个开区间覆盖$D(f)$．对每个连续点取一个邻域, 使得邻域内振幅不超过$\epsilon$．每个连续点的邻域和覆盖$D(f)$的开区间构成了$[a,b]$的一个开覆盖．应用加强形式的有限开覆盖定理, 得到Lebesgue数$\delta$．取分割$P,\,\norm{P}<\delta$即证．
 \end{pf}
@@ -629,7 +612,7 @@
 	\[\int_{a}^{x}f(t)\,\d t=F(x)-F(a).\]
 \end{thm}
 \begin{pf}
-	设$F'(t)\neq f(t)$的点为$t_1,\dots,t_m$．$\forall\,\epsilon>0,\,\exists\,\delta>0$, 使得$\forall$分割$P$, 只要$\norm{P}<\delta$, 不论介点集$\{\xi_i\}$如何取, 都有$\left|\sum_P f(\xi_i)\Delta x_i-\int_{a}^{x}f\right|<\epsilon$．将$t_1,\dots,t_m$加入分割$P$中, 新的分点为$\{x'_i\}$．用Lagrange中值定理取介点集即证．
+	设$F'(t)\neq f(t)$的点为$t_1,\dots,t_m$．$\forall\,\epsilon>0,\,\exists\,\delta>0$, 使得$\forall$分割$P$, 只要$\norm{P}<\delta$, 不论介点集$\{\xi_i\}$如何取, 都有$\textstyle\left|\sum_P f(\xi_i)\Delta x_i-\int_{a}^{x}f\right|<\epsilon$．将$t_1,\dots,t_m$加入分割$P$中, 新的分点为$\{x'_i\}$．用Lagrange中值定理取介点集即证．
 \end{pf}
 
 
@@ -649,7 +632,7 @@
 \begin{exer}
 	设$[a,b]$上处处大于$0$的函数$f\in R[a,b]$, 求证: $\int_{a}^{b}f>0.$
 \end{exer}
-\begin{pf}
+\begin{pf}\everymath{\textstyle}
 	用反证法．假设$\int_{a}^{b}f=0$．于是$\forall\,\epsilon>0,\,\int_{a}^{b}[\epsilon-f(x)]\,\d x>0$．利用上一命题, 用闭区间套定理, 取$\epsilon_n=1/n$, 将$\int_{a_n}^{b_n}f=0$继承到局部, 引出矛盾．
 \end{pf}
 \begin{rem}
@@ -657,13 +640,11 @@
 \end{rem}
 
 \begin{exer}[积分的连续性命题]
-	设$f\in R[a-\delta,b+\delta],\,\delta>0$．求证: 
+	设$f\in R[a-\delta,b+\delta],\,\delta>0$．求证:
 	\[\lim_{h\to0}\int_{a}^{b}|f(x+h)-f(x)|\,\d x=0.\]
 \end{exer}
-\begin{pf}
-	从极限过程的顺序上看, Riemann和式的极限在$h\to0$之前．所以必须先取定分割．
-	
-	对任意取定的$\epsilon>0,\,\exists$等距分割$P,\,\sum_P \omega_i\Delta x_i<\epsilon$．任取$0<|h|<\norm{P},$则有
+\begin{pf}\everymath{\textstyle}
+	从极限过程的顺序上看, Riemann和式的极限在$h\to0$之前．所以必须先取定分割．对任意取定的$\epsilon>0,\,\exists$等距分割$P,\,\sum_P \omega_i\Delta x_i<\epsilon$．任取$0<|h|<\norm{P},$则有
 	$I=\sum_P \int_{x_{i-1}}^{x_i}|f(x+h)-f(x)|\,\d x,$其中每个$x+h$与$x$都落在同一或相邻小区间内, 使积分的值得到控制．
 \end{pf}
 
@@ -691,7 +672,7 @@
 \begin{sol}
 	考虑三角恒等式
 	\[\sin\frac{(2n+1)x}{2}=2\sin\frac{x}{2}\bra{\frac{1}{2}+\sum_{k=1}^{n}\cos kx}.\]
-	答案为$\frac{\pi}{2}$．也可以使用归纳法．
+	答案为$\frac{\pi}{2}$．也可以用归纳法．
 \end{sol}
 
 \begin{exer}[Fejér积分]
@@ -705,7 +686,7 @@
 \begin{sol}
 	\begin{align*}
 		F(x)&=\int_{0}^{x}t^2\,\d\cos\frac{1}{t}\\
-		&=x^2\cos\frac{1}{x}-\int_{0}^{x}2t\cos\frac{1}{t}\,\d t.
+		&=x^2\cos\frac{1}{x}-\int_{0}^{x}2t\cos\frac{1}{t}\,\d t.\qedhere
 	\end{align*}
 	即可解决被积函数不连续的问题, 答案为$0$．
 \end{sol}
@@ -847,7 +828,7 @@ Jensen不等式包含了很多不等式．例如 ($\phi$为下凸函数)
 \end{pf}
 
 \begin{exer}
-	设非负函数$f\in R[a,b],\,\int_{a}^{b}f=1,\,k\in\R$, 求证: 
+	设非负函数$f\in R[a,b],\,\int_{a}^{b}f=1,\,k\in\R$, 求证:
 	\[\bra{\int_{a}^{b}f(x)\cos kx\,\d x}^2+\bra{\int_{a}^{b}f(x)\sin kx\,\d x}^2\leq1.\]
 \end{exer}
 \begin{pf}
@@ -856,7 +837,7 @@ Jensen不等式包含了很多不等式．例如 ($\phi$为下凸函数)
 
 \subsection{Schwarz不等式}
 \begin{exer}
-	设$f\in C^1[a,b],\,f(a)=0$．求证: 
+	设$f\in C^1[a,b],\,f(a)=0$．求证:
 	\[\int_{a}^{b}f^2(x)\,\d x\leq\frac{(b-a)^2}{2}\int_{a}^{b}(f'(x))^2\,\d x-\frac{1}{2}\int_{a}^{b}(f'(x))^2(x-a)^2\,\d x.\]
 \end{exer}
 \begin{pf}
@@ -905,6 +886,13 @@ Jensen不等式包含了很多不等式．例如 ($\phi$为下凸函数)
 	\end{align*}
 \end{sol}
 
+\begin{exer}
+	设$\lim_{\nti}n^{2n\sin\frac{1}{n}}a_n=1$, 求证: 级数$\series a_n$收敛．
+\end{exer}
+\begin{pf}
+	只需证$\series n^{-2n\sin\frac{1}{n}}$收敛, 用Jordan不等式处理三角函数．
+\end{pf}
+
 
 \section{广义积分}
 一些积分学中的重要定理在广义积分中有其推广形式．
@@ -919,7 +907,7 @@ Jensen不等式包含了很多不等式．例如 ($\phi$为下凸函数)
 \subsection{广义积分与和式极限}
 广义积分虽然是通过对常义积分取极限得到, 它在被积函数单调的情况下也有可能从积分和式的极限得到．
 \begin{exer}
-	设$f$在$(0,1)$单调, 瑕积分$\int_{0}^{1}f$收敛．求证: 
+	设$f$在$(0,1)$单调, 瑕积分$\int_{0}^{1}f$收敛．求证:
 	\[\lim_{\nti}\frac{1}{n}\sbra{f\bra{\frac{1}{n}}+f\bra{\frac{2}{n}}+\cdots+f\bra{\frac{n-1}{n}}}=\int_{0}^{1}f(x)\,\d x.\]
 \end{exer}
 \begin{pf}
@@ -1053,9 +1041,9 @@ Dirichlet和Abel判别法难以判别广义积分发散．比较判别法无法�
 
 \subsection{无穷限积分的特殊性质}
 不同于数项级数, $\int_{a}^{+\infty}f$收敛不仅不能推出$f(+\infty)=0$, $f(+\infty)$完全可以不存在, 甚至有极限点为$+\infty$．但关于无穷限积分在无穷远处的性质, 仍有一些结论．
-\begin{prop}
-	设无穷限积分$\int_{a}^{+\infty}f$收敛, 且$\lim_{x\to+\infty}f(x)$有意义, 则$f(+\infty)=0$．
-\end{prop}
+% \begin{prop}
+% 	设无穷限积分$\int_{a}^{+\infty}f$收敛, 且$\lim_{x\to+\infty}f(x)$有意义, 则$f(+\infty)=0$．
+% \end{prop}
 \begin{prop}
 	设无穷限积分$\int_{a}^{+\infty}f$收敛, 且$f$单调, 则$\lim_{x\to+\infty}xf(x)=0$．
 \end{prop}
@@ -1092,13 +1080,11 @@ Du Bois-Reymond定理和Abel定理分别证明了没有收敛或发散最慢的�
 	\phantom{text}
 
 	\begin{enumerate}
-		\item 正项级数$\series a_n$收敛的充分必要条件是存在正数数列$\{b_n\}$与正数$\delta$, 使得$n$充分大时成立
-		\vspace{-0.5em}
+		\item 正项级数$\series a_n$收敛的充分必要条件是存在正数数列$\{b_n\}$与正数$\delta$, 使得$n$充分大时成立\vs
 		\[b_n\cdot\frac{a_n}{a_{n+1}}-b_{n+1}\geq\delta.\]
-		\item 正项级数$\series a_n$发散的充分必要条件是存在发散的正项级数$\series \frac{1}{b_n}$, 使得$n$充分大时成立
-		\vspace{-0.5em}
+		\item 正项级数$\series a_n$发散的充分必要条件是存在发散的正项级数$\series \frac{1}{b_n}$, 使得$n$充分大时成立\vs
 		\[b_n\cdot\frac{a_n}{a_{n+1}}-b_{n+1}\leq0.\]
-	\end{enumerate}
+	\end{enumerate}\vspace{-1.5em}
 \end{thm}
 
 \begin{thm}[Cauchy凝聚判别法]
@@ -1109,8 +1095,8 @@ Du Bois-Reymond定理和Abel定理分别证明了没有收敛或发散最慢的�
 \begin{thm}[Sapagof判别法]
 	Sapagof判别法有几种等价形式．
 	\begin{enumerate}
-		\item 设正数数列$\{a_n\}$单调递减．则$\lim_{\nti}a_n=0$的充分必要条件是正项级数$\series\bra{1-\frac{a_{n+1}}{a_n}}$发散．\vspace{-.5em}
-		\item 设正数数列$\{a_n\}$单调递增．则$\{a_n\}$与$\series\bra{1-\frac{a_n}{a_{n+1}}}$同敛散．\vspace{-.5em}
+		\item 设正数数列$\{a_n\}$单调递减．则$\lim_{\nti}a_n=0$的充分必要条件是正项级数$\series\bra{1-\frac{a_{n+1}}{a_n}}$发散．
+		\item 设正数数列$\{a_n\}$单调递增．则$\{a_n\}$与$\series\bra{1-\frac{a_n}{a_{n+1}}}$同敛散．
 		\item 设正项级数$\series a_n$的部分和数列为$\{S_n\}$, 则$\series a_n$与$\series\frac{a_n}{S_n}$同敛散．
 	\end{enumerate}
 \end{thm}
@@ -1159,8 +1145,7 @@ Lagrange中值定理在正项级数的敛散性判别中有其应用．其思想
 	求证: 级数$\series\frac{(-1)^{[\sqrt{n}\,]}}{n}$收敛．
 \end{exer}
 \begin{pf}
-	只需考虑$\series(-1)^na_n$, 用Taylor公式估计$a_n$即证．其中
-	\vspace{-1em}
+	只需考虑$\series(-1)^na_n$, 用Taylor公式估计$a_n$即证．其中\vs
 	\[a_n=\frac{1}{n^2}+\frac{1}{n^2+1}+\cdots+\frac{1}{n^2+2n}=\frac{2}{n}-\frac{1}{n^2}+O(\frac{1}{n^3}).\qedhere\]
 \end{pf}
 
@@ -1176,13 +1161,17 @@ Lagrange中值定理在正项级数的敛散性判别中有其应用．其思想
 	两题中$p=q$时均通过加括号构造Leibniz级数．$p\neq q$时设法放缩．
 	\begin{enumerate}
 		\item $p>q$时考察相邻的$p+q$项, 其中前$p$项为正项．可以让后$q$个正项与$q$个负项抵消, 多余的至少一个正项组成调和级数．$p<q$时考察相邻的$q+p$项, 其中前$q$项为负项．
-		\item $p>q$时相当于提前拿出了前$2qn$项之后的正项, 它们\qedhere
+		\item $p>q$时即多取出了前$2qn$项之后的若干正项, 前$2qn$项趋于原级数的和, 多出的正项发散．\qedhere
 	\end{enumerate}
 \end{pf}
 
 另一种处理交错级数的方式是将相邻项配对, 对加括号得到的级数求和, 它很可能是同号级数．
 \begin{exer}
 	判别级数$\series\ln\sbra{1+\frac{(-1)^n}{n^p}}$的敛散性．
+\end{exer}
+
+\begin{exer}
+	$p,q>0$, 讨论级数$1-\frac{1}{2^q}+\frac{1}{3^p}-\frac{1}{4^q}+\cdots+\frac{1}{(2n-1)^p}-\frac{1}{(2n)^q}+\cdots$的敛散性．
 \end{exer}
 
 下题体现出变换$(-1)^n\sin nx=\sin(\pi+x)n$的作用．

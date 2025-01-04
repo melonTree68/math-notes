@@ -18,7 +18,7 @@
 \contentsline {subsection}{\numberline {7.2}Jensen不等式}{15}{subsection.7.2}%
 \contentsline {subsection}{\numberline {7.3}Schwarz不等式}{15}{subsection.7.3}%
 \contentsline {subsection}{\numberline {7.4}Jordan不等式}{16}{subsection.7.4}%
-\contentsline {section}{\numberline {8}广义积分}{16}{section.8}%
+\contentsline {section}{\numberline {8}广义积分}{17}{section.8}%
 \contentsline {subsection}{\numberline {8.1}广义积分与和式极限}{17}{subsection.8.1}%
 \contentsline {subsection}{\numberline {8.2}广义积分的敛散性判别法}{17}{subsection.8.2}%
 \contentsline {subsection}{\numberline {8.3}广义积分的计算}{18}{subsection.8.3}%
