@@ -1138,6 +1138,15 @@ Lagrange中值定理在正项级数的敛散性判别中有其应用．其思想
 	设$\tseries a_n=A,\,\tseries b_n=B$均收敛, 且其中至少有一个级数绝对收敛．则它们的Cauchy乘积$\tseries c_n=A\cdot B$．
 \end{thm}
 
+从Abel引理可以得到以下两个判别法, 它们与Abel判别法和Dirichlet判别法有所不同．
+\begin{thm}
+	\phantom{text}
+	\begin{enumerate}
+		\item (Du Bois-Reymond判别法) 设级数$\tseries(a_{n+1}-a_n)$绝对收敛, 级数$\tseries b_n$收敛, 则$\tseries a_nb_n$收敛．
+		\item (Dedekind判别法) 设级数$\tseries(a_{n+1}-a_n)$绝对收敛, $\lim_{\nti}a_n=0$, 级数$\tseries b_n$的部分和数列有界, 则$\tseries a_nb_n$收敛．
+	\end{enumerate}
+\end{thm}
+
 交错级数的用处实际上很多．通过以下命题可以将变号级数转化为交错级数, 从而可以利用Leibniz判别法．
 \begin{prop}
 	若对$\tseries a_n$加括号得到的级数收敛, 且每个括号内各项的符号相同, 则$\tseries a_n$也收敛．
@@ -1151,20 +1160,20 @@ Lagrange中值定理在正项级数的敛散性判别中有其应用．其思想
 	\[a_n=\frac{1}{n^2}+\frac{1}{n^2+1}+\cdots+\frac{1}{n^2+2n}=\frac{2}{n}-\frac{1}{n^2}+O(\frac{1}{n^3}).\qedhere\]
 \end{pf}
 
-\begin{exer}
-	\phantom{text}
-	\begin{enumerate}
-		\item 将调和级数的各项改变符号, 每$p$个正项后为$q$个负项, 如此重复, 但不改变各项原有顺序．求证: 所得级数当且仅当$p=q$时收敛．
-		\item 设$0<\alpha<1$．将级数$\tseries\frac{(-1)^{n-1}}{n^\alpha}$按照每$p$个正项后为$q$个负项的规则进行重排, 但不改变正项之间和负项之间的原有顺序．求证: 所得重排级数当且仅当$p=q$时收敛．
-	\end{enumerate}
-\end{exer}
-\begin{pf}
-	两题中$p=q$时均通过加括号构造Leibniz级数．$p\neq q$时设法放缩．
-	\begin{enumerate}
-		\item $p>q$时考察相邻的$p+q$项, 其中前$p$项为正项．可以让后$q$个正项与$q$个负项抵消, 多余的至少一个正项组成调和级数．$p<q$时考察相邻的$q+p$项, 其中前$q$项为负项．
-		\item $p>q$时即多取出了前$2qn$项之后的若干正项, 前$2qn$项趋于原级数的和, 多出的正项发散．\qedhere
-	\end{enumerate}
-\end{pf}
+% \begin{exer}
+% 	\phantom{text}
+% 	\begin{enumerate}
+% 		\item 将调和级数的各项改变符号, 每$p$个正项后为$q$个负项, 如此重复, 但不改变各项原有顺序．求证: 所得级数当且仅当$p=q$时收敛．
+% 		\item 设$0<\alpha<1$．将级数$\tseries\frac{(-1)^{n-1}}{n^\alpha}$按照每$p$个正项后为$q$个负项的规则进行重排, 但不改变正项之间和负项之间的原有顺序．求证: 所得重排级数当且仅当$p=q$时收敛．
+% 	\end{enumerate}
+% \end{exer}
+% \begin{pf}
+% 	两题中$p=q$时均通过加括号构造Leibniz级数．$p\neq q$时设法放缩．
+% 	\begin{enumerate}
+% 		\item $p>q$时考察相邻的$p+q$项, 其中前$p$项为正项．可以让后$q$个正项与$q$个负项抵消, 多余的至少一个正项组成调和级数．$p<q$时考察相邻的$q+p$项, 其中前$q$项为负项．
+% 		\item $p>q$时即多取出了前$2qn$项之后的若干正项, 前$2qn$项趋于原级数的和, 多出的正项发散．\qedhere
+% 	\end{enumerate}
+% \end{pf}
 
 另一种处理交错级数的方式是将相邻项配对, 对加括号得到的级数求和, 它很可能是同号级数．
 \begin{exer}
@@ -1202,6 +1211,56 @@ Lagrange中值定理在正项级数的敛散性判别中有其应用．其思想
 		\item 若$\{\alpha_n\}$变号, 但$\tseries\alpha_n$收敛, 则$\tprod(1+\alpha_n)$与$\tseries\alpha_n^2$同敛散．
 	\end{enumerate}
 \end{prop}
+
+下题中的证明与$\e=\tseries\frac{1}{n!}$的证明类似．\vspace{-.5em}
+\begin{exer}[Euler]
+	求证: $\forall\,x\in\R,\,\sin x=x\tprod\bra{1-\frac{x^2}{n^2\pi^2}}.$
+\end{exer}
+\begin{pf}
+	观察形式, 结论是$\sin x$与多项式的类比．于是自然考虑$\sin(2n+1)\phi=\sin\phi\cdot p(\sin^2\phi)$, 其中$p$为$n$次多项式, 这种形式的正确性由De Moivre公式保证．$p$的至多$n$个根于是为$\sin^2\bra{k\pi/(2n+1)},\,k=1,2,\dots,n$．令$x=(2n+1)\phi$, 得到
+	\[\sin x=(2n+1)\sin\frac{x}{2n+1}\prod_{k=1}^{n}\bra{1-\frac{\sin^2\frac{x}{2n+1}}{\sin^2\frac{k\pi}{2n+1}}}.\]
+	取定$m\in\N$, 令$n>m$, 将上式分解为$\sin x=U_m\cdot V_m$, 其中
+	\[U_m=(2n+1)\sin\frac{x}{2n+1}\prod_{k=1}^{m}\bra{1-\frac{\sin^2\frac{x}{2n+1}}{\sin^2\frac{k\pi}{2n+1}}},\quad V_m=\prod_{k=m+1}^{n}\bra{1-\frac{\sin^2\frac{x}{2n+1}}{\sin^2\frac{k\pi}{2n+1}}}.\]
+	令$\nti$得到$U_m$的估计．由Jordan不等式估计得
+	\[1>V_m\geq\prod_{k=m+1}^{n}\bra{1-\frac{x^2}{4k^2}}>\prod_{k=m+1}^{\infty}\bra{1-\frac{x^2}{4k^2}}.\]
+	令$m\to\infty$, 上式右端为余项, 于是用夹逼定理, 代入即证．
+\end{pf}
+
+\begin{prop}[Gamma函数]
+	对$x\neq0,-1,-2,\dots$, 定义
+	\[\Gamma(x)=\frac{1}{x}\dprod\frac{\bra{1+\frac{1}{n}}^x}{1+\frac{x}{n}}.\]
+	收敛性易证, 有如下结论．
+	\begin{enumerate}
+		\item (Euler-Gauss公式)
+		\[\Gamma(x)=\lim_{\nti}\frac{n!n^x}{x(x+1)\cdots(x+n)}.\]
+		\item (Weierstrass公式)
+		\[\Gamma(x)=\frac{\e^{-\gamma x}}{x}\dprod\bra{1+\frac{x}{n}}^{-1}\e^\frac{x}{n}.\]
+		\item (余元公式)
+		\[\Gamma(x)\Gamma(1-x)=\frac{\pi}{\sin\pi x}.\]
+	\end{enumerate}
+\end{prop}
+\begin{pf}
+	Euler-Gauss公式由部分乘积得到．同时得到推论$\Gamma(x+1)=x\Gamma(x),\,\Gamma(n+1)=n!,\,n\in\N$．Weierstrass由无穷乘积定义得到．余元公式由Weierstrass公式得到．
+\end{pf}
+
+\begin{exer}[Landau]
+	求证: 级数
+	\[\dseries\frac{n!a_n}{x(x+1)\cdots(x+n)}\quad(x\neq0,-1,-2,\dots)\]
+	与Dirichlet级数$\tseries\frac{a_n}{n^x}$对同样的$x$值收敛．
+\end{exer}
+\begin{pf}
+	二者之比为$\Gamma(x)$, 是单调收敛的, 用Abel判别法即证．
+\end{pf}
+
+判别级数发散有时比判敛更令人感到棘手, 以下列举一些判别级数发散的常用手段．
+\begin{enumerate}
+	\item 证明通项不趋于$0$．
+	\item 用Cauchy收敛准则．
+	\item 证明按某种方式加括号得到的级数发散．
+	\item 对正项级数, 证明其部分和数列无上界．
+	\item 对正项级数使用各种判别法．
+	\item 把级数通项分解为一个收敛级数的通项和一个发散级数的通项之和．
+\end{enumerate}
 
 
 
