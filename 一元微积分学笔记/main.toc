@@ -22,7 +22,7 @@
 \contentsline {subsection}{\numberline {8.1}广义积分的敛散性判别法}{16}{subsection.8.1}%
 \contentsline {subsection}{\numberline {8.2}广义积分的计算}{16}{subsection.8.2}%
 \contentsline {subsection}{\numberline {8.3}无穷限积分的特殊性质}{18}{subsection.8.3}%
-\contentsline {section}{\numberline {9}数项级数}{19}{section.9}%
+\contentsline {section}{\numberline {9}数项级数}{18}{section.9}%
 \contentsline {subsection}{\numberline {9.1}正项级数}{19}{subsection.9.1}%
 \contentsline {subsection}{\numberline {9.2}一般项级数}{21}{subsection.9.2}%
 \contentsline {subsection}{\numberline {9.3}无穷乘积}{22}{subsection.9.3}%

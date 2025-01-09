@@ -1,3 +1,4 @@
+% Compile with XeLaTeX.
 \documentclass[11pt,a4paper]{ctexart}
 \usepackage{newtxtext}
 \usepackage{geometry}
@@ -263,7 +264,7 @@
 \end{exer}
 \begin{pf}
 	先证明$\{x_n\}$有界．设$|y_n|<M$且$|x_1|<M$．由$|x_{n+1}|=\frac{1}{2}|y_n-x_n|\leq\frac{1}{2}|y_n|+\frac{1}{2}|x_n|$, 归纳地, $|x_n|<M$．
-
+	
 	对$2x_{n+1}=y_n-x_n$左右两边同时取上下极限, 解得$\llim x_n=\ulim x_n$, 即$\{x_n\}$收敛．
 \end{pf}
 
@@ -578,9 +579,7 @@
 \section{定积分}
 \subsection{积分学的若干重要定理}
 \begin{defn}
-	函数$f$在$U(x_0,\delta)$上的振幅$\omega_f(x,\delta)=\sup_{x\in U(x_0,\delta)}\cbra{f(x)}-\inf_{x\in U(x_0,\delta)}\cbra{f(x)}$．
-	
-	函数$f$在$x_0$处的振幅$\omega_f(x)=\lim_{\delta\to 0}\omega_f(x,\delta)$．
+	函数$f$在$U(x_0,\delta)$上的振幅$\omega_f(x,\delta)=\sup_{x\in U(x_0,\delta)}\cbra{f(x)}-\inf_{x\in U(x_0,\delta)}\cbra{f(x)}$．函数$f$在$x_0$处的振幅$\omega_f(x)=\lim_{\delta\to 0}\omega_f(x,\delta)$．
 \end{defn}
 
 \begin{prop}
@@ -603,7 +602,7 @@
 \end{thm}
 
 \begin{prop}
-	设$f,g\in R[a,b],\,\xi$和$\xi'$是分割$P$的两个介点集, 则
+	设$f,g\in R[a,b],\,\{\xi_i\}$和$\{\xi'_i\}$是分割$P$的两个介点集, 则
 	\[\lim_{\norm{P}\to0}\sum_P f(\xi_k)g(\xi'_k)\Delta x_k=\int_{a}^{b}f\cdot g.\]
 	更进一步, 设$m_k(f)\leq\mu_k\leq M_k(f),\,m_k(g)\leq\nu_k\leq M_k(g)$, 则
 	\[\lim_{\norm{P}\to0}\sum_P \mu_k\nu_k\Delta x_k=\int_{a}^{b}f\cdot g.\]
@@ -623,7 +622,7 @@
 	设$f$在$[a,b]$上的每一点处的极限都存在且为$0$, 求证: $f\in R[a,b],\,\int_{a}^{b}f=0$．
 \end{exer}
 \begin{pf}
-	断言: $\forall\,\epsilon>0,$使得$|f(x)|>\epsilon$的点$x$至多只有有限个．否则由聚点原理, 这与聚点处极限为0矛盾．也可以用有限开覆盖定理．
+	断言: $\forall\,\epsilon>0,$使得$|f(x)|>\epsilon$的点$x$至多只有有限个．否则由聚点原理, 这与聚点处极限为0矛盾．
 \end{pf}
 
 以下结论不难证得, 但具有启发性．上题也可以用它证明．
@@ -635,7 +634,7 @@
 	设$[a,b]$上处处大于$0$的函数$f\in R[a,b]$, 求证: $\int_{a}^{b}f>0.$
 \end{exer}
 \begin{pf}
-	用反证法．假设$\int_{a}^{b}f=0$．于是$\forall\,\epsilon>0,\,\int_{a}^{b}[\epsilon-f(x)]\,\d x>0$．利用上一命题, 用闭区间套定理, 取$\epsilon_n=1/n$, 将$\int_{a_n}^{b_n}f=0$继承到局部, 引出矛盾．
+	用反证法．假设$\int_{a}^{b}f=0$．于是$\forall\,\epsilon>0,\,\int_{a}^{b}[\epsilon-f(x)]\,\d x>0$．利用上一命题, 用闭区间套定理, 取$\epsilon_n=1/n$, 将$\int_{a_n}^{b_n}f=0$继承到局部, 引出矛盾．也可以用Darboux上下积分理论．
 \end{pf}
 \begin{rem}
 	这种利用$\epsilon$处理边界的方式是一种范式．
@@ -757,13 +756,13 @@
 
 \begin{thm}[Guldinus定理]
 	\phantom{text}
-
-	Guldinus第一定理: 位于右半平面内的平面曲线绕$y$轴旋转一周所产生的旋转曲面的面积等于曲线的质心绕$y$轴一周所经过的路程乘以曲线的弧长, 即$S_y=2\pi x_cl$．
-
-	Guldinus第二定理: 位于右半平面内的平面图形绕$y$轴旋转一周所产生的旋转立体的体积等于图形的质心绕$y$轴一周所经过的路程乘以图形的面积．即$V_y=2\pi x_cS$．
+	\begin{itemize}
+		\item Guldinus第一定理: 位于右半平面内的平面曲线绕$y$轴旋转一周所产生的旋转曲面的面积等于曲线的质心绕$y$轴一周所经过的路程乘以曲线的弧长, 即$S_y=2\pi x_cl$．
+		\item Guldinus第二定理: 位于右半平面内的平面图形绕$y$轴旋转一周所产生的旋转立体的体积等于图形的质心绕$y$轴一周所经过的路程乘以图形的面积．即$V_y=2\pi x_cS$．
+\end{itemize}
 \end{thm}
 
-利用定积分求数列极限时, 应当积极考虑用Taylor公式分离出主要部分, 以及用夹逼定理去除形式上无关紧要的部分．
+利用定积分求数列极限时, 应当积极考虑用Taylor公式分离出主要部分, 以及用夹逼定理去除形式上无关紧要的, 不影响本质的部分．
 \begin{exer}
 	计算极限
 	\[\lim_{\nti}\sbra{\bra{1+\frac{1}{n}}\sin\frac{\pi}{n^2}+\bra{1+\frac{2}{n}}\sin\frac{2\pi}{n^2}+\cdots+\bra{1+\frac{n}{n}}\sin\frac{n\pi}{n^2}}.\]
@@ -972,7 +971,7 @@ Dirichlet和Abel判别法难以判别广义积分发散．比较判别法无法�
 	计算广义积分$\int_{0}^{+\infty}\frac{1}{x}\sin\bra{x-\frac{1}{x}}\,\ dx$．
 \end{exer}
 
-有一些有名的广义积分, 其中的思想方法和结果都是重要的．可以利用它们计算出很多其他积分．
+% 有一些有名的广义积分, 其中的思想方法和结果都是重要的．可以利用它们计算出很多其他积分．
 \begin{exer}[Euler积分]
 	求证: $\int_{0}^{\pi/2}\ln\sin x=-\frac{\pi}{2}\ln 2$．
 \end{exer}
@@ -1032,7 +1031,7 @@ Dirichlet和Abel判别法难以判别广义积分发散．比较判别法无法�
 	求证: $\int_{0}^{+\infty}\e^{-t^2}\,\d t=\frac{\sqrt{\pi}}{2}$．
 \end{exer}
 \begin{pf}
-	指数函数和无穷限都难以处理．考虑用极限逼近指数函数, 并通过数列极限逼近无穷限积分．于是考虑以下积分, 积分上限不难通过定义域想到．
+	指数函数和无穷限都难以处理．考虑同时用极限逼近指数函数, 用数列极限逼近无穷限积分．于是考虑以下积分, 积分上限不难通过定义域想到．
 	\[I_n=\int_{0}^{\sqrt{n}}\bra{1-\frac{t^2}{n}}^n\,\d t\xlongequal{t=\sqrt{n}\sin x}\sqrt{n}\int_{0}^{\pi/2}\cos^{2n+1}x\,\d x\to\frac{\sqrt{\pi}}{2}\quad(\nti).\]
 	等式右端已经得到, 自然考虑将二者作差．只需证
 	\[\lim_{\nti}\int_{0}^{\sqrt{n}}\sbra{\e^{-t^2}-\bra{1-\frac{t^2}{n}}^n}\,\d t=0.\]
@@ -1134,7 +1133,7 @@ Du Bois-Reymond定理和Abel定理分别证明了没有收敛或发散最慢的�
 
 以下命题是面积原理的应用, 联系了正项级数和广义积分．
 \begin{prop}
-	若$f$在$[1,+\infty)$单调递减, 则存在如下极限, 且$0\leq A\leq1$．
+	若$f$在$[1,+\infty)$单调递减, 则存在如下极限, 且$0\leq A\leq f(1)$．
 	\[\lim_{\nti}\bra{\dseries f(k)-\int_{1}^{n}f(x)\,\d x}=A.\]
 \end{prop}
 
