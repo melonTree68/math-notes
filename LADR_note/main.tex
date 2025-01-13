@@ -63,7 +63,6 @@
 \newtheorem{rem}[thm]{Remark}
 \newtheorem{rems}[thm]{Remarks}
 \newtheorem{warn}[thm]{Warning}
-\newtheorem{sch}[thm]{Scholium}
 
 
 % ---------- Symbol Macros ----------
@@ -87,6 +86,11 @@
 \newcommand{\W}{\bm{W}}
 \renewcommand{\u}{\bm{u}}
 \renewcommand{\v}{\bm{v}}
+% \newcommand{\U}{{U}}
+% \newcommand{\V}{{V}}
+% \newcommand{\W}{{W}}
+% \renewcommand{\u}{{u}}
+% \renewcommand{\v}{{v}}
 \newcommand{\w}{\bm{w}}
 \newcommand{\x}{\bm{x}}
 
@@ -140,7 +144,7 @@ We declare several notations below for convenience and clarity.
 \end{defn}
 
 \begin{lem}[Linear dependence lemma]
-	Suppose $\v_1,\dots,\v_m$ is a linearly dependent set in $\V$. Then there exists $k\in\{1,2,\dots,m\}$ s.t.
+	Suppose $\v_1,\dots,\v_m$ is a linearly dependent set in $\V$. Then there exists $k\in\{1,2,\dots,m\}$ such that
 	\[\v_k\in\spn\cbra{\v_1,\dots,\v_m}.\]
 	Further more, removing the $k^\text{th}$ term from the list does not change the span.\footnote{The lemma lays the foundation for a series of basic results for vector spaces.}
 \end{lem}
@@ -165,7 +169,7 @@ We declare several notations below for convenience and clarity.
 		\dim Z & = \dim T(Z) + \dim\ker \rest{T}{Z} \\
 		& \leq \dim T(Z) + \dim\ker T \\
 		& = \dim ST(Z) + \dim\ker \rest{S}{T(Z)} + \dim\ker T \\
-		& \leq \dim\ker S + \dim\ker T.
+		& \leq \dim\ker S + \dim\ker T.\qedhere
 	\end{align*}
 \end{proof}
 
@@ -211,12 +215,12 @@ We declare several notations below for convenience and clarity.
 	It can be shown that $S$ is a linear map, and that $S\circ T=I$ and $T\circ S=I$, where $I$ is the identity operator on the proper vector space. That proves $T$ is indeed an isomorphism between the two vector spaces, as desired.
 \end{proof}
 
-\begin{thm}\label{thm: test for translate}
+\begin{prop}\label{prop: test for translate}
 	A nonempty subset $A$ of $\V$ is a translate of some subspace of $\V$ if and only if $\lambda\v+\bra{1-\lambda}\w\in A$ for all $\v,\w\in A$ and all $\lambda\in\F$.
-\end{thm}
+\end{prop}
 
 \begin{exer}
-	Suppose $A_1=\v+\U_1$ and $A_2=\w+\U_2$ for some $\v,\w\in\V$ and some subspaces $\U_1$, $\U_2$ of $\V$. Prove that $A_1\cap A_2$ is either the empty set or a translate of some subspace of $\V$.\footnote{Recall Theorem~\ref{thm: test for translate}.}
+	Suppose $A_1=\v+\U_1$ and $A_2=\w+\U_2$ for some $\v,\w\in\V$ and some subspaces $\U_1$, $\U_2$ of $\V$. Prove that $A_1\cap A_2$ is either the empty set or a translate of some subspace of $\V$.\footnote{Recall Proposition~\ref{prop: test for translate}.}
 \end{exer}
 
 \begin{prop}\label{prop: direct sum from quotient space}
@@ -224,16 +228,16 @@ We declare several notations below for convenience and clarity.
 \end{prop}
 
 \begin{exer}
-	Suppose $\U$ is a subspace of $\V$ s.t. $\V/\U$ is finite-dimensional.
+	Suppose $\U$ is a subspace of $\V$ such that $\V/\U$ is finite-dimensional.
 	\begin{enumerate}
-		\item Show that if $\W$ is a finite-dimensional subspace of $\V$ and $\V=\U+\W$, then $\dim\W\geq\dim\V/\U$.
-		\item Prove that there exists a finite-dimensional subspace $\W$ of $\V$ s.t. $\dim\W=\dim\V/\U$ and $\V=\U\oplus\W$.
+		\item Prove that if $\W$ is a finite-dimensional subspace of $\V$ and $\V=\U+\W$, then $\dim\W\geq\dim\V/\U$.
+		\item Prove that there exists a finite-dimensional subspace $\W$ of $\V$ such that $\V=\U\oplus\W$ and $\dim\W=\dim\V/\U$.
 	\end{enumerate}
 \end{exer}
 \begin{proof}
 	Let $\overline{\w}_1+\U,\dots,\overline{\w}_m+\U$ be a basis of $\V/\U$. Then by Proposition~\ref{prop: direct sum from quotient space}, we have $\V=\spn\cbra{\overline{\w}_1,\dots,\overline{\w}_m}\oplus\U$. Let $\W_0=\spn\cbra{\overline{\w}_1,\dots,\overline{\w}_m}$, then $\V=\U\oplus\W_0$, as desired.
 
-	Now we prove that for each subspace $\W$ of $\V$ s.t. $\V=\U+\W$, we have $\dim\W\geq m=\dim\V/\U$.
+	Now we prove that for each subspace $\W$ of $\V$ such that $\V=\U+\W$, we have $\dim\W\geq m=\dim\V/\U$.
 	
 	For each $\overline{\w}_i\in\V$ above, by definition we have $\overline{\w}_i=\u_i+\w_i$ for some $\u_i\in\U$ and $\w_i\in\W$. It can be shown from the linear independence of $\overline{\w}_1+\U,\dots,\overline{\w}_m+\U$ that $\overline{\w}_1-\u_1,\dots,\overline{\w}_m-\u_m$ are independent vectors in $\W$. Hence $\dim\W\geq m$.
 \end{proof}
@@ -304,7 +308,7 @@ We declare several notations below for convenience and clarity.
 		\end{bmatrix}=A^\intercal\mM\bra{S,\bra{\u_1,\dots,\u_n}}=A^\intercal.
 	\end{align*}\vspace{0em}
 
-	Consider basis $\overline{\v}_1,\dots,\overline{\v}_n$ of $\V$ s.t. the change of basis matrix from $\v$'s to $\overline{\v}$'s is $A^\intercal$. Thus
+	Consider basis $\overline{\v}_1,\dots,\overline{\v}_n$ of $\V$ such that the change of basis matrix from $\v$'s to $\overline{\v}$'s is $A^\intercal$. Thus
 	\[\mM\bra{T,\bra{\overline{\v}_1,\dots,\overline{\v}_n}}=\mM\bra{T,\bra{\v_1,\dots,\v_n}}\mM\bra{I,\bra{\overline{\v}_1,\dots,\overline{\v}_n},\bra{\v_1,\dots,\v_n}}=I.\]
 	Then by Lemma~\ref{lem: matrix of dual basis}, the dual basis of $\overline{\v}_1,\dots,\overline{\v}_n$ is precisely $\phi_1,\dots,\phi_n$, as desired.
 \end{proof}
@@ -312,7 +316,7 @@ We declare several notations below for convenience and clarity.
 
 \section{Polynomials}
 \begin{thm}[Division algorithm for polynomials]
-	Suppose that $p,s\in\mP(\F)$, with $s\neq0$. Then there exist unique polynomials $q,r\in\mP(\F)$ s.t. $p=sq+r$.\footnote{The division algorithm for polynomials can be proved without using any linear algebra. This proof makes a nice use of a basis of $\mP_n(\F)$.}
+	Suppose that $p,s\in\mP(\F)$, with $s\neq0$. Then there exist unique polynomials $q,r\in\mP(\F)$ such that $p=sq+r$.\footnote{The division algorithm for polynomials can be proved without using any linear algebra. This proof makes a nice use of a basis of $\mP_n(\F)$.}
 \end{thm}
 \begin{proof}
 	Let $n=\deg p$ and $m=\deg s$. The case where $n<m$ is trivial. Thus we now assume that $n\geq m$.
@@ -321,10 +325,10 @@ We declare several notations below for convenience and clarity.
 	\[1,z,\dots,z^{m-1},s,zs,\dots,z^{n-m}s\]
 	is linearly independent in $\mP_n(\F)$. And it also has length $n+1$. Hence the list is a basis of $\mP_n(\F)$.
 
-	Because $p\in\mP_n(\F)$, there exist unique constants $a_0,\dots,a_{m-1},b_0,\dots,b_{n-m}\in\F$ s.t.
+	Because $p\in\mP_n(\F)$, there exist unique constants $a_0,\dots,a_{m-1},b_0,\dots,b_{n-m}\in\F$ such that
 	\begin{align*}
 		p&=a_0+a_1z+\cdots+a_{m-1}z^{m-1}+b_0s+b_1zs+\cdots+b_{n-m}z^{n-m}s\\
-		&=\underbrace{\bra{a_0+a_1z+\cdots+a_{m-1}z^{m-1}}}_q+s\underbrace{\bra{b_0+b_1z+\cdots+b_{n-m}z^{n-m}}}_r
+		&=\bra{a_0+a_1z+\cdots+a_{m-1}z^{m-1}}+s\bra{b_0+b_1z+\cdots+b_{n-m}z^{n-m}}.\qedhere
 	\end{align*}
 \end{proof}
 
