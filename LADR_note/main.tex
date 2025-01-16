@@ -144,17 +144,20 @@
 \begin{defn}
 	The complexification of $V$, denoted by $V_\C$, equals $V\times V$ with normal addition and real scalar multiplication for product space. But we write an element $(u,v)$ of $V_\C$ as $u+iv$. Complex scalar multiplication is defined by
 	\[(a+bi)(u+iv)=(au-bv)+i(av+bu)\]
-	for all $a,b\in\R$ and all $u,v\in V$.\footnote{Think of $V$ as a subset of $V_\C$ by identifying $u\in V$ with $u+i0$. The construction of $V_\C$ from $V$ can then be thought of as generalizing the construction of $\C^n$ from $\R^n$.}
+	for all $a,b\in\R$ and all $u,v\in V$.%
+	\footnote{Think of $V$ as a subset of $V_\C$ by identifying $u\in V$ with $u+i0$. The construction of $V_\C$ from $V$ can then be thought of as generalizing the construction of $\C^n$ from $\R^n$.}
 \end{defn}
 
 \begin{lem}[Linear dependence lemma]
 	Suppose $v_1,\dots,v_m$ is a linearly dependent set in $V$. Then there exists $k\in\{1,2,\dots,m\}$ such that
 	\[v_k\in\spn(v_1,\dots,v_m).\]
-	Furthermore, removing the $k^\text{th}$ term from the list does not change the span.\footnote{This lemma lays the foundation for a series of basic results for vector spaces.}
+	Furthermore, removing the $k^\text{th}$ term from the list does not change the span.%
+	\footnote{This lemma lays the foundation for a series of basic results for vector spaces.}
 \end{lem}
 
 \begin{thm}
-	Any two bases of a finite-dimensional vector space have the same length.\footnote{This proposition ensures that the \emph{dimension} of a vector space is well-defined.}
+	Any two bases of a finite-dimensional vector space have the same length.%
+	\footnote{This proposition ensures that the \emph{dimension} of a vector space is well-defined.}
 \end{thm}
 \begin{proof}
 	Suppose $V$ is finite-dimensional. Let $\B_1$ and $\B_2$ be two bases of $V$. Considering $\B_1$ as an independent set and $\B_2$ as a spanning set leads to $\#\B_1\leq\#\B_2$. Interchanging the roles of $\B_1$ and $\B_2$ and we have $\#\B_2\leq\#\B_1$. Thus $\#\B_1=\#\B_2$.
@@ -178,19 +181,24 @@
 \end{proof}
 
 \begin{cor}[Sylvester's rank inequality]
-	Suppose $A\in\F^{m,n}$ and $B\in\F^{n,p}$ are two matrices. Then\footnote{There is a slicker proof for this inequality using block matrices. But the proof here using linear maps is more informative.}
+	Suppose $A\in\F^{m,n}$ and $B\in\F^{n,p}$ are two matrices. Then%
+	\footnote{There is a slicker proof for this inequality using block matrices. But the proof here using linear maps is more informative.}
 	\[\rank A+\rank B-n\leq\rank\bra{AB}.\]
 \end{cor}
 
 \subsection{Products and Quotients of Vector Spaces}
 \begin{lem}\label{lem: direct sum and product space}
-	Suppose $V_1,\dots,V_m$ are subspaces of $V$.\footnote{Note that $V$ does not have to be finite-dimensional. Recall that $V_1+\cdots+V_m$ is a direct sum if and only if the only way to write $0$ as a sum of $v_1+\cdots+v_m$, where each $v_k\in V_k$, is by taking each $v_k$ equal to $0$.} Define a linear map $\Gamma: V_1\times\cdots\times V_m \to V_1+\cdots+V_m$ by
+	Suppose $V_1,\dots,V_m$ are subspaces of $V$.%
+    \footnote{Note that $V$ does not have to be finite-dimensional. Recall that $V_1+\cdots+V_m$ is a direct sum if and only if the only way to write $0$ as a sum of $v_1+\cdots+v_m$, where each $v_k\in V_k$, is by taking each $v_k$ equal to $0$.}
+	Define a linear map $\Gamma: V_1\times\cdots\times V_m \to V_1+\cdots+V_m$ by
 	\[\Gamma\bra{v_1,\dots,v_m} = v_1+\cdots+v_m.\]
 	Then $V_1+\cdots+V_m$ is a direct sum if and only if $\Gamma$ is injective.
 \end{lem}
 
 \begin{thm}
-	Suppose $V$ is finite-dimensional and $V_1,\dots,V_m$ are subspaces of $V$. Then $V_1+\cdots+V_m$ is a direct sum if and only $\dim\bra{V_1+\cdots+V_m} = \dim V_1+\cdots+\dim V_m$.\footnote{Recall Lemma~\ref{lem: direct sum and product space}.}
+	Suppose $V$ is finite-dimensional and $V_1,\dots,V_m$ are subspaces of $V$. Then $V_1+\cdots+V_m$ is a direct sum if and only if%
+    \footnote{Recall Lemma~\ref{lem: direct sum and product space}.}
+	\[\dim\bra{V_1+\cdots+V_m} = \dim V_1+\cdots+\dim V_m.\]
 \end{thm}
 % \begin{proof}
 % 	Recall Lemma~\ref{lem: direct sum and product space}.Because $\Gamma$ is surjective, by the fundamental theorem of linear maps, $V_1+\cdots+V_m$ is a direct sum if and only if $\dim\bra{V_1+\cdots+V_m} = \dim\bra{V_1\times\cdots\times V_m} = \dim V_1+\cdots+\dim V_m$.
@@ -224,11 +232,13 @@
 \end{prop}
 
 \begin{exer}
-	Suppose $A_1=v+U_1$ and $A_2=w+U_2$ for some $v,w\in V$ and some subspaces $U_1$, $U_2$ of $V$. Prove that $A_1\cap A_2$ is either the empty set or a translate of some subspace of $V$.\footnote{Recall Proposition~\ref{prop: test for translate}.}
+	Suppose $A_1=v+U_1$ and $A_2=w+U_2$ for some $v,w\in V$ and some subspaces $U_1$, $U_2$ of $V$. Prove that $A_1\cap A_2$ is either the empty set or a translate of some subspace of $V$.%
+    \footnote{Recall Proposition~\ref{prop: test for translate}.}
 \end{exer}
 
 \begin{prop}\label{prop: direct sum from quotient space}
-	Suppose $U$ is a subspace of $V$ and $v_1+U,\dots,v_m+U$ is a basis of $V/U$ and $u_1,\dots,u_n$ is a basis of $U$. Then $v_1,\dots,v_m,u_1,\dots,u_n$ is a basis of $V$. In other words, $V=\spn(v_1,\dots,v_m)\oplus U$.\footnote{$V=\spn(v_1,\dots,v_m)\oplus U$ still holds without the hypothesis that $U$ is finite-dimensional.}
+	Suppose $U$ is a subspace of $V$ and $v_1+U,\dots,v_m+U$ is a basis of $V/U$ and $u_1,\dots,u_n$ is a basis of $U$. Then $v_1,\dots,v_m,u_1,\dots,u_n$ is a basis of $V$. In other words, $V=\spn(v_1,\dots,v_m)\oplus U$.%
+    \footnote{$V=\spn(v_1,\dots,v_m)\oplus U$ still holds without the hypothesis that $U$ is finite-dimensional.}
 \end{prop}
 
 \begin{exer}
@@ -251,7 +261,8 @@
 \begin{thm}
 	Suppose $V$ and $W$ are finite-dimensional and $T\in\L\bra{V,W}$. Then
 	\begin{center}
-	$T$ is surjective $\iff$ $T'$ is injective \quad and \quad $T$ is injective $\iff$ $T'$ is surjective.\footnote{This result can be useful because sometimes it is easier to verify that $T'$ is injective (surjective) than to show directly that $T$ is surjective (injective).}
+	$T$ is surjective $\iff$ $T'$ is injective \quad and \quad $T$ is injective $\iff$ $T'$ is surjective.%
+    \footnote{This result can be useful because sometimes it is easier to verify that $T'$ is injective (surjective) than to show directly that $T$ is surjective (injective).}
 	\end{center}
 \end{thm}
 
@@ -264,7 +275,8 @@
 	Suppose $V$ is finite-dimensional and $U$ and $W$ are subspaces of $V$.
 	\begin{enumerate}
 		\item Prove that $W^0\subseteq U^0$ if and only if $U\subseteq W$.
-		\item Prove that $W^0=U^0$ if and only if $U=W$.\footnote{Recall Proposition~\ref{prop: relation between subspace and annihilator}.}
+		\item Prove that $W^0=U^0$ if and only if $U=W$.%
+    	\footnote{Recall Proposition~\ref{prop: relation between subspace and annihilator}.}
 	\end{enumerate}
 \end{exer}
 
@@ -314,10 +326,23 @@
 		&=A^\intercal\cdot\M\bra{S,\bra{u_1,\dots,u_n}}=A^\intercal.
 	\end{align*}
 
-	Consider basis $v_1,\dots,v_n$ of $V$ such that the change of basis matrix from $u$'s to $v$'s is $\bra{A^\intercal}^{-1}$.\footnote{The change of basis for $V'\to V'$ corresponds to the transpose of $V\leftarrow V$, where transpose and inverse both come from duality. That gives the idea of considering $\bra{A^\intercal}^{-1}$.} Thus
+	Consider basis $v_1,\dots,v_n$ of $V$ such that the change of basis matrix from $u$'s to $v$'s is $\bra{A^\intercal}^{-1}$.%
+    \footnote{The change of basis for $V'\to V'$ corresponds to the transpose of $V\leftarrow V$, where transpose and inverse both come from duality. That gives the idea of considering $\bra{A^\intercal}^{-1}$.}
+	Thus
 	\[\M\bra{T,\bra{v_1,\dots,v_n}}=\M\bra{T,\bra{u_1,\dots,u_n}}\cdot\M\bra{I,\bra{v_1,\dots,v_n},\bra{u_1,\dots,u_n}}=I.\]
 	Then by Proposition~\ref{prop: matrix of dual basis}, the dual basis of $v_1,\dots,v_n$ is precisely $\phi_1,\dots,\phi_n$, as desired.
 \end{proof}
+
+\begin{exer}[A natural isomorphism from primal space onto double dual space]
+	Define $\Lambda:V\to V''$ by
+	\[(\Lambda v)(\phi)=\phi(v)\]
+	for each $v\in V$ and $\phi\in V'$.
+	\begin{enumerate}
+		\item Prove that if $T\in\L(V)$, then $T''\circ\Lambda=\Lambda\circ T$.
+		\item Prove that if $V$ is finite-dimensional, then $\Lambda$ is an isomorphism from $V$ onto $V''$.%
+    	\footnote{Suppose $V$ is finite-dimensional. Then $V$ and $V'$ are isomorphic, but finding an isomorphism from $V$ onto $V'$ generally requires choosing a basis of $V$. In contrast, the isomorphism $\Lambda$ from $V$ onto $V''$ does not require a choice of basis and thus is more natural.}
+	\end{enumerate}
+\end{exer}
 
 
 \section{Polynomials}
@@ -326,11 +351,13 @@
 \end{thm}
 
 \begin{thm}
-	Suppose $p\in\P(\F)$ is a nonconstant polynomial of degree $m$. Then $p$ has at most $m$ zeros in $\F$.\footnote{This theorem indicates that when a polynomial $p$ has too many zeros, $p=0$.}\footnote{This theorem implies that the coefficients of a polynomial are uniquely determined. In particular, the \emph{degree} of a polynomial is well-defined.}
+	Suppose $p\in\P(\F)$ is a nonconstant polynomial of degree $m$. Then $p$ has at most $m$ zeros in $\F$.%
+	\footnote{This theorem indicates that when a polynomial $p$ has too many zeros, $p=0$.}%
+    \footnote{This theorem implies that the coefficients of a polynomial are uniquely determined. In particular, the \emph{degree} of a polynomial is well-defined.}
 \end{thm}
 
 \begin{thm}[Division algorithm for polynomials]
-	Suppose that $p,s\in\P(\F)$, with $s\neq0$. Then there exist unique polynomials $q,r\in\P(\F)$ such that $p=sq+r$.
+	Suppose that $p,s\in\P(\F)$, with $s\neq0$. Then there exist unique polynomials $q,r\in\P(\F)$ such that $p=sq+r$.%
 	% \footnote{The division algorithm for polynomials can be proved without using any linear algebra. This proof makes a nice use of a basis of $\P_n(\F)$.}
 \end{thm}
 \begin{proof}
