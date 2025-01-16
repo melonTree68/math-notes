@@ -149,12 +149,12 @@
 
 \begin{lem}[Linear dependence lemma]
 	Suppose $v_1,\dots,v_m$ is a linearly dependent set in $V$. Then there exists $k\in\{1,2,\dots,m\}$ such that
-	\[v_k\in\spn\cbra{v_1,\dots,v_m}.\]
+	\[v_k\in\spn(v_1,\dots,v_m).\]
 	Furthermore, removing the $k^\text{th}$ term from the list does not change the span.\footnote{This lemma lays the foundation for a series of basic results for vector spaces.}
 \end{lem}
 
 \begin{thm}
-	Any two bases of a finite-dimensional vector space have the same length.\footnote{This proposition ensures that \emph{dimension} is well-defined.}
+	Any two bases of a finite-dimensional vector space have the same length.\footnote{This proposition ensures that the \emph{dimension} of a vector space is well-defined.}
 \end{thm}
 \begin{proof}
 	Suppose $V$ is finite-dimensional. Let $\B_1$ and $\B_2$ be two bases of $V$. Considering $\B_1$ as an independent set and $\B_2$ as a spanning set leads to $\#\B_1\leq\#\B_2$. Interchanging the roles of $\B_1$ and $\B_2$ and we have $\#\B_2\leq\#\B_1$. Thus $\#\B_1=\#\B_2$.
@@ -211,7 +211,7 @@
 	\[\phi_i\bra{v_i}=\Gamma\bra{0,\dots,v_i,\dots,0}\]
 	with $v_i$ in the $i^\text{th}$ slot and $0$ in all other slots. It can be verified that $\phi_i\in\L\bra{V_i,W}$.
 
-	Let $T\bra{\Gamma}=\bra{\phi_1,\dots,\phi_m}$. It can be verified that $T$ is a linear map. We prove $T$ is an isomorphism by constructing its inverse linear map $S$.
+	Define $T\bra{\Gamma}=\bra{\phi_1,\dots,\phi_m}$. It can be verified that $T$ is a linear map. We prove $T$ is an isomorphism by constructing its inverse linear map $S$.
 
 	For every $\bra{\phi_1,\dots,\phi_m}\in\L\bra{V_1,W}\times\cdots\times\L\bra{V_m,W}$, let
 	\[S\bra{\phi_1,\dots,\phi_m}\bra{v_1,\dots,v_m}=\phi_1\bra{v_1}+\cdots+\phi_m\bra{v_m}.\]
@@ -228,7 +228,7 @@
 \end{exer}
 
 \begin{prop}\label{prop: direct sum from quotient space}
-	Suppose $U$ is a subspace of $V$ and $v_1+U,\dots,v_m+U$ is a basis of $V/U$ and $u_1,\dots,u_n$ is a basis of $U$. Then $v_1,\dots,v_m,u_1,\dots,u_n$ is a basis of $V$. In other words, $V=\spn\cbra{v_1,\dots,v_m}\oplus U$.\footnote{$V=\spn\cbra{v_1,\dots,v_m}\oplus U$ still holds without the hypothesis that $U$ is finite-dimensional.}
+	Suppose $U$ is a subspace of $V$ and $v_1+U,\dots,v_m+U$ is a basis of $V/U$ and $u_1,\dots,u_n$ is a basis of $U$. Then $v_1,\dots,v_m,u_1,\dots,u_n$ is a basis of $V$. In other words, $V=\spn(v_1,\dots,v_m)\oplus U$.\footnote{$V=\spn(v_1,\dots,v_m)\oplus U$ still holds without the hypothesis that $U$ is finite-dimensional.}
 \end{prop}
 
 \begin{exer}
@@ -239,7 +239,7 @@
 	\end{enumerate}
 \end{exer}
 \begin{proof}
-	Let $\overline{w}_1+U,\dots,\overline{w}_m+U$ be a basis of $V/U$. Then by Proposition~\ref{prop: direct sum from quotient space}, we have $V=\spn\cbra{\overline{w}_1,\dots,\overline{w}_m}\oplus U$. Let $W_0=\spn\cbra{\overline{w}_1,\dots,\overline{w}_m}$, then $V=U\oplus W_0$, as desired.
+	Let $\overline{w}_1+U,\dots,\overline{w}_m+U$ be a basis of $V/U$. Then by Proposition~\ref{prop: direct sum from quotient space}, we have $V=\spn(\overline{w}_1,\dots,\overline{w}_m)\oplus U$. Let $W_0=\spn(\overline{w}_1,\dots,\overline{w}_m)$, then $V=U\oplus W_0$, as desired.
 
 	Now we prove that for each subspace $W$ of $V$ such that $V=U+W$, we have $\dim W\geq m=\dim V/U$.
 	
@@ -294,7 +294,7 @@
 	
 	Define $S,T\in\L\bra{V,\F^n}$ by
 	\[T(v)=\bra{\phi_1(v),\dots,\phi_n(v)},\quad S(v)=\bra{\psi_1(v),\dots,\psi_n(v)}.\]
-	Then by Lemma~\ref{prop: matrix of dual basis}, $\M\bra{S,\bra{u_1,\dots,u_n}}=I$.
+	Then by Proposition~\ref{prop: matrix of dual basis}, $\M\bra{S,\bra{u_1,\dots,u_n}}=I$.
 	
 	Let $A$ be the change of basis matrix from $\psi$'s to $\phi$'s, i.e.,
 	% \[A=\M\bra{I,\bra{\phi_1,\dots,\phi_n},\bra{\psi_1,\dots,\psi_n}}.\]
@@ -353,11 +353,11 @@
 \begin{proof}
 	Suppose $p\in\P(\C)$ is a nonconstant polynomial with highest-order nonzero term $c_mz^m$. Then $\abs{p(z)}\to\infty$ as $\abs{z}\to\infty$. Thus the continuous function $z\mapsto\abs{p(z)}$ has a global minimum at some $\zeta\in\C$. Assume that $p(\zeta)\neq0$.
 
-	Consider polynomial $q=p(z+\zeta)/p(\zeta)$. The function $z\mapsto\abs{q(z)}$ has a global minimum at $z=0$. Write
+	Consider polynomial $q(z)=p(z+\zeta)/p(\zeta)$. The function $z\mapsto\abs{q(z)}$ has a global minimum at $z=0$. Write
 	\[q(z)=1+a_kz_k+\cdots+a_mz^m\]
 	where $k$ is the smallest positive integer such that the coefficient of $z_k$ is nonzero.
 	
-	Let $\beta$ be the $k^\text{th}$ root of $-1/a_k$. There is a constant $c>1$ such that if $t\in(0,1)$, then
+	Let $\beta$ be a $k^\text{th}$ root of $-1/a_k$. There is a constant $c>1$ such that if $t\in(0,1)$, then
 	\[\abs{q(t\beta)}\leq\abs{1+a_kt^k\beta^k}+ct^{k+1}=1-t^k(1-tc).\]
 	Thus taking $t$ to be $1/(2c)$ leads to $\abs{q(t\beta)}<1$. The contradiction implies that $p(\zeta)=0$, as desired.
 \end{proof}
@@ -378,8 +378,12 @@
 	Suppose $p,q\in\P(\C)$ are nonconstant polynomials with no zeros in common. Let $m=\deg p$ and $n=\deg q$. Prove that there exist $r\in\P_{n-1}(\C)$ and $s\in\P_{m-1}(\C)$ such that $rp+sq=1$.
 \end{exer}
 \begin{proof}
-	
+	Define $T:\P_{n-1}(\C)\times\P_{m-1}(\C)\to\P_{m+n-1}(\C)$ by $T(r,s)=rp+sq$. It can be shown that $T$ is an injective linear map. Because the domain space and target space have the same dimension, $T$ is surjective, completing the proof.
 \end{proof}
+
+
+\section{Eigenvalues and Eigenvectors}
+
 
 
 \end{document}
