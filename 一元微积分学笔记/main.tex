@@ -1,10 +1,10 @@
-% Compile with XeLaTeX.
 \documentclass[11pt,a4paper]{ctexart}
-\usepackage{newtxtext}
+% \usepackage{newtxtext}
 \usepackage{geometry}
 \usepackage[dvipsnames,svgnames]{xcolor}
 \usepackage[strict]{changepage}
 \usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{fontspec}
 \usepackage{extarrows}
 \usepackage{thmtools}
 \usepackage{bm}
@@ -19,6 +19,8 @@
 \usepackage{sectsty}
 \usepackage{hyperref}
 \usepackage{titlesec}
+\setmainfont{Times New Roman}
+\newfontfamily{\garamond}{EB Garamond}
 
 
 % ---------- Preamble ----------
@@ -141,6 +143,30 @@
 \thispagestyle{empty}
 \tableofcontents
 \justifying
+\newpage
+
+
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+	\garamond
+	\LARGE
+	Don't just read it; fight it!\\
+	Ask your own questions.\\
+	Look for your own examples.\\
+	Discover your own proofs.\\
+	Is the hypothesis necessary?\\
+	Is the converse true?\\
+	What happens in the classical special case?\\
+	What about the degenerate cases?\\
+	Where does the proof use the hypothesis?
+\end{center}
+\begin{flushright}
+	\garamond
+	\LARGE
+	\textemdash\,Paul Holmos\phantom{placehold}
+\end{flushright}
+\vspace*{\fill}
 \newpage
 
 
@@ -294,7 +320,7 @@
 	\[\lim_{\nti}\frac{\ln a_n}{n}=\inf_{n\geq 1}\cbra{\frac{\ln a_n}{n}}.\]
 \end{exer}
 \begin{pf}
-	设所求证等式右端为$\alpha$．观察条件, 条件对$\{a_n\}$的增速作出了限制．为了利用条件控制$\{a_n\}$, 想到取定$N\in\N$, 用$N$的整数倍估计$n$．设$n=mN+r$, 其中$m,r\in\N,\,r<N$．于是$k$只有有限个取值, 可以在$\nti$的过程中被控制．变形得
+	设所求证等式右端为$\alpha$．观察条件, 条件对$\{a_n\}$的增速作出了限制．为了利用条件控制$\{a_n\}$, 想到取定$N\in\N$, 用$N$的整数倍估计$n$．设$n=mN+k$, 其中$m,k\in\N,\,r<N$．于是$k$只有有限个取值, 可以在$\nti$的过程中被控制．变形得
 	\[\frac{\ln a_n}{n}\leq\frac{mN}{n}\,\frac{\ln a_N}{N}+\frac{\ln a_k}{n}.\]
 	比较所求证等式与上式, 自然想到$\forall\,\epsilon>0$, 取$\alpha\leq\frac{\ln a_N}{N}<\alpha+\epsilon.$
 	令$\nti$, 在不等式两边取上极限．
@@ -343,7 +369,7 @@
 	证明满足某性质的点有至多可数个的常用方法:
 	\begin{enumerate}
 		\item 用可数集 (例如$\Q$) 唯一标记它．
-		\item 将其表示为可数个可数集的并 (例如$E=\bigcup_{n\in \N}E_{\frac{1}{n}}$)．这种方法对零测集的证明也适用．
+		\item 将其表示为可数个可数集的并 (例如$\textstyle E=\bigcup_{n\in \N}E_{1/n}$)．这种方法对零测集的证明也适用．
 	\end{enumerate}
 \end{rem}
 
@@ -1134,7 +1160,7 @@ Du Bois-Reymond定理和Abel定理分别证明了没有收敛或发散最慢的�
 以下命题是面积原理的应用, 联系了正项级数和广义积分．
 \begin{prop}
 	若$f$在$[1,+\infty)$单调递减, 则存在如下极限, 且$0\leq A\leq f(1)$．
-	\[\lim_{\nti}\bra{\dseries f(k)-\int_{1}^{n}f(x)\,\d x}=A.\]
+	\[\lim_{\nti}\bra{\sum_{k=1}^{n}f(k)-\int_{1}^{n}f(x)\,\d x}=A.\]
 \end{prop}
 
 \begin{exer}
@@ -1227,16 +1253,16 @@ Lagrange中值定理在正项级数的敛散性判别中有其应用．其思想
 	判别级数$\tseries(-1)^n\,\frac{\cos^2n}{n}$的敛散性．
 \end{exer}
 
-在级数的敛散性判别中, 可以先不处理不影响本质的项, 留到最后用Abel判别法处理．
-\begin{exer}
-	判别以下级数的敛散性．\vspace{-.5em}
-	\begin{enumerate}
-		\begin{multicols}{2}
-			\item $\dseries\frac{(-1)^n2^\frac{1}{n}}{\sqrt{n}}.$
-			\item $\dseries\frac{\sin nx}{n}\bra{1+\frac{1}{n}}^n.$
-		\end{multicols}
-	\end{enumerate}
-\end{exer}
+% 在级数的敛散性判别中, 可以先不处理不影响本质的项, 留到最后用Abel判别法处理．
+% \begin{exer}
+% 	判别以下级数的敛散性．\vspace{-.5em}
+% 	\begin{enumerate}
+% 		\begin{multicols}{2}
+% 			\item $\dseries\frac{(-1)^n2^\frac{1}{n}}{\sqrt{n}}.$
+% 			\item $\dseries\frac{\sin nx}{n}\bra{1+\frac{1}{n}}^n.$
+% 		\end{multicols}
+% 	\end{enumerate}
+% \end{exer}
 
 
 \subsection{无穷乘积}

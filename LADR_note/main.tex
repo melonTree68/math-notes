@@ -11,7 +11,6 @@
 \usepackage{fancyhdr} % custom headers and footers
 \usepackage{ragged2e}
 \usepackage{sectsty} % Allow customizing section commands
-% \usepackage{lmodern} % Return to CMU Serif
 
 
 % ---------- Preamble ----------
@@ -81,21 +80,8 @@
 \renewcommand{\P}{\mathcal{P}}
 \newcommand{\B}{\mathcal{B}}
 \newcommand{\zero}{\mathbf{0}}
+\newcommand{\e}{\mathrm{e}}
 \renewcommand{\intercal}{t}
-% \newcommand{\U}{\bm{U}}
-% \newcommand{\V}{\bm{V}}
-% \newcommand{W}{\bm{W}}
-% \renewcommand{\u}{\bm{u}}
-% \renewcommand{\v}{\bm{v}}
-% \newcommand{\w}{\bm{w}}
-% \newcommand{\x}{\bm{x}}
-% \newcommand{\U}{{U}}
-% \newcommand{\V}{{V}}
-% \newcommand{\W}{{W}}
-% \renewcommand{\u}{{u}}
-% \renewcommand{\v}{{v}}
-% \newcommand{\w}{{w}}
-% \newcommand{\x}{{x}}
 
 \DeclareMathOperator{\dist}{dist}
 \DeclareMathOperator{\spn}{span}
@@ -119,11 +105,32 @@
 
 
 \begin{document}
-
-
 \justifying
 \maketitle
 \tableofcontents
+\newpage
+
+\thispagestyle{empty}
+\begin{fullwidth}
+	\vspace*{\fill}
+	\begin{center}
+		\LARGE
+		Don't just read it; fight it!\\
+		Ask your own questions.\\
+		Look for your own examples.\\
+		Discover your own proofs.\\
+		Is the hypothesis necessary?\\
+		Is the converse true?\\
+		What happens in the classical special case?\\
+		What about the degenerate cases?\\
+		Where does the proof use the hypothesis?
+	\end{center}
+	\begin{flushright}
+		\LARGE
+		\textemdash\,Paul Holmos\phantom{placeholderrrrrr}
+	\end{flushright}
+	\vspace*{\fill}
+\end{fullwidth}
 \newpage
 
 
@@ -187,19 +194,19 @@
 \end{cor}
 
 \subsection{Products and Quotients of Vector Spaces}
-\begin{lem}\label{lem: direct sum and product space}
-	Suppose $V_1,\dots,V_m$ are subspaces of $V$.%
-    \footnote{Note that $V$ does not have to be finite-dimensional. Recall that $V_1+\cdots+V_m$ is a direct sum if and only if the only way to write $0$ as a sum of $v_1+\cdots+v_m$, where each $v_k\in V_k$, is by taking each $v_k$ equal to $0$.}
-	Define a linear map $\Gamma: V_1\times\cdots\times V_m \to V_1+\cdots+V_m$ by
-	\[\Gamma\bra{v_1,\dots,v_m} = v_1+\cdots+v_m.\]
-	Then $V_1+\cdots+V_m$ is a direct sum if and only if $\Gamma$ is injective.
-\end{lem}
+% \begin{lem}\label{lem: direct sum and product space}
+% 	Suppose $V_1,\dots,V_m$ are subspaces of $V$.%
+%     \footnote{Note that $V$ does not have to be finite-dimensional. Recall that $V_1+\cdots+V_m$ is a direct sum if and only if the only way to write $0$ as a sum of $v_1+\cdots+v_m$, where each $v_k\in V_k$, is by taking each $v_k$ equal to $0$.}
+% 	Define a linear map $\Gamma: V_1\times\cdots\times V_m \to V_1+\cdots+V_m$ by
+% 	\[\Gamma\bra{v_1,\dots,v_m} = v_1+\cdots+v_m.\]
+% 	Then $V_1+\cdots+V_m$ is a direct sum if and only if $\Gamma$ is injective.
+% \end{lem}
 
-\begin{thm}
-	Suppose $V$ is finite-dimensional and $V_1,\dots,V_m$ are subspaces of $V$. Then $V_1+\cdots+V_m$ is a direct sum if and only if%
-    \footnote{Recall Lemma~\ref{lem: direct sum and product space}.}
-	\[\dim\bra{V_1+\cdots+V_m} = \dim V_1+\cdots+\dim V_m.\]
-\end{thm}
+% \begin{thm}
+% 	Suppose $V$ is finite-dimensional and $V_1,\dots,V_m$ are subspaces of $V$. Then $V_1+\cdots+V_m$ is a direct sum if and only if%
+%     \footnote{Recall Lemma~\ref{lem: direct sum and product space}.}
+% 	\[\dim\bra{V_1+\cdots+V_m} = \dim V_1+\cdots+\dim V_m.\]
+% \end{thm}
 % \begin{proof}
 % 	Recall Lemma~\ref{lem: direct sum and product space}.Because $\Gamma$ is surjective, by the fundamental theorem of linear maps, $V_1+\cdots+V_m$ is a direct sum if and only if $\dim\bra{V_1+\cdots+V_m} = \dim\bra{V_1\times\cdots\times V_m} = \dim V_1+\cdots+\dim V_m$.
 % \end{proof}
@@ -215,11 +222,11 @@
 \begin{proof}
 	We construct an isomorphism $T$ between the two vector spaces.
 	
-	For every $\Gamma\in\L\bra{V_1\times\cdots\times V_m,W}$, define $\phi_i:V_i\to W$ for each $i\in\cbra{1,\dots,m}$ by
-	\[\phi_i\bra{v_i}=\Gamma\bra{0,\dots,v_i,\dots,0}\]
-	with $v_i$ in the $i^\text{th}$ slot and $0$ in all other slots. It can be verified that $\phi_i\in\L\bra{V_i,W}$.
+	For every $\Gamma\in\L\bra{V_1\times\cdots\times V_m,W}$, define $\phi_k:V_k\to W$ for each $k$ by
+	\[\phi_k\bra{v_k}=\Gamma\bra{0,\dots,v_k,\dots,0}\]
+	with $v_k$ in the $k^\text{th}$ slot and $0$ in all other slots. It can be verified that $\phi_k\in\L\bra{V_k,W}$.
 
-	Define $T\bra{\Gamma}=\bra{\phi_1,\dots,\phi_m}$. It can be verified that $T$ is a linear map. We prove $T$ is an isomorphism by constructing its inverse linear map $S$.
+	Define $T$ by $T\bra{\Gamma}=\bra{\phi_1,\dots,\phi_m}$. It can be verified that $T$ is a linear map. We prove $T$ is an isomorphism by constructing its inverse linear map $S$.
 
 	For every $\bra{\phi_1,\dots,\phi_m}\in\L\bra{V_1,W}\times\cdots\times\L\bra{V_m,W}$, let
 	\[S\bra{\phi_1,\dots,\phi_m}\bra{v_1,\dots,v_m}=\phi_1\bra{v_1}+\cdots+\phi_m\bra{v_m}.\]
@@ -261,7 +268,7 @@
 \begin{thm}
 	Suppose $V$ and $W$ are finite-dimensional and $T\in\L\bra{V,W}$. Then
 	\begin{center}
-	$T$ is surjective $\iff$ $T'$ is injective \quad and \quad $T$ is injective $\iff$ $T'$ is surjective.%
+	$T$ is surjective $\iff T'$ is injective \quad and \quad $T$ is injective $\iff T'$ is surjective.%
     \footnote{This result can be useful because sometimes it is easier to verify that $T'$ is injective (surjective) than to show directly that $T$ is surjective (injective).}
 	\end{center}
 \end{thm}
@@ -340,7 +347,8 @@
 	\begin{enumerate}
 		\item Prove that if $T\in\L(V)$, then $T''\circ\Lambda=\Lambda\circ T$.
 		\item Prove that if $V$ is finite-dimensional, then $\Lambda$ is an isomorphism from $V$ onto $V''$.%
-    	\footnote{Suppose $V$ is finite-dimensional. Then $V$ and $V'$ are isomorphic, but finding an isomorphism from $V$ onto $V'$ generally requires choosing a basis of $V$. In contrast, the isomorphism $\Lambda$ from $V$ onto $V''$ does not require a choice of basis and thus is more natural.}
+    	\footnote{Suppose $V$ is finite-dimensional. Then $V$ and $V'$ are isomorphic, but finding an isomorphism from $V$ onto $V'$ generally requires choosing a basis of $V$. In contrast, the isomorphism $\Lambda$ from $V$ onto $V''$ does not require a choice of basis and thus is more natural.}%
+		\footnote{Another natural isomorphism is $\pi'\in\L\bra{(V/U)',V'}$ where $\pi$ is the normal quotient map.}
 	\end{enumerate}
 \end{exer}
 
@@ -352,7 +360,7 @@
 
 \begin{thm}
 	Suppose $p\in\P(\F)$ is a nonconstant polynomial of degree $m$. Then $p$ has at most $m$ zeros in $\F$.%
-	\footnote{This theorem indicates that when a polynomial $p$ has too many zeros, $p=0$.}%
+	\footnote{This theorem implies that when a polynomial $p$ has too many zeros, $p=0$.}%
     \footnote{This theorem implies that the coefficients of a polynomial are uniquely determined. In particular, the \emph{degree} of a polynomial is well-defined.}
 \end{thm}
 
@@ -410,7 +418,44 @@
 
 
 \section{Eigenvalues and Eigenvectors}
+\subsection{Invariant Subspaces}
+\begin{thm}
+	Suppose $V$ is finite-dimensional, $T\in\L(V)$, and $\lambda\in\F$. Then the following are equivalent.%
+	\footnote{The equivalences are useful in that they allow identifying an eigenvalue without explicitly constructing an eigenvector.}
+	\begin{enumerate}
+		\item $\lambda$ is an eigenvalue of $T$.
+		\item $T-\lambda I$ is not injective.
+		\item $T-\lambda I$ is not surjective.
+		\item $T-\lambda I$ is not invertible.
+	\end{enumerate}
+\end{thm}
 
+\begin{exer}
+	Suppose $T\in\L(V)$ has no eigenvalues and $T^4=I$. Prove that $T^2=-I$.
+\end{exer}
+\begin{proof}
+	$(T^2+I)(T+I)(T-I)=0$. Because $T$ has no eigenvalues, $T+I$ and $T-I$ are both invertible. Hence $T^2+I=0$.
+\end{proof}
+
+\begin{exer}
+	Suppose that $\lambda_1,\dots,\lambda_n\in\R$ are pairwise distinct. Prove that the list $\e^{\lambda_1x},\dots,\e^{\lambda_nx}$ is linearly independent in $\R^\R$.
+\end{exer}
+\begin{proof}
+	Let $V=\spn(\e^{\lambda_1x},\dots,\e^{\lambda_nx})$.%
+	\footnote{Alternatively we can let $V$ be the vector space of differentiable functions on $\R$.}
+	Define $D\in\L(V)$ by $Df=f'$. Then $\e^{\lambda x}$ is an eigenvector of $D$ corresponding to $\lambda$. A list of eigenvectors corresponding to distinct eigenvalues is linearly independent.
+\end{proof}
+
+\begin{exer}
+	Suppose $V$ is finite-dimensional, $T\in\L(V)$, and $U$ is a subspace of $V$ invariant under $T$. The \emph{quotient operator} $T/U\in\L(V/U)$ is defined by
+	\[(T/U)(v+U)=Tv+U\]
+	for each $v\in V$. Prove that each eigenvalue of $T/U$ is an eigenvalue of $T$.
+\end{exer}
+\begin{proof}
+	It suffices to show that $T/U-\lambda I=(T-\lambda I)/U$ is not injective $\implies$ $T-\lambda I$ is not injective. We prove that $T-\lambda I$ is invertible $\implies$ $(T-\lambda I)/U$ is injective.
+
+	Suppose $T-\lambda I$ is invertible. $U$ being invariant under $T$ implies that $U$ is invariant under $T-\lambda I$. Thus $(T-\lambda I)v\in U\iff v\in U$. Suppose $((T-\lambda I)/U)(v+U)=0$. Then $(T-\lambda I)v\in U$, which implies that $v\in U$, i.e., $v+U=0$. That proves the injectivity of $(T-\lambda I)/U$.
+\end{proof}
 
 
 \end{document}
