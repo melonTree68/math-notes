@@ -8,6 +8,7 @@
 \usepackage{multicol}
 \usepackage{booktabs}
 \usepackage{enumerate,enumitem}
+\usepackage{setspace}
 \usepackage{fancyhdr} % custom headers and footers
 \usepackage{ragged2e}
 \usepackage{sectsty} % Allow customizing section commands
@@ -79,6 +80,7 @@
 \newcommand{\M}{\mathcal{M}}
 \renewcommand{\P}{\mathcal{P}}
 \newcommand{\B}{\mathcal{B}}
+\newcommand{\E}{\mathcal{E}}
 \newcommand{\zero}{\mathbf{0}}
 \newcommand{\e}{\mathrm{e}}
 \renewcommand{\intercal}{t}
@@ -112,9 +114,10 @@
 
 \thispagestyle{empty}
 \begin{fullwidth}
+	\Large
+	\setstretch{1.5}
 	\vspace*{\fill}
 	\begin{center}
-		\LARGE
 		Don't just read it; fight it!\\
 		Ask your own questions.\\
 		Look for your own examples.\\
@@ -126,7 +129,6 @@
 		Where does the proof use the hypothesis?
 	\end{center}
 	\begin{flushright}
-		\LARGE
 		\textemdash\,Paul Holmos\phantom{placeholderrrrrr}
 	\end{flushright}
 	\vspace*{\fill}
@@ -192,6 +194,7 @@
 	\footnote{There is a slicker proof for this inequality using block matrices. But the proof here using linear maps is more informative.}
 	\[\rank A+\rank B-n\leq\rank\bra{AB}.\]
 \end{cor}
+
 
 \subsection{Products and Quotients of Vector Spaces}
 % \begin{lem}\label{lem: direct sum and product space}
@@ -446,16 +449,54 @@
 	Define $D\in\L(V)$ by $Df=f'$. Then $\e^{\lambda x}$ is an eigenvector of $D$ corresponding to $\lambda$. A list of eigenvectors corresponding to distinct eigenvalues is linearly independent.
 \end{proof}
 
-\begin{exer}
+\begin{defn}
 	Suppose $V$ is finite-dimensional, $T\in\L(V)$, and $U$ is a subspace of $V$ invariant under $T$. The \emph{quotient operator} $T/U\in\L(V/U)$ is defined by
 	\[(T/U)(v+U)=Tv+U\]
-	for each $v\in V$. Prove that each eigenvalue of $T/U$ is an eigenvalue of $T$.
+	for each $v\in V$.
+\end{defn}
+
+\begin{exer}
+	Suppose $V$ is finite-dimensional, $T\in\L(V)$, and $U$ is a subspace of $V$ invariant under $T$. Prove that each eigenvalue of the quotient operator $T/U$ is an eigenvalue of $T$.
 \end{exer}
 \begin{proof}
 	It suffices to show that $T/U-\lambda I=(T-\lambda I)/U$ is not injective $\implies$ $T-\lambda I$ is not injective. We prove that $T-\lambda I$ is invertible $\implies$ $(T-\lambda I)/U$ is injective.
 
 	Suppose $T-\lambda I$ is invertible. $U$ being invariant under $T$ implies that $U$ is invariant under $T-\lambda I$. Thus $(T-\lambda I)v\in U\iff v\in U$. Suppose $((T-\lambda I)/U)(v+U)=0$. Then $(T-\lambda I)v\in U$, which implies that $v\in U$, i.e., $v+U=0$. That proves the injectivity of $(T-\lambda I)/U$.
 \end{proof}
+
+\begin{exer}
+	Suppose $V$ is finite-dimensional and $T\in\L(V)$. Prove that $T$ has an eigenvalue if and only if there exists a subspace of $V$ of dimension $\dim V-1$ that is invariant under $T$.%
+	\footnote{This proof is inspired by $\M(T)$ and its transpose, where an invariant subspace $\spn(v_1,\dots,v_m)$ is characterized by zero entries at $(i,j)$, where $m+1\leq i\leq\dim V$ and $1\leq j\leq m$.}
+\end{exer}
+\begin{proof}
+	We first suppose that $T$ has an eigenvalue $\lambda$. Then there exists $\phi\in V'$ such that $\phi\circ T=T'\phi=\lambda\phi$. Extend $\phi$ to a basis $\phi,\phi_2,\dots,\phi_n$ of $V'$ and let $v,v_2,\dots,v_n$ be a basis of $V$ whose dual basis is $\phi,\phi_2,\dots,\phi_n$. Then $(\phi\circ T)v_k=0$ for every $k$. Because $\phi(T v_k)=0$ for every $k$, $Tv_k\in\spn(v_2,\dots,v_n)$. That proves that $\spn(v_2,\dots,v_n)$ is invariant under $T$.
+
+	To prove the other direction, reverse the steps to obtain an eigenvector of $T'$.
+\end{proof}
+
+
+\subsection{Minimal Polynomials}
+\begin{exer}[Companion matrix of a polynomial]
+	Suppose $a_0,\dots,a_{n-1}\in\F$. Let $T\in\L(\F^n)$ be such that $\M(T)$ (with respect to the standard basis) is
+	\[\begin{bmatrix}
+		\hspace{0.3em}0&&&&&-a_0\\
+		\hspace{0.3em}1&0&&&&-a_1\\
+		\hspace{0.3em}&1&\ddots&&&-a_2\\
+		\hspace{0.3em}&&\ddots&&&\vdots\\
+		\hspace{0.3em}&&&&0&-a_{n-2}\\
+		\hspace{0.3em}&&&&1&-a_{n-1}\\
+	\end{bmatrix}\]
+	Prove that the minimal polynomial of $T$ is the polynomial%
+	\footnote{This exercise implies that every monic polynomial is the minimal polynomial of some operator. Hence an algorithm that could produce exact eigenvalues for each operators on each $\F^n$ does not exist.}
+	\[a_0+a_1z+\cdots+a_{n-1}z^{n-1}+z^n.\]
+\end{exer}
+
+\begin{prop}
+	Suppose $T\in\L(V)$ and $p\in\P(\F)$. Then there exists a unique $r\in\P(\F)$ such that $p(T)=r(T)$ and $\deg r$ is less than the degree of the minimal polynomial of $T$.%
+	\footnote{This proposition implies that every polynomial applied to an operator can be simplified to a polynomial of smaller degree.}
+\end{prop}
+
+
 
 
 \end{document}

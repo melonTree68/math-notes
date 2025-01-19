@@ -7,4 +7,5 @@
 \contentsline {section}{Polynomials}{6}{section*.7}%
 \contentsline {section}{Eigenvalues and Eigenvectors}{7}{section*.8}%
 \contentsline {subsection}{Invariant Subspaces}{7}{section*.9}%
+\contentsline {subsection}{Minimal Polynomials}{8}{section*.10}%
 \contentsfinish 
