@@ -1,5 +1,4 @@
 \documentclass[11pt,a4paper]{ctexart}
-% \usepackage{newtxtext}
 \usepackage{geometry}
 \usepackage[dvipsnames,svgnames]{xcolor}
 \usepackage[strict]{changepage}
@@ -95,27 +94,31 @@
 \newcommand{\bra}[1]{\mathopen{}\left(#1\right)}
 \newcommand{\sbra}[1]{\mathopen{}\left[#1\right]}
 \newcommand{\cbra}[1]{\mathopen{}\left\{#1\right\}}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\abs}[1]{\left| #1 \right|}
 \newcommand{\rest}[2]{\mathopen{}\left.#1\right|_{#2}}
+
 \renewcommand{\epsilon}{\varepsilon}
 \renewcommand{\phi}{\varphi}
 \newcommand{\dnei}{\overset{\circ}{U}}
+
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Q}{\mathbb{Q}}
+
 \renewcommand{\d}{\mathrm{d}}
 \newcommand{\e}{\mathrm{e}}
+
+\DeclareMathOperator{\llim}{\underset{\nti}{\underline{\lim}}}
+\DeclareMathOperator{\ulim}{\underset{\nti}{\overline{\lim}}}
 \def \nti {\mathnormal{n}\to\infty}
 \def \tseries {{\textstyle\sum\limits_{n=1}^{\infty}}\,} % textstyle series
 \def \dseries {\sum_{n=1}^{\infty}\,} % displaystyle series
 \def \tprod {{\textstyle\prod\limits_{n=1}^{\infty}}\,} % textstyle prod
 \def \dprod {\prod_{n=1}^{\infty}\,} % displaystyle prod
 \def \vs {\vspace{-1em}}
-\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
-\newcommand{\abs}[1]{\left|#1\right|}
-\DeclareMathOperator{\llim}{\underset{\nti}{\underline{\lim}}}
-\DeclareMathOperator{\ulim}{\underset{\nti}{\overline{\lim}}}
 
 
 % ---------- Title Section ----------
