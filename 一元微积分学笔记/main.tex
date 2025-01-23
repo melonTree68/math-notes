@@ -149,11 +149,11 @@
 \newpage
 
 
-\thispagestyle{empty}
+{\Large\thispagestyle{empty}
 \vspace*{\fill}
 \begin{center}
 	\garamond
-	\LARGE
+	\Large
 	Don't just read it; fight it!\\
 	Ask your own questions.\\
 	Look for your own examples.\\
@@ -166,11 +166,10 @@
 \end{center}
 \begin{flushright}
 	\garamond
-	\LARGE
-	\textemdash\,Paul Holmos\phantom{placehold}
+	\textemdash\,Paul Holmos\phantom{placeholderrrrr}
 \end{flushright}
 \vspace*{\fill}
-\newpage
+\newpage}
 
 
 \section{实数系的基本定理}
@@ -625,10 +624,10 @@
 	再证充分性．对任意$\epsilon>0$, 先用总长度小于$\epsilon$的至多可数个开区间覆盖$D(f)$．对每个连续点取一个邻域, 使得邻域内振幅不超过$\epsilon$．每个连续点的邻域和覆盖$D(f)$的开区间构成了$[a,b]$的一个开覆盖．应用加强形式的有限开覆盖定理, 得到Lebesgue数$\delta$．取分割$P,\,\norm{P}<\delta$即证．
 \end{pf}
 
-\begin{thm}[Riemann引理]
-	$f\in R[a,b],\,g$是以$T$为周期的周期函数, 且$g\in R[0,T]$．则
-	\[\lim_{p\to\infty}\int_{a}^{b}f(x)g(px)\,\d x=\frac{1}{T}\int_{0}^{T}g(x)\,\d x\int_{a}^{b}f(x)\,\d x.\]
-\end{thm}
+% \begin{thm}[Riemann-Lebesgue引理]
+% 	$f\in R[a,b],\,g$是以$T$为周期的周期函数, 且$g\in R[0,T]$．则
+% 	\[\lim_{p\to\infty}\int_{a}^{b}f(x)g(px)\,\d x=\frac{1}{T}\int_{0}^{T}g(x)\,\d x\int_{a}^{b}f(x)\,\d x.\]
+% \end{thm}
 
 \begin{prop}
 	设$f,g\in R[a,b],\,\{\xi_i\}$和$\{\xi'_i\}$是分割$P$的两个介点集, 则
@@ -674,7 +673,7 @@
 	\[\lim_{h\to0}\int_{a}^{b}|f(x+h)-f(x)|\,\d x=0.\]
 \end{exer}
 \begin{pf}\everymath{\textstyle}
-	从极限过程的顺序上看, Riemann和式的极限在$h\to0$之前．所以必须先取定分割．对任意取定的$\epsilon>0,\,\exists$等距分割$P,\,\sum_P \omega_i\Delta x_i<\epsilon$．任取$0<|h|<\norm{P},$则有
+	从极限过程的顺序上看, Riemann和式的极限先于$h\to0$．所以必须先取定分割．对任意取定的$\epsilon>0,\,\exists$等距分割$P,\,\sum_P \omega_i\Delta x_i<\epsilon$．任取$0<|h|<\norm{P},$则有
 	$I=\sum_P \int_{x_{i-1}}^{x_i}|f(x+h)-f(x)|\,\d x,$其中每个$x+h$与$x$都落在同一或相邻小区间内, 使积分的值得到控制．
 \end{pf}
 
@@ -721,9 +720,9 @@
 	即可解决被积函数不连续的问题, 答案为$0$．
 \end{sol}
 
-\begin{exer}
-	求证: $m<2$时, $\lim_{x\to0^+}\frac{1}{x^m}\int_{0}^{x}\sin\frac{1}{t}\,\d t=0$．
-\end{exer}
+% \begin{exer}
+% 	求证: $m<2$时, $\lim_{x\to0^+}\frac{1}{x^m}\int_{0}^{x}\sin\frac{1}{t}\,\d t=0$．
+% \end{exer}
 
 \begin{exer}
 	计算$B(m,n)=\sum_{k=0}^{n}\binom{n}{k}\frac{(-1)^k}{m+k+1}$．
@@ -896,13 +895,13 @@ Jensen不等式包含了很多不等式．例如 ($\phi$为下凸函数)
 	用Jordan不等式将难以处理的$\sin x$放缩为$x$．
 \end{pf}
 
-\begin{exer}
-	判别广义积分$\int_{1}^{+\infty}\frac{1}{x}\e^{\cos x}\sin(\sin x)\,\d x$的敛散性．
-\end{exer}
-\begin{sol}
-	由Dirichlet判别法易证其收敛．由Jordan不等式, 通过以下估计证得其条件收敛．
-	\[\frac{1}{x}\e^{\cos x}\sin|\sin x|\geq\frac{2}{\pi\e}\frac{|\sin x|}{x}.\qedhere\]
-\end{sol}
+% \begin{exer}
+% 	判别广义积分$\int_{1}^{+\infty}\frac{1}{x}\e^{\cos x}\sin(\sin x)\,\d x$的敛散性．
+% \end{exer}
+% \begin{sol}
+% 	由Dirichlet判别法易证其收敛．由Jordan不等式, 通过以下估计证得其条件收敛．
+% 	\[\frac{1}{x}\e^{\cos x}\sin|\sin x|\geq\frac{2}{\pi\e}\frac{|\sin x|}{x}.\qedhere\]
+% \end{sol}
 
 \begin{exer}
 	判别广义积分$\int_{0}^{+\infty}\frac{x\,\d x}{1+x^4\sin^2x}$的敛散性．
@@ -925,13 +924,13 @@ Jensen不等式包含了很多不等式．例如 ($\phi$为下凸函数)
 
 
 \section{广义积分}
-一些积分学中的重要定理在广义积分中有其推广形式．
-\begin{thm}[广义积分的Riemann引理]
-	设$f$在$[a,+\infty)$上绝对可积．$g$是以$T$为周期的周期函数, 且$g\in R[0,T]$．则
-	\[\lim_{p\to\infty}\int_{a}^{+\infty}f(x)g(px)\,\d x=\frac{1}{T}\int_{0}^{T}g(x)\,\d x\int_{a}^{+\infty}f(x)\,\d x.\]
-\end{thm}
+一些积分学中的重要定理在广义积分中有其推广形式．瑕积分和无穷限积分都有对应的Riemann-Lebesgue引理．瑕积分有对应的积分第二中值定理．
+% \begin{thm}[广义积分的Riemann引理]
+% 	设$f$在$[a,+\infty)$上绝对可积．$g$是以$T$为周期的周期函数, 且$g\in R[0,T]$．则
+% 	\[\lim_{p\to\infty}\int_{a}^{+\infty}f(x)g(px)\,\d x=\frac{1}{T}\int_{0}^{T}g(x)\,\d x\int_{a}^{+\infty}f(x)\,\d x.\]
+% \end{thm}
 
-广义积分的Riemann引理用分段估计的方式证明．对瑕积分也有积分第二中值定理, 证明方式与定积分中相同．
+% 广义积分的Riemann引理用分段估计的方式证明．对瑕积分也有积分第二中值定理, 证明方式与定积分中相同．
 
 
 % \subsection{广义积分与和式极限}
@@ -956,9 +955,9 @@ Jensen不等式包含了很多不等式．例如 ($\phi$为下凸函数)
 % \end{pf}
 
 
-\subsection{广义积分的敛散性判别法}
-判别广义积分敛散的第一步是找到被积函数所有 (可能) 的奇点．当指数上出现参数时, 被积函数的零点也可能是奇点．例如以下广义积分所有可能的奇点是$0,1,+\infty$．
-\[\int_{0}^{\infty}\frac{\sin x}{x}|\ln x|^p\,\d x.\]
+% \subsection{广义积分的敛散性判别法}
+% 判别广义积分敛散的第一步是找到被积函数所有 (可能) 的奇点．当指数上出现参数时, 被积函数的零点也可能是奇点．例如以下广义积分所有可能的奇点是$0,1,+\infty$．
+% \[\int_{0}^{\infty}\frac{\sin x}{x}|\ln x|^p\,\d x.\]
 
 % 广义积分敛散性判别的本质是被积函数值的估计．因此应不吝啬先用Taylor公式分析渐近性态, 从而找到合适的指数$p$, 再用Cauchy判别法．
 % \begin{exer}
@@ -974,13 +973,13 @@ Jensen不等式包含了很多不等式．例如 ($\phi$为下凸函数)
 % 值得注意的是, $\lim_{x\to+\infty}f(x)/g(x)=l\in\R$并不能推出二者同敛散．如果添加$f,g$均不变号的条件则可以．反例如下, 此时应当用Taylor公式估计．
 % \[\int_{1}^{+\infty}\ln\bra{1+\frac{\sin x}{x^\frac{1}{2}}}\,\d x.\]
 
-Dirichlet和Abel判别法难以判别广义积分发散．比较判别法无法处理的情况下, 应当考虑Cauchy收敛准则．
-\begin{exer}
-	判别广义积分$\int_{0}^{+\infty}x^p\e^{\sin x}\sin 2x\,\d x\,(p\geq0)$的敛散性．
-\end{exer}
-\begin{sol}
-	显然先考虑证明其发散．被积函数不保号, 应当考虑Cauchy收敛准则, 于是尝试寻找一列被积函数定号的区间．自然想到将$x^p$与$\e^{\sin x}$放缩为常数, 于是取$[k\pi+\pi/6,k\pi+\pi/4]$, 因为$k\to\infty$的过程中区间上的积分不趋于$0$, 所以广义积分发散．
-\end{sol}
+% Dirichlet和Abel判别法难以判别广义积分发散．比较判别法无法处理的情况下, 应当考虑Cauchy收敛准则．
+% \begin{exer}
+% 	判别广义积分$\int_{0}^{+\infty}x^p\e^{\sin x}\sin 2x\,\d x\,(p\geq0)$的敛散性．
+% \end{exer}
+% \begin{sol}
+% 	显然先考虑证明其发散．被积函数不保号, 应当考虑Cauchy收敛准则, 于是尝试寻找一列被积函数定号的区间．自然想到将$x^p$与$\e^{\sin x}$放缩为常数, 于是取$[k\pi+\pi/6,k\pi+\pi/4]$, 因为$k\to\infty$的过程中区间上的积分不趋于$0$, 所以广义积分发散．
+% \end{sol}
 
 
 \subsection{广义积分的计算}
@@ -997,13 +996,13 @@ Dirichlet和Abel判别法难以判别广义积分发散．比较判别法无法�
 \end{rem}
 
 \begin{exer}
-	计算广义积分$\int_{0}^{+\infty}\frac{1}{x}\sin\bra{x-\frac{1}{x}}\,\ dx$．
+	计算广义积分$\int_{0}^{+\infty}\frac{1}{x}\sin\bra{x-\frac{1}{x}}\,\d x$．
 \end{exer}
 
 % 有一些有名的广义积分, 其中的思想方法和结果都是重要的．可以利用它们计算出很多其他积分．
-\begin{exer}[Euler积分]
-	求证: $\int_{0}^{\pi/2}\ln\sin x=-\frac{\pi}{2}\ln 2$．
-\end{exer}
+\begin{prop}[Euler积分]
+	$\int_{0}^{\pi/2}\ln\sin x=-\frac{\pi}{2}\ln 2$．
+\end{prop}
 
 以下习题体现出: 在广义积分中, 不应像常义积分一样避免对数函数和三角函数一起出现．相反, 应当积极尝试这种思路, 尝试利用Euler积分．
 \begin{exer}
@@ -1016,14 +1015,14 @@ Dirichlet和Abel判别法难以判别广义积分发散．比较判别法无法�
 		\end{multicols}
 	\end{enumerate}
 \end{exer}
-\begin{sol}
-	\begin{enumerate}
-		% \item $I=\int_{0}^{\pi/2}\arcsin x\,\d\ln x$．用分部积分法．
-		\item $I=\int_{0}^{\pi/2}x\,\d\ln\sin x$．用分部积分法．
-		\item 设$a=\sin\theta$．
-		\[I=\int_{0}^{\pi/2}\ln\left|\sin^2x-\sin^2\theta\right|\,\d x=\int_{0}^{\pi/2}\ln\left|\sin(x+\theta)\sin(x-\theta)\right|\,\d x=-\pi\ln 2.\qedhere\]
-	\end{enumerate}
-\end{sol}
+% \begin{sol}
+% 	\begin{enumerate}
+% 		% \item $I=\int_{0}^{\pi/2}\arcsin x\,\d\ln x$．用分部积分法．
+% 		\item $I=\int_{0}^{\pi/2}x\,\d\ln\sin x$．用分部积分法．
+% 		\item 设$a=\sin\theta$．
+% 		\[I=\int_{0}^{\pi/2}\ln\left|\sin^2x-\sin^2\theta\right|\,\d x=\int_{0}^{\pi/2}\ln\left|\sin(x+\theta)\sin(x-\theta)\right|\,\d x=-\pi\ln 2.\qedhere\]
+% 	\end{enumerate}
+% \end{sol}
 
 以下Frullani积分, Dirichlet积分, Euler-Poisson积分的证明都体现出: 广义积分的计算中, 可以先不处理广义积分带来的极限过程, 而从常义积分展开分析．减少一个极限过程并处理常义积分有时候能够简化问题, 提供新的角度．
 \begin{exer}[Frullani积分]
@@ -1053,7 +1052,7 @@ Dirichlet和Abel判别法难以判别广义积分发散．比较判别法无法�
 	回想Dirichlet核, 二者的差异在于积分限和分母．于是考虑线性换元将无穷限积分转化为常义积分与数列极限, 并对二者作差．
 	\[\int_{0}^{+\infty}\frac{\sin x}{x}\,\d x=\lim_{\nti}\int_{0}^{\pi}\frac{\sin(n+\frac{1}{2})x}{x}\,\d x.\]
 	\[\frac{1}{x}-\frac{1}{2\sin\frac{x}{2}}=O(x)\quad(x\to0).\]
-	于是上式中的函数Riemann可积．与$\sin(n+\frac{1}{2})x$相乘, 自然使用Riemann引理, 即证．
+	于是上式中的函数Riemann可积．与$\sin(n+\frac{1}{2})x$相乘, 自然使用Riemann-Lebesgue引理, 即证．
 \end{pf}
 
 \begin{exer}[Euler-Poisson积分]
@@ -1280,9 +1279,9 @@ Lagrange中值定理在正项级数的敛散性判别中有其应用．其思想
 \end{prop}
 
 下题中的证明与$\e=\tseries\frac{1}{n!}$的证明类似．\vspace{-.5em}
-\begin{exer}[Euler]
-	求证: $\forall\,x\in\R,\,\sin x=x\tprod\bra{1-\frac{x^2}{n^2\pi^2}}.$
-\end{exer}
+\begin{prop}[Euler]
+	$\forall\,x\in\R,\,\sin x=x\tprod\bra{1-\frac{x^2}{n^2\pi^2}}.$
+\end{prop}
 \begin{pf}
 	观察形式, 结论是$\sin x$与多项式的类比．于是自然考虑$\sin(2n+1)\phi=\sin\phi\cdot p(\sin^2\phi)$, 其中$p$为$n$次多项式, 这种形式的正确性由De Moivre公式保证．$p$的至多$n$个根于是为$\sin^2\bra{k\pi/(2n+1)},\,k=1,2,\dots,n$．令$x=(2n+1)\phi$, 得到
 	\[\sin x=(2n+1)\sin\frac{x}{2n+1}\prod_{k=1}^{n}\bra{1-\frac{\sin^2\frac{x}{2n+1}}{\sin^2\frac{k\pi}{2n+1}}}.\]
