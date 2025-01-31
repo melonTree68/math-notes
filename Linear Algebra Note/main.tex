@@ -1,7 +1,5 @@
 \documentclass{tufte-handout}
-\usepackage[english]{babel} % English language
 \usepackage{amsmath,amsfonts,amsthm,amssymb}
-\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
 \usepackage{bm}
 \usepackage{pgf,tikz}
 \usepackage{float}
@@ -469,7 +467,7 @@
 
 \begin{exer}
 	Suppose $V$ is finite-dimensional and $T\in\L(V)$. Prove that $T$ has an eigenvalue if and only if there exists a subspace of $V$ of dimension $\dim V-1$ that is invariant under $T$.%
-	\footnote{This proof is inspired by $\M(T)$ and its transpose, where an invariant subspace $\spn(v_1,\dots,v_m)$ is characterized by zero entries at $(i,j)$, where $m+1\leq i\leq\dim V$ and $1\leq j\leq m$.}
+	\footnote{This proof is inspired by $\M(T)$ and its transpose.}
 \end{exer}
 \begin{proof}
 	We first suppose that $T$ has an eigenvalue $\lambda$. Then there exists $\phi\in V'$ such that $\phi\circ T=T'\phi=\lambda\phi$. Extend $\phi$ to a basis $\phi,\phi_2,\dots,\phi_n$ of $V'$ and let $v,v_2,\dots,v_n$ be a basis of $V$ whose dual basis is $\phi,\phi_2,\dots,\phi_n$. Then $(\phi\circ T)v_k=0$ for every $k$. Because $\phi(T v_k)=0$ for every $k$, $Tv_k\in\spn(v_2,\dots,v_n)$. That proves that $\spn(v_2,\dots,v_n)$ is invariant under $T$.
@@ -484,7 +482,7 @@
 	\[\begin{bmatrix}
 		\hspace{0.3em}0&&&&&-a_0\\
 		\hspace{0.3em}1&0&&&&-a_1\\
-		\hspace{0.3em}&1&\ddots&&&-a_2\\
+		\hspace{0.3em}&1&0&&&-a_2\\
 		\hspace{0.3em}&&\ddots&&&\vdots\\
 		\hspace{0.3em}&&&&0&-a_{n-2}\\
 		\hspace{0.3em}&&&&1&-a_{n-1}\\
@@ -494,11 +492,21 @@
 	\[a_0+a_1z+\cdots+a_{n-1}z^{n-1}+z^n.\]
 \end{exer}
 
-\begin{prop}
-	Suppose $T\in\L(V)$ and $p\in\P(\F)$. Then there exists a unique $r\in\P(\F)$ such that $p(T)=r(T)$ and $\deg r$ is less than the degree of the minimal polynomial of $T$.%
-	\footnote{This proposition implies that every polynomial applied to an operator can be simplified to a polynomial of smaller degree.}
-\end{prop}
+% \begin{prop}
+% 	Suppose $T\in\L(V)$ and $p\in\P(\F)$. Then there exists a unique $r\in\P(\F)$ such that $p(T)=r(T)$ and $\deg r$ is less than the degree of the minimal polynomial of $T$.%
+% 	\footnote{This proposition implies that every polynomial applied to an operator can be simplified to a polynomial of smaller degree.}
+% \end{prop}
 
+\begin{exer}
+	Prove that every operator on a finite-dimensional vector space of dimension at least $2$ has an invariant subspace of dimension $2$.
+\end{exer}
+\begin{proof}
+	Let $T\in\L(V)$ and $\dim V=n$. We use induction on $n$. The base case $n=2$ is trivial. Now suppose $n>2$ and the desired result holds for all smaller positive integers. Let $p$ be the minimal polynomial of $T$.
+
+	If $T$ has an eigenvalue $\lambda$, then $p(z)=q(z)(z-\lambda)$ for some monic polynomial $q$ with $\deg q=\deg p-1$. Because $\rest{q(T)}{\im(T-\lambda I)}=0$, the desired result holds by induction hypothesis if $\dim\im(T-\lambda I)\geq2$. If $T-\lambda I=0$ the desired result trivially holds. If $\dim\im(T-\lambda I)=1$, then $(T-\lambda I)v$ is a scalar multiple of some fixed $u\in V$ for all $v\in V$. Take $w\in V\backslash\spn(u)$ and $\spn(u,w)$ will satisfy the desired property.
+
+	If $T$ has no eigenvalues, then $\F=\R$ and $p(z)=q(z)(z^2+bz+c)$ for some $b,c\in\R$ with $b^2<4c$ and monic polynomial $q$ with $\deg q=\deg p-2$. If $\dim\im(T^2+bT+cI)\geq2$ the desired result holds by induction hypothesis. If $T^2+bT+cI=0$, then any subspace of $V$ with dimension $2$ is a subspace of $\ker(T^2+bT+cI)$, and thus is invariant under $T$. If $\dim\im(T^2+bT+cI)=1$, because $\dim\ker(T^2+bT+cI)$ is even, $n$ is odd and $T$ has an eigenvalue. That completes the proof.
+\end{proof}
 
 
 
