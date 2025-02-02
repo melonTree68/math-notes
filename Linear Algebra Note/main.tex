@@ -66,9 +66,9 @@
 \newcommand{\bra}[1]{\mathopen{}\left(#1\right)}
 \newcommand{\sbra}[1]{\mathopen{}\left[#1\right]}
 \newcommand{\cbra}[1]{\mathopen{}\left\{#1\right\}}
-\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
-\newcommand{\inp}[2]{\left\langle #1, #2 \right\rangle}
-\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\inp}[2]{\left\langle#1,#2\right\rangle}
+\newcommand{\abs}[1]{\left|#1\right|}
 \newcommand{\rest}[2]{\mathopen{}\left.#1\right|_{#2}}
 
 \renewcommand{\phi}{\varphi}
@@ -150,7 +150,7 @@
 % \end{notns}
 
 
-\section{Vector Spaces}
+\section{Complexifcation}
 \begin{defn}
 	The complexification of $V$, denoted by $V_\C$, equals $V\times V$ with normal addition and real scalar multiplication for product space. But we write an element $(u,v)$ of $V_\C$ as $u+iv$. Complex scalar multiplication is defined by
 	\[(a+bi)(u+iv)=(au-bv)+i(av+bu)\]
@@ -158,6 +158,20 @@
 	\footnote{Think of $V$ as a subset of $V_\C$ by identifying $u\in V$ with $u+i0$. The construction of $V_\C$ from $V$ can then be thought of as generalizing the construction of $\C^n$ from $\R^n$.}
 \end{defn}
 
+\begin{props}[Properties of complexification]
+	\begin{enumerate}
+		\item $\lambda\in\R$ is an eigenvalue of $T$ if and only if $\lambda$ is an eigenvalue of $T_\C$.
+		\item $\lambda\in\C$ is an eigenvalue of $T_\C$ if and only if $\overline{\lambda}$ is an eigenvalue of $T_\C$.
+		\item The minimal polynomial of $T_\C$ equals the minimal polynomial of $T$.
+		\item Suppose $V$ is a real inner product space. For $u,v,w,x\in V$, define
+		\[\inp{u+iv}{w+ix}_\C=\inp{u}{w}+\inp{v}{x}+(\inp{v}{w}-\inp{u}{x})i.\]
+		Then $\inp{\cdot}{\cdot}_\C$ makes $V_\C$ into a complex inner product space. If $u,v\in V$, then
+		\[\inp{u}{v}_\C=\inp{u}{v}\quad\text{and}\quad\norm{u+iv}_\C^2=\norm{u}^2+\norm{v}^2.\]
+	\end{enumerate}
+\end{props}
+
+
+\section{Vector Spaces}
 \begin{lem}[Linear dependence lemma]
 	Suppose $v_1,\dots,v_m$ is a linearly dependent set in $V$. Then there exists $k\in\{1,2,\dots,m\}$ such that
 	\[v_k\in\spn(v_1,\dots,v_m).\]
@@ -165,13 +179,13 @@
 	\footnote{This lemma lays the foundation for a series of basic results for vector spaces.}
 \end{lem}
 
-\begin{thm}
-	Any two bases of a finite-dimensional vector space have the same length.%
-	\footnote{This proposition ensures that the \emph{dimension} of a vector space is well-defined.}
-\end{thm}
-\begin{proof}
-	Suppose $V$ is finite-dimensional. Let $\B_1$ and $\B_2$ be two bases of $V$. Considering $\B_1$ as an independent set and $\B_2$ as a spanning set leads to $\#\B_1\leq\#\B_2$. Interchanging the roles of $\B_1$ and $\B_2$ and we have $\#\B_2\leq\#\B_1$. Thus $\#\B_1=\#\B_2$.
-\end{proof}
+% \begin{thm}
+% 	Any two bases of a finite-dimensional vector space have the same length.%
+% 	\footnote{This proposition ensures that the \emph{dimension} of a vector space is well-defined.}
+% \end{thm}
+% \begin{proof}
+% 	Suppose $V$ is finite-dimensional. Let $\B_1$ and $\B_2$ be two bases of $V$. Considering $\B_1$ as an independent set and $\B_2$ as a spanning set leads to $\#\B_1\leq\#\B_2$. Interchanging the roles of $\B_1$ and $\B_2$ and we have $\#\B_2\leq\#\B_1$. Thus $\#\B_1=\#\B_2$.
+% \end{proof}
 
 
 \section{Linear Maps}
@@ -358,9 +372,9 @@
 
 
 \section{Polynomials}
-\begin{thm}
-	Suppose $p\in\P(\F)$ is a nonconstant polynomial of degree $m$. Then $\lambda\in\F$ is a zero of $p$ if and only if there exists a polynomial $q\in\P(\F)$ of degree $m-1$ such that $p(z)=(z-\lambda)q(z)$ for every $z\in\F$.
-\end{thm}
+% \begin{thm}
+% 	Suppose $p\in\P(\F)$ is a nonconstant polynomial of degree $m$. Then $\lambda\in\F$ is a zero of $p$ if and only if there exists a polynomial $q\in\P(\F)$ of degree $m-1$ such that $p(z)=(z-\lambda)q(z)$ for every $z\in\F$.
+% \end{thm}
 
 \begin{thm}
 	Suppose $p\in\P(\F)$ is a nonconstant polynomial of degree $m$. Then $p$ has at most $m$ zeros in $\F$.%
@@ -401,17 +415,17 @@
 	Thus taking $t$ to be $1/(2c)$ leads to $\abs{q(t\beta)}<1$. The contradiction implies that $p(\zeta)=0$, as desired.
 \end{proof}
 
-\begin{thm}[Fundamental theorem of algebra, second version]
-	If $p\in\P(\C)$ is a nonconstant polynomial, then $p$ has a unique factorization of the form
-	\[p(z)=c(z-\lambda_1)\cdots(z-\lambda_m),\]
-	where $c,\lambda_1,\dots,\lambda_m\in\C$.
-\end{thm}
+% \begin{thm}[Fundamental theorem of algebra, second version]
+% 	If $p\in\P(\C)$ is a nonconstant polynomial, then $p$ has a unique factorization of the form
+% 	\[p(z)=c(z-\lambda_1)\cdots(z-\lambda_m),\]
+% 	where $c,\lambda_1,\dots,\lambda_m\in\C$.
+% \end{thm}
 
-\begin{thm}[Factorization of a polynomial over $\R$]
-	If $p\in\P(\R)$ is a nonconstant polynomial, then $p$ has a unique factorization of the form
-	\[p(x)=c(x-\lambda_1)\cdots(x-\lambda_m)(x^2+b_1x+c_1)\cdots(x^2+b_Mx+c_M),\]
-	where $m,M\in\N$ and $c,\lambda_1,\dots,\lambda_m,b_1,\dots,b_M,c_1,\dots,c_M\in\R$, with $b_k^2<4c_k$ for each $k$.
-\end{thm}
+% \begin{thm}[Factorization of a polynomial over $\R$]
+% 	If $p\in\P(\R)$ is a nonconstant polynomial, then $p$ has a unique factorization of the form
+% 	\[p(x)=c(x-\lambda_1)\cdots(x-\lambda_m)(x^2+b_1x+c_1)\cdots(x^2+b_Mx+c_M),\]
+% 	where $m,M\in\N$ (possibly $0$) and $c,\lambda_1,\dots,\lambda_m,b_1,\dots,b_M,c_1,\dots,c_M\in\R$, with $b_k^2<4c_k$ for each $k$.
+% \end{thm}
 
 \begin{exer}
 	Suppose $p,q\in\P(\C)$ are nonconstant polynomials with no zeros in common. Let $m=\deg p$ and $n=\deg q$. Prove that there exist $r\in\P_{n-1}(\C)$ and $s\in\P_{m-1}(\C)$ such that $rp+sq=1$.
@@ -423,23 +437,23 @@
 
 \section{Eigenvalues and Eigenvectors}
 \subsection{Invariant Subspaces}
-\begin{thm}
-	Suppose $V$ is finite-dimensional, $T\in\L(V)$, and $\lambda\in\F$. Then the following are equivalent.%
-	\footnote{The equivalences are useful in that they allow identifying an eigenvalue without explicitly constructing an eigenvector.}
-	\begin{enumerate}
-		\item $\lambda$ is an eigenvalue of $T$.
-		\item $T-\lambda I$ is not injective.
-		\item $T-\lambda I$ is not surjective.
-		\item $T-\lambda I$ is not invertible.
-	\end{enumerate}
-\end{thm}
+% \begin{thm}
+% 	Suppose $V$ is finite-dimensional, $T\in\L(V)$, and $\lambda\in\F$. Then the following are equivalent.%
+% 	\footnote{The equivalences are useful in that they allow identifying an eigenvalue without explicitly constructing an eigenvector.}
+% 	\begin{enumerate}
+% 		\item $\lambda$ is an eigenvalue of $T$.
+% 		\item $T-\lambda I$ is not injective.
+% 		\item $T-\lambda I$ is not surjective.
+% 		\item $T-\lambda I$ is not invertible.
+% 	\end{enumerate}
+% \end{thm}
 
-\begin{exer}
-	Suppose $T\in\L(V)$ has no eigenvalues and $T^4=I$. Prove that $T^2=-I$.
-\end{exer}
-\begin{proof}
-	$(T^2+I)(T+I)(T-I)=0$. Because $T$ has no eigenvalues, $T+I$ and $T-I$ are both invertible. Hence $T^2+I=0$.
-\end{proof}
+% \begin{exer}
+% 	Suppose $T\in\L(V)$ has no eigenvalues and $T^4=I$. Prove that $T^2=-I$.
+% \end{exer}
+% \begin{proof}
+% 	$(T^2+I)(T+I)(T-I)=0$. Because $T$ has no eigenvalues, $T+I$ and $T-I$ are both invertible. Hence $T^2+I=0$.
+% \end{proof}
 
 \begin{exer}
 	Suppose that $\lambda_1,\dots,\lambda_n\in\R$ are pairwise distinct. Prove that the list $\e^{\lambda_1x},\dots,\e^{\lambda_nx}$ is linearly independent in $\R^\R$.
@@ -480,12 +494,12 @@
 \begin{exer}[Companion matrix of a polynomial]
 	Suppose $a_0,\dots,a_{n-1}\in\F$. Let $T\in\L(\F^n)$ be such that $\M(T)$ (with respect to the standard basis) is
 	\[\begin{bmatrix}
-		\hspace{0.3em}0&&&&&-a_0\\
-		\hspace{0.3em}1&0&&&&-a_1\\
-		\hspace{0.3em}&1&0&&&-a_2\\
-		\hspace{0.3em}&&\ddots&&&\vdots\\
-		\hspace{0.3em}&&&&0&-a_{n-2}\\
-		\hspace{0.3em}&&&&1&-a_{n-1}\\
+		0&&&&&-a_0\\
+		1&0&&&&-a_1\\
+		&1&0&&&-a_2\\
+		&&\ddots&&&\vdots\\
+		&&&&0&-a_{n-2}\\
+		&&&&1&-a_{n-1}\\
 	\end{bmatrix}\]
 	Prove that the minimal polynomial of $T$ is the polynomial%
 	\footnote{This exercise implies that every monic polynomial is the minimal polynomial of some operator. Hence an algorithm that could produce exact eigenvalues for each operators on each $\F^n$ does not exist.}
@@ -508,6 +522,58 @@
 	If $T$ has no eigenvalues, then $\F=\R$ and $p(z)=q(z)(z^2+bz+c)$ for some $b,c\in\R$ with $b^2<4c$ and monic polynomial $q$ with $\deg q=\deg p-2$. If $\dim\im(T^2+bT+cI)\geq2$ the desired result holds by induction hypothesis. If $T^2+bT+cI=0$, then any subspace of $V$ with dimension $2$ is a subspace of $\ker(T^2+bT+cI)$, and thus is invariant under $T$. If $\dim\im(T^2+bT+cI)=1$, because $\dim\ker(T^2+bT+cI)$ is even, $n$ is odd and $T$ has an eigenvalue. That completes the proof.
 \end{proof}
 
+
+
+\subsection{Commuting Operators}
+\begin{exer}
+	Suppose $\E\subseteq\L(V)$ and every element of $\E$ is diagonalizable. Prove that there exists a basis of $V$ with respect to which every element of $\E$ has a diagonal matrix if and only if every pair of elements of $\E$ commutes.%
+	\footnote{This is an extension of simultaneous diagonalizability to more than $2$ (possibly infinitely many) operators.}
+\end{exer}
+\begin{proof}
+	Suppose every pair of elements of $\E$ commutes. The other direction is trivial. We use induction on $n=\dim V$. The base case $n=1$ is trivial. Now suppose $n>1$ and the desired result holds for all smaller integers. Without loss of generality, suppose $\E\cap\{\lambda I:\lambda\in\F\}=\emptyset$, or else consider $\E\backslash\{\lambda I:\lambda\in\F\}$.
+
+	Let $\lambda_1,\dots,\lambda_m$ be the distinct eigenvalues of $T\in\E$. Then $V=E(\lambda_1,T)\oplus\cdots\oplus E(\lambda_m,T)$. Because $E(\lambda_k,T)$ is invariant under every $S\in\E$, it suffices to show that the desired result holds on $E(\lambda_1,T)$. Because $E(\lambda_1,T)\subsetneqq V$, it holds by induction hypothesis, as desired.
+\end{proof}
+
+\begin{exer}
+	Suppose $V$ is a finite-dimensional nonzero complex vector space. Suppose that $\E\in\L(V)$ is such that $S$ and $T$ commute for all $S,T\in\E$.
+	\begin{enumerate}
+		\item Prove that there is a vector in $V$ that is an eigenvector for every element of $\E$.
+		\item Prove that there exists a basis of $V$ with respect to which every element of $\E$ has an upper-triangular matrix.%
+		\footnote{This is an extension of simultaneous upper triangularizability to more than $2$ operators.}
+	\end{enumerate}
+\end{exer}
+
+
+\section{Inner Product Spaces}
+\subsection{Inner Products and Norms}
+\begin{props}[Polarization identities]\label{props: polarization identities}
+	\begin{enumerate}
+		\item Suppose $V$ is a real inner product space. Then
+		\[\inp{u}{v}=\frac{\norm{u+v}^2-\norm{u-v}^2}{4}.\]
+		\item Suppose $V$ is a complex inner product space. Then
+		\[\inp{u}{v}=\frac{\norm{u+v}^2-\norm{u-v}^2+\norm{u+iv}^2i-\norm{u-iv}^2i}{4}.\]
+	\end{enumerate}
+\end{props}
+
+\begin{exer}
+	A \emph{norm} on a vector space $U$ is a function
+	\[\norm{\cdot}:U\to[0,+\infty)\]
+	which satisfies positive-definiteness, absolute homogeneity, and triangle inequality.
+
+	Prove that if $\norm{\cdot}$ is a norm on $U$ satisfying the parallelogram equality, then there is an inner product $\inp{\cdot}{\cdot}$ on $U$ such that $\norm{u}=\inp{u}{u}^{1/2}$ for all $u\in U$.%
+	\footnote{Recall Propositions~\ref{props: polarization identities}.}
+\end{exer}
+
+\begin{exer}
+	Suppose $f,g$ are differentiable functions from $\R$ to $\R^n$.
+	\begin{enumerate}
+		\item Prove that
+		\[\inp{f(t)}{g(t)}'=\inp{f'(t)}{g(t)}+\inp{f(t)}{g'(t)}.\]
+		\item Suppose $\norm{f(t)}\equiv c>0$ for every $t\in\R$. Prove that $\inp{f'(t)}{f(t)}=0$ for every $t\in\R$.%
+		\footnote{This result has a nice geometric interpretation.}
+	\end{enumerate}
+\end{exer}
 
 
 \end{document}
