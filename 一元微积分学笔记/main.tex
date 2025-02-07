@@ -90,7 +90,7 @@
 
 
 % ---------- Symbol Macros ----------
-% period: ．
+% period: . 
 \newcommand{\bra}[1]{\mathopen{}\left(#1\right)}
 \newcommand{\sbra}[1]{\mathopen{}\left[#1\right]}
 \newcommand{\cbra}[1]{\mathopen{}\left\{#1\right\}}
@@ -175,73 +175,73 @@
 \section{实数系的基本定理}
 实数系基本定理的使用有其显著动机, 在观察题干时应当向这方面思考, 例如:
 \begin{enumerate}
-	\item Lebesgue方法将局部性质推广至整体．它聚焦于``函数在什么地方失去了这个整体性质'', 并通过研究该处的局部性质引出矛盾．
-	\item 闭区间套定理将整体性质继承至局部．
-	\item 有限开覆盖定理将局部性质推广至整体．
+	\item Lebesgue方法将局部性质推广至整体. 它聚焦于``函数在什么地方失去了这个整体性质'', 并通过研究该处的局部性质引出矛盾. 
+	\item 闭区间套定理将整体性质继承至局部. 
+	\item 有限开覆盖定理将局部性质推广至整体. 
 \end{enumerate}
 
 \begin{exer}
-	设$f$在开区间$I$上连续．且于每一点$x\in I$处取到极值．求证: $f$为$I$上的常值函数．
+	设$f$在开区间$I$上连续. 且于每一点$x\in I$处取到极值. 求证: $f$为$I$上的常值函数. 
 \end{exer}
 \begin{pf}
-	用反证法．假设$f(a_0)<f(b_0)$．$\exists\,\xi\in[a_0,b_0],\,f(\xi)=(f(a_0)+f(b_0))/2$．如果$\xi\leq(a_0+b_0)/2$, 取$\eta\in[a_0,\xi],\,f(\eta)=(f(a_0)+f(\xi))/2$, 令$[a_1,b_1]=[\eta,\xi]\subseteq[a_0,b_0]$．其余情况同理．重复此过程, 得到一列闭区间套收缩至$\xi$, 可以证明$\xi$不是极值点, 矛盾．
+	用反证法. 假设$f(a_0)<f(b_0)$. $\exists\,\xi\in[a_0,b_0],\,f(\xi)=(f(a_0)+f(b_0))/2$. 如果$\xi\leq(a_0+b_0)/2$, 取$\eta\in[a_0,\xi],\,f(\eta)=(f(a_0)+f(\xi))/2$, 令$[a_1,b_1]=[\eta,\xi]\subseteq[a_0,b_0]$. 其余情况同理. 重复此过程, 得到一列闭区间套收缩至$\xi$, 可以证明$\xi$不是极值点, 矛盾. 
 \end{pf}
 
 \begin{exer}
-	设$f$在$[0,1]$上满足以下条件: (1) $f(0)>0,\,f(1)<0$; (2) $\exists\,g\in C[0,1]$, 使得$f+g$在$[0,1]$上单调递增．求证: $f$在$[0,1]$中有零点．
+	设$f$在$[0,1]$上满足以下条件: (1) $f(0)>0,\,f(1)<0$; (2) $\exists\,g\in C[0,1]$, 使得$f+g$在$[0,1]$上单调递增. 求证: $f$在$[0,1]$中有零点. 
 \end{exer}
 \begin{pf}
-	设$E=\cbra{x\in[0,1]\,\middle\vert\,f(x)>0},\,\sup E=b\in[0,1]$．$f(b)\neq0$必然导致$f$从正值突跃入负值时, 因$f+g$单调递增而违背$g$的连续性．
+	设$E=\cbra{x\in[0,1]\,\middle\vert\,f(x)>0},\,\sup E=b\in[0,1]$. $f(b)\neq0$必然导致$f$从正值突跃入负值时, 因$f+g$单调递增而违背$g$的连续性. 
 \end{pf}
 
 \begin{thm}[加强形式的有限开覆盖定理]
-	$\{\mathcal{O}_n\}$是$[a,b]$的一个开覆盖, 则$\exists\,\delta>0$ (称作开覆盖的Lebesgue数), 使得$\forall\,x',x''\in[a,b]$, 只要$x'-x''<\delta$, 就存在开覆盖中的一个开区间, 它覆盖$x',x''$．
+	$\{\mathcal{O}_n\}$是$[a,b]$的一个开覆盖, 则$\exists\,\delta>0$ (称作开覆盖的Lebesgue数), 使得$\forall\,x',x''\in[a,b]$, 只要$x'-x''<\delta$, 就存在开覆盖中的一个开区间, 它覆盖$x',x''$. 
 \end{thm}
 
 % \begin{exer}
-% 	用有限开覆盖定理证明Cantor定理: 如果$f\in C[a,b]$, 则$f\in U.C.[a,b]$．
+% 	用有限开覆盖定理证明Cantor定理: 如果$f\in C[a,b]$, 则$f\in U.C.[a,b]$. 
 % \end{exer}
 
 \begin{lem}
-	每个数列都有单调子列．
+	每个数列都有单调子列. 
 \end{lem}
 % \begin{pf}
-% 	记数列$\{a_n\}$中的项$a_m$具有性质M, 如果$\forall\,n>m,\,a_n\leq a_m$．分类讨论具有性质M的项数量是否有限．
+% 	记数列$\{a_n\}$中的项$a_m$具有性质M, 如果$\forall\,n>m,\,a_n\leq a_m$. 分类讨论具有性质M的项数量是否有限. 
 % \end{pf}
 % \begin{rem}
-% 	从这一引理出发可以由单调有界收敛定理得到B-W定理．
+% 	从这一引理出发可以由单调有界收敛定理得到B-W定理. 
 % \end{rem}
 
 \begin{cor}
-	一个数列有收敛子列的充分必要条件是它不是无穷大量．
+	一个数列有收敛子列的充分必要条件是它不是无穷大量. 
 \end{cor}
 
-以下压缩映射原理是处理迭代数列的实用工具．
+以下压缩映射原理是处理迭代数列的实用工具. 
 \begin{defn}
-	称$f$是$[a,b]$上的一个压缩映射, 如果$f\bra{[a,b]}\subseteq[a,b]$, 且$\exists\,0<k<1$, 使得$\forall\,x,y\in[a,b],\,|f(x)-f(y)|\leq k|x-y|$．
+	称$f$是$[a,b]$上的一个压缩映射, 如果$f\bra{[a,b]}\subseteq[a,b]$, 且$\exists\,0<k<1$, 使得$\forall\,x,y\in[a,b],\,|f(x)-f(y)|\leq k|x-y|$. 
 \end{defn}
 
 \begin{prop}[压缩映射原理]
 	设$f$是$[a,b]$上的一个压缩映射, 则:
 	\begin{enumerate}
-		\item $f$在$[a,b]$中存在唯一不动点$\xi$．
-		\item 由任何初始值$a_0\in[a,b]$和递推公式$a_{n+1}=f(a_n)$生成的数列$\{a_n\}$一定收敛于$\xi$．
-		\item 成立事后估计$|a_n-\xi|\leq\frac{k}{1-k}|a_n-a_{n-1}|$和先验估计$|a_n-\xi|\leq\frac{k^n}{1-k}|a_1-a_0|$．
+		\item $f$在$[a,b]$中存在唯一不动点$\xi$. 
+		\item 由任何初始值$a_0\in[a,b]$和递推公式$a_{n+1}=f(a_n)$生成的数列$\{a_n\}$一定收敛于$\xi$. 
+		\item 成立事后估计$|a_n-\xi|\leq\frac{k}{1-k}|a_n-a_{n-1}|$和先验估计$|a_n-\xi|\leq\frac{k^n}{1-k}|a_1-a_0|$. 
 	\end{enumerate}
 \end{prop}
 \begin{pf}
-	$|a_{n+p}-a_n|\leq k|a_{n+p-1}-a_{n-1}|\leq\cdots\leq k^n|a_p-a_0|\leq k^n(b-a)$．由Cauchy收敛准则, $\{a_n\}$收敛．记其极限为$\xi\in[a,b]$．由$|f(a_n)-f(\xi)|\leq k|a_n-\xi|,\,f(a_n)$收敛于$f(\xi)$．代入$a_{n+1}=f(a_n)$, 得到$f(\xi)=\xi$．不动点唯一性与估计式易证．
+	$|a_{n+p}-a_n|\leq k|a_{n+p-1}-a_{n-1}|\leq\cdots\leq k^n|a_p-a_0|\leq k^n(b-a)$. 由Cauchy收敛准则, $\{a_n\}$收敛. 记其极限为$\xi\in[a,b]$. 由$|f(a_n)-f(\xi)|\leq k|a_n-\xi|,\,f(a_n)$收敛于$f(\xi)$. 代入$a_{n+1}=f(a_n)$, 得到$f(\xi)=\xi$. 不动点唯一性与估计式易证. 
 \end{pf}
 
 % \begin{exer}
-% 	数列$\{a_n\}$由$a_1=1$和$a_{n+1}=f(a_n)=1+\frac{1}{a_n}$生成．求证$\{a_n\}$收敛, 并求其极限．
+% 	数列$\{a_n\}$由$a_1=1$和$a_{n+1}=f(a_n)=1+\frac{1}{a_n}$生成. 求证$\{a_n\}$收敛, 并求其极限. 
 % \end{exer}
 
 
 % \section{数列与函数极限}
 % \subsection{数列极限}
 % \begin{exer}
-% 	求证: 数列$a_n=1+\frac{1}{2^p}+\cdots+\frac{1}{n^p}\,(p>1)$收敛．
+% 	求证: 数列$a_n=1+\frac{1}{2^p}+\cdots+\frac{1}{n^p}\,(p>1)$收敛. 
 % \end{exer}
 % \begin{pf}
 % 	\begin{align*}
@@ -250,12 +250,12 @@
 % 		&\leq1+2\cdot2^{-p}\cdot\bra{1+\frac{1}{2^p}+\cdots+\frac{1}{n^p}}\\
 % 		&=1+2^{1-p}a_n.
 % 	\end{align*}
-% 	于是$a_n<a_{2n}<1+2^{1-p}a_n$, 得$a_n<\frac{1}{1-2^{1-p}}$有界．
+% 	于是$a_n<a_{2n}<1+2^{1-p}a_n$, 得$a_n<\frac{1}{1-2^{1-p}}$有界. 
 % \end{pf}
 
 
 % \begin{exer}
-%     设$A_n=\sum_{k=1}^{n}a_k$, 数列$A_n$收敛．$\{p_n\}$为单调增加的正数数列, 且为正无穷大量．求证:
+%     设$A_n=\sum_{k=1}^{n}a_k$, 数列$A_n$收敛. $\{p_n\}$为单调增加的正数数列, 且为正无穷大量. 求证:
 %     \[\lim_{\nti}\frac{p_1a_1+\cdots+p_na_n}{p_n}=0.\]
 % \end{exer}
 % \begin{pf}
@@ -267,15 +267,15 @@
 % \subsection{数列的上下极限}
 \section{数列的上下极限}
 % \begin{defn}[上下极限的等价定义]
-% 仅叙述上极限有关性质, 下极限同理．
+% 仅叙述上极限有关性质, 下极限同理. 
 % \begin{enumerate}
-% 	\item $\ulim x_n$为$\cbra{x_n}$的最大极限点．
+% 	\item $\ulim x_n$为$\cbra{x_n}$的最大极限点. 
 % 	\item $\ulim x_n=\lim_{n\to\infty}\sup_{k\geq n}\{x_k\}.$
-% 	\item $b\in\R$是$\cbra{x_n}$的上极限的充分必要条件是: $\forall\,\epsilon>0,\,U\bra{b,\epsilon}$内含有$\{x_n\}$的无穷多项, 且$\exists\,N\in\N$, 使得$\forall\,n>N,\,x_n<b+\epsilon$．
+% 	\item $b\in\R$是$\cbra{x_n}$的上极限的充分必要条件是: $\forall\,\epsilon>0,\,U\bra{b,\epsilon}$内含有$\{x_n\}$的无穷多项, 且$\exists\,N\in\N$, 使得$\forall\,n>N,\,x_n<b+\epsilon$. 
 % \end{enumerate}
 % \end{defn}
 
-% 以下结论是使用上下极限工具的主要手段．假设以下所有四则运算 (在$\overline{\R}$中) 均有意义．
+% 以下结论是使用上下极限工具的主要手段. 假设以下所有四则运算 (在$\overline{\R}$中) 均有意义. 
 % \begin{thm}
 % 	\[\llim x_n+\llim y_n\leq\llim\bra{x_n+y_n}\leq
 % 	\left\{\begin{aligned}
@@ -288,123 +288,123 @@
 % \end{thm}
 
 \begin{exer}
-	$y_n=x_n+2x_{n+1}$．已知$\{y_n\}$收敛, 求证: $\{x_n\}$也收敛．
+	$y_n=x_n+2x_{n+1}$. 已知$\{y_n\}$收敛, 求证: $\{x_n\}$也收敛. 
 \end{exer}
 \begin{pf}
-	先证明$\{x_n\}$有界．设$|y_n|<M$且$|x_1|<M$．由$|x_{n+1}|=\frac{1}{2}|y_n-x_n|\leq\frac{1}{2}|y_n|+\frac{1}{2}|x_n|$, 归纳地, $|x_n|<M$．
+	先证明$\{x_n\}$有界. 设$|y_n|<M$且$|x_1|<M$. 由$|x_{n+1}|=\frac{1}{2}|y_n-x_n|\leq\frac{1}{2}|y_n|+\frac{1}{2}|x_n|$, 归纳地, $|x_n|<M$. 
 	
-	对$2x_{n+1}=y_n-x_n$左右两边同时取上下极限, 解得$\llim x_n=\ulim x_n$, 即$\{x_n\}$收敛．
+	对$2x_{n+1}=y_n-x_n$左右两边同时取上下极限, 解得$\llim x_n=\ulim x_n$, 即$\{x_n\}$收敛. 
 \end{pf}
 
-% 判别数列敛散时, 可以考虑使用上下极限工具．
+% 判别数列敛散时, 可以考虑使用上下极限工具. 
 % \begin{exer}
-% 	若对于$\{a_n\}$的每个子列$\cbra{a_{n_k}}$都有$\lim_{k\to\infty}\frac{a_{n_1}+a_{n_2}+\cdots+a_{n_k}}{k}=a$, 求证: $\lim_{\nti}a_n=a$．
+% 	若对于$\{a_n\}$的每个子列$\cbra{a_{n_k}}$都有$\lim_{k\to\infty}\frac{a_{n_1}+a_{n_2}+\cdots+a_{n_k}}{k}=a$, 求证: $\lim_{\nti}a_n=a$. 
 % \end{exer}
 % \begin{pf}
-% 	考虑$\{a_n\}$的收敛子列, 得到$\llim a_n=\ulim a_n=a$．
+% 	考虑$\{a_n\}$的收敛子列, 得到$\llim a_n=\ulim a_n=a$. 
 % \end{pf}
 
-以下两题体现出: 上下极限是一个定数, 应当充分利用它和已知数的大小关系．例如假设$\llim y_n=b<1$时, 应当考虑$b$和$1$的空隙; 另一题中的$l$也是如此．
+以下两题体现出: 上下极限是一个定数, 应当充分利用它和已知数的大小关系. 例如假设$\llim y_n=b<1$时, 应当考虑$b$和$1$的空隙; 另一题中的$l$也是如此. 
 \begin{exer}
-	设$\{x_n\}$为正数数列, 求证: $\ulim n\,\bra{\frac{1+x_{n+1}}{x_n}-1}\geq1$．
+	设$\{x_n\}$为正数数列, 求证: $\ulim n\,\bra{\frac{1+x_{n+1}}{x_n}-1}\geq1$. 
 \end{exer}
 % \begin{pf}
-% 	用反证法．假设$\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}=b<1$．于是对$\epsilon=\frac{1-b}{2},\,\exists\,N\in\N$, 使得$\forall\,n>N,\,\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}<1$, 即$\frac{x_{n+1}}{n+1}<\frac{x_n}{n}-\frac{1}{n+1}$．$x_n>0$与调和级数的发散性矛盾．
+% 	用反证法. 假设$\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}=b<1$. 于是对$\epsilon=\frac{1-b}{2},\,\exists\,N\in\N$, 使得$\forall\,n>N,\,\ulim n\bra{\frac{1+x_{n+1}}{x_n}-1}<1$, 即$\frac{x_{n+1}}{n+1}<\frac{x_n}{n}-\frac{1}{n+1}$. $x_n>0$与调和级数的发散性矛盾. 
 % \end{pf}
 
 \begin{exer}
-	设$\{a_n\}$为正数数列．求证: $\ulim \sqrt[n]{a_n}\leq1$的充分必要条件是$\forall\,l>1,\,\lim_{\nti}\frac{a_n}{l^n}=0$．
+	设$\{a_n\}$为正数数列. 求证: $\ulim \sqrt[n]{a_n}\leq1$的充分必要条件是$\forall\,l>1,\,\lim_{\nti}\frac{a_n}{l^n}=0$. 
 \end{exer}
 
-以下两题中均涉及两个极限过程．所以必须先取定一个极限过程的$\epsilon-N$, 然后在此基础上分析第二个极限过程．
+以下两题中均涉及两个极限过程. 所以必须先取定一个极限过程的$\epsilon-N$, 然后在此基础上分析第二个极限过程. 
 \begin{exer}
-	设正数数列$\{a_n\}$满足$a_{n+m}\leq a_na_m,\,\forall\,n,m\in\N$．求证:
+	设正数数列$\{a_n\}$满足$a_{n+m}\leq a_na_m,\,\forall\,n,m\in\N$. 求证:
 	\[\lim_{\nti}\frac{\ln a_n}{n}=\inf_{n\geq 1}\cbra{\frac{\ln a_n}{n}}.\]
 \end{exer}
 \begin{pf}
-	设所求证等式右端为$\alpha$．观察条件, 条件对$\{a_n\}$的增速作出了限制．为了利用条件控制$\{a_n\}$, 想到取定$N\in\N$, 用$N$的整数倍估计$n$．设$n=mN+k$, 其中$m,k\in\N,\,r<N$．于是$k$只有有限个取值, 可以在$\nti$的过程中被控制．变形得
+	设所求证等式右端为$\alpha$. 观察条件, 条件对$\{a_n\}$的增速作出了限制. 为了利用条件控制$\{a_n\}$, 想到取定$N\in\N$, 用$N$的整数倍估计$n$. 设$n=mN+k$, 其中$m,k\in\N,\,r<N$. 于是$k$只有有限个取值, 可以在$\nti$的过程中被控制. 变形得
 	\[\frac{\ln a_n}{n}\leq\frac{mN}{n}\,\frac{\ln a_N}{N}+\frac{\ln a_k}{n}.\]
 	比较所求证等式与上式, 自然想到$\forall\,\epsilon>0$, 取$\alpha\leq\frac{\ln a_N}{N}<\alpha+\epsilon.$
-	令$\nti$, 在不等式两边取上极限．
+	令$\nti$, 在不等式两边取上极限. 
 	\[\ulim\frac{\ln a_n}{n}\leq\alpha+\epsilon.\]
-	结合$\alpha\leq\llim\frac{\ln a_n}{n}$, 得证．
+	结合$\alpha\leq\llim\frac{\ln a_n}{n}$, 得证. 
 \end{pf}
 
 \begin{exer}
-	设数列$\{x_n\}$满足$x_n+x_m-1\leq x_{n+m}\leq x_n+x_m+1$．求证: $\cbra{\frac{x_n}{n}}$收敛．
+	设数列$\{x_n\}$满足$x_n+x_m-1\leq x_{n+m}\leq x_n+x_m+1$. 求证: $\cbra{\frac{x_n}{n}}$收敛. 
 \end{exer}
 
 
 \section{连续函数}
 \begin{thm}
-	有界开区间$(a,b)$上的连续函数$f$在$(a,b)$上一致连续的充分必要条件是存在两个有限的单侧极限$f(a^+)$和$f(b^-)$．当$(a,b)$是无界区间时, 充分性依然成立．
+	有界开区间$(a,b)$上的连续函数$f$在$(a,b)$上一致连续的充分必要条件是存在两个有限的单侧极限$f(a^+)$和$f(b^-)$. 当$(a,b)$是无界区间时, 充分性依然成立. 
 \end{thm}
 \begin{rem}
-	对可导函数来说, 以下条件依次减弱．Lipshitz条件$=$导数有界$\geq$一致连续．
+	对可导函数来说, 以下条件依次减弱. Lipshitz条件$=$导数有界$\geq$一致连续. 
 \end{rem}
 
 % \begin{prop}
-% 	单调函数的间断点为跳跃间断点．
+% 	单调函数的间断点为跳跃间断点. 
 % \end{prop}
 
-以下两题的证明体现了``证明满足某性质的点有至多可数个''的常用方法．
+以下两题的证明体现了``证明满足某性质的点有至多可数个''的常用方法. 
 \begin{prop}
-	单调函数的间断点至多为可数个．
+	单调函数的间断点至多为可数个. 
 \end{prop}
 \begin{pf}
-	易证对单调增函数$f$的间断点$x_1<x_2$, 有$f(x_1^-)<f(x_1^+)\leq f(x_2^-)<f(x_2^+)$．于是$f$的每个间断点$x$都可以用不同的有理数$q\in\bra{f(x^-),f(x^+)}$标记．由于$\Q$是可数集, 间断点个数也至多可数．
+	易证对单调增函数$f$的间断点$x_1<x_2$, 有$f(x_1^-)<f(x_1^+)\leq f(x_2^-)<f(x_2^+)$. 于是$f$的每个间断点$x$都可以用不同的有理数$q\in\bra{f(x^-),f(x^+)}$标记. 由于$\Q$是可数集, 间断点个数也至多可数. 
 \end{pf}
 
 \begin{exer}
-	设$f$在$[a,b]$上处处有极限．求证:
+	设$f$在$[a,b]$上处处有极限. 求证:
 	\begin{enumerate}
-		\item $\forall\,\epsilon>0,\,[a,b]$中使得$|\lim_{t\to x}f(t)-f(x)|>\epsilon$的点至多有有限个．
-		\item $f$在$[a,b]$中至多有可数个间断点．
+		\item $\forall\,\epsilon>0,\,[a,b]$中使得$|\lim_{t\to x}f(t)-f(x)|>\epsilon$的点至多有有限个. 
+		\item $f$在$[a,b]$中至多有可数个间断点. 
 	\end{enumerate}
 \end{exer}
 \begin{pf}
-	对任意取定的$\epsilon>0$, $\forall\,x\in[a,b],\,\exists\,\delta_x$, 使得$\forall\,x-\delta_x<y<x+\delta_x,\,|f(y)-\lim_{t\to x}f(t)|\leq\epsilon$．由保号性, $|\lim_{t\to y}f(t)-\lim_{t\to x}f(t)|\leq\epsilon$．于是$\forall\,y\in\dnei(x,\delta_x),\,|\lim_{t\to y}f(t)-f(y)|\leq2\epsilon$．即每个$U(x,\delta_x)$中至多有一个满足要求的点．由有限开覆盖定理, 这样的点至多有有限个．
+	对任意取定的$\epsilon>0$, $\forall\,x\in[a,b],\,\exists\,\delta_x$, 使得$\forall\,x-\delta_x<y<x+\delta_x,\,|f(y)-\lim_{t\to x}f(t)|\leq\epsilon$. 由保号性, $|\lim_{t\to y}f(t)-\lim_{t\to x}f(t)|\leq\epsilon$. 于是$\forall\,y\in\dnei(x,\delta_x),\,|\lim_{t\to y}f(t)-f(y)|\leq2\epsilon$. 即每个$U(x,\delta_x)$中至多有一个满足要求的点. 由有限开覆盖定理, 这样的点至多有有限个. 
 
-	对(2), 取$\epsilon_n=1/n$, 可数个有限集的并是可数集．
+	对(2), 取$\epsilon_n=1/n$, 可数个有限集的并是可数集. 
 \end{pf}
 \begin{rem}
 	证明满足某性质的点有至多可数个的常用方法:
 	\begin{enumerate}
-		\item 用可数集 (例如$\Q$) 唯一标记它．
-		\item 将其表示为可数个可数集的并 (例如$\textstyle E=\bigcup_{n\in \N}E_{1/n}$)．这种方法对零测集的证明也适用．
+		\item 用可数集 (例如$\Q$) 唯一标记它. 
+		\item 将其表示为可数个可数集的并 (例如$\textstyle E=\bigcup_{n\in \N}E_{1/n}$). 这种方法对零测集的证明也适用. 
 	\end{enumerate}
 \end{rem}
 
 
 \section{一元微分学}
 \subsection{导数与微分}
-% 以下加强的无穷小增量公式在证明链式求导法则与反函数求导法则时很方便．
+% 以下加强的无穷小增量公式在证明链式求导法则与反函数求导法则时很方便. 
 % \begin{thm}[加强形式的无穷小增量公式]
 % 	设$f$在$x_0$处可导, 则成立以下公式:
 % 	\[\Delta y=f'(x_0)\Delta x+\omega(x)\Delta x.\]
-% 	其中$\lim_{x\to x_0}\omega(x)=\omega(x_0)=0$．
+% 	其中$\lim_{x\to x_0}\omega(x)=\omega(x_0)=0$. 
 % \end{thm}
 
 % \begin{thm}
-% 	设$x=\phi(y)$在$U(y_0)$上是严格单调的连续函数, 且$\phi'(y_0)\neq0$．若$y=f(x)$是$x=\phi(y)$的反函数, 则$f(x)$在$x_0=\phi(y_0)$处可导, 且
+% 	设$x=\phi(y)$在$U(y_0)$上是严格单调的连续函数, 且$\phi'(y_0)\neq0$. 若$y=f(x)$是$x=\phi(y)$的反函数, 则$f(x)$在$x_0=\phi(y_0)$处可导, 且
 % 	\[f'(x_0)=\frac{1}{\phi'(y_0)}.\]
 % \end{thm}
 % \begin{pf}
 % 	\[x-x_0=\bra{\phi'(y_0)+\omega(y)}(y-y_0),\]
-% 	其中$\lim_{y\to y_0}\omega(y)=\omega(y_0)=0$．
-% 	代入$y=f(x)$, 由保号性, $U(y_0)$内$\phi'(y_0)+\omega(y)\neq0$．
+% 	其中$\lim_{y\to y_0}\omega(y)=\omega(y_0)=0$. 
+% 	代入$y=f(x)$, 由保号性, $U(y_0)$内$\phi'(y_0)+\omega(y)\neq0$. 
 % 	\[\frac{\Delta y}{\Delta x}=\frac{f(x)-f(x_0)}{x-x_0}=\frac{1}{\phi'(y_0)+\omega(y)}.\]
-% 	令$\Delta x\to0$, 即得结论．
+% 	令$\Delta x\to0$, 即得结论. 
 % \end{pf}
 
 \begin{prop}
 	$f(x)=\left\{\begin{aligned}
 		&\e^{-\frac{1}{x^2}}&,x\neq0\\
 		&0&,x=0\\
-	\end{aligned}\right.$在$0$处的任意阶导数为$0$．定义$g(x)=\left\{\begin{aligned}
+	\end{aligned}\right.$在$0$处的任意阶导数为$0$. 定义$g(x)=\left\{\begin{aligned}
 		&\e^{-\frac{1}{x^2}}&,x>0\\
 		&0&,x\leq0\\
-	\end{aligned}\right.$, 则$h(x)=\frac{g(x)}{g(x)+g(1-x)}$是$\R$上无限次可导的函数, 且$x\leq0$时$h\equiv0,\,x\geq1$时$h\equiv1$．
+	\end{aligned}\right.$, 则$h(x)=\frac{g(x)}{g(x)+g(1-x)}$是$\R$上无限次可导的函数, 且$x\leq0$时$h\equiv0,\,x\geq1$时$h\equiv1$. 
 \end{prop}
 
 \begin{exer}
@@ -412,11 +412,11 @@
 	\[x_n=f\bra{\frac{1}{n^2}}+f\bra{\frac{2}{n^2}}+\cdots+f\bra{\frac{n}{n^2}}.\]
 \end{exer}
 \begin{sol}
-	注意到每一项的自变量都离$0$很近, 于是用无穷小增量公式, 答案为$\frac{1}{2}f'(0)$．
+	注意到每一项的自变量都离$0$很近, 于是用无穷小增量公式, 答案为$\frac{1}{2}f'(0)$. 
 \end{sol}
 
 \begin{exer}
-	求数列极限．
+	求数列极限. 
 	\begin{enumerate}
 		\begin{multicols}{2}
 			\item $\lim_{\nti}\bra{\sin\frac{1}{n^2}+\sin\frac{2}{n^2}+\cdots+\sin\frac{n}{n^2}}.$
@@ -441,19 +441,19 @@
 \end{sol}
 
 \begin{exer}
-	计算$f(x)=\arcsin x$的Maclaurin公式直到$x^5$项．
+	计算$f(x)=\arcsin x$的Maclaurin公式直到$x^5$项. 
 \end{exer}
 \begin{sol}
-	本题有多种出于不同思路的解法．
+	本题有多种出于不同思路的解法. 
 	\begin{enumerate}
-		\item 求导一次, 用广义二项式定理展开．
-		\item 利用$f$是奇函数, 对各项待定系数, 利用$\sin(\arcsin x)\equiv x$与$\sin x$的Maclaurin公式计算．\qedhere
+		\item 求导一次, 用广义二项式定理展开. 
+		\item 利用$f$是奇函数, 对各项待定系数, 利用$\sin(\arcsin x)\equiv x$与$\sin x$的Maclaurin公式计算. \qedhere
 	\end{enumerate}
 \end{sol}
 
 
 \subsection{微分中值定理与Taylor公式}
-以下几题使用待定常数法构造Rolle定理的辅助函数．核心是将区间一端$b$替换为变元, 使辅助函数在$a,\,b,$任意选定的内点$x$处具有良好性质, 例如函数值为0, 一阶导数值为0．
+以下几题使用待定常数法构造Rolle定理的辅助函数. 核心是将区间一端$b$替换为变元, 使辅助函数在$a,\,b,$任意选定的内点$x$处具有良好性质, 例如函数值为0, 一阶导数值为0. 
 \begin{exer}
 	\phantom{text}
 	\begin{enumerate}
@@ -466,7 +466,7 @@
 	\end{enumerate}
 \end{exer}
 \begin{pf}
-	以下均设所求证的$\xi$的导数值为$\lambda$．对$g$反复使用Rolle定理即得结论．
+	以下均设所求证的$\xi$的导数值为$\lambda$. 对$g$反复使用Rolle定理即得结论. 
 	\begin{enumerate}
 		\item $g(t)=f(t)-\frac{\lambda}{6}(t-a)^2(t-b).$
 		\item $g(x)=f(x)-f(a)-\frac{1}{2}(x-a)\sbra{f'(a)+f'(x)}+\frac{\lambda}{12}(x-a)^3.$
@@ -474,75 +474,75 @@
 	\end{enumerate}
 \end{pf}
 
-下一题的核心步骤是代数技巧: 如果$\frac{a}{b}<\frac{c}{d},\,0<b<c$, 则$\frac{a}{b}<\frac{c}{d}<\frac{c-a}{d-b}$．
+下一题的核心步骤是代数技巧: 如果$\frac{a}{b}<\frac{c}{d},\,0<b<c$, 则$\frac{a}{b}<\frac{c}{d}<\frac{c-a}{d-b}$. 
 \begin{exer}
-	设$f\in C[a,b],\,f'(a)=f'(b)$．求证: $\exists\,\xi\in(a,b),$
+	设$f\in C[a,b],\,f'(a)=f'(b)$. 求证: $\exists\,\xi\in(a,b),$
 	\[f'(\xi)=\frac{f(\xi)-f(a)}{\xi-a}.\]
 \end{exer}
 \begin{pf}
-	即证辅助函数$g(x)=\frac{f(x)-f(a)}{x-a}$有零点．反证假设其没有零点, 由Darboux定理, 不妨设$g$严格单调增．$\forall\,x\in(a,b),$
+	即证辅助函数$g(x)=\frac{f(x)-f(a)}{x-a}$有零点. 反证假设其没有零点, 由Darboux定理, 不妨设$g$严格单调增. $\forall\,x\in(a,b),$
 	\[f'(a)<\frac{f(x)-f(a)}{x-a}<\frac{f(b)-f(a)}{b-a}<\frac{f(b)-f(x)}{b-x}.\]
-	令$x\to b$, 即得矛盾．
+	令$x\to b$, 即得矛盾. 
 \end{pf}
 \begin{rem}
-	辅助函数往往唯一, 找出即可．如果没有发现显然的方法使用Rolle定理, 应毫不犹豫地用Darboux定理反证．
+	辅助函数往往唯一, 找出即可. 如果没有发现显然的方法使用Rolle定理, 应毫不犹豫地用Darboux定理反证. 
 \end{rem}
 
 % \begin{exer}
-% 	设$f$在$(a,b)$上任意阶可导, 且$\forall\,n\in\N,\,f^{(n)}(x)\geq0,\,|f(x)|\leq M$．求证: $\forall\,x\in(a,b),\,r>0,\,x+r\in(a,b)$, 成立关于导数的估计式:
+% 	设$f$在$(a,b)$上任意阶可导, 且$\forall\,n\in\N,\,f^{(n)}(x)\geq0,\,|f(x)|\leq M$. 求证: $\forall\,x\in(a,b),\,r>0,\,x+r\in(a,b)$, 成立关于导数的估计式:
 % 	\[f^{(n)}(x)\leq\frac{2Mn!}{r^n},\,\forall\,n\in\N.\]
 % \end{exer}
 
 % \begin{exer}[Bernstein定理]
-% 	设$f$在$(a,b)$上任意阶可导, 且$\forall\,n\in\N,\,f^{(n)}(x)\geq0$．求证: $\forall\,x_0\in(a,b),\,\exists\,r>0$, 使得当$x\in[x_0-r,x_0+r]\subseteq(a,b)$时, 成立
+% 	设$f$在$(a,b)$上任意阶可导, 且$\forall\,n\in\N,\,f^{(n)}(x)\geq0$. 求证: $\forall\,x_0\in(a,b),\,\exists\,r>0$, 使得当$x\in[x_0-r,x_0+r]\subseteq(a,b)$时, 成立
 % 	\[f(x)=\lim_{\nti}\sum_{k=0}^{n}\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k.\]
 % \end{exer}
 
 
 \subsection{函数的凸性}
-以下两题的关键在于注意到指数高于$1$的幂函数的下凸性, 于是考虑将$[a,b]$等分为$n$个小区间, 分别利用条件并相加, 使不等式右边随$n$的增大而收紧．
+以下两题的关键在于注意到指数高于$1$的幂函数的下凸性, 于是考虑将$[a,b]$等分为$n$个小区间, 分别利用条件并相加, 使不等式右边随$n$的增大而收紧. 
 \begin{exer}
-	设$f$在区间$I$上满足带指数的Lipshitz条件, 即$\exists\,M>0,\,\alpha>0$, 使得$\forall\,x,y\in I$, 成立$|f(x)-f(y)|\leq M|x-y|^\alpha$．求证: 若$\alpha>1$, 则$f$在$I$上是常值函数．
+	设$f$在区间$I$上满足带指数的Lipshitz条件, 即$\exists\,M>0,\,\alpha>0$, 使得$\forall\,x,y\in I$, 成立$|f(x)-f(y)|\leq M|x-y|^\alpha$. 求证: 若$\alpha>1$, 则$f$在$I$上是常值函数. 
 \end{exer}
 
 \begin{exer}
-	设$f\in C[a,b]$, 且$\exists\,M,\,\eta\in\R^+$, 使得$\forall\,[\alpha,\beta]\subseteq[a,b]$, 恒有$\left|\int_{\alpha}^{\beta}f(x)\,\d x\right|\leq M(\beta-\alpha)^{1+\eta}$．求证: $f\equiv0$．
+	设$f\in C[a,b]$, 且$\exists\,M,\,\eta\in\R^+$, 使得$\forall\,[\alpha,\beta]\subseteq[a,b]$, 恒有$\left|\int_{\alpha}^{\beta}f(x)\,\d x\right|\leq M(\beta-\alpha)^{1+\eta}$. 求证: $f\equiv0$. 
 \end{exer}
 
 \begin{exer}[Schwarz定理]
 	定义广义二阶导数
 	\[f^{[2]}(x)=\lim_{h\to0^+}\frac{f(x+h)-2f(x)+f(x-h)}{h^2}.\]
-	若$f\in C[a,b],\,f^{[2]}(x)\equiv0$, 求证: $f$为线性函数．
+	若$f\in C[a,b],\,f^{[2]}(x)\equiv0$, 求证: $f$为线性函数. 
 \end{exer}
 \begin{pf}
-	广义二阶导数的形式提示了可能与凸性相关．先用反证法证明: 如果$\forall\,x\in[a,b],\,f^{[2]}(x)>0$, 则$f$下凸．于是$\forall\,\epsilon>0,\,f(x)+\epsilon x^2$下凸．由定义得$f$下凸, 同理$f$上凸, 于是$f$为线性函数．
+	广义二阶导数的形式提示了可能与凸性相关. 先用反证法证明: 如果$\forall\,x\in[a,b],\,f^{[2]}(x)>0$, 则$f$下凸. 于是$\forall\,\epsilon>0,\,f(x)+\epsilon x^2$下凸. 由定义得$f$下凸, 同理$f$上凸, 于是$f$为线性函数. 
 \end{pf}
 \begin{rem}
-	证明线性函数可以从既是下凸函数又是上凸函数的角度入手．
+	证明线性函数可以从既是下凸函数又是上凸函数的角度入手. 
 	
-	这种利用$\epsilon$处理边界的方式是一种范式．
+	这种利用$\epsilon$处理边界的方式是一种范式. 
 \end{rem}
 
 
 \subsection{单侧导数的性质}
-以下定理具有启发性, 有时能带来出其不意的方便．仅陈述右侧导数相关性质, 左侧导数同理．
+以下定理具有启发性, 有时能带来出其不意的方便. 仅陈述右侧导数相关性质, 左侧导数同理. 
 \begin{lem}[Fermat引理]
-	设$f$在其极大值点$x_0$处右侧可导, 则$f_+'(x_0)\leq0$．
+	设$f$在其极大值点$x_0$处右侧可导, 则$f_+'(x_0)\leq0$. 
 \end{lem}
 
 \begin{prop}[单调性]
-	设$f\in C[a,b],$在$(a,b)$上右侧可导．若$f_+'(x)>0$恒成立, 则$f$在$[a,b]$上严格单调增．若$f_+'(x)\geq0$恒成立, 则$f$在$[a,b]$上单调增．
+	设$f\in C[a,b],$在$(a,b)$上右侧可导. 若$f_+'(x)>0$恒成立, 则$f$在$[a,b]$上严格单调增. 若$f_+'(x)\geq0$恒成立, 则$f$在$[a,b]$上单调增. 
 \end{prop}
 
 \begin{prop}
-	设$f\in C[a,b],$在$(a,b)$上右侧可导．若$f_+'(x)\equiv0$, 则$f\equiv C$．
+	设$f\in C[a,b],$在$(a,b)$上右侧可导. 若$f_+'(x)\equiv0$, 则$f\equiv C$. 
 \end{prop}
 
 \begin{prop}
-	设$f\in C[a,b],$在$(a,b)$上右侧可导．若$f_+'(x)\in C[a,b],$则$f\in C^1[a,b],\,f'=f_+'$.
+	设$f\in C[a,b],$在$(a,b)$上右侧可导. 若$f_+'(x)\in C[a,b],$则$f\in C^1[a,b],\,f'=f_+'$.
 \end{prop}
 \begin{pf}
-	考虑$G(x)=\int_{a}^{x}f_+'(t)\d t$．因为$\bra{f(x)-G(x)}_+'\equiv0,$所以$f(x)=G(x)+C$．
+	考虑$G(x)=\int_{a}^{x}f_+'(t)\d t$. 因为$\bra{f(x)-G(x)}_+'\equiv0,$所以$f(x)=G(x)+C$. 
 \end{pf}
 
 \begin{prop}[Rolle中值定理]
@@ -556,12 +556,12 @@
 \end{prop}
 
 \begin{prop}
-	设$f\in C[a,b],$在$(a,b)$上右侧可导, 则$f$在$(a,b)$上 (严格) 下凸的充分必要条件是$f_+'(x)$ (严格) 单调递增．
+	设$f\in C[a,b],$在$(a,b)$上右侧可导, 则$f$在$(a,b)$上 (严格) 下凸的充分必要条件是$f_+'(x)$ (严格) 单调递增. 
 \end{prop}
 
-下一题用定义证明计算量非常大．但上述定理可以直接证得．
+下一题用定义证明计算量非常大. 但上述定理可以直接证得. 
 \begin{exer}
-	设$a<b<c<d$, 求证: 若$f$在$[a,c],\,[b,d]$上下凸, 则$f$在$[a,d]$上下凸．
+	设$a<b<c<d$, 求证: 若$f$在$[a,c],\,[b,d]$上下凸, 则$f$在$[a,d]$上下凸. 
 \end{exer}
 
 \begin{exer}
@@ -569,63 +569,63 @@
 	\[f(d)-f(c)=\int_{c}^{d}f_-'(x)\,\d x=\int_{c}^{d}f_+'(x)\,\d x.\]
 \end{exer}
 \begin{pf}
-	用单侧导数的Lagrange中值定理．
+	用单侧导数的Lagrange中值定理. 
 \end{pf}
 
 
 \section{不定积分}
-以下两题利用了配对积分法．遇到难以积出的积分时应当想到这种方法, 联想与原积分相关的更简单的积分．特殊的例子有$\sin x,\cos x$的线性组合, 以及$1,x^2,x^4$的线性组合．
+以下两题利用了配对积分法. 遇到难以积出的积分时应当想到这种方法, 联想与原积分相关的更简单的积分. 特殊的例子有$\sin x,\cos x$的线性组合, 以及$1,x^2,x^4$的线性组合. 
 \begin{exer}
-	计算$\int\frac{\d x}{1+x^4}$．
+	计算$\int\frac{\d x}{1+x^4}$. 
 \end{exer}
 \begin{sol}
-	考虑以下两个积分．
+	考虑以下两个积分. 
 	\[\int\frac{1+x^2}{1+x^4}\,\d x=\int\frac{1+\frac{1}{x^2}}{x^2+\frac{1}{x^2}}\,\d x=\int\frac{\d\bra{x-\frac{1}{x}}}{\bra{x-\frac{1}{x}}^2+2}.\]
 	\[\int\frac{1-x^2}{1+x^4}\,\d x=\int\frac{1-\frac{1}{x^2}}{x^2+\frac{1}{x^2}}\,\d x=\int\frac{\d\bra{x+\frac{1}{x}}}{\bra{x+\frac{1}{x}}^2-2}.\qedhere\]
 \end{sol}
 
 \begin{exer}
-	计算$\int\frac{b\sin x+a\cos x}{a\sin x+b\cos x}\,\d x$．
+	计算$\int\frac{b\sin x+a\cos x}{a\sin x+b\cos x}\,\d x$. 
 \end{exer}
 \begin{sol}
-	分别计算以$b\sin x-a\cos x$与$a\sin x+b\cos x$为分子的积分．
+	分别计算以$b\sin x-a\cos x$与$a\sin x+b\cos x$为分子的积分. 
 \end{sol}
 
-下题体现出利用二倍角公式降幂扩角的实用性．
+下题体现出利用二倍角公式降幂扩角的实用性. 
 \begin{exer}
-	计算$\int \sin^4x\,\d x$．
+	计算$\int \sin^4x\,\d x$. 
 \end{exer}
 
 % \begin{exer}
-% 	计算$\int\arctan\sqrt{\frac{a-x}{a+x}}\,\d x$．
+% 	计算$\int\arctan\sqrt{\frac{a-x}{a+x}}\,\d x$. 
 % \end{exer}
 % \begin{sol}
-% 	令$x=a\cos t$, 利用半角公式．也可以直接使用分部积分法．
+% 	令$x=a\cos t$, 利用半角公式. 也可以直接使用分部积分法. 
 % \end{sol}
 
 
 \section{定积分}
 \subsection{积分学的若干重要定理}
 \begin{defn}
-	函数$f$在$U(x_0,\delta)$上的振幅$\omega_f(x,\delta)=\sup_{x\in U(x_0,\delta)}\cbra{f(x)}-\inf_{x\in U(x_0,\delta)}\cbra{f(x)}$．函数$f$在$x_0$处的振幅$\omega_f(x)=\lim_{\delta\to 0}\omega_f(x,\delta)$．
+	函数$f$在$U(x_0,\delta)$上的振幅$\omega_f(x,\delta)=\sup_{x\in U(x_0,\delta)}\cbra{f(x)}-\inf_{x\in U(x_0,\delta)}\cbra{f(x)}$. 函数$f$在$x_0$处的振幅$\omega_f(x)=\lim_{\delta\to 0}\omega_f(x,\delta)$. 
 \end{defn}
 
 \begin{prop}
-	$f$在$x_0$处连续的充分必要条件是$\omega_f(x_0)=0$．
+	$f$在$x_0$处连续的充分必要条件是$\omega_f(x_0)=0$. 
 \end{prop}
 
 \begin{thm}[Lebesgue定理]
-	设$f$在$[a,b]$上有界．则$f\in R[a,b]$的充分必要条件是$f$的不连续点的集合$D(f)$零测 ($f$在$[a,b]$上几乎处处连续)．
+	设$f$在$[a,b]$上有界. 则$f\in R[a,b]$的充分必要条件是$f$的不连续点的集合$D(f)$零测 ($f$在$[a,b]$上几乎处处连续). 
 \end{thm}
 \begin{pf}
 	\everymath{\textstyle}
-	先证必要性．只需证$\forall\,n\in\N,\,D_{1/n}=\cbra{x\in[a,b]\,\middle\vert\,\omega(x)>\frac{1}{n}}$零测．因为$f\in R[a,b],\,\forall\,\epsilon>0,\,\exists$分割$P,$使得$\sum_P\omega_i\Delta x_i<\epsilon/n$．记$\Lambda=\cbra{i\,\middle\vert\,(x_{i-1},x_i)\cap D_{1/n}\neq\emptyset},$则$\frac{1}{n}\sum_{i\in\Lambda}\Delta x_i<\sum_{i\in\Lambda}\omega_i\Delta x_i<\frac{\epsilon}{n}$．再用总长度可以任意小的区间覆盖$x_0,\dots,x_n$, 即证得$D_{1/n}$零测．
+	先证必要性. 只需证$\forall\,n\in\N,\,D_{1/n}=\cbra{x\in[a,b]\,\middle\vert\,\omega(x)>\frac{1}{n}}$零测. 因为$f\in R[a,b],\,\forall\,\epsilon>0,\,\exists$分割$P,$使得$\sum_P\omega_i\Delta x_i<\epsilon/n$. 记$\Lambda=\cbra{i\,\middle\vert\,(x_{i-1},x_i)\cap D_{1/n}\neq\emptyset},$则$\frac{1}{n}\sum_{i\in\Lambda}\Delta x_i<\sum_{i\in\Lambda}\omega_i\Delta x_i<\frac{\epsilon}{n}$. 再用总长度可以任意小的区间覆盖$x_0,\dots,x_n$, 即证得$D_{1/n}$零测. 
 
-	再证充分性．对任意$\epsilon>0$, 先用总长度小于$\epsilon$的至多可数个开区间覆盖$D(f)$．对每个连续点取一个邻域, 使得邻域内振幅不超过$\epsilon$．每个连续点的邻域和覆盖$D(f)$的开区间构成了$[a,b]$的一个开覆盖．应用加强形式的有限开覆盖定理, 得到Lebesgue数$\delta$．取分割$P,\,\norm{P}<\delta$即证．
+	再证充分性. 对任意$\epsilon>0$, 先用总长度小于$\epsilon$的至多可数个开区间覆盖$D(f)$. 对每个连续点取一个邻域, 使得邻域内振幅不超过$\epsilon$. 每个连续点的邻域和覆盖$D(f)$的开区间构成了$[a,b]$的一个开覆盖. 应用加强形式的有限开覆盖定理, 得到Lebesgue数$\delta$. 取分割$P,\,\norm{P}<\delta$即证. 
 \end{pf}
 
 % \begin{thm}[Riemann-Lebesgue引理]
-% 	$f\in R[a,b],\,g$是以$T$为周期的周期函数, 且$g\in R[0,T]$．则
+% 	$f\in R[a,b],\,g$是以$T$为周期的周期函数, 且$g\in R[0,T]$. 则
 % 	\[\lim_{p\to\infty}\int_{a}^{b}f(x)g(px)\,\d x=\frac{1}{T}\int_{0}^{T}g(x)\,\d x\int_{a}^{b}f(x)\,\d x.\]
 % \end{thm}
 
@@ -637,113 +637,113 @@
 \end{prop}
 
 \begin{thm}[广义的Newton-Leibniz公式]
-	设$f\in R[a,b],\,F\in C[a,b]$, 且除了有限个点外均有$F'=f$．则$\forall\,x\in[a,b]$, 仍成立Newton-Leibniz公式
+	设$f\in R[a,b],\,F\in C[a,b]$, 且除了有限个点外均有$F'=f$. 则$\forall\,x\in[a,b]$, 仍成立Newton-Leibniz公式
 	\[\int_{a}^{x}f(t)\,\d t=F(x)-F(a).\]
 \end{thm}
 \begin{pf}
-	设$F'(t)\neq f(t)$的点为$t_1,\dots,t_m$．$\forall\,\epsilon>0,\,\exists\,\delta>0$, 使得$\forall$分割$P$, 只要$\norm{P}<\delta$, 不论介点集$\{\xi_i\}$如何取, 都有$\textstyle\left|\sum_P f(\xi_i)\Delta x_i-\int_{a}^{x}f\right|<\epsilon$．将$t_1,\dots,t_m$加入分割$P$中, 新的分点为$\{x'_i\}$．用Lagrange中值定理取介点集即证．
+	设$F'(t)\neq f(t)$的点为$t_1,\dots,t_m$. $\forall\,\epsilon>0,\,\exists\,\delta>0$, 使得$\forall$分割$P$, 只要$\norm{P}<\delta$, 不论介点集$\{\xi_i\}$如何取, 都有$\textstyle\left|\sum_P f(\xi_i)\Delta x_i-\int_{a}^{x}f\right|<\epsilon$. 将$t_1,\dots,t_m$加入分割$P$中, 新的分点为$\{x'_i\}$. 用Lagrange中值定理取介点集即证. 
 \end{pf}
 
 
 \subsection{定积分的性质}
 \begin{exer}
-	设$f$在$[a,b]$上的每一点处的极限都存在且为$0$, 求证: $f\in R[a,b],\,\int_{a}^{b}f=0$．
+	设$f$在$[a,b]$上的每一点处的极限都存在且为$0$, 求证: $f\in R[a,b],\,\int_{a}^{b}f=0$. 
 \end{exer}
 \begin{pf}
-	断言: $\forall\,\epsilon>0,$使得$|f(x)|>\epsilon$的点$x$至多只有有限个．否则由聚点原理, 这与聚点处极限为0矛盾．
+	断言: $\forall\,\epsilon>0,$使得$|f(x)|>\epsilon$的点$x$至多只有有限个. 否则由聚点原理, 这与聚点处极限为0矛盾. 
 \end{pf}
 
-以下结论不难证得, 但具有启发性．上题也可以用它证明．
+以下结论不难证得, 但具有启发性. 上题也可以用它证明. 
 \begin{prop}
-	设$f\in R[a,b],\,\int_{a}^{b}f>0$．则有$[c,d]\subseteq[a,b]$和$\mu>0,$使得区间$[c,d]$上成立$f(x)\geq\mu$．
+	设$f\in R[a,b],\,\int_{a}^{b}f>0$. 则有$[c,d]\subseteq[a,b]$和$\mu>0,$使得区间$[c,d]$上成立$f(x)\geq\mu$. 
 \end{prop}
 
 \begin{exer}
 	设$[a,b]$上处处大于$0$的函数$f\in R[a,b]$, 求证: $\int_{a}^{b}f>0.$
 \end{exer}
 \begin{pf}
-	用反证法．假设$\int_{a}^{b}f=0$．于是$\forall\,\epsilon>0,\,\int_{a}^{b}[\epsilon-f(x)]\,\d x>0$．利用上一命题, 用闭区间套定理, 取$\epsilon_n=1/n$, 将$\int_{a_n}^{b_n}f=0$继承到局部, 引出矛盾．也可以用Darboux上下积分理论．
+	用反证法. 假设$\int_{a}^{b}f=0$. 于是$\forall\,\epsilon>0,\,\int_{a}^{b}[\epsilon-f(x)]\,\d x>0$. 利用上一命题, 用闭区间套定理, 取$\epsilon_n=1/n$, 将$\int_{a_n}^{b_n}f=0$继承到局部, 引出矛盾. 也可以用Darboux上下积分理论. 
 \end{pf}
 \begin{rem}
-	这种利用$\epsilon$处理边界的方式是一种范式．
+	这种利用$\epsilon$处理边界的方式是一种范式. 
 \end{rem}
 
 \begin{exer}[积分的连续性命题]
-	设$f\in R[a-\delta,b+\delta],\,\delta>0$．求证:
+	设$f\in R[a-\delta,b+\delta],\,\delta>0$. 求证:
 	\[\lim_{h\to0}\int_{a}^{b}|f(x+h)-f(x)|\,\d x=0.\]
 \end{exer}
 \begin{pf}\everymath{\textstyle}
-	从极限过程的顺序上看, Riemann和式的极限先于$h\to0$．所以必须先取定分割．对任意取定的$\epsilon>0,\,\exists$等距分割$P,\,\sum_P \omega_i\Delta x_i<\epsilon$．任取$0<|h|<\norm{P},$则有
-	$I=\sum_P \int_{x_{i-1}}^{x_i}|f(x+h)-f(x)|\,\d x,$其中每个$x+h$与$x$都落在同一或相邻小区间内, 使积分的值得到控制．
+	从极限过程的顺序上看, Riemann和式的极限先于$h\to0$. 所以必须先取定分割. 对任意取定的$\epsilon>0,\,\exists$等距分割$P,\,\sum_P \omega_i\Delta x_i<\epsilon$. 任取$0<|h|<\norm{P},$则有
+	$I=\sum_P \int_{x_{i-1}}^{x_i}|f(x+h)-f(x)|\,\d x,$其中每个$x+h$与$x$都落在同一或相邻小区间内, 使积分的值得到控制. 
 \end{pf}
 
 \begin{exer}
-	设$f\in C[0,1]$, 计算$\lim_{\nti}\int_{0}^{1}nx^nf(x)\,\d x$．
+	设$f\in C[0,1]$, 计算$\lim_{\nti}\int_{0}^{1}nx^nf(x)\,\d x$. 
 \end{exer}
 \begin{sol}
-	$f$的性态未知, 因此先观察其余部分, 注意到$nx^n$的定积分为$1$．分段控制方法需要$1$处被积函数值为$1$, 因此考虑$\lim_{\nti}\int_{0}^{1}nx^n\bra{f(x)-f(1)}\,\d x$．答案为$f(1)$．
+	$f$的性态未知, 因此先观察其余部分, 注意到$nx^n$的定积分为$1$. 分段控制方法需要$1$处被积函数值为$1$, 因此考虑$\lim_{\nti}\int_{0}^{1}nx^n\bra{f(x)-f(1)}\,\d x$. 答案为$f(1)$. 
 \end{sol}
 
 
 \subsection{定积分的计算}
-下题也可以用对称性方法解出, 但以下解法中处理极限不存在的方法值得学习．
+下题也可以用对称性方法解出, 但以下解法中处理极限不存在的方法值得学习. 
 \begin{exer}
-	计算$\int_{0}^{\pi/2}\sin x\ln\sin x\,\d x$．
+	计算$\int_{0}^{\pi/2}\sin x\ln\sin x\,\d x$. 
 \end{exer}
 \begin{sol}
 	\[\left.I=\int_{0}^{\pi/2}\ln\sin x\,\d(-\cos x)=-\cos x\ln\sin x\right|_{0^+}^{\pi/2}+\int_{0}^{\pi/2}\cos x\,\d\ln\sin x.\]
-	第一项极限不存在, 因此不能解决问题．但如果将$\d(-\cos x)$改成$\d(1-\cos x)$即可通过等价无穷小解决问题．
+	第一项极限不存在, 因此不能解决问题. 但如果将$\d(-\cos x)$改成$\d(1-\cos x)$即可通过等价无穷小解决问题. 
 \end{sol}
 
 \begin{exer}[Dirichlet核]
-	定义$D_n(x)=\frac{\sin\frac{(2n+1)x}{2}}{2\sin\frac{x}{2}}$．计算$\int_{0}^{\pi}D_n(x)\,\d x$．
+	定义$D_n(x)=\frac{\sin\frac{(2n+1)x}{2}}{2\sin\frac{x}{2}}$. 计算$\int_{0}^{\pi}D_n(x)\,\d x$. 
 \end{exer}
 \begin{sol}
 	考虑三角恒等式
 	\[\sin\frac{(2n+1)x}{2}=2\sin\frac{x}{2}\bra{\frac{1}{2}+\sum_{k=1}^{n}\cos kx}.\]
-	答案为$\frac{\pi}{2}$．也可以用归纳法．
+	答案为$\frac{\pi}{2}$. 也可以用归纳法. 
 \end{sol}
 
 % \begin{exer}[Fejér积分]
-% 	求证: $\int_{0}^{\pi/2}\bra{\frac{\sin nx}{\sin x}}^2=\frac{n\pi}{2}$．
+% 	求证: $\int_{0}^{\pi/2}\bra{\frac{\sin nx}{\sin x}}^2=\frac{n\pi}{2}$. 
 % \end{exer}
 
-下题中处理$\int_{0}^{x}\sin\frac{1}{t}$的方式是一种范式．
+下题中处理$\int_{0}^{x}\sin\frac{1}{t}$的方式是一种范式. 
 \begin{exer}
-	设$F(x)=\int_{0}^{x}\sin\frac{1}{t}\,\d t,$求$F'(0)$．
+	设$F(x)=\int_{0}^{x}\sin\frac{1}{t}\,\d t,$求$F'(0)$. 
 \end{exer}
 \begin{sol}
 	\begin{align*}
 		F(x)&=\int_{0}^{x}t^2\,\d\cos\frac{1}{t}\\
 		&=x^2\cos\frac{1}{x}-\int_{0}^{x}2t\cos\frac{1}{t}\,\d t.\qedhere
 	\end{align*}
-	即可解决被积函数不连续的问题, 答案为$0$．
+	即可解决被积函数不连续的问题, 答案为$0$. 
 \end{sol}
 
 % \begin{exer}
-% 	求证: $m<2$时, $\lim_{x\to0^+}\frac{1}{x^m}\int_{0}^{x}\sin\frac{1}{t}\,\d t=0$．
+% 	求证: $m<2$时, $\lim_{x\to0^+}\frac{1}{x^m}\int_{0}^{x}\sin\frac{1}{t}\,\d t=0$. 
 % \end{exer}
 
 \begin{exer}
-	计算$B(m,n)=\sum_{k=0}^{n}\binom{n}{k}\frac{(-1)^k}{m+k+1}$．
+	计算$B(m,n)=\sum_{k=0}^{n}\binom{n}{k}\frac{(-1)^k}{m+k+1}$. 
 \end{exer}
 \begin{sol}
-	观察$\frac{(-1)^k}{m+k+1}$的形式, 自然想到幂函数从$0$到$1$的定积分．
+	观察$\frac{(-1)^k}{m+k+1}$的形式, 自然想到幂函数从$0$到$1$的定积分. 
 \end{sol}
 
-变限积分函数的引入带来了新的凑微分的可能性．
+变限积分函数的引入带来了新的凑微分的可能性. 
 \begin{exer}
-	设$f$在$[0,1]$上非负连续, 且$f^2(t)\leq1+2\int_{0}^{t}f(s)\,\d s$．求证: $f(t)\leq1+t$．
+	设$f$在$[0,1]$上非负连续, 且$f^2(t)\leq1+2\int_{0}^{t}f(s)\,\d s$. 求证: $f(t)\leq1+t$. 
 \end{exer}
 \begin{pf}
-	观察条件的形式, $f^2$难以处理, 并且自然想到引入变限积分函数．在条件的两边开根号, 将右边除到左边再两边积分即证．
+	观察条件的形式, $f^2$难以处理, 并且自然想到引入变限积分函数. 在条件的两边开根号, 将右边除到左边再两边积分即证. 
 \end{pf}
 
 
 \subsection{积分估计}
-以下两题中分部积分法的使用值得学习．
+以下两题中分部积分法的使用值得学习. 
 \begin{exer}
-	设$f$在$[a,b]$上二阶可导, $f(a)=f(b)=0,\,|f''(x)|\leq M$．求证: $\left|\int_{a}^{b}f(x)\,\d x\right|\leq\frac{M}{12}(b-a)^3$．	
+	设$f$在$[a,b]$上二阶可导, $f(a)=f(b)=0,\,|f''(x)|\leq M$. 求证: $\left|\int_{a}^{b}f(x)\,\d x\right|\leq\frac{M}{12}(b-a)^3$. 	
 \end{exer}
 \begin{pf}
 	\begin{align*}
@@ -755,15 +755,15 @@
 \end{pf}
 
 % \begin{exer}
-% 	设$f\in D[a,b],\,f(a)=f(b)=0,\,|f'(x)\leq M$．求证: $\left|\int_{a}^{b}f(x)\,\d x\right|\leq\frac{M}{4}(b-a)^2$．
+% 	设$f\in D[a,b],\,f(a)=f(b)=0,\,|f'(x)\leq M$. 求证: $\left|\int_{a}^{b}f(x)\,\d x\right|\leq\frac{M}{4}(b-a)^2$. 
 % \end{exer}
 
-下题给出了梯形公式的误差估计．证明可以使用积分学手段: 分部积分法 (Euler-Maclaurin公式)．也可以使用微分学手段, 即待定常数法和Rolle定理．它们的差异不是本质的．中矩形公式和Simpson公式的证明可以使用相同方法．
+下题给出了梯形公式的误差估计. 证明可以使用积分学手段: 分部积分法 (Euler-Maclaurin公式). 也可以使用微分学手段, 即待定常数法和Rolle定理. 它们的差异不是本质的. 中矩形公式和Simpson公式的证明可以使用相同方法. 
 \begin{exer}
-	设$f\in C^2[0,h]$．求证: $\exists\,\xi\in[0,h]$, 使得$\int_{0}^{h}f(x)\,\d x=\frac{h}{2}[f(0)+f(h)]-\frac{1}{12}f''(\xi)h^3$．
+	设$f\in C^2[0,h]$. 求证: $\exists\,\xi\in[0,h]$, 使得$\int_{0}^{h}f(x)\,\d x=\frac{h}{2}[f(0)+f(h)]-\frac{1}{12}f''(\xi)h^3$. 
 \end{exer}
 \begin{pf}
-	反复使用分部积分法．
+	反复使用分部积分法. 
 	\begin{align*}
 		\int_{0}^{h}f(x)\,\d x&=\int_{0}^{h}f(x)\,\d\bra{x-\frac{h}{2}}\\
 		&=\left.f(x)\bra{x-\frac{h}{2}}\right|_0^h-\int_{0}^{h}f'(x)\bra{x-\frac{h}{2}}\,\d x\\
@@ -776,7 +776,7 @@
 
 \subsection{积分学的其他应用}
 \begin{thm}[质心公式]
-	设密度均匀的平面图形分布在$x=a,\,x=b$和$y=c,\,y=d$之间, 且$\forall\,x_0\in[a,b],\,y_0\in[c,d]$, 直线$x=x_0$和$y=y_0$截得的线段长度为$s(x_0)$和$t(y_0)$．则图形的质心的坐标为
+	设密度均匀的平面图形分布在$x=a,\,x=b$和$y=c,\,y=d$之间, 且$\forall\,x_0\in[a,b],\,y_0\in[c,d]$, 直线$x=x_0$和$y=y_0$截得的线段长度为$s(x_0)$和$t(y_0)$. 则图形的质心的坐标为
 	\[x_c=\frac{\int_{a}^{b}xs(x)\,\d x}{\int_{a}^{b}s(x)\,\d x},\qquad y_c=\frac{\int_{c}^{d}yt(y)\,\d y}{\int_{c}^{d}t(y)\,\d y}.\]
 	而密度均匀的分段光滑曲线$y=f(x)\,(a\leq x\leq b)$的质心的坐标为
 	\[x_c=\frac{\int_{a}^{b}x\sqrt{1+f'^2(x)}\,\d x}{\int_{a}^{b}\sqrt{1+f'^2(x)}\,\d x},\qquad y_c=\frac{\int_{a}^{b}f(x)\sqrt{1+f'^2(x)}\,\d x}{\int_{a}^{b}\sqrt{1+f'^2(x)}\,\d x}.\]
@@ -785,18 +785,18 @@
 \begin{thm}[Guldinus定理]
 	\phantom{text}
 	\begin{itemize}
-		\item Guldinus第一定理: 位于右半平面内的平面曲线绕$y$轴旋转一周所产生的旋转曲面的面积等于曲线的质心绕$y$轴一周所经过的路程乘以曲线的弧长, 即$S_y=2\pi x_cl$．
-		\item Guldinus第二定理: 位于右半平面内的平面图形绕$y$轴旋转一周所产生的旋转立体的体积等于图形的质心绕$y$轴一周所经过的路程乘以图形的面积．即$V_y=2\pi x_cS$．
+		\item Guldinus第一定理: 位于右半平面内的平面曲线绕$y$轴旋转一周所产生的旋转曲面的面积等于曲线的质心绕$y$轴一周所经过的路程乘以曲线的弧长, 即$S_y=2\pi x_cl$. 
+		\item Guldinus第二定理: 位于右半平面内的平面图形绕$y$轴旋转一周所产生的旋转立体的体积等于图形的质心绕$y$轴一周所经过的路程乘以图形的面积. 即$V_y=2\pi x_cS$. 
 \end{itemize}
 \end{thm}
 
-利用定积分求数列极限时, 应当积极考虑用Taylor公式分离出主要部分, 以及用夹逼定理去除形式上无关紧要的, 不影响本质的部分．
+利用定积分求数列极限时, 应当积极考虑用Taylor公式分离出主要部分, 以及用夹逼定理去除形式上无关紧要的, 不影响本质的部分. 
 \begin{exer}
 	计算极限
 	\[\lim_{\nti}\sbra{\bra{1+\frac{1}{n}}\sin\frac{\pi}{n^2}+\bra{1+\frac{2}{n}}\sin\frac{2\pi}{n^2}+\cdots+\bra{1+\frac{n}{n}}\sin\frac{n\pi}{n^2}}.\]
 \end{exer}
 \begin{sol}
-	将$\sin\frac{k\pi}{n^2}$ Taylor展开．
+	将$\sin\frac{k\pi}{n^2}$ Taylor展开. 
 \end{sol}
 
 \begin{exer}
@@ -804,10 +804,10 @@
 	\[\lim_{\nti}\sbra{\frac{\sin(\pi/n)}{n+1}+\frac{\sin(2\pi/n)}{n+1/2}+\cdots+\frac{\sin\pi}{n+1/n}}.\]
 \end{exer}
 \begin{sol}
-	观察形式, 注意到将分母分别放缩至$n$和$n+1$不影响本质, 然后用夹逼定理．
+	观察形式, 注意到将分母分别放缩至$n$和$n+1$不影响本质, 然后用夹逼定理. 
 \end{sol}
 
-以下Wallis公式的形式有时更加便于应用．
+以下Wallis公式的形式有时更加便于应用. 
 \begin{thm}[Wallis公式]
 	$\nti$时, 成立
 	\[\frac{(2n)!!}{(2n-1)!!}\sim\sqrt{\pi n},\quad\qquad\frac{(n!)^22^{2n}}{(2n)!}\sim\sqrt{\pi n}.\]
@@ -815,45 +815,45 @@
 
 
 \section{不等式}
-积分学重要不等式的证明一般有两种方法: (1) 使用与离散形式相同的思路; (2) 对离散形式取极限．
+积分学重要不等式的证明一般有两种方法: (1) 使用与离散形式相同的思路; (2) 对离散形式取极限. 
 \subsection{若干重要不等式}
-可以利用广义AM-GM不等式来证明H\"older不等式, 利用H\"older不等式来证明Minkowski不等式．这里提供利用凸性与Jensen不等式的证法, 利用凸性的证法可以证明$0<p<1$时Minkowski不等式反向成立．
+可以利用广义AM-GM不等式来证明H\"older不等式, 利用H\"older不等式来证明Minkowski不等式. 这里提供利用凸性与Jensen不等式的证法, 利用凸性的证法可以证明$0<p<1$时Minkowski不等式反向成立. 
 \begin{exer}
-	证明H\"older不等式与Minkowski不等式．
+	证明H\"older不等式与Minkowski不等式. 
 \end{exer}
 \begin{pf}
-	对H\"older不等式, 考虑下凸函数$f(u)=u^p$．
+	对H\"older不等式, 考虑下凸函数$f(u)=u^p$. 
 	\[\lambda_k=\frac{y_k^q}{\sum y_i^q},\quad u_k=x_ky_k^{1-q}.\]
 
-	对Minkowski不等式, 考虑下凸函数$f(u)=\bra{1-u^{\frac{1}{p}}}^p$．
+	对Minkowski不等式, 考虑下凸函数$f(u)=\bra{1-u^{\frac{1}{p}}}^p$. 
 	\[\lambda_k=\frac{(x_k+y_k)^p}{\sum(x_i+y_i)^p},\quad u_k=\bra{\frac{x_k}{x_k+y_k}}^p.\qedhere\]
 \end{pf}
 
-以下Hadamard不等式有显著的几何直观．两侧的不等式实际上都是下凸的充分必要条件．
+以下Hadamard不等式有显著的几何直观. 两侧的不等式实际上都是下凸的充分必要条件. 
 \begin{thm}[Hadamard不等式]
-	设$f$为$(a,b)$上的下凸函数．则$\forall\,x_1,x_2\in(a,b)$, 成立不等式
+	设$f$为$(a,b)$上的下凸函数. 则$\forall\,x_1,x_2\in(a,b)$, 成立不等式
 	\[f\bra{\frac{x_1+x_2}{2}}\leq\frac{1}{x_2-x_1}\int_{x_1}^{x_2}f(t)\,\d t\leq\frac{f(x_1)+f(x_2)}{2}.\]
 \end{thm}
 
 
 \subsection{Jensen不等式}
-Jensen不等式的积分形式可以对离散形式取极限证得, 其中$p$类比为离散形式中的权重．
+Jensen不等式的积分形式可以对离散形式取极限证得, 其中$p$类比为离散形式中的权重. 
 \begin{thm}[Jensen不等式]
-	设$f,p\in R[a,b],\,p\geq0,\,\int_{a}^{b}p>0$．则当$\phi$是$f$值域上的下凸函数时, 成立不等式
+	设$f,p\in R[a,b],\,p\geq0,\,\int_{a}^{b}p>0$. 则当$\phi$是$f$值域上的下凸函数时, 成立不等式
 	\[\phi\bra{\frac{\int_{a}^{b}p(x)f(x)\,\d x}{\int_{a}^{b}p(x)\,\d x}}\leq\frac{\int_{a}^{b}p(x)\bra{\phi(f(x))}\d x}{\int_{a}^{b}p(x)\,\d x}.\]
 \end{thm}
 
-Jensen不等式包含了很多不等式．例如 ($\phi$为下凸函数)
+Jensen不等式包含了很多不等式. 例如 ($\phi$为下凸函数)
 \[\phi\bra{\frac{1}{b-a}\int_{a}^{b}f(x)\,\d x}\leq\frac{1}{b-a}\int_{a}^{b}\phi(f(x))\,\d x.\]
 \[\ln\bra{\frac{1}{b-a}\int_{a}^{b}f(x)\,\d x}\geq\frac{1}{b-a}\int_{a}^{b}\ln(f(x))\,\d x.\]
-当遇到不等式时, 应当观察其中形式相似的部分, 并寻找凸函数．
+当遇到不等式时, 应当观察其中形式相似的部分, 并寻找凸函数. 
 
 \begin{exer}
 	若$f$在$[0,1]$上上凸, 求证: $\forall\,n\in\N,$
 	\[\int_{0}^{1}f(x^n)\,\d x\leq f\bra{\frac{1}{n+1}}.\]
 \end{exer}
 \begin{pf}
-	观察$1/(n+1)$的形式, 自然想到幂函数的定积分．
+	观察$1/(n+1)$的形式, 自然想到幂函数的定积分. 
 \end{pf}
 
 \begin{exer}
@@ -861,53 +861,53 @@ Jensen不等式包含了很多不等式．例如 ($\phi$为下凸函数)
 	\[\bra{\int_{a}^{b}f(x)\cos kx\,\d x}^2+\bra{\int_{a}^{b}f(x)\sin kx\,\d x}^2\leq1.\]
 \end{exer}
 \begin{pf}
-	观察形式, 自然希望将平方挪到三角函数上．于是用Jensen不等式, 这里凸函数是$\phi(x)=x^2$．
+	观察形式, 自然希望将平方挪到三角函数上. 于是用Jensen不等式, 这里凸函数是$\phi(x)=x^2$. 
 \end{pf}
 
 \subsection{Schwarz不等式}
 \begin{exer}
-	设$f\in C^1[a,b],\,f(a)=0$．求证:
+	设$f\in C^1[a,b],\,f(a)=0$. 求证:
 	\[\int_{a}^{b}f^2(x)\,\d x\leq\frac{(b-a)^2}{2}\int_{a}^{b}(f'(x))^2\,\d x-\frac{1}{2}\int_{a}^{b}(f'(x))^2(x-a)^2\,\d x.\]
 \end{exer}
 \begin{pf}
-	观察条件$f\in C^1[a,b]$, 自然想到变限积分函数．$\int_{a}^{b} f^2$难以处理, 于是先用Schwarz不等式估计$f^2$, 再两边积分即证．
+	观察条件$f\in C^1[a,b]$, 自然想到变限积分函数. $\int_{a}^{b} f^2$难以处理, 于是先用Schwarz不等式估计$f^2$, 再两边积分即证. 
 	\[f^2(x)=\bra{\int_{a}^{x}f'(t)\,\d t}^2\leq(x-a)\int_{a}^{x}(f'(t))^2\,\d t.\qedhere\]
 \end{pf}
 
 \begin{exer}
-	设$f$在$[a,+\infty)$上平方可积．求证: 积分$\int_{a}^{+\infty}\frac{f(x)}{x}\,\d x$收敛．
+	设$f$在$[a,+\infty)$上平方可积. 求证: 积分$\int_{a}^{+\infty}\frac{f(x)}{x}\,\d x$收敛. 
 \end{exer}
 \begin{pf}
-	观察形式, 平方可积的条件自然联想到Schwarz不等式．
+	观察形式, 平方可积的条件自然联想到Schwarz不等式. 
 \end{pf}
 
 
 \subsection{Jordan不等式}
-以下Jordan不等式的证明非常简单, 但它的作用十分强大, 能将复杂式子中难以处理的$\sin x$放缩为线性函数．
+以下Jordan不等式的证明非常简单, 但它的作用十分强大, 能将复杂式子中难以处理的$\sin x$放缩为线性函数. 
 \begin{thm}[Jordan不等式]
-	设$0\leq x\leq\frac{\pi}{2}$, 则成立不等式$\frac{2}{\pi}x\leq\sin x\leq x$．
+	设$0\leq x\leq\frac{\pi}{2}$, 则成立不等式$\frac{2}{\pi}x\leq\sin x\leq x$. 
 \end{thm}
 
 \begin{exer}
-	求证: $\lambda<1$时, $\lim_{R\to\infty}R^\lambda\int_{0}^{\pi/2}\e^{-R\sin\theta}\,\d\theta=0$．
+	求证: $\lambda<1$时, $\lim_{R\to\infty}R^\lambda\int_{0}^{\pi/2}\e^{-R\sin\theta}\,\d\theta=0$. 
 \end{exer}
 \begin{pf}
-	用Jordan不等式将难以处理的$\sin x$放缩为$x$．
+	用Jordan不等式将难以处理的$\sin x$放缩为$x$. 
 \end{pf}
 
 % \begin{exer}
-% 	判别广义积分$\int_{1}^{+\infty}\frac{1}{x}\e^{\cos x}\sin(\sin x)\,\d x$的敛散性．
+% 	判别广义积分$\int_{1}^{+\infty}\frac{1}{x}\e^{\cos x}\sin(\sin x)\,\d x$的敛散性. 
 % \end{exer}
 % \begin{sol}
-% 	由Dirichlet判别法易证其收敛．由Jordan不等式, 通过以下估计证得其条件收敛．
+% 	由Dirichlet判别法易证其收敛. 由Jordan不等式, 通过以下估计证得其条件收敛. 
 % 	\[\frac{1}{x}\e^{\cos x}\sin|\sin x|\geq\frac{2}{\pi\e}\frac{|\sin x|}{x}.\qedhere\]
 % \end{sol}
 
 \begin{exer}
-	判别广义积分$\int_{0}^{+\infty}\frac{x\,\d x}{1+x^4\sin^2x}$的敛散性．
+	判别广义积分$\int_{0}^{+\infty}\frac{x\,\d x}{1+x^4\sin^2x}$的敛散性. 
 \end{exer}
 \begin{sol}
-	观察被积函数的形式, 注意到多数情况下分母阶数高于分子, 故被积函数值趋于$0$．而在$\sin x=0$时被积函数值为$x$．于是自然想到将积分拆分为长为$\pi$的区间, 保留$\sin x$而将其余部分放缩, 再使用对称性与Jordan不等式．经过尝试发现估算积分值的上界不可行, 于是转而估算下界．证得其发散．
+	观察被积函数的形式, 注意到多数情况下分母阶数高于分子, 故被积函数值趋于$0$. 而在$\sin x=0$时被积函数值为$x$. 于是自然想到将积分拆分为长为$\pi$的区间, 保留$\sin x$而将其余部分放缩, 再使用对称性与Jordan不等式. 经过尝试发现估算积分值的上界不可行, 于是转而估算下界. 证得其发散. 
 	\begin{align*}
 		I_k&=\int_{(k-1)\pi}^{k\pi}\frac{x\,\d x}{1+x^4\sin^2x}\geq(k-1)\pi\int_{(k-1)\pi}^{k\pi}\frac{\d x}{1+k^4\pi^4\sin^2x}\\
 		&=2(k-1)\pi\int_{0}^{\pi/2}\frac{\d x}{1+k^4\pi^4\sin^2x}\geq2(k-1)\pi\int_{0}^{\pi/2}\frac{\d x}{1+k^4\pi^4x^2}\\
@@ -916,216 +916,216 @@ Jensen不等式包含了很多不等式．例如 ($\phi$为下凸函数)
 \end{sol}
 
 \begin{exer}
-	设$\lim_{\nti}n^{2n\sin\frac{1}{n}}a_n=1$, 求证: 级数$\tseries a_n$收敛．
+	设$\lim_{\nti}n^{2n\sin\frac{1}{n}}a_n=1$, 求证: 级数$\tseries a_n$收敛. 
 \end{exer}
 \begin{pf}
-	只需证$\tseries n^{-2n\sin\frac{1}{n}}$收敛, 用Jordan不等式处理三角函数．
+	只需证$\tseries n^{-2n\sin\frac{1}{n}}$收敛, 用Jordan不等式处理三角函数. 
 \end{pf}
 
 
 \section{广义积分}
-一些积分学中的重要定理在广义积分中有其推广形式．瑕积分和无穷限积分都有对应的Riemann-Lebesgue引理．瑕积分有对应的积分第二中值定理．
+一些积分学中的重要定理在广义积分中有其推广形式. 瑕积分和无穷限积分都有对应的Riemann-Lebesgue引理. 瑕积分有对应的积分第二中值定理. 
 % \begin{thm}[广义积分的Riemann引理]
-% 	设$f$在$[a,+\infty)$上绝对可积．$g$是以$T$为周期的周期函数, 且$g\in R[0,T]$．则
+% 	设$f$在$[a,+\infty)$上绝对可积. $g$是以$T$为周期的周期函数, 且$g\in R[0,T]$. 则
 % 	\[\lim_{p\to\infty}\int_{a}^{+\infty}f(x)g(px)\,\d x=\frac{1}{T}\int_{0}^{T}g(x)\,\d x\int_{a}^{+\infty}f(x)\,\d x.\]
 % \end{thm}
 
-% 广义积分的Riemann引理用分段估计的方式证明．对瑕积分也有积分第二中值定理, 证明方式与定积分中相同．
+% 广义积分的Riemann引理用分段估计的方式证明. 对瑕积分也有积分第二中值定理, 证明方式与定积分中相同. 
 
 
 % \subsection{广义积分与和式极限}
-% 广义积分虽然是通过对常义积分取极限得到, 它在被积函数单调的情况下也有可能从积分和式的极限得到．
+% 广义积分虽然是通过对常义积分取极限得到, 它在被积函数单调的情况下也有可能从积分和式的极限得到. 
 % \begin{exer}
-% 	设$f$在$(0,1)$单调, 瑕积分$\int_{0}^{1}f$收敛．求证:
+% 	设$f$在$(0,1)$单调, 瑕积分$\int_{0}^{1}f$收敛. 求证:
 % 	\[\lim_{\nti}\frac{1}{n}\sbra{f\bra{\frac{1}{n}}+f\bra{\frac{2}{n}}+\cdots+f\bra{\frac{n-1}{n}}}=\int_{0}^{1}f(x)\,\d x.\]
 % \end{exer}
 % \begin{pf}
-% 	不妨设$f$单调递增．将以下不等式的中间部分理解为阶梯函数的定积分．则由保号性, 成立
+% 	不妨设$f$单调递增. 将以下不等式的中间部分理解为阶梯函数的定积分. 则由保号性, 成立
 % 	\[\int_{0}^{1-\frac{1}{n}}f(x)\,\d x\leq\frac{1}{n}\sbra{f\bra{\frac{1}{n}}+f\bra{\frac{2}{n}}+\cdots+f\bra{\frac{n-1}{n}}}\leq\int_{\frac{1}{n}}^{1}f(x)\,\d x.\]
-% 	令$n\to\infty$即证．
+% 	令$n\to\infty$即证. 
 % \end{pf}
 
 % \begin{exer}
-% 	设$f$在$[0,+\infty)$上单调, $\int_{0}^{+\infty}f$收敛, 求证: $\lim_{h\to0^+}h\dseries f(nh)=\int_{0}^{+\infty}f(x)\,\d x$．
+% 	设$f$在$[0,+\infty)$上单调, $\int_{0}^{+\infty}f$收敛, 求证: $\lim_{h\to0^+}h\dseries f(nh)=\int_{0}^{+\infty}f(x)\,\d x$. 
 % \end{exer}
 % \begin{pf}
-% 	不妨设$f$单调递减大于$0$．用有限的积分限代替奇点, 得到不等式
+% 	不妨设$f$单调递减大于$0$. 用有限的积分限代替奇点, 得到不等式
 % 	\[\int_{h}^{(n+1)h}f(x)\,\d x\leq\sum_{k=1}^{n}hf(kh)\leq\int_{0}^{nh}f(x)\,\d x.\]
-% 	令$n\to+\infty$, 再令$h\to0^+$即证．
+% 	令$n\to+\infty$, 再令$h\to0^+$即证. 
 % \end{pf}
 
 
 % \subsection{广义积分的敛散性判别法}
-% 判别广义积分敛散的第一步是找到被积函数所有 (可能) 的奇点．当指数上出现参数时, 被积函数的零点也可能是奇点．例如以下广义积分所有可能的奇点是$0,1,+\infty$．
+% 判别广义积分敛散的第一步是找到被积函数所有 (可能) 的奇点. 当指数上出现参数时, 被积函数的零点也可能是奇点. 例如以下广义积分所有可能的奇点是$0,1,+\infty$. 
 % \[\int_{0}^{\infty}\frac{\sin x}{x}|\ln x|^p\,\d x.\]
 
-% 广义积分敛散性判别的本质是被积函数值的估计．因此应不吝啬先用Taylor公式分析渐近性态, 从而找到合适的指数$p$, 再用Cauchy判别法．
+% 广义积分敛散性判别的本质是被积函数值的估计. 因此应不吝啬先用Taylor公式分析渐近性态, 从而找到合适的指数$p$, 再用Cauchy判别法. 
 % \begin{exer}
-% 	判别以下广义积分的敛散性．
+% 	判别以下广义积分的敛散性. 
 % 	\begin{enumerate}
 % 		\begin{multicols}{2}
-% 			\item $\int_{1}^{+\infty}\ln\bra{\cos\frac{1}{x}+\sin\frac{1}{x}}\,\d x$．
-% 			\item $\int_{0}^{+\infty}\sbra{\frac{1}{\sqrt{x}}-\sqrt{\ln\bra{1+\frac{1}{x}}}\,}\,\d x$．
+% 			\item $\int_{1}^{+\infty}\ln\bra{\cos\frac{1}{x}+\sin\frac{1}{x}}\,\d x$. 
+% 			\item $\int_{0}^{+\infty}\sbra{\frac{1}{\sqrt{x}}-\sqrt{\ln\bra{1+\frac{1}{x}}}\,}\,\d x$. 
 % 		\end{multicols}
 % 	\end{enumerate}
 % \end{exer}
 
-% 值得注意的是, $\lim_{x\to+\infty}f(x)/g(x)=l\in\R$并不能推出二者同敛散．如果添加$f,g$均不变号的条件则可以．反例如下, 此时应当用Taylor公式估计．
+% 值得注意的是, $\lim_{x\to+\infty}f(x)/g(x)=l\in\R$并不能推出二者同敛散. 如果添加$f,g$均不变号的条件则可以. 反例如下, 此时应当用Taylor公式估计. 
 % \[\int_{1}^{+\infty}\ln\bra{1+\frac{\sin x}{x^\frac{1}{2}}}\,\d x.\]
 
-% Dirichlet和Abel判别法难以判别广义积分发散．比较判别法无法处理的情况下, 应当考虑Cauchy收敛准则．
+% Dirichlet和Abel判别法难以判别广义积分发散. 比较判别法无法处理的情况下, 应当考虑Cauchy收敛准则. 
 % \begin{exer}
-% 	判别广义积分$\int_{0}^{+\infty}x^p\e^{\sin x}\sin 2x\,\d x\,(p\geq0)$的敛散性．
+% 	判别广义积分$\int_{0}^{+\infty}x^p\e^{\sin x}\sin 2x\,\d x\,(p\geq0)$的敛散性. 
 % \end{exer}
 % \begin{sol}
-% 	显然先考虑证明其发散．被积函数不保号, 应当考虑Cauchy收敛准则, 于是尝试寻找一列被积函数定号的区间．自然想到将$x^p$与$\e^{\sin x}$放缩为常数, 于是取$[k\pi+\pi/6,k\pi+\pi/4]$, 因为$k\to\infty$的过程中区间上的积分不趋于$0$, 所以广义积分发散．
+% 	显然先考虑证明其发散. 被积函数不保号, 应当考虑Cauchy收敛准则, 于是尝试寻找一列被积函数定号的区间. 自然想到将$x^p$与$\e^{\sin x}$放缩为常数, 于是取$[k\pi+\pi/6,k\pi+\pi/4]$, 因为$k\to\infty$的过程中区间上的积分不趋于$0$, 所以广义积分发散. 
 % \end{sol}
 
 
 \subsection{广义积分的计算}
-% 常规的定积分方法仍然适用．
-广义积分中的一些对称性不那么容易注意到．以下两题中的倒代换是处理$0$到$+\infty$的广义积分的一种手段, 它也是一种对称性方法．
+% 常规的定积分方法仍然适用. 
+广义积分中的一些对称性不那么容易注意到. 以下两题中的倒代换是处理$0$到$+\infty$的广义积分的一种手段, 它也是一种对称性方法. 
 \begin{exer}
-	计算广义积分$\int_{0}^{+\infty}\frac{x\ln x}{1+x^2}\,\d x$．
+	计算广义积分$\int_{0}^{+\infty}\frac{x\ln x}{1+x^2}\,\d x$. 
 \end{exer}
 % \begin{sol}
-% 	显然该广义积分收敛．观察形式, 容易想到分部积分, 但尝试后发现不可行．于是考虑拆分为$0$到$1$的积分与$1$到$+\infty$的积分．作倒代换, 得到答案为$0$．
+% 	显然该广义积分收敛. 观察形式, 容易想到分部积分, 但尝试后发现不可行. 于是考虑拆分为$0$到$1$的积分与$1$到$+\infty$的积分. 作倒代换, 得到答案为$0$. 
 % \end{sol}
 \begin{rem}
-	如果作代换$x=\tan t$, 就容易发现此处倒代换的本质是$\ln\tan x$关于$[0,\pi/2]$的区间中点为奇函数．
+	如果作代换$x=\tan t$, 就容易发现此处倒代换的本质是$\ln\tan x$关于$[0,\pi/2]$的区间中点为奇函数. 
 \end{rem}
 
 \begin{exer}
-	计算广义积分$\int_{0}^{+\infty}\frac{1}{x}\sin\bra{x-\frac{1}{x}}\,\d x$．
+	计算广义积分$\int_{0}^{+\infty}\frac{1}{x}\sin\bra{x-\frac{1}{x}}\,\d x$. 
 \end{exer}
 
-% 有一些有名的广义积分, 其中的思想方法和结果都是重要的．可以利用它们计算出很多其他积分．
+% 有一些有名的广义积分, 其中的思想方法和结果都是重要的. 可以利用它们计算出很多其他积分. 
 \begin{prop}[Euler积分]
-	$\int_{0}^{\pi/2}\ln\sin x=-\frac{\pi}{2}\ln 2$．
+	$\int_{0}^{\pi/2}\ln\sin x=-\frac{\pi}{2}\ln 2$. 
 \end{prop}
 
-以下习题体现出: 在广义积分中, 不应像常义积分一样避免对数函数和三角函数一起出现．相反, 应当积极尝试这种思路, 尝试利用Euler积分．
+以下习题体现出: 在广义积分中, 不应像常义积分一样避免对数函数和三角函数一起出现. 相反, 应当积极尝试这种思路, 尝试利用Euler积分. 
 \begin{exer}
-	计算以下广义积分．
+	计算以下广义积分. 
 	\begin{enumerate}
 		\begin{multicols}{2}
-			% \item $\int_{0}^{1}\frac{\arcsin x}{x}\,\d x$．
-			\item $\int_{0}^{\pi/2}x\cot x\,\d x$．
-			\item $\int_{0}^{\pi/2}\ln\left|\sin^2x-a^2\right|\,\d x\quad(a^2\leq 1)$．
+			% \item $\int_{0}^{1}\frac{\arcsin x}{x}\,\d x$. 
+			\item $\int_{0}^{\pi/2}x\cot x\,\d x$. 
+			\item $\int_{0}^{\pi/2}\ln\left|\sin^2x-a^2\right|\,\d x\quad(a^2\leq 1)$. 
 		\end{multicols}
 	\end{enumerate}
 \end{exer}
 % \begin{sol}
 % 	\begin{enumerate}
-% 		% \item $I=\int_{0}^{\pi/2}\arcsin x\,\d\ln x$．用分部积分法．
-% 		\item $I=\int_{0}^{\pi/2}x\,\d\ln\sin x$．用分部积分法．
-% 		\item 设$a=\sin\theta$．
+% 		% \item $I=\int_{0}^{\pi/2}\arcsin x\,\d\ln x$. 用分部积分法. 
+% 		\item $I=\int_{0}^{\pi/2}x\,\d\ln\sin x$. 用分部积分法. 
+% 		\item 设$a=\sin\theta$. 
 % 		\[I=\int_{0}^{\pi/2}\ln\left|\sin^2x-\sin^2\theta\right|\,\d x=\int_{0}^{\pi/2}\ln\left|\sin(x+\theta)\sin(x-\theta)\right|\,\d x=-\pi\ln 2.\qedhere\]
 % 	\end{enumerate}
 % \end{sol}
 
-以下Frullani积分, Dirichlet积分, Euler-Poisson积分的证明都体现出: 广义积分的计算中, 可以先不处理广义积分带来的极限过程, 而从常义积分展开分析．减少一个极限过程并处理常义积分有时候能够简化问题, 提供新的角度．
+以下Frullani积分, Dirichlet积分, Euler-Poisson积分的证明都体现出: 广义积分的计算中, 可以先不处理广义积分带来的极限过程, 而从常义积分展开分析. 减少一个极限过程并处理常义积分有时候能够简化问题, 提供新的角度. 
 \begin{exer}[Frullani积分]
-	设$f\in C[0,+\infty),\,f(+\infty)$存在且有限, $0<a<b$．计算广义积分
+	设$f\in C[0,+\infty),\,f(+\infty)$存在且有限, $0<a<b$. 计算广义积分
 	\[\int_{0}^{+\infty}\frac{f(ax)-f(bx)}{x}\,\d x.\]
 \end{exer}
 \begin{sol}
-	观察被积函数分子的形式, 自然想到$f(ax)$与$f(bx)$在$x$取遍正实数的过程中, 大部分会互相抵消．于是先固定积分限．拆分被积函数, 利用线性换元的形式不变性, 将无法处理的自变量形式的差异转移到积分限上．
+	观察被积函数分子的形式, 自然想到$f(ax)$与$f(bx)$在$x$取遍正实数的过程中, 大部分会互相抵消. 于是先固定积分限. 拆分被积函数, 利用线性换元的形式不变性, 将无法处理的自变量形式的差异转移到积分限上. 
 	\begin{align*}
 		\int_{r}^{R}\frac{f(ax)-f(bx)}{x}\,\d x&=\bra{\int_{ar}^{aR}-\int_{br}^{bR}}\frac{f(x)}{x}\,\d x=\int_{ar}^{br}\frac{f(x)}{x}\,\d x-\int_{aR}^{bR}\frac{f(x)}{x}\,\d x\\
 		&=f(\xi)\cdot\ln\frac{b}{a}-f(\eta)\cdot\ln\frac{b}{a}\quad (ar\leq\xi\leq br,\,aR\leq\eta\leq bR).
 	\end{align*}
-	令$r\to0,\,R\to+\infty$, 得到答案为$\bra{f(0)-f(+\infty)}\cdot(\ln b-\ln a)$．
+	令$r\to0,\,R\to+\infty$, 得到答案为$\bra{f(0)-f(+\infty)}\cdot(\ln b-\ln a)$. 
 \end{sol}
 \begin{rem}
-	由此可以推出以下两种情况下Frullani积分的变形．
+	由此可以推出以下两种情况下Frullani积分的变形. 
 	\begin{enumerate}
-		\item $f(+\infty)$不存在或不有限, 但对某个$A>0$, 积分$\int_{A}^{+\infty}\frac{f(x)}{x}\,\d x$收敛．
-		\item $f$在$0$处不连续, 甚至右极限也不存在, 但对某个$A>0$, 积分$\int_{0}^{A}\frac{f(x)}{x}\,\d x$收敛．
+		\item $f(+\infty)$不存在或不有限, 但对某个$A>0$, 积分$\int_{A}^{+\infty}\frac{f(x)}{x}\,\d x$收敛. 
+		\item $f$在$0$处不连续, 甚至右极限也不存在, 但对某个$A>0$, 积分$\int_{0}^{A}\frac{f(x)}{x}\,\d x$收敛. 
 	\end{enumerate}
 \end{rem}
 
 \begin{exer}[Dirichlet积分]
-	求证: $\int_{0}^{+\infty}\frac{\sin x}{x}\,\d x=\frac{\pi}{2}$．
+	求证: $\int_{0}^{+\infty}\frac{\sin x}{x}\,\d x=\frac{\pi}{2}$. 
 \end{exer}
 \begin{pf}
-	回想Dirichlet核, 二者的差异在于积分限和分母．于是考虑线性换元将无穷限积分转化为常义积分与数列极限, 并对二者作差．
+	回想Dirichlet核, 二者的差异在于积分限和分母. 于是考虑线性换元将无穷限积分转化为常义积分与数列极限, 并对二者作差. 
 	\[\int_{0}^{+\infty}\frac{\sin x}{x}\,\d x=\lim_{\nti}\int_{0}^{\pi}\frac{\sin(n+\frac{1}{2})x}{x}\,\d x.\]
 	\[\frac{1}{x}-\frac{1}{2\sin\frac{x}{2}}=O(x)\quad(x\to0).\]
-	于是上式中的函数Riemann可积．与$\sin(n+\frac{1}{2})x$相乘, 自然使用Riemann-Lebesgue引理, 即证．
+	于是上式中的函数Riemann可积. 与$\sin(n+\frac{1}{2})x$相乘, 自然使用Riemann-Lebesgue引理, 即证. 
 \end{pf}
 
 \begin{exer}[Euler-Poisson积分]
-	求证: $\int_{0}^{+\infty}\e^{-t^2}\,\d t=\frac{\sqrt{\pi}}{2}$．
+	求证: $\int_{0}^{+\infty}\e^{-t^2}\,\d t=\frac{\sqrt{\pi}}{2}$. 
 \end{exer}
 \begin{pf}
-	指数函数和无穷限都难以处理．考虑同时用极限逼近指数函数, 用数列极限逼近无穷限积分．于是考虑以下积分, 积分上限不难通过定义域想到．
+	指数函数和无穷限都难以处理. 考虑同时用极限逼近指数函数, 用数列极限逼近无穷限积分. 于是考虑以下积分, 积分上限不难通过定义域想到. 
 	\[I_n=\int_{0}^{\sqrt{n}}\bra{1-\frac{t^2}{n}}^n\,\d t\xlongequal{t=\sqrt{n}\sin x}\sqrt{n}\int_{0}^{\pi/2}\cos^{2n+1}x\,\d x\to\frac{\sqrt{\pi}}{2}\quad(\nti).\]
-	等式右端已经得到, 自然考虑将二者作差．只需证
+	等式右端已经得到, 自然考虑将二者作差. 只需证
 	\[\lim_{\nti}\int_{0}^{\sqrt{n}}\sbra{\e^{-t^2}-\bra{1-\frac{t^2}{n}}^n}\,\d t=0.\]
-	用如下不等式即证．
+	用如下不等式即证. 
 	\[0\leq\e^{-x}-\bra{1-\frac{x}{n}}^n\leq\frac{x^2}{n}\e^{-x}.\qedhere\]
 \end{pf}
 
 
 \subsection{无穷限积分的特殊性质}
-不同于数项级数, $\int_{a}^{+\infty}f$收敛不仅不能推出$f(+\infty)=0$, $f(+\infty)$完全可以不存在, 甚至有极限点为$+\infty$．但关于无穷限积分在无穷远处的性质, 仍有一些结论．
+不同于数项级数, $\int_{a}^{+\infty}f$收敛不仅不能推出$f(+\infty)=0$, $f(+\infty)$完全可以不存在, 甚至有极限点为$+\infty$. 但关于无穷限积分在无穷远处的性质, 仍有一些结论. 
 % \begin{prop}
-% 	设无穷限积分$\int_{a}^{+\infty}f$收敛, 且$\lim_{x\to+\infty}f(x)$有意义, 则$f(+\infty)=0$．
+% 	设无穷限积分$\int_{a}^{+\infty}f$收敛, 且$\lim_{x\to+\infty}f(x)$有意义, 则$f(+\infty)=0$. 
 % \end{prop}
 
-以下结论在数项级数中也成立．
+以下结论在数项级数中也成立. 
 \begin{prop}
-	设无穷限积分$\int_{a}^{+\infty}f$收敛, 且$f$单调, 则$\lim_{x\to+\infty}xf(x)=0$．
+	设无穷限积分$\int_{a}^{+\infty}f$收敛, 且$f$单调, 则$\lim_{x\to+\infty}xf(x)=0$. 
 \end{prop}
 \begin{pf}
-	不妨设$f$单调递减．观察结论形式, 于是考虑$x$充分大时, $0\leq xf(2x)\leq\int_{x}^{2x}f(t)\,\d t$任意小．
+	不妨设$f$单调递减. 观察结论形式, 于是考虑$x$充分大时, $0\leq xf(2x)\leq\int_{x}^{2x}f(t)\,\d t$任意小. 
 \end{pf}
 
 \begin{exer}
-	设无穷限积分$\int_{a}^{+\infty}$收敛, 且$xf(x)$单调．求证: $\lim_{\nti}xf(x)\ln x=0$．
+	设无穷限积分$\int_{a}^{+\infty}$收敛, 且$xf(x)$单调. 求证: $\lim_{\nti}xf(x)\ln x=0$. 
 \end{exer}
 \begin{pf}
-	不妨设$xf(x)$单调递减．考虑$xf(x)\int_{\sqrt{x}}^{x}\frac{\d t}{t}\leq\int_{\sqrt{x}}^{x}tf(t)\,\frac{\d t}{t}$．
+	不妨设$xf(x)$单调递减. 考虑$xf(x)\int_{\sqrt{x}}^{x}\frac{\d t}{t}\leq\int_{\sqrt{x}}^{x}tf(t)\,\frac{\d t}{t}$. 
 \end{pf}
 
 \begin{prop}
-	设无穷限积分$\int_{a}^{+\infty}f$收敛, 且$f\in U.C.[a,+\infty)$, 则$\lim_{x\to+\infty}f(x)=0$．
+	设无穷限积分$\int_{a}^{+\infty}f$收敛, 且$f\in U.C.[a,+\infty)$, 则$\lim_{x\to+\infty}f(x)=0$. 
 \end{prop}
 \begin{rem}
-	当$f\in C[a,+\infty)$时, $f(+\infty)=0$与$f\in U.C.[a,+\infty)$是等价的．
+	当$f\in C[a,+\infty)$时, $f(+\infty)=0$与$f\in U.C.[a,+\infty)$是等价的. 
 \end{rem}
 
 
 \section{数项级数}
-判别级数发散有时比判敛更令人感到棘手, 以下列举一些判别级数发散的常用手段．
+判别级数发散有时比判敛更令人感到棘手, 以下列举一些判别级数发散的常用手段. 
 \begin{enumerate}
-	\item 证明通项不趋于$0$．
-	\item 用Cauchy收敛准则．
-	\item 证明按某种方式加括号得到的级数发散．
-	\item 对正项级数, 证明其部分和数列无上界．
-	\item 对正项级数使用各种判别法．
-	\item 把级数通项分解为一个收敛级数的通项和一个发散级数的通项之和．
+	\item 证明通项不趋于$0$. 
+	\item 用Cauchy收敛准则. 
+	\item 证明按某种方式加括号得到的级数发散. 
+	\item 对正项级数, 证明其部分和数列无上界. 
+	\item 对正项级数使用各种判别法. 
+	\item 把级数通项分解为一个收敛级数的通项和一个发散级数的通项之和. 
 \end{enumerate}
 
 
 \subsection{正项级数}
-Du Bois-Reymond定理和Abel定理分别证明了没有收敛或发散最慢的正项级数．
+Du Bois-Reymond定理和Abel定理分别证明了没有收敛或发散最慢的正项级数. 
 
-类比Cauchy根值判别法与D'Alembert判别法的关系, 以下对数判别法在对应的比值判别法有效时一定有效, 但往往不便于计算; 对数判别法不依赖于比值, 因此对通项非单调递减的正项级数仍然可能有效．
+类比Cauchy根值判别法与D'Alembert判别法的关系, 以下对数判别法在对应的比值判别法有效时一定有效, 但往往不便于计算; 对数判别法不依赖于比值, 因此对通项非单调递减的正项级数仍然可能有效. 
 \begin{thm}[对数判别法的极限形式]
-	设$\tseries a_n$是正项级数．
+	设$\tseries a_n$是正项级数. 
 	\begin{enumerate}
 		\item (类比Raabe判别法) 如果
 		\[\lim_{\nti}\frac{\ln\bra{1/a_n}}{\ln n}=r,\]
-		则$r>1$时级数收敛, $r<1$时级数发散．
+		则$r>1$时级数收敛, $r<1$时级数发散. 
 		\item (类比Bertrand判别法) 如果
 		\[\lim_{\nti}\frac{\ln\bra{1/na_n}}{\ln\ln n}=b,\]
-		则$b>1$时级数收敛, $b<1$时级数发散．
+		则$b>1$时级数收敛, $b<1$时级数发散. 
 	\end{enumerate}
 \end{thm}
 
-在以下Kummer判别法中将$b_n$取为$1,\,n,\,n\ln n$, 就分别得到D'Alembert, Raabe, Bertrand判别法．
+在以下Kummer判别法中将$b_n$取为$1,\,n,\,n\ln n$, 就分别得到D'Alembert, Raabe, Bertrand判别法. 
 \begin{thm}[Kummer判别法]
 	\phantom{text}
 	\begin{enumerate}
@@ -1137,63 +1137,63 @@ Du Bois-Reymond定理和Abel定理分别证明了没有收敛或发散最慢的�
 \end{thm}
 
 \begin{thm}[Cauchy凝聚判别法]
-	设$\{a_n\}$是单调递减的正数数列, 则级数$\tseries a_n$收敛的充分必要条件是凝聚项级数$\textstyle\sum\limits_{n=0}^{\infty}2^na_{2^n}$收敛．
+	设$\{a_n\}$是单调递减的正数数列, 则级数$\tseries a_n$收敛的充分必要条件是凝聚项级数$\textstyle\sum\limits_{n=0}^{\infty}2^na_{2^n}$收敛. 
 \end{thm}
 
 \begin{thm}[二重正项级数的求和顺序交换定理]
-	设$\forall\,n\in\N$, 正项级数$\textstyle\sum\limits_{k=1}^{\infty}\displaystyle a_{n,k}$收敛, 且其和为$a_n$．若级数$\tseries a_n$收敛, 则成立
+	设$\forall\,n\in\N$, 正项级数$\textstyle\sum\limits_{k=1}^{\infty}\displaystyle a_{n,k}$收敛, 且其和为$a_n$. 若级数$\tseries a_n$收敛, 则成立
 	\[\dseries a_n=\dseries\sum_{k=1}^{\infty}a_{n,k}=\sum_{k=1}^{\infty}\dseries a_{n,k}.\]
 \end{thm}
 
-以下Sapagof判别法提供了一种新的更有力的证明$\lim_{\nti}a_n=0$的手段．在变号级数敛散性判别中, 往往需要证明某个单调数列趋于$0$．利用Sapagof判别法可能将变号级数的敛散性判别归结为某个正项级数的敛散性判别, 而后者的方法更为丰富．
+以下Sapagof判别法提供了一种新的更有力的证明$\lim_{\nti}a_n=0$的手段. 在变号级数敛散性判别中, 往往需要证明某个单调数列趋于$0$. 利用Sapagof判别法可能将变号级数的敛散性判别归结为某个正项级数的敛散性判别, 而后者的方法更为丰富. 
 \begin{thm}[Sapagof判别法]
-	Sapagof判别法有几种等价形式．
+	Sapagof判别法有几种等价形式. 
 	\begin{enumerate}
-		\item 设正数数列$\{a_n\}$单调递减．则$\lim_{\nti}a_n=0$的充分必要条件是正项级数$\tseries\bra{1-\frac{a_{n+1}}{a_n}}$发散．
-		\item 设正数数列$\{a_n\}$单调递增．则$\{a_n\}$与$\tseries\bra{1-\frac{a_n}{a_{n+1}}}$同敛散．
-		\item 设正项级数$\tseries a_n$的部分和数列为$\{S_n\}$, 则$\tseries a_n$与$\tseries\frac{a_n}{S_n}$同敛散．
+		\item 设正数数列$\{a_n\}$单调递减. 则$\lim_{\nti}a_n=0$的充分必要条件是正项级数$\tseries\bra{1-\frac{a_{n+1}}{a_n}}$发散. 
+		\item 设正数数列$\{a_n\}$单调递增. 则$\{a_n\}$与$\tseries\bra{1-\frac{a_n}{a_{n+1}}}$同敛散. 
+		\item 设正项级数$\tseries a_n$的部分和数列为$\{S_n\}$, 则$\tseries a_n$与$\tseries\frac{a_n}{S_n}$同敛散. 
 	\end{enumerate}
 \end{thm}
 
 \begin{exer}
-	设$\alpha\in\R\backslash\N$, 问: $\alpha$在什么条件下数列$\{a_n\}$为无穷小量, 其中$a_n=\binom{\alpha}{n}$．
+	设$\alpha\in\R\backslash\N$, 问: $\alpha$在什么条件下数列$\{a_n\}$为无穷小量, 其中$a_n=\binom{\alpha}{n}$. 
 \end{exer}
 
-以下命题是面积原理的应用, 联系了正项级数和广义积分．
+以下命题是面积原理的应用, 联系了正项级数和广义积分. 
 \begin{prop}
-	若$f$在$[1,+\infty)$单调递减, 则存在如下极限, 且$0\leq A\leq f(1)$．
+	若$f$在$[1,+\infty)$单调递减, 则存在如下极限, 且$0\leq A\leq f(1)$. 
 	\[\lim_{\nti}\bra{\sum_{k=1}^{n}f(k)-\int_{1}^{n}f(x)\,\d x}=A.\]
 \end{prop}
 
 \begin{exer}
-	设$f$在$[1,+\infty)$单调递减, 求证: $\lim_{\nti}\tseries\frac{x}{x^2+n^2}=\frac{\pi}{2}$．
+	设$f$在$[1,+\infty)$单调递减, 求证: $\lim_{\nti}\tseries\frac{x}{x^2+n^2}=\frac{\pi}{2}$. 
 \end{exer}
 
-Lagrange中值定理在正项级数的敛散性判别中有其应用．其思想是将级数的通项放缩为另一个数列的相邻两项之差．
+Lagrange中值定理在正项级数的敛散性判别中有其应用. 其思想是将级数的通项放缩为另一个数列的相邻两项之差. 
 \begin{exer}
-	设正项级数$\tseries a_n$收敛, 其余项为$R_n$．求证: $\tseries\frac{a_n}{R_{n-1}}$发散, 但$\forall\,p>0,\,\tseries\frac{a_n}{R_{n-1}^{1-p}}$收敛．
+	设正项级数$\tseries a_n$收敛, 其余项为$R_n$. 求证: $\tseries\frac{a_n}{R_{n-1}}$发散, 但$\forall\,p>0,\,\tseries\frac{a_n}{R_{n-1}^{1-p}}$收敛. 
 \end{exer}
 \begin{pf}
-	观察形式, 所求证级数通项为$\frac{R_{n-1}-R_n}{R_{n-1}^{1-p}}$, 于是考虑Lagrange中值定理放缩裂项．
+	观察形式, 所求证级数通项为$\frac{R_{n-1}-R_n}{R_{n-1}^{1-p}}$, 于是考虑Lagrange中值定理放缩裂项. 
 \end{pf}
 
 \begin{exer}
-	设$0<p<1,\,a_1>0,\,a_{n+1}=\frac{a_n}{1+a_n^p}$．求证: $\tseries a_n$收敛．
+	设$0<p<1,\,a_1>0,\,a_{n+1}=\frac{a_n}{1+a_n^p}$. 求证: $\tseries a_n$收敛. 
 \end{exer}
 \begin{pf}
-	递推公式不利于级数的计算, 应当考虑裂项．于是变形为$a_{n+1}=\frac{a_n-a_{n+1}}{a_n^p}$, 自然用Lagrange中值定理裂项．
+	递推公式不利于级数的计算, 应当考虑裂项. 于是变形为$a_{n+1}=\frac{a_n-a_{n+1}}{a_n^p}$, 自然用Lagrange中值定理裂项. 
 \end{pf}
 
 
 \subsection{一般项级数}
-一般项级数的以下性质应当了解．由此可以自然地证明出Riemann重排定理．
+一般项级数的以下性质应当了解. 由此可以自然地证明出Riemann重排定理. 
 % \begin{prop}
 % 	\textnormal{(1)} $\sum a_n$绝对收敛的充分必要条件是$\sum a_n^+$与$\sum a_n^-$同时收敛;
-% 	\textnormal{(2)} 已知$\sum a_n$收敛, 则它条件收敛的充分必要条件是$\sum a_n^+$与$\sum a_n^-$同时发散．
+% 	\textnormal{(2)} 已知$\sum a_n$收敛, 则它条件收敛的充分必要条件是$\sum a_n^+$与$\sum a_n^-$同时发散. 
 % \end{prop}
 \begin{prop}
 	\textnormal{(1)} $\tseries a_n$绝对收敛的充分必要条件是$\tseries a_n^+$与$\tseries a_n^-$同时收敛;
-	\textnormal{(2)} 已知$\tseries a_n$收敛, 则它条件收敛的充分必要条件是$\tseries a_n^+$与$\tseries a_n^-$同时发散．
+	\textnormal{(2)} 已知$\tseries a_n$收敛, 则它条件收敛的充分必要条件是$\tseries a_n^+$与$\tseries a_n^-$同时发散. 
 \end{prop}
 
 \begin{thm}[Riemann重排定理]
@@ -1201,63 +1201,63 @@ Lagrange中值定理在正项级数的敛散性判别中有其应用．其思想
 \end{thm}
 
 \begin{thm}[Mertens定理]
-	设$\tseries a_n=A,\,\tseries b_n=B$均收敛, 且其中至少有一个级数绝对收敛．则它们的Cauchy乘积$\tseries c_n=A\cdot B$．
+	设$\tseries a_n=A,\,\tseries b_n=B$均收敛, 且其中至少有一个级数绝对收敛. 则它们的Cauchy乘积$\tseries c_n=A\cdot B$. 
 \end{thm}
 
-从Abel引理可以得到以下两个判别法, 它们与Abel判别法和Dirichlet判别法有所不同．
+从Abel引理可以得到以下两个判别法, 它们与Abel判别法和Dirichlet判别法有所不同. 
 \begin{thm}
 	\phantom{text}
 	\begin{enumerate}
-		\item (Du Bois-Reymond判别法) 设级数$\tseries(a_{n+1}-a_n)$绝对收敛, 级数$\tseries b_n$收敛, 则$\tseries a_nb_n$收敛．
-		\item (Dedekind判别法) 设级数$\tseries(a_{n+1}-a_n)$绝对收敛, $\lim_{\nti}a_n=0$, 级数$\tseries b_n$的部分和数列有界, 则$\tseries a_nb_n$收敛．
+		\item (Du Bois-Reymond判别法) 设级数$\tseries(a_{n+1}-a_n)$绝对收敛, 级数$\tseries b_n$收敛, 则$\tseries a_nb_n$收敛. 
+		\item (Dedekind判别法) 设级数$\tseries(a_{n+1}-a_n)$绝对收敛, $\lim_{\nti}a_n=0$, 级数$\tseries b_n$的部分和数列有界, 则$\tseries a_nb_n$收敛. 
 	\end{enumerate}
 \end{thm}
 
-交错级数的用处实际上很多．通过以下命题可以将任何变号级数转化为交错级数, 从而可以尝试利用Leibniz判别法．
+交错级数的用处实际上很多. 通过以下命题可以将任何变号级数转化为交错级数, 从而可以尝试利用Leibniz判别法. 
 \begin{prop}
-	若对$\tseries a_n$加括号得到的级数收敛, 且每个括号内各项的符号相同, 则$\tseries a_n$也收敛．
+	若对$\tseries a_n$加括号得到的级数收敛, 且每个括号内各项的符号相同, 则$\tseries a_n$也收敛. 
 \end{prop}
 
 \begin{exer}
-	求证: 级数$\tseries\frac{(-1)^{[\sqrt{n}\,]}}{n}$收敛．
+	求证: 级数$\tseries\frac{(-1)^{[\sqrt{n}\,]}}{n}$收敛. 
 \end{exer}
 \begin{pf}
-	只需考虑$\tseries(-1)^na_n$, 用Taylor公式估计$a_n$即证．其中\vs
+	只需考虑$\tseries(-1)^na_n$, 用Taylor公式估计$a_n$即证. 其中\vs
 	\[a_n=\frac{1}{n^2}+\frac{1}{n^2+1}+\cdots+\frac{1}{n^2+2n}=\frac{2}{n}-\frac{1}{n^2}+O(\frac{1}{n^3}).\qedhere\]
 \end{pf}
 
 % \begin{exer}
 % 	\phantom{text}
 % 	\begin{enumerate}
-% 		\item 将调和级数的各项改变符号, 每$p$个正项后为$q$个负项, 如此重复, 但不改变各项原有顺序．求证: 所得级数当且仅当$p=q$时收敛．
-% 		\item 设$0<\alpha<1$．将级数$\tseries\frac{(-1)^{n-1}}{n^\alpha}$按照每$p$个正项后为$q$个负项的规则进行重排, 但不改变正项之间和负项之间的原有顺序．求证: 所得重排级数当且仅当$p=q$时收敛．
+% 		\item 将调和级数的各项改变符号, 每$p$个正项后为$q$个负项, 如此重复, 但不改变各项原有顺序. 求证: 所得级数当且仅当$p=q$时收敛. 
+% 		\item 设$0<\alpha<1$. 将级数$\tseries\frac{(-1)^{n-1}}{n^\alpha}$按照每$p$个正项后为$q$个负项的规则进行重排, 但不改变正项之间和负项之间的原有顺序. 求证: 所得重排级数当且仅当$p=q$时收敛. 
 % 	\end{enumerate}
 % \end{exer}
 % \begin{pf}
-% 	两题中$p=q$时均通过加括号构造Leibniz级数．$p\neq q$时设法放缩．
+% 	两题中$p=q$时均通过加括号构造Leibniz级数. $p\neq q$时设法放缩. 
 % 	\begin{enumerate}
-% 		\item $p>q$时考察相邻的$p+q$项, 其中前$p$项为正项．可以让后$q$个正项与$q$个负项抵消, 多余的至少一个正项组成调和级数．$p<q$时考察相邻的$q+p$项, 其中前$q$项为负项．
-% 		\item $p>q$时即多取出了前$2qn$项之后的若干正项, 前$2qn$项趋于原级数的和, 多出的正项发散．\qedhere
+% 		\item $p>q$时考察相邻的$p+q$项, 其中前$p$项为正项. 可以让后$q$个正项与$q$个负项抵消, 多余的至少一个正项组成调和级数. $p<q$时考察相邻的$q+p$项, 其中前$q$项为负项. 
+% 		\item $p>q$时即多取出了前$2qn$项之后的若干正项, 前$2qn$项趋于原级数的和, 多出的正项发散. \qedhere
 % 	\end{enumerate}
 % \end{pf}
 
-另一种处理交错级数的方式是将相邻项配对, 对加括号得到的级数求和, 它很可能是同号级数．
+另一种处理交错级数的方式是将相邻项配对, 对加括号得到的级数求和, 它很可能是同号级数. 
 % \begin{exer}
-% 	判别级数$\tseries\ln\sbra{1+\frac{(-1)^n}{n^p}}$的敛散性．
+% 	判别级数$\tseries\ln\sbra{1+\frac{(-1)^n}{n^p}}$的敛散性. 
 % \end{exer}
 
 \begin{exer}
-	$p,q>0$, 讨论级数$1-\frac{1}{2^q}+\frac{1}{3^p}-\frac{1}{4^q}+\cdots+\frac{1}{(2n-1)^p}-\frac{1}{(2n)^q}+\cdots$的敛散性．
+	$p,q>0$, 讨论级数$1-\frac{1}{2^q}+\frac{1}{3^p}-\frac{1}{4^q}+\cdots+\frac{1}{(2n-1)^p}-\frac{1}{(2n)^q}+\cdots$的敛散性. 
 \end{exer}
 
-下题体现出变换$(-1)^n\sin nx=\sin(\pi+x)n$的作用．
+下题体现出变换$(-1)^n\sin nx=\sin(\pi+x)n$的作用. 
 \begin{exer}
-	判别级数$\tseries(-1)^n\,\frac{\cos^2n}{n}$的敛散性．
+	判别级数$\tseries(-1)^n\,\frac{\cos^2n}{n}$的敛散性. 
 \end{exer}
 
-% 在级数的敛散性判别中, 可以先不处理不影响本质的项, 留到最后用Abel判别法处理．
+% 在级数的敛散性判别中, 可以先不处理不影响本质的项, 留到最后用Abel判别法处理. 
 % \begin{exer}
-% 	判别以下级数的敛散性．\vspace{-.5em}
+% 	判别以下级数的敛散性. \vspace{-.5em}
 % 	\begin{enumerate}
 % 		\begin{multicols}{2}
 % 			\item $\dseries\frac{(-1)^n2^\frac{1}{n}}{\sqrt{n}}.$
@@ -1268,34 +1268,34 @@ Lagrange中值定理在正项级数的敛散性判别中有其应用．其思想
 
 
 \subsection{无穷乘积}
-从Taylor公式$\ln(1+\alpha_n)=\alpha_n-\frac{1}{2}\alpha_n^2+o(\alpha_n^2)$可以得到如下结论．
+从Taylor公式$\ln(1+\alpha_n)=\alpha_n-\frac{1}{2}\alpha_n^2+o(\alpha_n^2)$可以得到如下结论. 
 \begin{prop}[无穷乘积与无穷级数的敛散性关系]
 	\phantom{text}
 	\begin{enumerate}
-		\item 若$\{\alpha_n\}$保号, 则$\tprod(1+\alpha_n)$与$\tseries\alpha_n$同敛散．
-		\item 若$\{\alpha_n\}$变号, 但$\tseries\alpha_n^2$收敛, 则$\tprod(1+\alpha_n)$与$\tseries\alpha_n$同敛散．
-		\item 若$\{\alpha_n\}$变号, 但$\tseries\alpha_n$收敛, 则$\tprod(1+\alpha_n)$与$\tseries\alpha_n^2$同敛散．
+		\item 若$\{\alpha_n\}$保号, 则$\tprod(1+\alpha_n)$与$\tseries\alpha_n$同敛散. 
+		\item 若$\{\alpha_n\}$变号, 但$\tseries\alpha_n^2$收敛, 则$\tprod(1+\alpha_n)$与$\tseries\alpha_n$同敛散. 
+		\item 若$\{\alpha_n\}$变号, 但$\tseries\alpha_n$收敛, 则$\tprod(1+\alpha_n)$与$\tseries\alpha_n^2$同敛散. 
 	\end{enumerate}
 \end{prop}
 
-下题中的证明与$\e=\tseries\frac{1}{n!}$的证明类似．\vspace{-.5em}
+下题中的证明与$\e=\tseries\frac{1}{n!}$的证明类似. \vspace{-.5em}
 \begin{prop}[Euler]
 	$\forall\,x\in\R,\,\sin x=x\tprod\bra{1-\frac{x^2}{n^2\pi^2}}.$
 \end{prop}
 \begin{pf}
-	观察形式, 结论是$\sin x$与多项式的类比．于是自然考虑$\sin(2n+1)\phi=\sin\phi\cdot p(\sin^2\phi)$, 其中$p$为$n$次多项式, 这种形式的正确性由De Moivre公式保证．$p$的至多$n$个根于是为$\sin^2\bra{k\pi/(2n+1)},\,k=1,2,\dots,n$．令$x=(2n+1)\phi$, 得到
+	观察形式, 结论是$\sin x$与多项式的类比. 于是自然考虑$\sin(2n+1)\phi=\sin\phi\cdot p(\sin^2\phi)$, 其中$p$为$n$次多项式, 这种形式的正确性由De Moivre公式保证. $p$的至多$n$个根于是为$\sin^2\bra{k\pi/(2n+1)},\,k=1,2,\dots,n$. 令$x=(2n+1)\phi$, 得到
 	\[\sin x=(2n+1)\sin\frac{x}{2n+1}\prod_{k=1}^{n}\bra{1-\frac{\sin^2\frac{x}{2n+1}}{\sin^2\frac{k\pi}{2n+1}}}.\]
 	取定$m\in\N$, 令$n>m$, 将上式分解为$\sin x=U_m\cdot V_m$, 其中
 	\[U_m=(2n+1)\sin\frac{x}{2n+1}\prod_{k=1}^{m}\bra{1-\frac{\sin^2\frac{x}{2n+1}}{\sin^2\frac{k\pi}{2n+1}}},\quad V_m=\prod_{k=m+1}^{n}\bra{1-\frac{\sin^2\frac{x}{2n+1}}{\sin^2\frac{k\pi}{2n+1}}}.\]
-	令$\nti$得到$U_m$的估计．由Jordan不等式估计得
+	令$\nti$得到$U_m$的估计. 由Jordan不等式估计得
 	\[1>V_m\geq\prod_{k=m+1}^{n}\bra{1-\frac{x^2}{4k^2}}>\prod_{k=m+1}^{\infty}\bra{1-\frac{x^2}{4k^2}}.\]
-	令$m\to\infty$, 上式右端为余项, 于是用夹逼定理, 代入即证．
+	令$m\to\infty$, 上式右端为余项, 于是用夹逼定理, 代入即证. 
 \end{pf}
 
 \begin{prop}[Gamma函数]
 	对$x\neq0,-1,-2,\dots$, 定义
 	\[\Gamma(x)=\frac{1}{x}\dprod\frac{\bra{1+\frac{1}{n}}^x}{1+\frac{x}{n}}.\]
-	收敛性易证, 有如下结论．
+	收敛性易证, 有如下结论. 
 	\begin{enumerate}
 		\item (Euler-Gauss公式)
 		\[\Gamma(x)=\lim_{\nti}\frac{n!n^x}{x(x+1)\cdots(x+n)}.\]
@@ -1306,16 +1306,16 @@ Lagrange中值定理在正项级数的敛散性判别中有其应用．其思想
 	\end{enumerate}
 \end{prop}
 \begin{pf}
-	Euler-Gauss公式由部分乘积得到．同时得到推论$\Gamma(x+1)=x\Gamma(x),\,\Gamma(n+1)=n!,\,n\in\N$．Weierstrass由无穷乘积定义得到．余元公式由Weierstrass公式得到．
+	Euler-Gauss公式由部分乘积得到. 同时得到推论$\Gamma(x+1)=x\Gamma(x),\,\Gamma(n+1)=n!,\,n\in\N$. Weierstrass由无穷乘积定义得到. 余元公式由Weierstrass公式得到. 
 \end{pf}
 
 % \begin{exer}[Landau]
 % 	求证: 级数
 % 	\[\dseries\frac{n!a_n}{x(x+1)\cdots(x+n)}\quad(x\neq0,-1,-2,\dots)\]
-% 	与Dirichlet级数$\tseries\frac{a_n}{n^x}$对同样的$x$值收敛．
+% 	与Dirichlet级数$\tseries\frac{a_n}{n^x}$对同样的$x$值收敛. 
 % \end{exer}
 % \begin{pf}
-% 	二者之比为$\Gamma(x)$, 是单调收敛的, 用Abel判别法即证．
+% 	二者之比为$\Gamma(x)$, 是单调收敛的, 用Abel判别法即证. 
 % \end{pf}
 
 
