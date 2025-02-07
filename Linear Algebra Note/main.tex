@@ -1,4 +1,4 @@
-\documentclass{tufte-handout}
+\documentclass[colorlinks]{tufte-handout}
 \usepackage{amsmath,amsfonts,amsthm,amssymb}
 \usepackage{bm}
 \usepackage{pgf,tikz}
@@ -34,13 +34,13 @@
 	topsep=0.5em,
 	itemsep=0em,
 }
-\def \v {\vspace{0.2cm}}
 \allsectionsfont{\normalfont\bfseries} % Make all sections centered, the default font and small caps
 
 
 % ---------- Theorem Environments ----------
 \theoremstyle{plain} % default
 \newtheorem{thm}{Theorem}
+\newtheorem{thms}[thm]{Theorems}
 \newtheorem{cor}[thm]{Corollary}
 \newtheorem{prop}[thm]{Proposition}
 \newtheorem{props}[thm]{Propositions}
@@ -60,6 +60,8 @@
 \theoremstyle{remark}
 \newtheorem{rem}[thm]{Remark}
 \newtheorem{rems}[thm]{Remarks}
+
+\def \idea {\textit{\color[rgb]{0,0,.55}Proof Idea. }}
 
 
 % ---------- Symbol Macros ----------
@@ -82,7 +84,6 @@
 \renewcommand{\L}{\mathcal{L}}
 \newcommand{\M}{\mathcal{M}}
 \renewcommand{\P}{\mathcal{P}}
-\newcommand{\B}{\mathcal{B}}
 \newcommand{\E}{\mathcal{E}}
 \newcommand{\zero}{\mathbf{0}}
 
@@ -150,27 +151,6 @@
 % \end{notns}
 
 
-\section{Complexifcation}
-\begin{defn}
-	The complexification of $V$, denoted by $V_\C$, equals $V\times V$ with normal addition and real scalar multiplication for product space. But we write an element $(u,v)$ of $V_\C$ as $u+iv$. Complex scalar multiplication is defined by
-	\[(a+bi)(u+iv)=(au-bv)+i(av+bu)\]
-	for all $a,b\in\R$ and all $u,v\in V$.%
-	\footnote{Think of $V$ as a subset of $V_\C$ by identifying $u\in V$ with $u+i0$. The construction of $V_\C$ from $V$ can then be thought of as generalizing the construction of $\C^n$ from $\R^n$.}
-\end{defn}
-
-\begin{props}[Properties of complexification]
-	\begin{enumerate}
-		\item $\lambda\in\R$ is an eigenvalue of $T$ if and only if $\lambda$ is an eigenvalue of $T_\C$.
-		\item $\lambda\in\C$ is an eigenvalue of $T_\C$ if and only if $\overline{\lambda}$ is an eigenvalue of $T_\C$.
-		\item The minimal polynomial of $T_\C$ equals the minimal polynomial of $T$.
-		\item Suppose $V$ is a real inner product space. For $u,v,w,x\in V$, define
-		\[\inp{u+iv}{w+ix}_\C=\inp{u}{w}+\inp{v}{x}+(\inp{v}{w}-\inp{u}{x})i.\]
-		Then $\inp{\cdot}{\cdot}_\C$ makes $V_\C$ into a complex inner product space. If $u,v\in V$, then
-		\[\inp{u}{v}_\C=\inp{u}{v}\quad\text{and}\quad\norm{u+iv}_\C^2=\norm{u}^2+\norm{v}^2.\]
-	\end{enumerate}
-\end{props}
-
-
 \section{Vector Spaces}
 \begin{lem}[Linear dependence lemma]
 	Suppose $v_1,\dots,v_m$ is a linearly dependent set in $V$. Then there exists $k\in\{1,2,\dots,m\}$ such that
@@ -179,12 +159,12 @@
 	\footnote{This lemma lays the foundation for a series of basic results for vector spaces.}
 \end{lem}
 
-% \begin{thm}
-% 	Any two bases of a finite-dimensional vector space have the same length.%
-% 	\footnote{This proposition ensures that the \emph{dimension} of a vector space is well-defined.}
-% \end{thm}
+\begin{thm}
+	Any two bases of a finite-dimensional vector space have the same length.%
+	\footnote{This proposition ensures that the \emph{dimension} of a vector space is well-defined.}
+\end{thm}
 % \begin{proof}
-% 	Suppose $V$ is finite-dimensional. Let $\B_1$ and $\B_2$ be two bases of $V$. Considering $\B_1$ as an independent set and $\B_2$ as a spanning set leads to $\#\B_1\leq\#\B_2$. Interchanging the roles of $\B_1$ and $\B_2$ and we have $\#\B_2\leq\#\B_1$. Thus $\#\B_1=\#\B_2$.
+% 	Suppose $V$ is finite-dimensional. Let $\mathcal{B}_1$ and $\mathcal{B}_2$ be two bases of $V$. Considering $\mathcal{B}_1$ as an independent set and $\mathcal{B}_2$ as a spanning set leads to $\#\mathcal{B}_1\leq\#\mathcal{B}_2$. Interchanging the roles of $\mathcal{B}_1$ and $\mathcal{B}_2$ and we have $\#\mathcal{B}_2\leq\#\mathcal{B}_1$. Thus $\#\mathcal{B}_1=\#\mathcal{B}_2$.
 % \end{proof}
 
 
@@ -206,7 +186,7 @@
 
 \begin{cor}[Sylvester's rank inequality]
 	Suppose $A\in\F^{m,n}$ and $B\in\F^{n,p}$ are two matrices. Then%
-	\footnote{There is a slicker proof for this inequality using block matrices. But the proof here using linear maps is more informative.}
+	% \footnote{There is a slicker proof for this inequality using block matrices. But the proof here using linear maps is more informative.}
 	\[\rank A+\rank B-n\leq\rank\bra{AB}.\]
 \end{cor}
 
@@ -287,7 +267,7 @@
 	Suppose $V$ and $W$ are finite-dimensional and $T\in\L\bra{V,W}$. Then
 	\begin{center}
 	$T$ is surjective $\iff T'$ is injective \quad and \quad $T$ is injective $\iff T'$ is surjective.%
-    \footnote{This result can be useful because sometimes it is easier to verify that $T'$ is injective (surjective) than to show directly that $T$ is surjective (injective).}
+    \footnote{This result can be useful because sometimes it is easier to verify that $T'$ is injective (or surjective) than to show directly that $T$ is surjective (or injective).}
 	\end{center}
 \end{thm}
 
@@ -324,7 +304,7 @@
 \end{prop}
 
 \begin{exer}
-	Suppose $V$ is finite-dimensional and $\phi_1,\dots,\phi_n$ is a basis of $V'$. Prove that there exists a basis of $V$ whose dual basis is $\phi_1,\dots,\phi_n$.
+	Suppose $V$ is finite-dimensional and $\phi_1,\dots,\phi_n$ is a basis of $V'$. Prove that there exists a basis of $V$ whose dual basis is precisely $\phi_1,\dots,\phi_n$.
 \end{exer}
 \begin{proof}
 	We start from an arbitrary basis $u_1,\dots,u_n$ of $V$. Let $\psi_1,\dots,\psi_n$ be its dual basis. In this proof, we take standard basis $e_1,\dots,e_n$ as the basis of $\F^n$.
@@ -352,21 +332,21 @@
 	\end{align*}
 
 	Consider basis $v_1,\dots,v_n$ of $V$ such that the change of basis matrix from $u$'s to $v$'s is $\bra{A^\intercal}^{-1}$.%
-    \footnote{The change of basis for $V'\to V'$ corresponds to the transpose of $V\leftarrow V$, where transpose and inverse both come from duality. That gives the idea of considering $\bra{A^\intercal}^{-1}$.}
+    \footnote{\idea The change of basis for $V'\to V'$ corresponds to the transpose of $V\leftarrow V$, where transpose and inverse both come from duality.}
 	Thus
 	\[\M\bra{T,\bra{v_1,\dots,v_n}}=\M\bra{T,\bra{u_1,\dots,u_n}}\cdot\M\bra{I,\bra{v_1,\dots,v_n},\bra{u_1,\dots,u_n}}=I.\]
 	Then by Proposition~\ref{prop: matrix of dual basis}, the dual basis of $v_1,\dots,v_n$ is precisely $\phi_1,\dots,\phi_n$, as desired.
 \end{proof}
 
-\begin{exer}[A natural isomorphism from primal space onto double dual space]
+\begin{exer}[A natural isomorphism from primal space onto double dual space]%
+	\footnote{Suppose $V$ is finite-dimensional. Then $V$ and $V'$ are isomorphic, but finding an isomorphism from $V$ onto $V'$ generally requires choosing a basis of $V$. In contrast, the isomorphism $\Lambda$ from $V$ onto $V''$ does not require a choice of basis and thus is more natural.}%
+	\footnote{Another natural isomorphism is $\pi'\in\L\bra{(V/U)',V'}$ where $\pi$ is the normal quotient map.}
 	Define $\Lambda:V\to V''$ by
 	\[(\Lambda v)(\phi)=\phi(v)\]
 	for each $v\in V$ and $\phi\in V'$.
 	\begin{enumerate}
 		\item Prove that if $T\in\L(V)$, then $T''\circ\Lambda=\Lambda\circ T$.
-		\item Prove that if $V$ is finite-dimensional, then $\Lambda$ is an isomorphism from $V$ onto $V''$.%
-    	\footnote{Suppose $V$ is finite-dimensional. Then $V$ and $V'$ are isomorphic, but finding an isomorphism from $V$ onto $V'$ generally requires choosing a basis of $V$. In contrast, the isomorphism $\Lambda$ from $V$ onto $V''$ does not require a choice of basis and thus is more natural.}%
-		\footnote{Another natural isomorphism is $\pi'\in\L\bra{(V/U)',V'}$ where $\pi$ is the normal quotient map.}
+		\item Prove that if $V$ is finite-dimensional, then $\Lambda$ is an isomorphism from $V$ onto $V''$.
 	\end{enumerate}
 \end{exer}
 
@@ -407,12 +387,14 @@
 	Suppose $p\in\P(\C)$ is a nonconstant polynomial with highest-order nonzero term $c_mz^m$. Then $\abs{p(z)}\to\infty$ as $\abs{z}\to\infty$. Thus the continuous function $z\mapsto\abs{p(z)}$ has a global minimum at some $\zeta\in\C$. Assume that $p(\zeta)\neq0$.
 
 	Consider polynomial $q(z)=p(z+\zeta)/p(\zeta)$. The function $z\mapsto\abs{q(z)}$ has a global minimum at $z=0$. Write
-	\[q(z)=1+a_kz_k+\cdots+a_mz^m\]
+	\[q(z)=1+a_kz^k+\cdots+a_mz^m\]
 	where $k$ is the smallest positive integer such that the coefficient of $z_k$ is nonzero.
 	
 	Let $\beta$ be a $k^\text{th}$ root of $-1/a_k$. There is a constant $c>1$ such that if $t\in(0,1)$, then
 	\[\abs{q(t\beta)}\leq\abs{1+a_kt^k\beta^k}+ct^{k+1}=1-t^k(1-tc).\]
-	Thus taking $t$ to be $1/(2c)$ leads to $\abs{q(t\beta)}<1$. The contradiction implies that $p(\zeta)=0$, as desired.
+	Thus taking $t$ to be $1/(2c)$ leads to $\abs{q(t\beta)}<1$.%
+	\footnote{\idea $z^k$ is the leading term in this infinitesimal. We hope to modify its coefficient, and thus use de Moivre's theorem.}
+	The contradiction implies that $p(\zeta)=0$, as desired.
 \end{proof}
 
 % \begin{thm}[Fundamental theorem of algebra, second version]
@@ -467,7 +449,7 @@
 \begin{defn}
 	Suppose $V$ is finite-dimensional, $T\in\L(V)$, and $U$ is a subspace of $V$ invariant under $T$. The \emph{quotient operator} $T/U\in\L(V/U)$ is defined by
 	\[(T/U)(v+U)=Tv+U\]
-	for each $v\in V$.
+	% for each $v\in V$.
 \end{defn}
 
 \begin{exer}
@@ -481,12 +463,12 @@
 
 \begin{exer}
 	Suppose $V$ is finite-dimensional and $T\in\L(V)$. Prove that $T$ has an eigenvalue if and only if there exists a subspace of $V$ of dimension $\dim V-1$ that is invariant under $T$.%
-	\footnote{This proof is inspired by $\M(T)$ and its transpose.}
+	\footnote{\idea Consider the zero entries in $\M(T)$ and its transpose matrix $\M(T')$.}
 \end{exer}
 \begin{proof}
-	We first suppose that $T$ has an eigenvalue $\lambda$. Then there exists $\phi\in V'$ such that $\phi\circ T=T'\phi=\lambda\phi$. Extend $\phi$ to a basis $\phi,\phi_2,\dots,\phi_n$ of $V'$ and let $v,v_2,\dots,v_n$ be a basis of $V$ whose dual basis is $\phi,\phi_2,\dots,\phi_n$. Then $(\phi\circ T)v_k=0$ for every $k$. Because $\phi(T v_k)=0$ for every $k$, $Tv_k\in\spn(v_2,\dots,v_n)$. That proves that $\spn(v_2,\dots,v_n)$ is invariant under $T$.
-
-	To prove the other direction, reverse the steps to obtain an eigenvector of $T'$.
+	We first suppose that $T$ has an eigenvalue $\lambda$. Then there exists $\phi\in V'$ such that $\phi\circ T=T'\phi=\lambda\phi$. Extend $\phi$ to a basis $\phi,\phi_2,\dots,\phi_n$ of $V'$ and let $v,v_2,\dots,v_n$ be the basis of $V$ whose dual basis is $\phi,\phi_2,\dots,\phi_n$. Then $(\phi\circ T)v_k=0$ for every $k$. Because $\phi(T v_k)=0$ for every $k$, we have $Tv_k\in\spn(v_2,\dots,v_n)$. That proves that $\spn(v_2,\dots,v_n)$ is invariant under $T$.
+	
+	Reversing the steps above leads to an eigenvector of $T'$, completing the proof.
 \end{proof}
 
 
@@ -536,7 +518,7 @@
 \end{proof}
 
 \begin{exer}
-	Suppose $V$ is a finite-dimensional nonzero complex vector space. Suppose that $\E\in\L(V)$ is such that $S$ and $T$ commute for all $S,T\in\E$.
+	Suppose $V$ is a finite-dimensional nonzero complex vector space. Suppose that $\E\subseteq\L(V)$ is such that $S$ and $T$ commute for all $S,T\in\E$.
 	\begin{enumerate}
 		\item Prove that there is a vector in $V$ that is an eigenvector for every element of $\E$.
 		\item Prove that there exists a basis of $V$ with respect to which every element of $\E$ has an upper-triangular matrix.%
@@ -547,14 +529,15 @@
 
 \section{Inner Product Spaces}
 \subsection{Inner Products and Norms}
-\begin{props}[Polarization identities]\label{props: polarization identities}
+\begin{thm}[Polarization identities]
 	\begin{enumerate}
 		\item Suppose $V$ is a real inner product space. Then
 		\[\inp{u}{v}=\frac{\norm{u+v}^2-\norm{u-v}^2}{4}.\]
 		\item Suppose $V$ is a complex inner product space. Then
 		\[\inp{u}{v}=\frac{\norm{u+v}^2-\norm{u-v}^2+\norm{u+iv}^2i-\norm{u-iv}^2i}{4}.\]
 	\end{enumerate}
-\end{props}
+	\label{thms: polarization identities}
+\end{thm}
 
 \begin{exer}
 	A \emph{norm} on a vector space $U$ is a function
@@ -562,7 +545,7 @@
 	which satisfies positive-definiteness, absolute homogeneity, and triangle inequality.
 
 	Prove that if $\norm{\cdot}$ is a norm on $U$ satisfying the parallelogram equality, then there is an inner product $\inp{\cdot}{\cdot}$ on $U$ such that $\norm{u}=\inp{u}{u}^{1/2}$ for all $u\in U$.%
-	\footnote{Recall Propositions~\ref{props: polarization identities}.}
+	\footnote{Recall Theorems~\ref{thms: polarization identities}.}
 \end{exer}
 
 \begin{exer}
@@ -574,6 +557,54 @@
 		\footnote{This result has a nice geometric interpretation.}
 	\end{enumerate}
 \end{exer}
+
+
+\subsection{Orthonormal Bases}
+\begin{exer}
+	Suppose $v_1,\dots,v_m$ is a linearly independent list in $V$. Prove that the orthonormal list produced by the formulas of the Gram-Schmidt procedure is the only orthonormal list $e_1,\dots,e_m$ in $V$ such that $\inp{v_k}{e_k}>0$ for each $k$.
+\end{exer}
+
+\begin{exer}
+	Suppose $\F=\C$ and $V$ is finite-dimensional. Prove that if $T\in\L(V)$ is such that $1$ is the only eigenvalue of $T$ and $\norm{Tv}\leq\norm{v}$ for all $v\in V$, then $T=I$.
+\end{exer}
+\begin{proof}
+	By Schur's theorem, there exists an orthonormal basis $e_1,\dots,e_m$ of $V$ with respect to which $T$ has an upper-triangular matrix. Then all entries on the diagonal of $\M(T)$ is $1$. Any $\M(T)_{j,k}\neq0$ with $j\neq k$ would contradict $\norm{Te_k}\leq\norm{e_k}$. That proves that $\M(T)=I$, as desired.
+\end{proof}
+
+\begin{exer}
+	Suppose $v_1,\dots,v_n$ is a basis of $V$. Prove that there exists a basis $u_1,\dots,u_n$ of $V$ such that%
+	\footnote{\idea Linearity in inner product and and patterns of $0,1$ inspire the use of linear functionals.}
+	\[\inp{u_j}{v_k}=\left\{\begin{aligned}
+		0 \quad & \text{if}\, j\neq k,\\
+		1 \quad & \text{if}\, j=k.\\
+	\end{aligned}\right.\]
+\end{exer}
+\begin{proof}
+	Define $\phi_k\in V'$ for each $k$ by $\phi_k(u)=\inp{u}{v_k}$. By Riesz representation theorem, $\phi_1,\dots,\phi_n$ is a spanning list in $V'$. Thus it is a basis of $V'$. Let $u_1,\dots,u_n$ be the basis of $V$ whose dual basis is $\phi_1,\dots,\phi_n$. This basis satisfies the desired property.
+\end{proof}
+
+
+\section{Complexifcation}
+\begin{defn}
+	The complexification of $V$, denoted by $V_\C$, equals $V\times V$ with normal addition and real scalar multiplication for product space. But we write an element $(u,v)$ of $V_\C$ as $u+iv$. Complex scalar multiplication is defined by
+	\[(a+bi)(u+iv)=(au-bv)+i(av+bu)\]
+	for all $a,b\in\R$ and all $u,v\in V$.%
+	\footnote{Think of $V$ as a subset of $V_\C$ by identifying $u\in V$ with $u+i0$. The construction of $V_\C$ from $V$ can then be thought of as generalizing the construction of $\C^n$ from $\R^n$.}
+\end{defn}
+
+\begin{props}[Properties of complexification]
+	\begin{enumerate}
+		\item $\lambda\in\R$ is an eigenvalue of $T$ if and only if $\lambda$ is an eigenvalue of $T_\C$.
+		\item $\lambda\in\C$ is an eigenvalue of $T_\C$ if and only if $\overline{\lambda}$ is an eigenvalue of $T_\C$.
+		\item The minimal polynomial of $T_\C$ equals the minimal polynomial of $T$.
+		\item Suppose $V$ is a real inner product space. For $u,v,w,x\in V$, define
+		\[\inp{u+iv}{w+ix}_\C=\inp{u}{w}+\inp{v}{x}+(\inp{v}{w}-\inp{u}{x})i.\]
+		Then $\inp{\cdot}{\cdot}_\C$ makes $V_\C$ into a complex inner product space. If $u,v\in V$, then
+		\[\inp{u}{v}_\C=\inp{u}{v}\quad\text{and}\quad\norm{u+iv}_\C^2=\norm{u}^2+\norm{v}^2.\]
+	\end{enumerate}
+\end{props}
+
+
 
 
 \end{document}

@@ -1,14 +1,15 @@
-\contentsline {section}{Complexifcation}{3}{section*.2}%
-\contentsline {section}{Vector Spaces}{3}{section*.3}%
-\contentsline {section}{Linear Maps}{3}{section*.4}%
-\contentsline {subsection}{Kernal and Image of Linear Maps}{3}{section*.5}%
-\contentsline {subsection}{Products and Quotients of Vector Spaces}{4}{section*.6}%
-\contentsline {subsection}{Duality}{5}{section*.7}%
-\contentsline {section}{Polynomials}{6}{section*.8}%
-\contentsline {section}{Eigenvalues and Eigenvectors}{7}{section*.9}%
-\contentsline {subsection}{Invariant Subspaces}{7}{section*.10}%
-\contentsline {subsection}{Minimal Polynomials}{8}{section*.11}%
-\contentsline {subsection}{Commuting Operators}{8}{section*.12}%
-\contentsline {section}{Inner Product Spaces}{9}{section*.13}%
-\contentsline {subsection}{Inner Products and Norms}{9}{section*.14}%
+\contentsline {section}{Vector Spaces}{3}{section*.2}%
+\contentsline {section}{Linear Maps}{3}{section*.3}%
+\contentsline {subsection}{Kernal and Image of Linear Maps}{3}{section*.4}%
+\contentsline {subsection}{Products and Quotients of Vector Spaces}{3}{section*.5}%
+\contentsline {subsection}{Duality}{4}{section*.6}%
+\contentsline {section}{Polynomials}{6}{section*.7}%
+\contentsline {section}{Eigenvalues and Eigenvectors}{7}{section*.8}%
+\contentsline {subsection}{Invariant Subspaces}{7}{section*.9}%
+\contentsline {subsection}{Minimal Polynomials}{7}{section*.10}%
+\contentsline {subsection}{Commuting Operators}{8}{section*.11}%
+\contentsline {section}{Inner Product Spaces}{9}{section*.12}%
+\contentsline {subsection}{Inner Products and Norms}{9}{section*.13}%
+\contentsline {subsection}{Orthonormal Bases}{9}{section*.14}%
+\contentsline {section}{Complexifcation}{10}{section*.15}%
 \contentsfinish 
