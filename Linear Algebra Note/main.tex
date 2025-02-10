@@ -1,15 +1,13 @@
 \documentclass[colorlinks]{tufte-handout}
+% \usepackage[osf,sc]{mathpazo}
+% \usepackage[scaled=0.90]{helvet}
+% \usepackage[scaled=0.85]{beramono}
+
 \usepackage{amsmath,amsfonts,amsthm,amssymb}
 \usepackage{bm}
 \usepackage{pgf,tikz}
-\usepackage{float}
-\usepackage{multicol}
-\usepackage{booktabs}
 \usepackage{enumerate,enumitem}
-\usepackage{setspace}
-\usepackage{fancyhdr} % custom headers and footers
-\usepackage{ragged2e}
-\usepackage{sectsty} % Allow customizing section commands
+\usepackage{sectsty}
 
 
 % ---------- Preamble ----------
@@ -23,10 +21,10 @@
 \setlength{\headheight}{13.6pt} % Customize the height of the header
 \allowdisplaybreaks
 \geometry{
-	left=13mm, % left margin
-	textwidth=130mm, % main text block
-	marginparsep=8mm, % gutter between main text block and margin notes
-	marginparwidth=55mm % width of margin notes
+	left=13mm,
+	textwidth=130mm,
+	marginparsep=8mm,
+	marginparwidth=55mm,
 }
 \setlist[enumerate]{
 	label=(\alph*),
@@ -34,7 +32,7 @@
 	topsep=0.5em,
 	itemsep=0em,
 }
-\allsectionsfont{\normalfont\bfseries} % Make all sections centered, the default font and small caps
+\allsectionsfont{\normalfont\bfseries}
 
 
 % ---------- Theorem Environments ----------
@@ -61,16 +59,16 @@
 \newtheorem{rem}[thm]{Remark}
 \newtheorem{rems}[thm]{Remarks}
 
-\def \idea {\textit{\color[rgb]{0,0,.55}Proof Idea. }}
+\def\idea{\textit{\color[rgb]{0,0,.55}Proof Idea. }}
 
 
 % ---------- Symbol Macros ----------
 \newcommand{\bra}[1]{\mathopen{}\left(#1\right)}
 \newcommand{\sbra}[1]{\mathopen{}\left[#1\right]}
 \newcommand{\cbra}[1]{\mathopen{}\left\{#1\right\}}
-\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
-\newcommand{\inp}[2]{\left\langle#1,#2\right\rangle}
-\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\norm}[1]{\mathopen{}\left\lVert#1\right\rVert}
+\newcommand{\inp}[2]{\mathopen{}\left\langle#1,#2\right\rangle}
+\newcommand{\abs}[1]{\mathopen{}\left|#1\right|}
 \newcommand{\rest}[2]{\mathopen{}\left.#1\right|_{#2}}
 
 \renewcommand{\phi}{\varphi}
@@ -155,8 +153,7 @@
 \begin{lem}[Linear dependence lemma]
 	Suppose $v_1,\dots,v_m$ is a linearly dependent set in $V$. Then there exists $k\in\{1,2,\dots,m\}$ such that
 	\[v_k\in\spn(v_1,\dots,v_m).\]
-	Furthermore, removing the $k^\text{th}$ term from the list does not change the span.%
-	\footnote{This lemma lays the foundation for a series of basic results for vector spaces.}
+	Furthermore, removing the $k^\text{th}$ term from the list does not change the span.
 \end{lem}
 
 \begin{thm}
@@ -209,10 +206,10 @@
 % 	Recall Lemma~\ref{lem: direct sum and product space}.Because $\Gamma$ is surjective, by the fundamental theorem of linear maps, $V_1+\cdots+V_m$ is a direct sum if and only if $\dim\bra{V_1+\cdots+V_m} = \dim\bra{V_1\times\cdots\times V_m} = \dim V_1+\cdots+\dim V_m$.
 % \end{proof}
 
-\begin{notn}
-	Suppose $T\in\L\bra{V,W}$. Define $\widetilde{T}: V+\ker V \to V$ by
-	\[\widetilde{T}\bra{v+\ker T}=Tv.\]
-\end{notn}
+% \begin{notn}
+% 	Suppose $T\in\L\bra{V,W}$. Define $\widetilde{T}: V+\ker V \to V$ by
+% 	\[\widetilde{T}\bra{v+\ker T}=Tv.\]
+% \end{notn}
 
 \begin{exer}
 	Suppose $V_1,\dots,V_m$ are vector spaces. Prove that $\L\bra{V_1\times\cdots\times V_m,W}$ and $\L\bra{V_1,W}\times\cdots\times\L\bra{V_m,W}$ are isomorphic vector spaces. 
@@ -442,15 +439,15 @@
 \end{exer}
 \begin{proof}
 	Let $V=\spn(\e^{\lambda_1x},\dots,\e^{\lambda_nx})$.%
-	\footnote{Alternatively we can let $V$ be the vector space of differentiable functions on $\R$.}
+	\footnote{Alternatively we can let $V=D(\R)$.}
 	Define $D\in\L(V)$ by $Df=f'$. Then $\e^{\lambda x}$ is an eigenvector of $D$ corresponding to $\lambda$. A list of eigenvectors corresponding to distinct eigenvalues is linearly independent.
 \end{proof}
 
-\begin{defn}
-	Suppose $V$ is finite-dimensional, $T\in\L(V)$, and $U$ is a subspace of $V$ invariant under $T$. The \emph{quotient operator} $T/U\in\L(V/U)$ is defined by
-	\[(T/U)(v+U)=Tv+U\]
-	% for each $v\in V$.
-\end{defn}
+% \begin{defn}
+% 	Suppose $V$ is finite-dimensional, $T\in\L(V)$, and $U$ is a subspace of $V$ invariant under $T$. The \emph{quotient operator} $T/U\in\L(V/U)$ is defined by
+% 	\[(T/U)(v+U)=Tv+U\]
+% 	% for each $v\in V$.
+% \end{defn}
 
 \begin{exer}
 	Suppose $V$ is finite-dimensional, $T\in\L(V)$, and $U$ is a subspace of $V$ invariant under $T$. Prove that each eigenvalue of the quotient operator $T/U$ is an eigenvalue of $T$.
@@ -466,7 +463,7 @@
 	\footnote{\idea Consider the zero entries in $\M(T)$ and its transpose matrix $\M(T')$.}
 \end{exer}
 \begin{proof}
-	We first suppose that $T$ has an eigenvalue $\lambda$. Then there exists $\phi\in V'$ such that $\phi\circ T=T'\phi=\lambda\phi$. Extend $\phi$ to a basis $\phi,\phi_2,\dots,\phi_n$ of $V'$ and let $v,v_2,\dots,v_n$ be the basis of $V$ whose dual basis is $\phi,\phi_2,\dots,\phi_n$. Then $(\phi\circ T)v_k=0$ for every $k$. Because $\phi(T v_k)=0$ for every $k$, we have $Tv_k\in\spn(v_2,\dots,v_n)$. That proves that $\spn(v_2,\dots,v_n)$ is invariant under $T$.
+	We first suppose that $T$ has an eigenvalue $\lambda$. Then $\lambda$ is an eigenvalue of $T'$. There exists $\phi\in V'$ such that $\phi\circ T=T'\phi=\lambda\phi$. Extend $\phi$ to a basis $\phi,\phi_2,\dots,\phi_n$ of $V'$ and let $v,v_2,\dots,v_n$ be the basis of $V$ whose dual basis is $\phi,\phi_2,\dots,\phi_n$. Then $(\phi\circ T)v_k=\lambda\phi(v_k)=0$ for every $k$. Because $\phi(T v_k)=0$ for every $k$, we have $Tv_k\in\spn(v_2,\dots,v_n)$. That proves that $\spn(v_2,\dots,v_n)$ is invariant under $T$.
 	
 	Reversing the steps above leads to an eigenvector of $T'$, completing the proof.
 \end{proof}
@@ -514,7 +511,7 @@
 \begin{proof}
 	Suppose every pair of elements of $\E$ commutes. The other direction is trivial. We use induction on $n=\dim V$. The base case $n=1$ is trivial. Now suppose $n>1$ and the desired result holds for all smaller integers. Without loss of generality, suppose $\E\cap\{\lambda I:\lambda\in\F\}=\emptyset$, or else consider $\E\backslash\{\lambda I:\lambda\in\F\}$.
 
-	Let $\lambda_1,\dots,\lambda_m$ be the distinct eigenvalues of $T\in\E$. Then $V=E(\lambda_1,T)\oplus\cdots\oplus E(\lambda_m,T)$. Because $E(\lambda_k,T)$ is invariant under every $S\in\E$, it suffices to show that the desired result holds on $E(\lambda_1,T)$. Because $E(\lambda_1,T)\subsetneqq V$, it holds by induction hypothesis, as desired.
+	Let $\lambda_1,\dots,\lambda_m$ be the distinct eigenvalues of $T\in\E$. Then $V=E(\lambda_1,T)\oplus\cdots\oplus E(\lambda_m,T)$. Because $E(\lambda_k,T)$ is invariant under every $S\in\E$, it suffices to show that the desired result holds on $E(\lambda_1,T)$. Because $E(\lambda_1,T)\subsetneqq V$, it holds by induction hypothesis, completing the proof.
 \end{proof}
 
 \begin{exer}
@@ -522,7 +519,7 @@
 	\begin{enumerate}
 		\item Prove that there is a vector in $V$ that is an eigenvector for every element of $\E$.
 		\item Prove that there exists a basis of $V$ with respect to which every element of $\E$ has an upper-triangular matrix.%
-		\footnote{This is an extension of simultaneous upper triangularizability to more than $2$ operators.}
+		\footnote{This is an extension of simultaneous upper triangularizability to more than $2$ (possibly infinitely many) operators.}
 	\end{enumerate}
 \end{exer}
 
@@ -539,10 +536,10 @@
 	\label{thms: polarization identities}
 \end{thm}
 
-\begin{exer}
-	A \emph{norm} on a vector space $U$ is a function
-	\[\norm{\cdot}:U\to[0,+\infty)\]
-	which satisfies positive-definiteness, absolute homogeneity, and triangle inequality.
+\begin{exer}\label{exer: condition for a norm-induced inner product}
+	% A \emph{norm} on a vector space $U$ is a function
+	% \[\norm{\cdot}:U\to[0,\infty)\]
+	% which satisfies positive-definiteness, absolute homogeneity, and triangle inequality.
 
 	Prove that if $\norm{\cdot}$ is a norm on $U$ satisfying the parallelogram equality, then there is an inner product $\inp{\cdot}{\cdot}$ on $U$ such that $\norm{u}=\inp{u}{u}^{1/2}$ for all $u\in U$.%
 	\footnote{Recall Theorems~\ref{thms: polarization identities}.}
@@ -565,7 +562,35 @@
 \end{exer}
 
 \begin{exer}
-	Suppose $\F=\C$ and $V$ is finite-dimensional. Prove that if $T\in\L(V)$ is such that $1$ is the only eigenvalue of $T$ and $\norm{Tv}\leq\norm{v}$ for all $v\in V$, then $T=I$.
+	Suppose $V$ is finite-dimensional. Suppose $\inp{\cdot}{\cdot}_1,\inp{\cdot}{\cdot}_2$ are inner products on $V$ with corresponding norms $\norm{\cdot}_1$ and $\norm{\cdot}_2$. Prove that there exists $b,c>0$ such that $b\norm{v}_2\leq\norm{v}_1\leq c\norm{v}_2$ for every $v\in V$.%
+	\footnote{Note that \textit{Proof 1} does not use the hypothesis that $\norm{\cdot}_1$ and $\norm{\cdot}_2$ are associated with an inner product respectively.}
+\end{exer}
+\begin{proof}[Proof 1]
+	Let $u_1,\dots,u_n$ be a basis of $V$. Without loss of generality, suppose that%
+	\footnote{As an alternative to infinity norm, we might also use the $2$-norm, which naturally induces an inner product by Exercise~\ref{exer: condition for a norm-induced inner product}.}
+	\[\norm{c_1u_1+\cdots+c_nu_n}_2=\max\{\abs{c_1},\dots,\abs{c_n}\}.\]
+	We interpret $\norm{\cdot}_1$ as a function $(c_1,\dots,c_n)\mapsto\norm{c_1u_1+\cdots+c_nu_n}_1$ from $\F^n$ to $\R$. It suffices to show that the desired result holds on the sphere
+	\[S=\cbra{(c_1,\dots,c_n)\in\F^n:\norm{c_1u_1+\cdots+c_nu_n}_2=1},\]
+	i.e. that $\norm{\cdot}_1$ is bounded on $S$.%
+	\footnote{\idea We cannot manipulate two norms simultaneously. Hence we restrict to $S$ and fix an orthonormal basis. Then $V$ behaves like $\F^n$. Nice properties of $S$ lead to proof of the continuity of $\norm{\cdot}_1$.}
+	Because $S$ is a closed and bounded set, it suffices to show that the function $\norm{\cdot}_1$ is continuous on $\F^n$.
+	
+	Suppose $a\in\F^n$ and $e_1,\dots,e_n$ is the standard basis of $\F^n$. As $\norm{x-a}\to0$,
+	\begin{align*}
+		\abs{\norm{x}_1-\norm{a}_1}&\leq\norm{x-a}_1=\norm{\sum_{k=1}^{n}(x_k-a_k)e_k}_1\\
+		&\leq\sum_{k=1}^{n}\abs{x_k-a_k}\norm{e_k}_1\\
+		&\leq\bra{\sum_{k=1}^{n}\norm{e_k}_1^2}^{1/2}\norm{x-a}\to0,
+	\end{align*}
+	where the last inequality follows from the Cauchy-Schwarz inequality. Because every continuous function on a closed and bounded set is bounded, the proof is completed.
+\end{proof}
+\begin{proof}[Proof 2]
+	Without loss of generality, suppose $V=\F^n$, $\norm{x}_1^2=x^\intercal Ax$, and $\norm{x}_2^2=x^\intercal Bx$, where $A,B$ are positive-definite and $B$ is diagonal.%
+	\footnote{\idea Fixing an orthonormal basis naturally leads to a (simple) diagonal matrix.}
+	Note that $\lambda B-A$ is Hermitian and hence diagonalizable. It suffices to show that there exists $\lambda>0$ such that $\lambda B-A$ is positive-definite. Such a $\lambda$ exists by the Gershgorin disk theorem, as desired.
+\end{proof}
+
+\begin{exer}
+	Suppose $\F=\C$ and $V$ is finite-dimensional. Prove that if $T\in\L(V)$ is such that $1$ is the only eigenvalue of $T$ and $\norm{Tv}\leq\norm{v}$ for all $v\in V$, then $T$ is the identity operator.
 \end{exer}
 \begin{proof}
 	By Schur's theorem, there exists an orthonormal basis $e_1,\dots,e_m$ of $V$ with respect to which $T$ has an upper-triangular matrix. Then all entries on the diagonal of $\M(T)$ is $1$. Any $\M(T)_{j,k}\neq0$ with $j\neq k$ would contradict $\norm{Te_k}\leq\norm{e_k}$. That proves that $\M(T)=I$, as desired.
@@ -580,7 +605,7 @@
 	\end{aligned}\right.\]
 \end{exer}
 \begin{proof}
-	Define $\phi_k\in V'$ for each $k$ by $\phi_k(u)=\inp{u}{v_k}$. By Riesz representation theorem, $\phi_1,\dots,\phi_n$ is a spanning list in $V'$. Thus it is a basis of $V'$. Let $u_1,\dots,u_n$ be the basis of $V$ whose dual basis is $\phi_1,\dots,\phi_n$. This basis satisfies the desired property.
+	Define $\phi_k\in V'$ for each $k$ by $\phi_k(u)=\inp{u}{v_k}$. By the Riesz representation theorem, $\phi_1,\dots,\phi_n$ is a spanning list in $V'$. Thus it is a basis of $V'$. Let $u_1,\dots,u_n$ be the basis of $V$ whose dual basis is $\phi_1,\dots,\phi_n$. Then $u_1,\dots,u_n$ satisfies the desired property.
 \end{proof}
 
 
@@ -604,7 +629,16 @@
 	\end{enumerate}
 \end{props}
 
-
+\begin{prop}
+	Every operator on a finite-dimensional nonzero vector space has an invariant subspace of dimension $1$ or $2$.
+\end{prop}
+\begin{proof}
+	The case where $\F=\C$ is trivial. Now assume $V$ is a real vector space and $T\in\L(V)$. Then $T_\C$%
+	\footnote{\idea Field extension.}
+	has an eigenvalue $a+bi$ with $a,b\in\R$. Thus there exist $u,v\in V$, not both $0$, such that
+	\[Tu+iTv=(au-bv)+(av+bu)i.\]
+	Hence $\spn(u,v)$ is invariant under $T$, as desired.
+\end{proof}
 
 
 \end{document}
