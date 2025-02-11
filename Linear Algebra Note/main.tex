@@ -61,6 +61,17 @@
 
 \def\idea{\textit{\color[rgb]{0,0,.55}Proof Idea. }}
 
+\newcounter{peq} % Set a new counter for problem-equations
+\counterwithin{peq}{thm}
+\newenvironment{peq}{%
+   \equation
+   \refstepcounter{peq}
+%    \tag{P.~\thepeq}
+   \tag{\thepeq}
+}{%
+   \endequation
+}
+
 
 % ---------- Symbol Macros ----------
 \newcommand{\bra}[1]{\mathopen{}\left(#1\right)}
@@ -129,7 +140,7 @@
 		Where does the proof use the hypothesis?
 	\end{center}
 	\begin{flushright}
-		\textemdash\,Paul Holmos\phantom{placeholderrrrrr}
+		\textemdash\,Paul Holmos\phantom{placeholderplaceholder}
 	\end{flushright}
 	\vspace*{\fill}
 \end{fullwidth}
@@ -263,8 +274,8 @@
 \begin{thm}
 	Suppose $V$ and $W$ are finite-dimensional and $T\in\L\bra{V,W}$. Then
 	\begin{center}
-	$T$ is surjective $\iff T'$ is injective \quad and \quad $T$ is injective $\iff T'$ is surjective.%
-    \footnote{This result can be useful because sometimes it is easier to verify that $T'$ is injective (or surjective) than to show directly that $T$ is surjective (or injective).}
+		$T$ is surjective $\iff T'$ is injective \quad and \quad $T$ is injective $\iff T'$ is surjective.%
+		\footnote{This result can be useful because sometimes it is easier to verify that $T'$ is injective (or surjective) than to show directly that $T$ is surjective (or injective).}
 	\end{center}
 \end{thm}
 
@@ -390,7 +401,7 @@
 	Let $\beta$ be a $k^\text{th}$ root of $-1/a_k$. There is a constant $c>1$ such that if $t\in(0,1)$, then
 	\[\abs{q(t\beta)}\leq\abs{1+a_kt^k\beta^k}+ct^{k+1}=1-t^k(1-tc).\]
 	Thus taking $t$ to be $1/(2c)$ leads to $\abs{q(t\beta)}<1$.%
-	\footnote{\idea $z^k$ is the leading term in this infinitesimal. We hope to modify its coefficient, and thus use de Moivre's theorem.}
+	\footnote{\idea $z^k$ is the leading term in this infinitesimal. We hope its coefficient is negative real, and thus use de Moivre's theorem.}
 	The contradiction implies that $p(\zeta)=0$, as desired.
 \end{proof}
 
@@ -606,6 +617,33 @@
 \end{exer}
 \begin{proof}
 	Define $\phi_k\in V'$ for each $k$ by $\phi_k(u)=\inp{u}{v_k}$. By the Riesz representation theorem, $\phi_1,\dots,\phi_n$ is a spanning list in $V'$. Thus it is a basis of $V'$. Let $u_1,\dots,u_n$ be the basis of $V$ whose dual basis is $\phi_1,\dots,\phi_n$. Then $u_1,\dots,u_n$ satisfies the desired property.
+\end{proof}
+
+
+\subsection{Orthogonal Complements and Minimization Problems}
+\begin{thm}[Riesz representation theorem]
+	Suppose $V$ is finite-dimensional. For each $v\in V$, define $\phi_v\in V'$ by
+	\[\phi_v(u)=\inp{u}{v}\]
+	for each $u\in V$. Then $v\mapsto\phi_v$ is a one-to-one map from $V$ onto $V'$.%
+	\footnote{\idea If $\phi(u)=\inp{u}{v}$ holds for all $u\in V$, then $v\in(\ker\phi)^\perp$. However, $(\ker\phi)^\perp$ has dimension $1$ (except when $\phi=0$). Hence we can obtain the right $v$ by choosing an arbitrary nonzero $w\in(\ker\phi)^\perp$ and then multiplying by an appropriate scalar.}
+\end{thm}
+\begin{proof}
+	The injectivity is trivial. We prove the surjectivity. Suppose $\phi\in V'$. The case where $\phi=0$ is trivial. Thus assume $\phi\neq0$. Hence $\ker\phi\neq V$, which implies that $(\ker\phi)^\perp\neq\{0\}$. Let $w\in(\ker\phi)^\perp$ be such that $w\neq0$. Let%
+	\footnote{\idea Apply $w$ to $u$ to find the supposedly right scalar $c$ in $\phi(u)=\inp{u}{cw}$.}
+	\begin{peq}\label{35peq: definition of $v$}
+		v=\frac{\overline{\phi(w)}}{\norm{w}^2}w.
+	\end{peq}
+	Then $v\in(\ker\phi)^\perp$ and $v\neq0$. Now we prove that $\phi(u)=\inp{u}{v}$ for each $u\in V$.
+
+	Let $u\in V$. The orthogonal decomposition leads to
+	\[u=\frac{\inp{u}{v}}{\norm{v}^2}v+\bra{u-\frac{\inp{u}{v}}{\norm{v}^2}v},\]
+	where the second term is orthogonal to $v$ and thus in $\ker\phi$. Applying $\phi$ to both sides, we have
+	\begin{peq}\label{35peq: last equation}
+		\phi(u)=\frac{\inp{u}{v}}{\norm{v}^2}\phi(v).
+	\end{peq}
+	By (\ref{35peq: definition of $v$}), we have
+	\[\norm{v}=\frac{\abs{\phi(w)}}{\norm{w}} ,\qquad \phi(v)=\frac{\abs{\phi(w)}^2}{\norm{w}^2}.\]
+	Applying them to (\ref{35peq: last equation}) leads to $\phi(u)=\inp{u}{v}$, as desired.
 \end{proof}
 
 
