@@ -646,6 +646,36 @@
 	Applying them to (\ref{35peq: last equation}) leads to $\phi(u)=\inp{u}{v}$, as desired.
 \end{proof}
 
+\begin{exer}
+	Suppose $V$ is finite-dimensional and  $P\in\L(V)$ is such that $P^2=P$.
+	\begin{enumerate}
+		\item Suppose every vector in $\ker P$ is orthogonal to every vector in $\im P$. Prove that there exists a subspace $U$ of $V$ such that $P=P_U$.%
+		\footnote{\idea Observe that $\ker P=(\im P)^\perp$. Thus we prove that $P$ and $P_{\im P}$ agree on $\ker P$ and $\im P$.}
+		\item Suppose $\norm{Pv}\leq\norm{v}$ for every $v\in V$. Prove that there exists a subspace $U$ of $V$ such that $P=P_U$.%
+		\footnote{\idea Observe that among all $v$'s with the same $Pv$, the one in $(\ker P)^\perp$ is the shortest. Applying this $v$ makes the best use of the inequality. Thus we prove that $P$ and $P_{(\ker P)^\perp}$ agree on $\ker P$ and $(\ker P)^\perp$.}
+	\end{enumerate}
+\end{exer}
+% \begin{proof}
+% 	\begin{enumerate}
+% 		\item We prove that $P=P_{\im P}$. We have $\ker P=(\im P)^\perp$. If $v\in\ker P$, then $Pv=0=P_{\im P}\,v$. If $v\in\im P$, suppose $v=Pu$ with $u\in V$. $P^2u=Pu$ implies that $Pv=v=P_{\im P}\,v$. $P$ and $P_{\im P}$ agree on $(\im P)^\perp=\ker P$ and $\im P$, and thus are equal.
+% 		\item We prove that $P=P_{(\ker P)^\perp}$. If $v\in\ker P$, then $Pv=0=P_{\,\ker P}\,v$. If $v\in(\ker P)^\perp$, $P^2v=Pv$ implies that $Pv-v\in\ker P$, which implies that $Pv=v+w$ with $w\in\ker P$. Because $v\in(\ker P)^\perp$, $\norm{Pv}^2=\norm{v}^2+\norm{w}^2$ by the Pythagorean theorem. Then $\norm{Pv}\leq\norm{v}$ leads to $w=0$, which implies that $Pv=v$. $P$ and $P_{(\ker P)^\perp}$ agree on $\ker P$ and $(\ker P)^\perp$, and thus are equal.
+% 	\end{enumerate}
+% \end{proof}
+
+\begin{props}[Algebraic properties of the pseudoinverse]
+	Suppose $V$ is finite-dimensional and $T\in\L(V,W)$.
+	\begin{enumerate}
+		\item The pseudoinverse of an orthogonal projection is the operator itself.
+		\item $\ker T^\dagger=(\im T)^\perp$ and $\im T^\dagger=(\ker T)^\perp$.
+		\item $TT^\dagger T=T$ and $T^\dagger TT^\dagger=T^\dagger$.
+		\item $\bra{T^\dagger}^\dagger=T$.
+	\end{enumerate}
+\end{props}
+
+
+\section{Operators on Inner Product Spaces}
+\textbf{From now on, we assume that $V$ and $W$ are finite-dimensional inner product spaces over $\F$.}
+
 
 \section{Complexifcation}
 \begin{defn}

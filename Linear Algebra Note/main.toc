@@ -12,5 +12,6 @@
 \contentsline {subsection}{Inner Products and Norms}{8}{section*.13}%
 \contentsline {subsection}{Orthonormal Bases}{9}{section*.14}%
 \contentsline {subsection}{Orthogonal Complements and Minimization Problems}{10}{section*.15}%
-\contentsline {section}{Complexifcation}{11}{section*.16}%
+\contentsline {section}{Operators on Inner Product Spaces}{11}{section*.16}%
+\contentsline {section}{Complexifcation}{11}{section*.17}%
 \contentsfinish 

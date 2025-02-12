@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.6)  12 FEB 2025 14:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.6)  12 FEB 2025 19:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1284,36 +1284,43 @@ LaTeX Warning: Marginpar on page 10 moved.
 pdfTeX warning (ext4): destination with the same identifier (name{equation.0.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.653 	\[
-         (a+bi)(u+iv)=(au-bv)+i(av+bu)\]]
+l.654 		\item S
+               uppose $\norm{Pv}\leq\norm{v}$ for every $v\in V$. Prove that...]
 
 LaTeX Warning: Marginpar on page 11 moved.
 
 
 LaTeX Warning: Marginpar on page 11 moved.
 
+
+LaTeX Warning: Marginpar on page 11 moved.
+
+
+LaTeX Warning: Marginpar on page 11 moved.
+
+[11]
 
 Package bibentry Warning: You have used \nobibliography* 
 (bibentry)                without a following \bibliography.
 (bibentry)                You may not be able to run BibTeX.
 
-[11] (./main.aux)
+[12] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A65AC962240A27A558434FAD6C5E7C38;774.
+(rerunfilecheck)             Checksum: B62FBBB7B44AFD92CB3B0C0F48EB5606;996.
  ) 
 Here is how much of TeX's memory you used:
- 24575 strings out of 476025
- 446817 string characters out of 5794015
+ 24588 strings out of 476025
+ 446913 string characters out of 5794015
  1879382 words of memory out of 5000000
- 44390 multiletter control sequences out of 15000+600000
- 591751 words of font info for 174 fonts, out of 8000000 for 9000
+ 44391 multiletter control sequences out of 15000+600000
+ 592308 words of font info for 176 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 97i,16n,93p,552b,686s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 97i,16n,93p,552b,694s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (11 pages, 204330 bytes).
+Output written on main.pdf (12 pages, 208017 bytes).
 PDF statistics:
- 280 PDF objects out of 1000 (max. 8388607)
- 221 compressed objects within 3 object streams
- 85 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 299 PDF objects out of 1000 (max. 8388607)
+ 238 compressed objects within 3 object streams
+ 95 named destinations out of 1000 (max. 500000)
+ 69 words of extra memory for PDF output out of 10000 (max. 10000000)
 
