@@ -505,11 +505,11 @@
 	Prove that every operator on a finite-dimensional vector space of dimension at least $2$ has an invariant subspace of dimension $2$.
 \end{exer}
 \begin{proof}
-	Let $T\in\L(V)$ and $\dim V=n$. We use induction on $n$. The base case $n=2$ is trivial. Now suppose $n>2$ and the desired result holds for all smaller positive integers. Let $p$ be the minimal polynomial of $T$.
+	Let $T\in\L(V)$ and $n=\dim V$. We use induction on $n$. The base case $n=2$ is trivial. Now suppose $n>2$ and the desired result holds for all smaller positive integers. Let $p$ be the minimal polynomial of $T$.
 
 	If $T$ has an eigenvalue $\lambda$, then $p(z)=q(z)(z-\lambda)$ for some monic polynomial $q$ with $\deg q=\deg p-1$. Because $\rest{q(T)}{\im(T-\lambda I)}=0$, the desired result holds by induction hypothesis if $\dim\im(T-\lambda I)\geq2$. If $T-\lambda I=0$ the desired result trivially holds. If $\dim\im(T-\lambda I)=1$, then $(T-\lambda I)v$ is a scalar multiple of some fixed $u\in V$ for all $v\in V$. Take $w\in V\backslash\spn(u)$ and $\spn(u,w)$ will satisfy the desired property.
 
-	If $T$ has no eigenvalues, then $\F=\R$ and $p(z)=q(z)(z^2+bz+c)$ for some $b,c\in\R$ with $b^2<4c$ and monic polynomial $q$ with $\deg q=\deg p-2$. If $\dim\im(T^2+bT+cI)\geq2$ the desired result holds by induction hypothesis. If $T^2+bT+cI=0$, then any subspace of $V$ with dimension $2$ is a subspace of $\ker(T^2+bT+cI)$, and thus is invariant under $T$. If $\dim\im(T^2+bT+cI)=1$, because $\dim\ker(T^2+bT+cI)$ is even, $n$ is odd and $T$ has an eigenvalue. That completes the proof.
+	If $T$ has no eigenvalues, then $\F=\R$ and $p(z)=q(z)(z^2+bz+c)$ for some $b,c\in\R$ with $b^2<4c$ and monic polynomial $q$ with $\deg q=\deg p-2$. If $\dim\im(T^2+bT+cI)\geq2$ the desired result holds by induction hypothesis. If $T^2+bT+cI=0$, then let $w\in V$ be such that $w\neq0$. It can be verified that $\spn(w,Tw)$ is invariant under $T$. If $\dim\im(T^2+bT+cI)=1$, because $\dim\ker(T^2+bT+cI)$ is even, $n$ is odd, which implies that $T$ has an eigenvalue. That completes the proof.
 \end{proof}
 
 
