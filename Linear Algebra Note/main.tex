@@ -1,13 +1,14 @@
-\documentclass[colorlinks]{tufte-handout}
-% \usepackage[osf,sc]{mathpazo}
-% \usepackage[scaled=0.90]{helvet}
-% \usepackage[scaled=0.85]{beramono}
-
+\documentclass[nofonts,colorlinks]{tufte-handout}
 \usepackage{amsmath,amsfonts,amsthm,amssymb}
 \usepackage{bm}
 \usepackage{pgf,tikz}
 \usepackage{enumerate,enumitem}
 \usepackage{sectsty}
+
+\usepackage[osf]{mathpazo} % Palatino for main and math
+% \usepackage[scaled=1.05]{newtxtext}
+\usepackage[scaled=0.90]{helvet} % Helvetica for sans serif
+\usepackage[scaled=0.85]{beramono} % Bera Mono for monospaced
 
 
 % ---------- Preamble ----------
@@ -56,8 +57,8 @@
 \newtheorem{exer}[thm]{Exercise}
 
 \theoremstyle{remark}
-\newtheorem{rem}[thm]{Remark}
-\newtheorem{rems}[thm]{Remarks}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{rmks}[thm]{Remarks}
 
 \def\idea{\textit{\color[rgb]{0,0,.55}Proof Idea. }}
 
@@ -96,7 +97,7 @@
 \newcommand{\E}{\mathcal{E}}
 \newcommand{\zero}{\mathbf{0}}
 
-\renewcommand{\intercal}{t}
+\renewcommand{\intercal}{\mathrm{t}}
 \newcommand{\e}{\mathrm{e}}
 
 \DeclareMathOperator{\dist}{dist}
@@ -126,7 +127,7 @@
 \thispagestyle{empty}
 \begin{fullwidth}
 	\Large
-	\setstretch{1.5}
+	\setstretch{1.4}
 	\vspace*{\fill}
 	\begin{center}
 		Don't just read it; fight it!\\
@@ -140,7 +141,7 @@
 		Where does the proof use the hypothesis?
 	\end{center}
 	\begin{flushright}
-		\textemdash\,Paul Holmos\phantom{placeholderplaceholder}
+		\textemdash\,Paul Holmos\phantom{mmmmmmmmmmmmmmm}
 	\end{flushright}
 	\vspace*{\fill}
 \end{fullwidth}
@@ -177,7 +178,7 @@
 
 
 \section{Linear Maps}
-\subsection{Kernal and Image of Linear Maps}
+\subsection{Kernals and Images}
 \begin{exer}
 	Suppose $U$ and $V$ are finite-dimensional and $S\in\L\bra{V,W}$ and $T\in\L\bra{U,V}$. Prove that
 	\[\dim\ker ST \leq \dim\ker S + \dim\ker T.\]
@@ -244,10 +245,10 @@
 	A nonempty subset $A$ of $V$ is a translate of some subspace of $V$ if and only if $\lambda v+\bra{1-\lambda}w\in A$ for all $v,w\in A$ and all $\lambda\in\F$.
 \end{prop}
 
-\begin{exer}
-	Suppose $A_1=v+U_1$ and $A_2=w+U_2$ for some $v,w\in V$ and some subspaces $U_1$, $U_2$ of $V$. Prove that $A_1\cap A_2$ is either the empty set or a translate of some subspace of $V$.%
-    \footnote{Recall Proposition~\ref{prop: test for translate}.}
-\end{exer}
+% \begin{exer}
+% 	Suppose $A_1=v+U_1$ and $A_2=w+U_2$ for some $v,w\in V$ and some subspaces $U_1$, $U_2$ of $V$. Prove that $A_1\cap A_2$ is either the empty set or a translate of some subspace of $V$.%
+%     \footnote{Recall Proposition~\ref{prop: test for translate}.}
+% \end{exer}
 
 \begin{prop}\label{prop: direct sum from quotient space}
 	Suppose $U$ is a subspace of $V$ and $v_1+U,\dots,v_m+U$ is a basis of $V/U$ and $u_1,\dots,u_n$ is a basis of $U$. Then $v_1,\dots,v_m,u_1,\dots,u_n$ is a basis of $V$. In other words, $V=\spn(v_1,\dots,v_m)\oplus U$.%
@@ -264,62 +265,61 @@
 \begin{proof}
 	Let $\overline{w}_1+U,\dots,\overline{w}_m+U$ be a basis of $V/U$. Then by Proposition~\ref{prop: direct sum from quotient space}, we have $V=\spn(\overline{w}_1,\dots,\overline{w}_m)\oplus U$. Let $W_0=\spn(\overline{w}_1,\dots,\overline{w}_m)$, then $V=U\oplus W_0$, as desired.
 
-	Now we prove that for each subspace $W$ of $V$ such that $V=U+W$, we have $\dim W\geq m=\dim V/U$.
-	
-	For each $\overline{w}_i\in V$ above, by definition we have $\overline{w}_i=u_i+w_i$ for some $u_i\in U$ and $w_i\in W$. It can be shown from the linear independence of $\overline{w}_1+U,\dots,\overline{w}_m+U$ that $\overline{w}_1-u_1,\dots,\overline{w}_m-u_m$ are independent vectors in $W$. Hence $\dim W\geq m$.
+	Now we prove that for each subspace $W$ of $V$ such that $V=U+W$, we have $\dim W\geq m=\dim V/U$. For each $\overline{w}_k$ above, by definition we have $\overline{w}_l=u_k+w_k$ for some $u_k\in U$ and $w_k\in W$. It can be shown from the linear independence of $\overline{w}_1+U,\dots,\overline{w}_m+U$ that $\overline{w}_1-u_1,\dots,\overline{w}_m-u_m$ are independent vectors in $W$. Hence $\dim W\geq m$.
 \end{proof}
 
 
 \subsection{Duality}
-\begin{thm}
-	Suppose $V$ and $W$ are finite-dimensional and $T\in\L\bra{V,W}$. Then
-	\begin{center}
-		$T$ is surjective $\iff T'$ is injective \quad and \quad $T$ is injective $\iff T'$ is surjective.%
-		\footnote{This result can be useful because sometimes it is easier to verify that $T'$ is injective (or surjective) than to show directly that $T$ is surjective (or injective).}
-	\end{center}
-\end{thm}
+% \begin{thm}
+% 	Suppose $V$ and $W$ are finite-dimensional and $T\in\L\bra{V,W}$. Then
+% 	\begin{center}
+% 		$T$ is surjective $\iff T'$ is injective \quad and \quad $T$ is injective $\iff T'$ is surjective.%
+% 		\footnote{This result can be useful because sometimes it is easier to verify that $T'$ is injective (or surjective) than to show directly that $T$ is surjective (or injective).}
+% 	\end{center}
+% \end{thm}
 
 \begin{prop}\label{prop: relation between subspace and annihilator}
 	Suppose $V$ is finite-dimensional and $U$ is a subspace of $V$. Then
 	\[U=\cbra{v\in V:\phi(v)=0\,\text{ for every }\,\phi\in U^0}.\]
 \end{prop}
 
-\begin{exer}
-	Suppose $V$ is finite-dimensional and $U$ and $W$ are subspaces of $V$.
-	\begin{enumerate}
-		\item Prove that $W^0\subseteq U^0$ if and only if $U\subseteq W$.
-		\item Prove that $W^0=U^0$ if and only if $U=W$.%
-    	\footnote{Recall Proposition~\ref{prop: relation between subspace and annihilator}.}
-	\end{enumerate}
-\end{exer}
+% \begin{exer}
+% 	Suppose $V$ is finite-dimensional and $U$ and $W$ are subspaces of $V$.
+% 	\begin{enumerate}
+% 		\item Prove that $W^0\subseteq U^0$ if and only if $U\subseteq W$.
+% 		\item Prove that $W^0=U^0$ if and only if $U=W$.%
+%     	\footnote{Recall Proposition~\ref{prop: relation between subspace and annihilator}.}
+% 	\end{enumerate}
+% \end{exer}
 
-\begin{exer}
-	Suppose $V$ is finite-dimensional and $U$ and $W$ are subspaces of $V$.\
-	\begin{enumerate}
-		\item Prove that $\bra{U+W}^0=U^0\cap W^0$.
-		\item Prove that $\bra{U\cap W}^0=U^0+W^0$.
-	\end{enumerate}
-\end{exer}
+% \begin{exer}
+% 	Suppose $V$ is finite-dimensional and $U$ and $W$ are subspaces of $V$.\
+% 	\begin{enumerate}
+% 		\item Prove that $\bra{U+W}^0=U^0\cap W^0$.
+% 		\item Prove that $\bra{U\cap W}^0=U^0+W^0$.
+% 	\end{enumerate}
+% \end{exer}
 
-\begin{prop}\label{prop: matrix of dual basis}
-	Suppose $V$ is finite-dimensional and $v_1,\dots,v_n$ is a basis of $V$. Then $\phi_1,\dots,\phi_n\in V'$ is the dual basis of $v_1,\dots,v_n$ if and only if
-	\[\begin{bmatrix}
-		\M(\phi_1,(v_1,\dots,v_n))\\
-		\vdots\\
-		\M(\phi_n,(v_1,\dots,v_n))\\
-	\end{bmatrix}=I.\]
-	% where $\M\bra{\phi_i}$ is the $1\times n$ matrix of $\phi_i$ with respect to basis $v_1,\dots v_n$ of $V$ for each $i\in\cbra{1,\dots,n}$.
-\end{prop}
+% \begin{prop}\label{prop: matrix of dual basis}
+% 	Suppose $V$ is finite-dimensional and $v_1,\dots,v_n$ is a basis of $V$. Then $\phi_1,\dots,\phi_n\in V'$ is the dual basis of $v_1,\dots,v_n$ if and only if
+% 	\[\begin{bmatrix}
+% 		\M(\phi_1,(v_1,\dots,v_n))\\
+% 		\vdots\\
+% 		\M(\phi_n,(v_1,\dots,v_n))\\
+% 	\end{bmatrix}=I.\]
+% 	% where $\M\bra{\phi_i}$ is the $1\times n$ matrix of $\phi_i$ with respect to basis $v_1,\dots v_n$ of $V$ for each $i\in\cbra{1,\dots,n}$.
+% \end{prop}
 
 \begin{exer}
 	Suppose $V$ is finite-dimensional and $\phi_1,\dots,\phi_n$ is a basis of $V'$. Prove that there exists a basis of $V$ whose dual basis is precisely $\phi_1,\dots,\phi_n$.
 \end{exer}
 \begin{proof}
-	We start from an arbitrary basis $u_1,\dots,u_n$ of $V$. Let $\psi_1,\dots,\psi_n$ be its dual basis. In this proof, we take standard basis $e_1,\dots,e_n$ as the basis of $\F^n$.
+	We start from an arbitrary basis $u_1,\dots,u_n$ of $V$. Let $\psi_1,\dots,\psi_n$ be its dual basis. In this proof, we take the standard basis $e_1,\dots,e_n$ as the basis of $\F^n$.
 	
 	Define $S,T\in\L\bra{V,\F^n}$ by
 	\[T(v)=\bra{\phi_1(v),\dots,\phi_n(v)},\quad S(v)=\bra{\psi_1(v),\dots,\psi_n(v)}.\]
-	Then by Proposition~\ref{prop: matrix of dual basis}, $\M\bra{S,\bra{u_1,\dots,u_n}}=I$.
+	% Then by Proposition~\ref{prop: matrix of dual basis}, $\M\bra{S,\bra{u_1,\dots,u_n}}=I$.
+	Then $\M\bra{S,\bra{u_1,\dots,u_n}}=I$.
 	
 	Let $A$ be the change of basis matrix from $\psi$'s to $\phi$'s, i.e.,
 	% \[A=\M\bra{I,\bra{\phi_1,\dots,\phi_n},\bra{\psi_1,\dots,\psi_n}}.\]
@@ -343,12 +343,11 @@
     \footnote{\idea The change of basis for $V'\to V'$ corresponds to the transpose of $V\leftarrow V$, where transpose and inverse both come from duality.}
 	Thus
 	\[\M\bra{T,\bra{v_1,\dots,v_n}}=\M\bra{T,\bra{u_1,\dots,u_n}}\cdot\M\bra{I,\bra{v_1,\dots,v_n},\bra{u_1,\dots,u_n}}=I.\]
-	Then by Proposition~\ref{prop: matrix of dual basis}, the dual basis of $v_1,\dots,v_n$ is precisely $\phi_1,\dots,\phi_n$, as desired.
+	% Then by Proposition~\ref{prop: matrix of dual basis}, the dual basis of $v_1,\dots,v_n$ is precisely $\phi_1,\dots,\phi_n$, as desired.
+	Then the dual basis of $v_1,\dots,v_n$ is precisely $\phi_1,\dots,\phi_n$, as desired.
 \end{proof}
 
-\begin{exer}[A natural isomorphism from primal space onto double dual space]%
-	\footnote{Suppose $V$ is finite-dimensional. Then $V$ and $V'$ are isomorphic, but finding an isomorphism from $V$ onto $V'$ generally requires choosing a basis of $V$. In contrast, the isomorphism $\Lambda$ from $V$ onto $V''$ does not require a choice of basis and thus is more natural.}%
-	\footnote{Another natural isomorphism is $\pi'\in\L\bra{(V/U)',V'}$ where $\pi$ is the normal quotient map.}
+\begin{exer}[A natural isomorphism from primal space onto double dual space]
 	Define $\Lambda:V\to V''$ by
 	\[(\Lambda v)(\phi)=\phi(v)\]
 	for each $v\in V$ and $\phi\in V'$.
@@ -358,17 +357,27 @@
 	\end{enumerate}
 \end{exer}
 
+\begin{rmks}
+	\begin{enumerate}
+		\item Suppose $V$ is finite-dimensional. Then $V$ and $V'$ are isomorphic, but finding an isomorphism from $V$ onto $V'$ generally requires choosing a basis of $V$. In contrast, the isomorphism $\Lambda$ from $V$ onto $V''$ does not require a choice of basis and thus is more natural.
+		\item Another natural isomorphism is $\pi'\in\L\bra{(V/U)',V'}$ where $\pi$ is the normal quotient map.
+	\end{enumerate}
+\end{rmks}
+
 
 \section{Polynomials}
 % \begin{thm}
 % 	Suppose $p\in\P(\F)$ is a nonconstant polynomial of degree $m$. Then $\lambda\in\F$ is a zero of $p$ if and only if there exists a polynomial $q\in\P(\F)$ of degree $m-1$ such that $p(z)=(z-\lambda)q(z)$ for every $z\in\F$.
 % \end{thm}
 
-\begin{thm}
+\begin{thm}\label{thm: limited number of zeros of polynomials}
 	Suppose $p\in\P(\F)$ is a nonconstant polynomial of degree $m$. Then $p$ has at most $m$ zeros in $\F$.%
-	\footnote{This theorem implies that when a polynomial $p$ has too many zeros, $p=0$.}%
-    \footnote{This theorem implies that the coefficients of a polynomial are uniquely determined. In particular, the \emph{degree} of a polynomial is well-defined.}
+	\footnote{A useful corollary of this theorem: when a polynomial $p$ has too many zeros, $p=0$.}
 \end{thm}
+
+\begin{rmk}
+	Theorem~\ref{thm: limited number of zeros of polynomials} implies that the coefficients of a polynomial are uniquely determined. In particular, the \emph{degree} of a polynomial is well-defined.
+\end{rmk}
 
 \begin{thm}[Division algorithm for polynomials]
 	Suppose that $p,s\in\P(\F)$, with $s\neq0$. Then there exist unique polynomials $q,r\in\P(\F)$ such that $p=sq+r$.%
@@ -388,22 +397,22 @@
 	\end{align*}
 \end{proof}
 
-\begin{thm}[Fundamental theorem of algebra, first version]
-	Every nonconstant polynomial with complex coefficients has a zero in $\C$.
-\end{thm}
-\begin{proof}
-	Suppose $p\in\P(\C)$ is a nonconstant polynomial with highest-order nonzero term $c_mz^m$. Then $\abs{p(z)}\to\infty$ as $\abs{z}\to\infty$. Thus the continuous function $z\mapsto\abs{p(z)}$ has a global minimum at some $\zeta\in\C$. Assume that $p(\zeta)\neq0$.
+% \begin{thm}[Fundamental theorem of algebra, first version]
+% 	Every nonconstant polynomial with complex coefficients has a zero in $\C$.
+% \end{thm}
+% \begin{proof}
+% 	Suppose $p\in\P(\C)$ is a nonconstant polynomial with highest-order nonzero term $c_mz^m$. Then $\abs{p(z)}\to\infty$ as $\abs{z}\to\infty$. Thus the continuous function $z\mapsto\abs{p(z)}$ has a global minimum at some $\zeta\in\C$. Assume that $p(\zeta)\neq0$.
 
-	Consider polynomial $q(z)=p(z+\zeta)/p(\zeta)$. The function $z\mapsto\abs{q(z)}$ has a global minimum at $z=0$. Write
-	\[q(z)=1+a_kz^k+\cdots+a_mz^m\]
-	where $k$ is the smallest positive integer such that the coefficient of $z_k$ is nonzero.
+% 	Consider polynomial $q(z)=p(z+\zeta)/p(\zeta)$. The function $z\mapsto\abs{q(z)}$ has a global minimum at $z=0$. Write
+% 	\[q(z)=1+a_kz^k+\cdots+a_mz^m\]
+% 	where $k$ is the smallest positive integer such that the coefficient of $z_k$ is nonzero.
 	
-	Let $\beta$ be a $k^\text{th}$ root of $-1/a_k$. There is a constant $c>1$ such that if $t\in(0,1)$, then
-	\[\abs{q(t\beta)}\leq\abs{1+a_kt^k\beta^k}+ct^{k+1}=1-t^k(1-tc).\]
-	Thus taking $t$ to be $1/(2c)$ leads to $\abs{q(t\beta)}<1$.%
-	\footnote{\idea $z^k$ is the leading term in this infinitesimal. We hope its coefficient is negative real, and thus use de Moivre's theorem.}
-	The contradiction implies that $p(\zeta)=0$, as desired.
-\end{proof}
+% 	Let $\beta$ be a $k^\text{th}$ root of $-1/a_k$. There is a constant $c>1$ such that if $t\in(0,1)$, then
+% 	\[\abs{q(t\beta)}\leq\abs{1+a_kt^k\beta^k}+ct^{k+1}=1-t^k(1-tc).\]
+% 	Thus taking $t$ to be $1/(2c)$ leads to $\abs{q(t\beta)}<1$.%
+% 	\footnote{\idea $z^k$ is the leading term in this infinitesimal. We hope its coefficient is negative real, and thus use de Moivre's theorem.}
+% 	The contradiction implies that $p(\zeta)=0$, as desired.
+% \end{proof}
 
 % \begin{thm}[Fundamental theorem of algebra, second version]
 % 	If $p\in\P(\C)$ is a nonconstant polynomial, then $p$ has a unique factorization of the form
@@ -480,7 +489,7 @@
 \end{proof}
 
 
-\subsection{Minimal Polynomials}
+\subsection{The Minimal Polynomial}
 \begin{exer}[Companion matrix of a polynomial]
 	Suppose $a_0,\dots,a_{n-1}\in\F$. Let $T\in\L(\F^n)$ be such that $\M(T)$ (with respect to the standard basis) is
 	\[\begin{bmatrix}
@@ -491,10 +500,13 @@
 		&&&&0&-a_{n-2}\\
 		&&&&1&-a_{n-1}\\
 	\end{bmatrix}\]
-	Prove that the minimal polynomial of $T$ is the polynomial%
-	\footnote{This exercise implies that every monic polynomial is the minimal polynomial of some operator. Hence an algorithm that could produce exact eigenvalues for each operators on each $\F^n$ does not exist.}
+	Prove that the minimal polynomial of $T$ is the polynomial
 	\[a_0+a_1z+\cdots+a_{n-1}z^{n-1}+z^n.\]
 \end{exer}
+
+\begin{rmk}
+	This exercise implies that every monic polynomial is the minimal polynomial of some operator. Hence an algorithm that could produce exact eigenvalues for each operators on each $\F^n$ does not exist.
+\end{rmk}
 
 % \begin{prop}
 % 	Suppose $T\in\L(V)$ and $p\in\P(\F)$. Then there exists a unique $r\in\P(\F)$ such that $p(T)=r(T)$ and $\deg r$ is less than the degree of the minimal polynomial of $T$.%
@@ -537,15 +549,15 @@
 
 \section{Inner Product Spaces}
 \subsection{Inner Products and Norms}
-\begin{thm}[Polarization identities]
+\begin{thms}[Polarization identities]
 	\begin{enumerate}
 		\item Suppose $V$ is a real inner product space. Then
 		\[\inp{u}{v}=\frac{\norm{u+v}^2-\norm{u-v}^2}{4}.\]
 		\item Suppose $V$ is a complex inner product space. Then
 		\[\inp{u}{v}=\frac{\norm{u+v}^2-\norm{u-v}^2+\norm{u+iv}^2i-\norm{u-iv}^2i}{4}.\]
 	\end{enumerate}
-	\label{thms: polarization identities}
-\end{thm}
+	\label{thm: polarization identities}
+\end{thms}
 
 \begin{exer}\label{exer: condition for a norm-induced inner product}
 	% A \emph{norm} on a vector space $U$ is a function
@@ -553,18 +565,18 @@
 	% which satisfies positive-definiteness, absolute homogeneity, and triangle inequality.
 
 	Prove that if $\norm{\cdot}$ is a norm on $U$ satisfying the parallelogram equality, then there is an inner product $\inp{\cdot}{\cdot}$ on $U$ such that $\norm{u}=\inp{u}{u}^{1/2}$ for all $u\in U$.%
-	\footnote{Recall Theorems~\ref{thms: polarization identities}.}
+	\footnote{Recall Theorems~\ref{thm: polarization identities}.}
 \end{exer}
 
-\begin{exer}
-	Suppose $f,g$ are differentiable functions from $\R$ to $\R^n$.
-	\begin{enumerate}
-		\item Prove that
-		\[\inp{f(t)}{g(t)}'=\inp{f'(t)}{g(t)}+\inp{f(t)}{g'(t)}.\]
-		\item Suppose $\norm{f(t)}\equiv c>0$ for every $t\in\R$. Prove that $\inp{f'(t)}{f(t)}=0$ for every $t\in\R$.%
-		\footnote{This result has a nice geometric interpretation.}
-	\end{enumerate}
-\end{exer}
+% \begin{exer}
+% 	Suppose $f,g$ are differentiable functions from $\R$ to $\R^n$.
+% 	\begin{enumerate}
+% 		\item Prove that
+% 		\[\inp{f(t)}{g(t)}'=\inp{f'(t)}{g(t)}+\inp{f(t)}{g'(t)}.\]
+% 		\item Suppose $\norm{f(t)}\equiv c>0$ for every $t\in\R$. Prove that $\inp{f'(t)}{f(t)}=0$ for every $t\in\R$.%
+% 		\footnote{This result has a nice geometric interpretation.}
+% 	\end{enumerate}
+% \end{exer}
 
 
 \subsection{Orthonormal Bases}
@@ -576,25 +588,26 @@
 	Suppose $V$ is finite-dimensional. Suppose $\inp{\cdot}{\cdot}_1,\inp{\cdot}{\cdot}_2$ are inner products on $V$ with corresponding norms $\norm{\cdot}_1$ and $\norm{\cdot}_2$. Prove that there exists $b,c>0$ such that $b\norm{v}_2\leq\norm{v}_1\leq c\norm{v}_2$ for every $v\in V$.%
 	\footnote{Note that \textit{Proof 1} does not use the hypothesis that $\norm{\cdot}_1$ and $\norm{\cdot}_2$ are associated with an inner product respectively.}
 \end{exer}
-\begin{proof}[Proof 1]
-	Let $u_1,\dots,u_n$ be a basis of $V$. Without loss of generality, suppose that%
-	\footnote{As an alternative to infinity norm, we might also use the $2$-norm, which naturally induces an inner product by Exercise~\ref{exer: condition for a norm-induced inner product}.}
-	\[\norm{c_1u_1+\cdots+c_nu_n}_2=\max\{\abs{c_1},\dots,\abs{c_n}\}.\]
-	We interpret $\norm{\cdot}_1$ as a function $(c_1,\dots,c_n)\mapsto\norm{c_1u_1+\cdots+c_nu_n}_1$ from $\F^n$ to $\R$. It suffices to show that the desired result holds on the sphere
-	\[S=\cbra{(c_1,\dots,c_n)\in\F^n:\norm{c_1u_1+\cdots+c_nu_n}_2=1},\]
-	i.e. that $\norm{\cdot}_1$ is bounded on $S$.%
-	\footnote{\idea We cannot manipulate two norms simultaneously. Hence we restrict to $S$ and fix an orthonormal basis. Then $V$ behaves like $\F^n$. Nice properties of $S$ lead to proof of the continuity of $\norm{\cdot}_1$.}
-	Because $S$ is a closed and bounded set, it suffices to show that the function $\norm{\cdot}_1$ is continuous on $\F^n$.
+% \begin{proof}[Proof 1]
+% 	Let $u_1,\dots,u_n$ be a basis of $V$. Without loss of generality, suppose that%
+% 	\footnote{As an alternative to infinity norm, we might also use the $2$-norm, which naturally induces an inner product by Exercise~\ref{exer: condition for a norm-induced inner product}.}
+% 	\[\norm{c_1u_1+\cdots+c_nu_n}_2=\max\{\abs{c_1},\dots,\abs{c_n}\}.\]
+% 	We interpret $\norm{\cdot}_1$ as a function $(c_1,\dots,c_n)\mapsto\norm{c_1u_1+\cdots+c_nu_n}_1$ from $\F^n$ to $\R$. It suffices to show that the desired result holds on the sphere
+% 	\[S=\cbra{(c_1,\dots,c_n)\in\F^n:\norm{c_1u_1+\cdots+c_nu_n}_2=1},\]
+% 	i.e. that $\norm{\cdot}_1$ is bounded on $S$.%
+% 	\footnote{\idea We cannot manipulate two norms simultaneously. Hence we restrict to $S$ and fix an orthonormal basis. Then $V$ behaves like $\F^n$. Nice properties of $S$ lead to proof of the continuity of $\norm{\cdot}_1$.}
+% 	Because $S$ is a closed and bounded set, it suffices to show that the function $\norm{\cdot}_1$ is continuous on $\F^n$.
 	
-	Suppose $a\in\F^n$ and $e_1,\dots,e_n$ is the standard basis of $\F^n$. As $\norm{x-a}\to0$,
-	\begin{align*}
-		\abs{\norm{x}_1-\norm{a}_1}&\leq\norm{x-a}_1=\norm{\sum_{k=1}^{n}(x_k-a_k)e_k}_1\\
-		&\leq\sum_{k=1}^{n}\abs{x_k-a_k}\norm{e_k}_1\\
-		&\leq\bra{\sum_{k=1}^{n}\norm{e_k}_1^2}^{1/2}\norm{x-a}\to0,
-	\end{align*}
-	where the last inequality follows from the Cauchy-Schwarz inequality. Because every continuous function on a closed and bounded set is bounded, the proof is completed.
-\end{proof}
-\begin{proof}[Proof 2]
+% 	Suppose $a\in\F^n$ and $e_1,\dots,e_n$ is the standard basis of $\F^n$. As $\norm{x-a}\to0$,
+% 	\begin{align*}
+% 		\abs{\norm{x}_1-\norm{a}_1}&\leq\norm{x-a}_1=\norm{\sum_{k=1}^{n}(x_k-a_k)e_k}_1\\
+% 		&\leq\sum_{k=1}^{n}\abs{x_k-a_k}\norm{e_k}_1\\
+% 		&\leq\bra{\sum_{k=1}^{n}\norm{e_k}_1^2}^{1/2}\norm{x-a}\to0,
+% 	\end{align*}
+% 	where the last inequality follows from the Cauchy-Schwarz inequality. Because every continuous function on a closed and bounded set is bounded, the proof is completed.
+% \end{proof}
+% \begin{proof}[Proof 2]
+\begin{proof}
 	Without loss of generality, suppose $V=\F^n$, $\norm{x}_1^2=x^\intercal Ax$, and $\norm{x}_2^2=x^\intercal Bx$, where $A,B$ are positive-definite and $B$ is diagonal.%
 	\footnote{\idea Fixing an orthonormal basis naturally leads to a (simple) diagonal matrix.}
 	Note that $\lambda B-A$ is Hermitian and hence diagonalizable. It suffices to show that there exists $\lambda>0$ such that $\lambda B-A$ is positive-definite. Such a $\lambda$ exists by the Gershgorin disk theorem, as desired.
@@ -674,7 +687,17 @@
 
 
 \section{Operators on Inner Product Spaces}
-\textbf{From now on, we assume that $V$ and $W$ are finite-dimensional inner product spaces over $\F$.}
+\textbf{From now on, we suppose that $V$ and $W$ are nonzero finite-dimensional inner product spaces over $\F$.}
+\subsection{Self-Adjoint and Normal Operators}
+\begin{exer}
+	Suppose $T\in\L(V,W)$. Prove that under the standard identification of $V$ with $V'$ (by Riesz representation theorem) and $W$ with $W'$, the adjoint map $T^*$ corresponds to the dual map $T'$. More precisely, prove that
+	\[T'(\phi_w)=\phi_{T^*w}\]
+	for all $w\in W$.
+\end{exer}
+
+\begin{rmk}
+	Furthermore, under this identification of $V$ with $V'$, the orthogonal complement corresponds to the annihilator; the formulas for $\ker T^*$ and $\im T^*$ become identical to the formulas for $\ker T'$ and $\im T'$. Note that orthogonal complements and adjoints are easier to deal with than annihilators and dual maps.
+\end{rmk}
 
 
 \section{Complexifcation}
