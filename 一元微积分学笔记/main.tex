@@ -70,7 +70,7 @@
 \theoremstyle{exerseries}
 \newtheorem{defn}{定义}[section]
 \newtheorem{exer}{习题}[section]
-\newtheorem*{rem}{注}
+\newtheorem*{rmk}{注}
 
 \makeatletter
 \renewenvironment{proof}[1][\proofname]{\par
@@ -94,8 +94,9 @@
 \newcommand{\bra}[1]{\mathopen{}\left(#1\right)}
 \newcommand{\sbra}[1]{\mathopen{}\left[#1\right]}
 \newcommand{\cbra}[1]{\mathopen{}\left\{#1\right\}}
-\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
-\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\norm}[1]{\mathopen{}\left\lVert#1\right\rVert}
+\newcommand{\inp}[2]{\mathopen{}\left\langle#1,#2\right\rangle}
+\newcommand{\abs}[1]{\mathopen{}\left|#1\right|}
 \newcommand{\rest}[2]{\mathopen{}\left.#1\right|_{#2}}
 
 \renewcommand{\epsilon}{\varepsilon}
@@ -107,7 +108,15 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbb{F}}
+\renewcommand{\L}{\mathcal{L}}
+\newcommand{\M}{\mathcal{M}}
+\renewcommand{\P}{\mathcal{P}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\zero}{\mathbf{0}}
 
+\renewcommand{\intercal}{\mathrm{t}}
 \renewcommand{\d}{\mathrm{d}}
 \newcommand{\e}{\mathrm{e}}
 
@@ -119,6 +128,12 @@
 \def \tprod {{\textstyle\prod\limits_{n=1}^{\infty}}\,} % textstyle prod
 \def \dprod {\prod_{n=1}^{\infty}\,} % displaystyle prod
 \def \vs {\vspace{-1em}}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\spn}{span}
+\DeclareMathOperator{\im}{im}
+% \DeclareMathOperator{\ker}{ker} % already existed
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\rank}{rank}
 
 
 % ---------- Title Section ----------
@@ -208,9 +223,9 @@
 % \begin{pf}
 % 	记数列$\{a_n\}$中的项$a_m$具有性质M, 如果$\forall\,n>m,\,a_n\leq a_m$. 分类讨论具有性质M的项数量是否有限. 
 % \end{pf}
-% \begin{rem}
+% \begin{rmk}
 % 	从这一引理出发可以由单调有界收敛定理得到B-W定理. 
-% \end{rem}
+% \end{rmk}
 
 \begin{cor}
 	一个数列有收敛子列的充分必要条件是它不是无穷大量. 
@@ -339,9 +354,9 @@
 \begin{thm}
 	有界开区间$(a,b)$上的连续函数$f$在$(a,b)$上一致连续的充分必要条件是存在两个有限的单侧极限$f(a^+)$和$f(b^-)$. 当$(a,b)$是无界区间时, 充分性依然成立. 
 \end{thm}
-\begin{rem}
+\begin{rmk}
 	对可导函数来说, 以下条件依次减弱. Lipshitz条件$=$导数有界$\geq$一致连续. 
-\end{rem}
+\end{rmk}
 
 % \begin{prop}
 % 	单调函数的间断点为跳跃间断点. 
@@ -367,13 +382,13 @@
 
 	对(2), 取$\epsilon_n=1/n$, 可数个有限集的并是可数集. 
 \end{pf}
-\begin{rem}
+\begin{rmk}
 	证明满足某性质的点有至多可数个的常用方法:
 	\begin{enumerate}
 		\item 用可数集 (例如$\Q$) 唯一标记它. 
 		\item 将其表示为可数个可数集的并 (例如$\textstyle E=\bigcup_{n\in \N}E_{1/n}$). 这种方法对零测集的证明也适用. 
 	\end{enumerate}
-\end{rem}
+\end{rmk}
 
 
 \section{一元微分学}
@@ -484,9 +499,9 @@
 	\[f'(a)<\frac{f(x)-f(a)}{x-a}<\frac{f(b)-f(a)}{b-a}<\frac{f(b)-f(x)}{b-x}.\]
 	令$x\to b$, 即得矛盾. 
 \end{pf}
-\begin{rem}
+\begin{rmk}
 	辅助函数往往唯一, 找出即可. 如果没有发现显然的方法使用Rolle定理, 应毫不犹豫地用Darboux定理反证. 
-\end{rem}
+\end{rmk}
 
 % \begin{exer}
 % 	设$f$在$(a,b)$上任意阶可导, 且$\forall\,n\in\N,\,f^{(n)}(x)\geq0,\,|f(x)|\leq M$. 求证: $\forall\,x\in(a,b),\,r>0,\,x+r\in(a,b)$, 成立关于导数的估计式:
@@ -517,11 +532,11 @@
 \begin{pf}
 	广义二阶导数的形式提示了可能与凸性相关. 先用反证法证明: 如果$\forall\,x\in[a,b],\,f^{[2]}(x)>0$, 则$f$下凸. 于是$\forall\,\epsilon>0,\,f(x)+\epsilon x^2$下凸. 由定义得$f$下凸, 同理$f$上凸, 于是$f$为线性函数. 
 \end{pf}
-\begin{rem}
+\begin{rmk}
 	证明线性函数可以从既是下凸函数又是上凸函数的角度入手. 
 	
 	这种利用$\epsilon$处理边界的方式是一种范式. 
-\end{rem}
+\end{rmk}
 
 
 \subsection{单侧导数的性质}
@@ -664,9 +679,9 @@
 \begin{pf}
 	用反证法. 假设$\int_{a}^{b}f=0$. 于是$\forall\,\epsilon>0,\,\int_{a}^{b}[\epsilon-f(x)]\,\d x>0$. 利用上一命题, 用闭区间套定理, 取$\epsilon_n=1/n$, 将$\int_{a_n}^{b_n}f=0$继承到局部, 引出矛盾. 也可以用Darboux上下积分理论. 
 \end{pf}
-\begin{rem}
+\begin{rmk}
 	这种利用$\epsilon$处理边界的方式是一种范式. 
-\end{rem}
+\end{rmk}
 
 \begin{exer}[积分的连续性命题]
 	设$f\in R[a-\delta,b+\delta],\,\delta>0$. 求证:
@@ -991,9 +1006,9 @@ Jensen不等式包含了很多不等式. 例如 ($\phi$为下凸函数)
 % \begin{sol}
 % 	显然该广义积分收敛. 观察形式, 容易想到分部积分, 但尝试后发现不可行. 于是考虑拆分为$0$到$1$的积分与$1$到$+\infty$的积分. 作倒代换, 得到答案为$0$. 
 % \end{sol}
-\begin{rem}
+\begin{rmk}
 	如果作代换$x=\tan t$, 就容易发现此处倒代换的本质是$\ln\tan x$关于$[0,\pi/2]$的区间中点为奇函数. 
-\end{rem}
+\end{rmk}
 
 \begin{exer}
 	计算广义积分$\int_{0}^{+\infty}\frac{1}{x}\sin\bra{x-\frac{1}{x}}\,\d x$. 
@@ -1037,13 +1052,13 @@ Jensen不等式包含了很多不等式. 例如 ($\phi$为下凸函数)
 	\end{align*}
 	令$r\to0,\,R\to+\infty$, 得到答案为$\bra{f(0)-f(+\infty)}\cdot(\ln b-\ln a)$. 
 \end{sol}
-\begin{rem}
+\begin{rmk}
 	由此可以推出以下两种情况下Frullani积分的变形. 
 	\begin{enumerate}
 		\item $f(+\infty)$不存在或不有限, 但对某个$A>0$, 积分$\int_{A}^{+\infty}\frac{f(x)}{x}\,\d x$收敛. 
 		\item $f$在$0$处不连续, 甚至右极限也不存在, 但对某个$A>0$, 积分$\int_{0}^{A}\frac{f(x)}{x}\,\d x$收敛. 
 	\end{enumerate}
-\end{rem}
+\end{rmk}
 
 \begin{exer}[Dirichlet积分]
 	求证: $\int_{0}^{+\infty}\frac{\sin x}{x}\,\d x=\frac{\pi}{2}$. 
@@ -1092,9 +1107,9 @@ Jensen不等式包含了很多不等式. 例如 ($\phi$为下凸函数)
 \begin{prop}
 	设无穷限积分$\int_{a}^{+\infty}f$收敛, 且$f\in U.C.[a,+\infty)$, 则$\lim_{x\to+\infty}f(x)=0$. 
 \end{prop}
-\begin{rem}
+\begin{rmk}
 	当$f\in C[a,+\infty)$时, $f(+\infty)=0$与$f\in U.C.[a,+\infty)$是等价的. 
-\end{rem}
+\end{rmk}
 
 
 \section{数项级数}
