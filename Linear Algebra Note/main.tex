@@ -6,7 +6,7 @@
 \usepackage{sectsty}
 
 \usepackage[osf]{mathpazo} % Palatino for main and math
-% \usepackage[scaled=1.05]{newtxtext}
+\usepackage[scaled=1.08]{newtxtext}
 \usepackage[scaled=0.90]{helvet} % Helvetica for sans serif
 \usepackage[scaled=0.85]{beramono} % Bera Mono for monospaced
 
@@ -34,6 +34,7 @@
 	itemsep=0em,
 }
 \allsectionsfont{\normalfont\bfseries}
+\setcounter{secnumdepth}{-1}
 
 
 % ---------- Theorem Environments ----------
@@ -83,7 +84,9 @@
 \newcommand{\abs}[1]{\mathopen{}\left|#1\right|}
 \newcommand{\rest}[2]{\mathopen{}\left.#1\right|_{#2}}
 
+\renewcommand{\epsilon}{\varepsilon}
 \renewcommand{\phi}{\varphi}
+\newcommand{\dnei}{\overset{\circ}{U}}
 
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
@@ -94,12 +97,22 @@
 \renewcommand{\L}{\mathcal{L}}
 \newcommand{\M}{\mathcal{M}}
 \renewcommand{\P}{\mathcal{P}}
+\newcommand{\B}{\mathcal{B}}
 \newcommand{\E}{\mathcal{E}}
 \newcommand{\zero}{\mathbf{0}}
 
 \renewcommand{\intercal}{\mathrm{t}}
+\renewcommand{\d}{\mathrm{d}}
 \newcommand{\e}{\mathrm{e}}
 
+\DeclareMathOperator{\llim}{\underset{\nti}{\underline{\lim}}}
+\DeclareMathOperator{\ulim}{\underset{\nti}{\overline{\lim}}}
+\def \nti {\mathnormal{n}\to\infty}
+\def \tseries {{\textstyle\sum\limits_{n=1}^{\infty}}\,} % textstyle series
+\def \dseries {\sum_{n=1}^{\infty}\,} % displaystyle series
+\def \tprod {{\textstyle\prod\limits_{n=1}^{\infty}}\,} % textstyle prod
+\def \dprod {\prod_{n=1}^{\infty}\,} % displaystyle prod
+\def \vs {\vspace{-1em}}
 \DeclareMathOperator{\dist}{dist}
 \DeclareMathOperator{\spn}{span}
 \DeclareMathOperator{\im}{im}
@@ -141,7 +154,8 @@
 		Where does the proof use the hypothesis?
 	\end{center}
 	\begin{flushright}
-		\textemdash\,Paul Holmos\phantom{mmmmmmmmmmmmmmm}
+		\textemdash\,Paul Holmos\phantom{mmmmmmmmmmmmmm}
+		% \textemdash\,Paul Holmos\phantom{mmmmmmmmmmm}
 	\end{flushright}
 	\vspace*{\fill}
 \end{fullwidth}
@@ -161,17 +175,17 @@
 % \end{notns}
 
 
-\section{Vector Spaces}
-\begin{lem}[Linear dependence lemma]
-	Suppose $v_1,\dots,v_m$ is a linearly dependent set in $V$. Then there exists $k\in\{1,2,\dots,m\}$ such that
-	\[v_k\in\spn(v_1,\dots,v_m).\]
-	Furthermore, removing the $k^\text{th}$ term from the list does not change the span.
-\end{lem}
+% \section{Vector Spaces}
+% \begin{lem}[Linear dependence lemma]
+% 	Suppose $v_1,\dots,v_m$ is a linearly dependent set in $V$. Then there exists $k\in\{1,2,\dots,m\}$ such that
+% 	\[v_k\in\spn(v_1,\dots,v_m).\]
+% 	Furthermore, removing the $k^\text{th}$ term from the list does not change the span.
+% \end{lem}
 
-\begin{thm}
-	Any two bases of a finite-dimensional vector space have the same length.%
-	\footnote{This proposition ensures that the \emph{dimension} of a vector space is well-defined.}
-\end{thm}
+% \begin{thm}
+% 	Any two bases of a finite-dimensional vector space have the same length.%
+% 	\footnote{This proposition ensures that the \emph{dimension} of a vector space is well-defined.}
+% \end{thm}
 % \begin{proof}
 % 	Suppose $V$ is finite-dimensional. Let $\mathcal{B}_1$ and $\mathcal{B}_2$ be two bases of $V$. Considering $\mathcal{B}_1$ as an independent set and $\mathcal{B}_2$ as a spanning set leads to $\#\mathcal{B}_1\leq\#\mathcal{B}_2$. Interchanging the roles of $\mathcal{B}_1$ and $\mathcal{B}_2$ and we have $\#\mathcal{B}_2\leq\#\mathcal{B}_1$. Thus $\#\mathcal{B}_1=\#\mathcal{B}_2$.
 % \end{proof}
@@ -227,9 +241,7 @@
 	Suppose $V_1,\dots,V_m$ are vector spaces. Prove that $\L\bra{V_1\times\cdots\times V_m,W}$ and $\L\bra{V_1,W}\times\cdots\times\L\bra{V_m,W}$ are isomorphic vector spaces. 
 \end{exer}
 \begin{proof}
-	We construct an isomorphism $T$ between the two vector spaces.
-	
-	For every $\Gamma\in\L\bra{V_1\times\cdots\times V_m,W}$, define $\phi_k:V_k\to W$ for each $k$ by
+	We construct an isomorphism $T$ between the two vector spaces. For every $\Gamma\in\L\bra{V_1\times\cdots\times V_m,W}$, define $\phi_k:V_k\to W$ for each $k$ by
 	\[\phi_k\bra{v_k}=\Gamma\bra{0,\dots,v_k,\dots,0}\]
 	with $v_k$ in the $k^\text{th}$ slot and $0$ in all other slots. It can be verified that $\phi_k\in\L\bra{V_k,W}$.
 
@@ -279,7 +291,8 @@
 % \end{thm}
 
 \begin{prop}\label{prop: relation between subspace and annihilator}
-	Suppose $V$ is finite-dimensional and $U$ is a subspace of $V$. Then
+	Suppose $V$ is finite-dimensional and $U$ is a subspace of $V$. Then%
+	\footnote{Compare this result with $\bra{U^\perp}^\perp=U$ where $U$ is a finite-dimensional subspace of inner product space $V$.}
 	\[U=\cbra{v\in V:\phi(v)=0\,\text{ for every }\,\phi\in U^0}.\]
 \end{prop}
 
@@ -427,11 +440,12 @@
 % \end{thm}
 
 \begin{exer}
-	Suppose $p,q\in\P(\C)$ are nonconstant polynomials with no zeros in common. Let $m=\deg p$ and $n=\deg q$. Prove that there exist $r\in\P_{n-1}(\C)$ and $s\in\P_{m-1}(\C)$ such that $rp+sq=1$.
+	Suppose $p,q\in\P(\C)$ are nonconstant polynomials with no zeros in common. Let $m=\deg p$ and $n=\deg q$. Prove that there exist $r\in\P_{n-1}(\C)$ and $s\in\P_{m-1}(\C)$ such that $rp+sq=1$.%
+	\footnote{\idea Define $T:\P_{n-1}(\C)\times\P_{m-1}(\C)\to\P_{m+n-1}(\C)$ by $T(r,s)=rp+sq$ and prove the surjectivity of $T$.}
 \end{exer}
-\begin{proof}
-	Define $T:\P_{n-1}(\C)\times\P_{m-1}(\C)\to\P_{m+n-1}(\C)$ by $T(r,s)=rp+sq$. It can be shown that $T$ is an injective linear map. Because the domain space and target space have the same dimension, $T$ is surjective, completing the proof.
-\end{proof}
+% \begin{proof}
+% 	Define $T:\P_{n-1}(\C)\times\P_{m-1}(\C)\to\P_{m+n-1}(\C)$ by $T(r,s)=rp+sq$. It can be shown that $T$ is an injective linear map. Because the domain space and target space have the same dimension, $T$ is surjective, completing the proof.
+% \end{proof}
 
 
 \section{Eigenvalues and Eigenvectors}
@@ -690,6 +704,27 @@
 \textbf{From now on, we suppose that $V$ and $W$ are nonzero finite-dimensional inner product spaces over $\F$.}
 \subsection{Self-Adjoint and Normal Operators}
 \begin{exer}
+	Suppose $T\in\L(V)$ and $\lambda\in\F$. Prove that
+	\begin{center}
+		$\lambda$ is an eigenvalue of $T$ $\iff$ $\overline{\lambda}$ is an eigenvalue of $T^*$.
+	\end{center}
+\end{exer}
+
+\begin{exer}
+	Suppose $T\in\L(V)$ and $U$ is a subspace of $V$. Prove that
+	\begin{center}
+		$U$ is invariant under $T$ $\iff$ $U^\perp$ is invariant under $T^*$.
+	\end{center}
+\end{exer}
+
+\begin{exer}
+	Suppose $T\in\L(V)$ is normal. Prove that
+	\begin{center}
+		$\ker T^k=\ker T$ \quad and \quad $\im T^k=\im T$.
+	\end{center}
+\end{exer}
+
+\begin{exer}
 	Suppose $T\in\L(V,W)$. Prove that under the standard identification of $V$ with $V'$ (by Riesz representation theorem) and $W$ with $W'$, the adjoint map $T^*$ corresponds to the dual map $T'$. More precisely, prove that
 	\[T'(\phi_w)=\phi_{T^*w}\]
 	for all $w\in W$.
@@ -698,6 +733,18 @@
 \begin{rmk}
 	Furthermore, under this identification of $V$ with $V'$, the orthogonal complement corresponds to the annihilator; the formulas for $\ker T^*$ and $\im T^*$ become identical to the formulas for $\ker T'$ and $\im T'$. Note that orthogonal complements and adjoints are easier to deal with than annihilators and dual maps.
 \end{rmk}
+
+
+\subsection{Spectral Theorem}
+\begin{props}
+	\begin{enumerate}
+		\item Suppose $\F=\R$ and $T\in\L(V)$. Then $T$ is self-adjoint if and only if all pairs of eigenvectors corresponding to distinct eigenvalues of $T$ are orthogonal and $V=E(\lambda_1,T)\oplus\cdots\oplus E(\lambda_m,T)$, where $\lambda_1,\dots,\lambda_m$ denote the distinct eigenvalues of $T$.
+		\item Suppose $\F=\C$ and $T\in\L(V)$. Then $T$ is normal if and only if all pairs of eigenvectors corresponding to distinct eigenvalues of $T$ are orthogonal and $V=E(\lambda_1,T)\oplus\cdots\oplus E(\lambda_m,T)$, where $\lambda_1,\dots,\lambda_m$ denote the distinct eigenvalues of $T$.
+	\end{enumerate}
+\end{props}
+
+
+\subsection{Positive Operators}
 
 
 \section{Complexifcation}
