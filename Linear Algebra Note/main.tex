@@ -10,6 +10,11 @@
 \usepackage[scaled=0.90]{helvet} % Helvetica for sans serif
 \usepackage[scaled=0.85]{beramono} % Bera Mono for monospaced
 
+% \usepackage{fontspec}
+% \usepackage{unicode-math}
+% \setmainfont{TeX Gyre Termes}
+% \setmathfont{TeX Gyre Pagella Math}
+
 
 % ---------- Preamble ----------
 \pagestyle{fancyplain} % Make all pages in the document conform to the custom headers and footers
@@ -192,26 +197,26 @@
 
 
 \section{Linear Maps}
-\subsection{Kernals and Images}
-\begin{exer}
-	Suppose $U$ and $V$ are finite-dimensional and $S\in\L\bra{V,W}$ and $T\in\L\bra{U,V}$. Prove that
-	\[\dim\ker ST \leq \dim\ker S + \dim\ker T.\]
-\end{exer}
-\begin{proof}
-	Restrict to $Z=\ker ST$. By the fundamental theorem of linear maps,
-	\begin{align*}
-		\dim Z & = \dim T(Z) + \dim\ker \rest{T}{Z} \\
-		& \leq \dim T(Z) + \dim\ker T \\
-		& = \dim ST(Z) + \dim\ker \rest{S}{T(Z)} + \dim\ker T \\
-		& \leq \dim\ker S + \dim\ker T.\qedhere
-	\end{align*}
-\end{proof}
+% \subsection{Kernals and Images}
+% \begin{exer}
+% 	Suppose $U$ and $V$ are finite-dimensional and $S\in\L\bra{V,W}$ and $T\in\L\bra{U,V}$. Prove that
+% 	\[\dim\ker ST \leq \dim\ker S + \dim\ker T.\]
+% \end{exer}
+% \begin{proof}
+% 	Restrict to $Z=\ker ST$. By the fundamental theorem of linear maps,
+% 	\begin{align*}
+% 		\dim Z & = \dim T(Z) + \dim\ker \rest{T}{Z} \\
+% 		& \leq \dim T(Z) + \dim\ker T \\
+% 		& = \dim ST(Z) + \dim\ker \rest{S}{T(Z)} + \dim\ker T \\
+% 		& \leq \dim\ker S + \dim\ker T.\qedhere
+% 	\end{align*}
+% \end{proof}
 
-\begin{cor}[Sylvester's rank inequality]
-	Suppose $A\in\F^{m,n}$ and $B\in\F^{n,p}$ are two matrices. Then%
-	% \footnote{There is a slicker proof for this inequality using block matrices. But the proof here using linear maps is more informative.}
-	\[\rank A+\rank B-n\leq\rank\bra{AB}.\]
-\end{cor}
+% \begin{cor}[Sylvester's rank inequality]
+% 	Suppose $A\in\F^{m,n}$ and $B\in\F^{n,p}$ are two matrices. Then%
+% 	% \footnote{There is a slicker proof for this inequality using block matrices. But the proof here using linear maps is more informative.}
+% 	\[\rank A+\rank B-n\leq\rank\bra{AB}.\]
+% \end{cor}
 
 
 \subsection{Products and Quotients of Vector Spaces}
@@ -262,10 +267,10 @@
 %     \footnote{Recall Proposition~\ref{prop: test for translate}.}
 % \end{exer}
 
-\begin{prop}\label{prop: direct sum from quotient space}
-	Suppose $U$ is a subspace of $V$ and $v_1+U,\dots,v_m+U$ is a basis of $V/U$ and $u_1,\dots,u_n$ is a basis of $U$. Then $v_1,\dots,v_m,u_1,\dots,u_n$ is a basis of $V$. In other words, $V=\spn(v_1,\dots,v_m)\oplus U$.%
-    \footnote{$V=\spn(v_1,\dots,v_m)\oplus U$ still holds without the hypothesis that $U$ is finite-dimensional.}
-\end{prop}
+% \begin{prop}\label{prop: direct sum from quotient space}
+% 	Suppose $U$ is a subspace of $V$ and $v_1+U,\dots,v_m+U$ is a basis of $V/U$ and $u_1,\dots,u_n$ is a basis of $U$. Then $v_1,\dots,v_m,u_1,\dots,u_n$ is a basis of $V$. In other words, $V=\spn(v_1,\dots,v_m)\oplus U$.%
+%     \footnote{$V=\spn(v_1,\dots,v_m)\oplus U$ still holds without the hypothesis that $U$ is finite-dimensional.}
+% \end{prop}
 
 \begin{exer}
 	Suppose $U$ is a subspace of $V$ such that $V/U$ is finite-dimensional.
@@ -275,7 +280,7 @@
 	\end{enumerate}
 \end{exer}
 \begin{proof}
-	Let $\overline{w}_1+U,\dots,\overline{w}_m+U$ be a basis of $V/U$. Then by Proposition~\ref{prop: direct sum from quotient space}, we have $V=\spn(\overline{w}_1,\dots,\overline{w}_m)\oplus U$. Let $W_0=\spn(\overline{w}_1,\dots,\overline{w}_m)$, then $V=U\oplus W_0$, as desired.
+	Let $\overline{w}_1+U,\dots,\overline{w}_m+U$ be a basis of $V/U$. It can be shown that $V=\spn(\overline{w}_1,\dots,\overline{w}_m)\oplus U$. Let $W_0=\spn(\overline{w}_1,\dots,\overline{w}_m)$. Then $V=U\oplus W_0$, as desired.
 
 	Now we prove that for each subspace $W$ of $V$ such that $V=U+W$, we have $\dim W\geq m=\dim V/U$. For each $\overline{w}_k$ above, by definition we have $\overline{w}_l=u_k+w_k$ for some $u_k\in U$ and $w_k\in W$. It can be shown from the linear independence of $\overline{w}_1+U,\dots,\overline{w}_m+U$ that $\overline{w}_1-u_1,\dots,\overline{w}_m-u_m$ are independent vectors in $W$. Hence $\dim W\geq m$.
 \end{proof}
@@ -469,7 +474,7 @@
 % \end{proof}
 
 \begin{exer}
-	Suppose that $\lambda_1,\dots,\lambda_n\in\R$ are pairwise distinct. Prove that the list $\e^{\lambda_1x},\dots,\e^{\lambda_nx}$ is linearly independent in $\R^\R$.
+	Suppose that $\lambda_1,\dots,\lambda_n\in\R$ are pairwise distinct. Prove that the list $\e^{\lambda_1x},\dots,\e^{\lambda_nx}$ is linearly independent in $\R^{\R}$.
 \end{exer}
 \begin{proof}
 	Let $V=\spn(\e^{\lambda_1x},\dots,\e^{\lambda_nx})$.%
@@ -546,9 +551,9 @@
 	\footnote{This is an extension of simultaneous diagonalizability to more than $2$ (possibly infinitely many) operators.}
 \end{exer}
 \begin{proof}
-	Suppose every pair of elements of $\E$ commutes. The other direction is trivial. We use induction on $n=\dim V$. The base case $n=1$ is trivial. Now suppose $n>1$ and the desired result holds for all smaller integers. Without loss of generality, suppose $\E\cap\{\lambda I:\lambda\in\F\}=\emptyset$, or else consider $\E\backslash\{\lambda I:\lambda\in\F\}$.
+	Suppose every pair of elements of $\E$ commutes. We use induction on $n=\dim V$. The base case $n=1$ is trivial. Now suppose $n>1$ and the desired result holds for all smaller integers. Without loss of generality, suppose $\E\cap\{\lambda I:\lambda\in\F\}=\emptyset$, or else consider $\E\backslash\{\lambda I:\lambda\in\F\}$.
 
-	Let $\lambda_1,\dots,\lambda_m$ be the distinct eigenvalues of $T\in\E$. Then $V=E(\lambda_1,T)\oplus\cdots\oplus E(\lambda_m,T)$. Because $E(\lambda_k,T)$ is invariant under every $S\in\E$, it suffices to show that the desired result holds on $E(\lambda_1,T)$. Because $E(\lambda_1,T)\subsetneqq V$, it holds by induction hypothesis, completing the proof.
+	Let $\lambda_1,\dots,\lambda_m$ be the distinct eigenvalues of $T\in\E$. Then $V=E(\lambda_1,T)\oplus\cdots\oplus E(\lambda_m,T)$. Because $E(\lambda_k,T)$ is invariant under every $S\in\E$, it suffices to show that the desired result holds on $E(\lambda_1,T)$. Because $E(\lambda_1,T)\subsetneqq V$, it holds by induction hypothesis. The other direction is trivial.
 \end{proof}
 
 \begin{exer}
@@ -595,7 +600,7 @@
 
 \subsection{Orthonormal Bases}
 \begin{exer}
-	Suppose $v_1,\dots,v_m$ is a linearly independent list in $V$. Prove that the orthonormal list produced by the formulas of the Gram-Schmidt procedure is the only orthonormal list $e_1,\dots,e_m$ in $V$ such that $\inp{v_k}{e_k}>0$ for each $k$.
+	Suppose $v_1,\dots,v_m$ is a linearly independent list in $V$. Prove that the orthonormal list produced by the formulas of the Gram-Schmidt procedure is the only orthonormal list $e_1,\dots,e_m$ in $V$ such that $\inp{v_k}{e_k}>0$ and $\spn(v_1,\dots,v_k)=\spn(e_1,\dots,e_k)$ for each $k$.
 \end{exer}
 
 \begin{exer}
@@ -736,12 +741,13 @@
 
 
 \subsection{Spectral Theorem}
-\begin{props}
+\begin{thms}
+	Suppose $T\in\L(V)$.
 	\begin{enumerate}
-		\item Suppose $\F=\R$ and $T\in\L(V)$. Then $T$ is self-adjoint if and only if all pairs of eigenvectors corresponding to distinct eigenvalues of $T$ are orthogonal and $V=E(\lambda_1,T)\oplus\cdots\oplus E(\lambda_m,T)$, where $\lambda_1,\dots,\lambda_m$ denote the distinct eigenvalues of $T$.
-		\item Suppose $\F=\C$ and $T\in\L(V)$. Then $T$ is normal if and only if all pairs of eigenvectors corresponding to distinct eigenvalues of $T$ are orthogonal and $V=E(\lambda_1,T)\oplus\cdots\oplus E(\lambda_m,T)$, where $\lambda_1,\dots,\lambda_m$ denote the distinct eigenvalues of $T$.
+		\item Suppose $\F=\R$. Then $T$ is self-adjoint if and only if all pairs of eigenvectors corresponding to distinct eigenvalues of $T$ are orthogonal and $V=E(\lambda_1,T)\oplus\cdots\oplus E(\lambda_m,T)$, where $\lambda_1,\dots,\lambda_m$ denote the distinct eigenvalues of $T$.
+		\item Suppose $\F=\C$. Then $T$ is normal if and only if all pairs of eigenvectors corresponding to distinct eigenvalues of $T$ are orthogonal and $V=E(\lambda_1,T)\oplus\cdots\oplus E(\lambda_m,T)$, where $\lambda_1,\dots,\lambda_m$ denote the distinct eigenvalues of $T$.
 	\end{enumerate}
-\end{props}
+\end{thms}
 
 
 \subsection{Positive Operators}
@@ -749,21 +755,21 @@
 
 \section{Complexifcation}
 \begin{defn}
-	The complexification of $V$, denoted by $V_\C$, equals $V\times V$ with normal addition and real scalar multiplication for product space. But we write an element $(u,v)$ of $V_\C$ as $u+iv$. Complex scalar multiplication is defined by
+	The complexification of $V$, denoted by $V_{\C}$, equals $V\times V$ with normal addition and real scalar multiplication for product space. But we write an element $(u,v)$ of $V_{\C}$ as $u+iv$. Complex scalar multiplication is defined by
 	\[(a+bi)(u+iv)=(au-bv)+i(av+bu)\]
 	for all $a,b\in\R$ and all $u,v\in V$.%
-	\footnote{Think of $V$ as a subset of $V_\C$ by identifying $u\in V$ with $u+i0$. The construction of $V_\C$ from $V$ can then be thought of as generalizing the construction of $\C^n$ from $\R^n$.}
+	\footnote{Think of $V$ as a subset of $V_{\C}$ by identifying $u\in V$ with $u+i0$. The construction of $V_{\C}$ from $V$ can then be thought of as generalizing the construction of $\C^n$ from $\R^n$.}
 \end{defn}
 
 \begin{props}[Properties of complexification]
 	\begin{enumerate}
-		\item $\lambda\in\R$ is an eigenvalue of $T$ if and only if $\lambda$ is an eigenvalue of $T_\C$.
-		\item $\lambda\in\C$ is an eigenvalue of $T_\C$ if and only if $\overline{\lambda}$ is an eigenvalue of $T_\C$.
-		\item The minimal polynomial of $T_\C$ equals the minimal polynomial of $T$.
+		\item $\lambda\in\R$ is an eigenvalue of $T$ if and only if $\lambda$ is an eigenvalue of $T_{\C}$.
+		\item $\lambda\in\C$ is an eigenvalue of $T_{\C}$ if and only if $\overline{\lambda}$ is an eigenvalue of $T_{\C}$.
+		\item The minimal polynomial of $T_{\C}$ equals the minimal polynomial of $T$.
 		\item Suppose $V$ is a real inner product space. For $u,v,w,x\in V$, define
-		\[\inp{u+iv}{w+ix}_\C=\inp{u}{w}+\inp{v}{x}+(\inp{v}{w}-\inp{u}{x})i.\]
-		Then $\inp{\cdot}{\cdot}_\C$ makes $V_\C$ into a complex inner product space. If $u,v\in V$, then
-		\[\inp{u}{v}_\C=\inp{u}{v}\quad\text{and}\quad\norm{u+iv}_\C^2=\norm{u}^2+\norm{v}^2.\]
+		\[\inp{u+iv}{w+ix}_{\C}=\inp{u}{w}+\inp{v}{x}+(\inp{v}{w}-\inp{u}{x})i.\]
+		Then $\inp{\cdot}{\cdot}_{\C}$ makes $V_{\C}$ into a complex inner product space. If $u,v\in V$, then
+		\[\inp{u}{v}_{\C}=\inp{u}{v}\quad\text{and}\quad\norm{u+iv}_{\C}^2=\norm{u}^2+\norm{v}^2.\]
 	\end{enumerate}
 \end{props}
 
@@ -771,7 +777,7 @@
 	Every operator on a finite-dimensional nonzero vector space has an invariant subspace of dimension $1$ or $2$.
 \end{prop}
 \begin{proof}
-	The case where $\F=\C$ is trivial. Now assume $V$ is a real vector space and $T\in\L(V)$. Then $T_\C$%
+	The case where $\F=\C$ is trivial. Now assume $V$ is a real vector space and $T\in\L(V)$. Then $T_{\C}$%
 	\footnote{\idea Field extension.}
 	has an eigenvalue $a+bi$ with $a,b\in\R$. Thus there exist $u,v\in V$, not both $0$, such that
 	\[Tu+iTv=(au-bv)+(av+bu)i.\]
