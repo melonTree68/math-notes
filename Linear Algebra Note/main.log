@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.6)  18 FEB 2025 17:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.6)  24 FEB 2025 16:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1241,43 +1241,39 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 11.826pt on input line 222.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.80002pt on input line 246.
-LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 246.
+(Font)              scaled to size 10.80002pt on input line 261.
+LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 262.
  (c:/texlive/2023/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
-LaTeX Font Info:    Trying to load font information for OML+zplm on input line 246.
+LaTeX Font Info:    Trying to load font information for OML+zplm on input line 262.
  (c:/texlive/2023/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 246.
+LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 262.
  (c:/texlive/2023/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 246.
+LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 262.
  (c:/texlive/2023/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 246.
+(Font)              scaled to size 10.42007pt on input line 262.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 246.
+(Font)              scaled to size 7.91925pt on input line 262.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 246.
+(Font)              scaled to size 6.25204pt on input line 262.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 246.
+(Font)              scaled to size 10.42007pt on input line 262.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 246.
+(Font)              scaled to size 7.91925pt on input line 262.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 246.
-LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 246.
+(Font)              scaled to size 6.25204pt on input line 262.
+LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 262.
  (c:/texlive/2023/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.20801pt on input line 251.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.48001pt on input line 251.
 LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 262.
  (c:/texlive/2023/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
@@ -1299,6 +1295,8 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 300.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.48001pt on input line 300.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 5.40001pt on input line 300.
 
 
@@ -1308,11 +1306,13 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
 (Font)              scaled to size 8.20801pt on input line 301.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
 (Font)              scaled to size 6.48001pt on input line 301.
-[3{c:/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2023/texmf-dist/fonts/enc/dvips/newtx/ntxsups_ot1.enc}]
 LaTeX Font Info:    Font shape `OT1/ntxsups/m/n' will be
 (Font)              scaled to size 10.80002pt on input line 361.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
 (Font)              scaled to size 8.64001pt on input line 361.
+[3{c:/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2023/texmf-dist/fonts/enc/dvips/newtx/ntxsups_ot1.enc}]
+
+LaTeX Warning: Marginpar on page 4 moved.
 
 
 LaTeX Warning: Marginpar on page 4 moved.
@@ -1327,22 +1327,28 @@ LaTeX Warning: Marginpar on page 5 moved.
 
 LaTeX Warning: Marginpar on page 5 moved.
 
+[5]
 
-LaTeX Warning: Marginpar on page 5 moved.
-
-[5] [6]
-
-LaTeX Warning: Marginpar on page 7 moved.
+LaTeX Warning: Marginpar on page 6 moved.
 
 
-LaTeX Warning: Marginpar on page 7 moved.
+LaTeX Warning: Marginpar on page 6 moved.
 
+[6]
 
 LaTeX Warning: Marginpar on page 7 moved.
 
 
 LaTeX Warning: Marginpar on page 7 moved.
 
+
+LaTeX Warning: Marginpar on page 7 moved.
+
+
+LaTeX Warning: Marginpar on page 7 moved.
+
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.20801pt on input line 646.
 [7]
 
 LaTeX Warning: Marginpar on page 8 moved.
@@ -1359,12 +1365,10 @@ LaTeX Warning: Marginpar on page 8 moved.
 
 LaTeX Warning: Marginpar on page 8 moved.
 
-[8
-pdfTeX warning (ext4): destination with the same identifier (name{equation.0.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.677 ...(v)=\frac{\abs{\phi(w)}^2}{\norm{w}^2}.\]
-                                                  ]
+[8]
+
+LaTeX Warning: Marginpar on page 9 moved.
+
 
 LaTeX Warning: Marginpar on page 9 moved.
 
@@ -1372,9 +1376,6 @@ LaTeX Warning: Marginpar on page 9 moved.
 LaTeX Warning: Marginpar on page 9 moved.
 
 [9]
-
-LaTeX Warning: Marginpar on page 10 moved.
-
 
 LaTeX Warning: Marginpar on page 10 moved.
 
@@ -1388,18 +1389,18 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D534A72DB6D74CC5A0974067F4227EA3;884.
  ) 
 Here is how much of TeX's memory you used:
- 25552 strings out of 476025
- 464605 string characters out of 5794015
+ 25550 strings out of 476025
+ 464573 string characters out of 5794015
  1878382 words of memory out of 5000000
  45323 multiletter control sequences out of 15000+600000
- 573222 words of font info for 171 fonts, out of 8000000 for 9000
+ 572088 words of font info for 169 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 97i,16n,93p,544b,688s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 97i,16n,93p,544b,715s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/newtx/ntxsups-Italic.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/newtx/ntxsups-Regular.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmb.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmr.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on main.pdf (10 pages, 250684 bytes).
+Output written on main.pdf (10 pages, 248547 bytes).
 PDF statistics:
- 286 PDF objects out of 1000 (max. 8388607)
- 224 compressed objects within 3 object streams
+ 284 PDF objects out of 1000 (max. 8388607)
+ 222 compressed objects within 3 object streams
  88 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

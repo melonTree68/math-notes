@@ -242,21 +242,21 @@
 % 	\[\widetilde{T}\bra{v+\ker T}=Tv.\]
 % \end{notn}
 
-\begin{exer}
-	Suppose $V_1,\dots,V_m$ are vector spaces. Prove that $\L\bra{V_1\times\cdots\times V_m,W}$ and $\L\bra{V_1,W}\times\cdots\times\L\bra{V_m,W}$ are isomorphic vector spaces. 
-\end{exer}
-\begin{proof}
-	We construct an isomorphism $T$ between the two vector spaces. For every $\Gamma\in\L\bra{V_1\times\cdots\times V_m,W}$, define $\phi_k:V_k\to W$ for each $k$ by
-	\[\phi_k\bra{v_k}=\Gamma\bra{0,\dots,v_k,\dots,0}\]
-	with $v_k$ in the $k^\text{th}$ slot and $0$ in all other slots. It can be verified that $\phi_k\in\L\bra{V_k,W}$.
+% \begin{exer}
+% 	Suppose $V_1,\dots,V_m$ are vector spaces. Prove that $\L\bra{V_1\times\cdots\times V_m,W}$ and $\L\bra{V_1,W}\times\cdots\times\L\bra{V_m,W}$ are isomorphic vector spaces. 
+% \end{exer}
+% \begin{proof}
+% 	We construct an isomorphism $T$ between the two vector spaces. For every $\Gamma\in\L\bra{V_1\times\cdots\times V_m,W}$, define $\phi_k:V_k\to W$ for each $k$ by
+% 	\[\phi_k\bra{v_k}=\Gamma\bra{0,\dots,v_k,\dots,0}\]
+% 	with $v_k$ in the $k^\text{th}$ slot and $0$ in all other slots. It can be verified that $\phi_k\in\L\bra{V_k,W}$.
 
-	Define $T$ by $T\bra{\Gamma}=\bra{\phi_1,\dots,\phi_m}$. It can be verified that $T$ is a linear map. We prove $T$ is an isomorphism by constructing its inverse linear map $S$.
+% 	Define $T$ by $T\bra{\Gamma}=\bra{\phi_1,\dots,\phi_m}$. It can be verified that $T$ is a linear map. We prove $T$ is an isomorphism by constructing its inverse linear map $S$.
 
-	For every $\bra{\phi_1,\dots,\phi_m}\in\L\bra{V_1,W}\times\cdots\times\L\bra{V_m,W}$, let
-	\[S\bra{\phi_1,\dots,\phi_m}\bra{v_1,\dots,v_m}=\phi_1\bra{v_1}+\cdots+\phi_m\bra{v_m}.\]
+% 	For every $\bra{\phi_1,\dots,\phi_m}\in\L\bra{V_1,W}\times\cdots\times\L\bra{V_m,W}$, let
+% 	\[S\bra{\phi_1,\dots,\phi_m}\bra{v_1,\dots,v_m}=\phi_1\bra{v_1}+\cdots+\phi_m\bra{v_m}.\]
 	
-	It can be shown that $S$ is a linear map, and that $S\circ T=I$ and $T\circ S=I$. That proves $T$ is indeed an isomorphism between the two vector spaces.
-\end{proof}
+% 	It can be shown that $S$ is a linear map, and that $S\circ T=I$ and $T\circ S=I$. That proves $T$ is indeed an isomorphism between the two vector spaces.
+% \end{proof}
 
 \begin{prop}\label{prop: test for translate}
 	A nonempty subset $A$ of $V$ is a translate of some subspace of $V$ if and only if $\lambda v+\bra{1-\lambda}w\in A$ for all $v,w\in A$ and all $\lambda\in\F$.
@@ -548,7 +548,7 @@
 \subsection{Commuting Operators}
 \begin{exer}
 	Suppose $\E\subseteq\L(V)$ and every element of $\E$ is diagonalizable. Prove that there exists a basis of $V$ with respect to which every element of $\E$ has a diagonal matrix if and only if every pair of elements of $\E$ commutes.%
-	\footnote{This is an extension of simultaneous diagonalizability to more than $2$ (possibly infinitely many) operators.}
+	\footnote{This exercise extends simultaneous diagonalizability to more than $2$ (possibly infinitely many) operators.}
 \end{exer}
 \begin{proof}
 	Suppose every pair of elements of $\E$ commutes. We use induction on $n=\dim V$. The base case $n=1$ is trivial. Now suppose $n>1$ and the desired result holds for all smaller integers. Without loss of generality, suppose $\E\cap\{\lambda I:\lambda\in\F\}=\emptyset$, or else consider $\E\backslash\{\lambda I:\lambda\in\F\}$.
@@ -561,7 +561,7 @@
 	\begin{enumerate}
 		\item Prove that there is a vector in $V$ that is an eigenvector for every element of $\E$.
 		\item Prove that there exists a basis of $V$ with respect to which every element of $\E$ has an upper-triangular matrix.%
-		\footnote{This is an extension of simultaneous upper triangularizability to more than $2$ (possibly infinitely many) operators.}
+		\footnote{This exercise extends simultaneous upper triangularizability to more than $2$ (possibly infinitely many) operators.}
 	\end{enumerate}
 \end{exer}
 
@@ -659,24 +659,24 @@
 	for each $u\in V$. Then $v\mapsto\phi_v$ is a one-to-one map from $V$ onto $V'$.%
 	\footnote{\idea If $\phi(u)=\inp{u}{v}$ holds for all $u\in V$, then $v\in(\ker\phi)^\perp$. However, $(\ker\phi)^\perp$ has dimension $1$ (except when $\phi=0$). Hence we can obtain the right $v$ by choosing an arbitrary nonzero $w\in(\ker\phi)^\perp$ and then multiplying by an appropriate scalar.}
 \end{thm}
-\begin{proof}
-	The injectivity is trivial. We prove the surjectivity. Suppose $\phi\in V'$. The case where $\phi=0$ is trivial. Thus assume $\phi\neq0$. Hence $\ker\phi\neq V$, which implies that $(\ker\phi)^\perp\neq\{0\}$. Let $w\in(\ker\phi)^\perp$ be such that $w\neq0$. Let%
-	\footnote{\idea Apply $w$ to $u$ to find the supposedly right scalar $c$ in $\phi(u)=\inp{u}{cw}$.}
-	\begin{peq}\label{35peq: definition of $v$}
-		v=\frac{\overline{\phi(w)}}{\norm{w}^2}w.
-	\end{peq}
-	Then $v\in(\ker\phi)^\perp$ and $v\neq0$. Now we prove that $\phi(u)=\inp{u}{v}$ for each $u\in V$.
+% \begin{proof}
+% 	The injectivity is trivial. We prove the surjectivity. Suppose $\phi\in V'$. The case where $\phi=0$ is trivial. Thus assume $\phi\neq0$. Hence $\ker\phi\neq V$, which implies that $(\ker\phi)^\perp\neq\{0\}$. Let $w\in(\ker\phi)^\perp$ be such that $w\neq0$. Let%
+% 	\footnote{\idea Apply $w$ to $u$ to find the supposedly right scalar $c$ in $\phi(u)=\inp{u}{cw}$.}
+% 	\begin{peq}\label{35peq: definition of $v$}
+% 		v=\frac{\overline{\phi(w)}}{\norm{w}^2}w.
+% 	\end{peq}
+% 	Then $v\in(\ker\phi)^\perp$ and $v\neq0$. Now we prove that $\phi(u)=\inp{u}{v}$ for each $u\in V$.
 
-	Let $u\in V$. The orthogonal decomposition leads to
-	\[u=\frac{\inp{u}{v}}{\norm{v}^2}v+\bra{u-\frac{\inp{u}{v}}{\norm{v}^2}v},\]
-	where the second term is orthogonal to $v$ and thus in $\ker\phi$. Applying $\phi$ to both sides, we have
-	\begin{peq}\label{35peq: last equation}
-		\phi(u)=\frac{\inp{u}{v}}{\norm{v}^2}\phi(v).
-	\end{peq}
-	By (\ref{35peq: definition of $v$}), we have
-	\[\norm{v}=\frac{\abs{\phi(w)}}{\norm{w}} ,\qquad \phi(v)=\frac{\abs{\phi(w)}^2}{\norm{w}^2}.\]
-	Applying them to (\ref{35peq: last equation}) leads to $\phi(u)=\inp{u}{v}$, as desired.
-\end{proof}
+% 	Let $u\in V$. The orthogonal decomposition leads to
+% 	\[u=\frac{\inp{u}{v}}{\norm{v}^2}v+\bra{u-\frac{\inp{u}{v}}{\norm{v}^2}v},\]
+% 	where the second term is orthogonal to $v$ and thus in $\ker\phi$. Applying $\phi$ to both sides, we have
+% 	\begin{peq}\label{35peq: last equation}
+% 		\phi(u)=\frac{\inp{u}{v}}{\norm{v}^2}\phi(v).
+% 	\end{peq}
+% 	By (\ref{35peq: definition of $v$}), we have
+% 	\[\norm{v}=\frac{\abs{\phi(w)}}{\norm{w}} ,\qquad \phi(v)=\frac{\abs{\phi(w)}^2}{\norm{w}^2}.\]
+% 	Applying them to (\ref{35peq: last equation}) leads to $\phi(u)=\inp{u}{v}$, as desired.
+% \end{proof}
 
 \begin{exer}
 	Suppose $V$ is finite-dimensional and  $P\in\L(V)$ is such that $P^2=P$.
@@ -742,15 +742,30 @@
 
 \subsection{Spectral Theorem}
 \begin{thms}
-	Suppose $T\in\L(V)$.
 	\begin{enumerate}
-		\item Suppose $\F=\R$. Then $T$ is self-adjoint if and only if all pairs of eigenvectors corresponding to distinct eigenvalues of $T$ are orthogonal and $V=E(\lambda_1,T)\oplus\cdots\oplus E(\lambda_m,T)$, where $\lambda_1,\dots,\lambda_m$ denote the distinct eigenvalues of $T$.
-		\item Suppose $\F=\C$. Then $T$ is normal if and only if all pairs of eigenvectors corresponding to distinct eigenvalues of $T$ are orthogonal and $V=E(\lambda_1,T)\oplus\cdots\oplus E(\lambda_m,T)$, where $\lambda_1,\dots,\lambda_m$ denote the distinct eigenvalues of $T$.
+		\item Suppose $T\in\L(V)$. Suppose $\F=\R$. Then $T$ is self-adjoint if and only if all pairs of eigenvectors corresponding to distinct eigenvalues of $T$ are orthogonal and $V=E(\lambda_1,T)\oplus\cdots\oplus E(\lambda_m,T)$, where $\lambda_1,\dots,\lambda_m$ denote the distinct eigenvalues of $T$.
+		\item Suppose $T\in\L(V)$. Suppose $\F=\C$. Then $T$ is normal if and only if all pairs of eigenvectors corresponding to distinct eigenvalues of $T$ are orthogonal and $V=E(\lambda_1,T)\oplus\cdots\oplus E(\lambda_m,T)$, where $\lambda_1,\dots,\lambda_m$ denote the distinct eigenvalues of $T$.
 	\end{enumerate}
 \end{thms}
 
+\begin{exer}
+	\begin{enumerate}
+		\item Suppose $\F=\C$ and $\E\subseteq\L(V)$. Prove that there is an orthonormal basis of $V$ with respect to which every element of $\E$ has a diagonal matrix if and only if $S$ and $T$ are commuting normal operators for all $S,T\in\E$.
+		\item Suppose $\F=\R$ and $\E\subseteq\L(V)$. Prove that there is an orthonormal basis of $V$ with respect to which every element of $\E$ has a diagonal matrix if and only if $S$ and $T$ are commuting self-adjoint operators for all $S,T\in\E$.%
+		\footnote{This exercise extends the spectral theorems to the context of a collection of commuting operators.}
+	\end{enumerate}
+\end{exer}
+
 
 \subsection{Positive Operators}
+\begin{exer}
+	For $T\in\L(V)$ and $u,v\in V$, define $\inp{u}{v}_T$ by $\inp{u}{v}_T=\inp{Tu}{v}$.
+	\begin{enumerate}
+		\item Suppose $T\in\L(V)$. Prove that $\inp{\cdot}{\cdot}_T$ is an inner product on $V$ if and only if $T$ is an invertible positive operator (with respect to the original inner product).
+		\item Prove that every inner product on $V$ is of the form $\inp{\cdot}{\cdot}_T$ for some invertible positive operator $T\in\L(V)$.%
+		\footnote{\idea Let $\inp{\cdot}{\cdot}_1$ be an inner product on $V$. We need to find $T$ such that $\inp{u}{v}_1=\inp{Tu}{v}$. Fixing $v$ is not sufficient to find the unique $Tu$. Thus we fix $u$ and consider $\inp{v}{u}_1=\inp{v}{Tu}$. The map $v\mapsto\inp{v}{u}_1$ is in $V'$. Hence we use the Riesz representation theorem to define $Tu$.}
+	\end{enumerate}
+\end{exer}
 
 
 \section{Complexifcation}
