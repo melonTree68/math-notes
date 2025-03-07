@@ -9,10 +9,11 @@
 \contentsline {section}{Inner Product Spaces}{7}{section*.10}%
 \contentsline {subsection}{Inner Products and Norms}{7}{section*.11}%
 \contentsline {subsection}{Orthonormal Bases}{7}{section*.12}%
-\contentsline {subsection}{Orthogonal Complements and Minimization Problems}{8}{section*.13}%
+\contentsline {subsection}{Orthogonal Complements and Minimization Problems}{7}{section*.13}%
 \contentsline {section}{Operators on Inner Product Spaces}{8}{section*.14}%
 \contentsline {subsection}{Self-Adjoint and Normal Operators}{8}{section*.15}%
 \contentsline {subsection}{Spectral Theorem}{9}{section*.16}%
 \contentsline {subsection}{Positive Operators}{9}{section*.17}%
-\contentsline {section}{Complexifcation}{9}{section*.18}%
+\contentsline {subsection}{Singular Value Decomposition}{9}{section*.18}%
+\contentsline {section}{Complexifcation}{10}{section*.19}%
 \contentsfinish 

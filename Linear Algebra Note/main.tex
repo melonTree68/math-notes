@@ -1,8 +1,10 @@
+% pdflatex
 \documentclass[nofonts,colorlinks]{tufte-handout}
 \usepackage{amsmath,amsfonts,amsthm,amssymb}
 \usepackage{bm}
 \usepackage{pgf,tikz}
-\usepackage{enumerate,enumitem}
+\usepackage{enumerate}
+\usepackage[inline]{enumitem}
 \usepackage{sectsty}
 
 \usepackage[osf]{mathpazo} % Palatino for main and math
@@ -93,12 +95,12 @@
 \renewcommand{\phi}{\varphi}
 \newcommand{\dnei}{\overset{\circ}{U}}
 
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\F}{\mathbb{F}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\N}{\mathbf{N}}
+\newcommand{\Z}{\mathbf{Z}}
+\newcommand{\C}{\mathbf{C}}
+\newcommand{\Q}{\mathbf{Q}}
+\newcommand{\F}{\mathbf{F}}
 \renewcommand{\L}{\mathcal{L}}
 \newcommand{\M}{\mathcal{M}}
 \renewcommand{\P}{\mathcal{P}}
@@ -167,19 +169,6 @@
 \newpage
 
 
-% \section{Prerequisites}
-% We declare several notations below for convenience and clarity.
-% \begin{notns}[Basic notations]
-% 	\phantom{linebreak}
-
-%     \begin{itemize}
-%         \item $\F$ denotes a number field.
-%         \item $U$, $V$, $W$ denotes vector spaces (usually over scalar field $\F$).
-%         \item $V^S$ denotes the set of functions from a nonempty set $S$ to a vector space $V$.
-%     \end{itemize}
-% \end{notns}
-
-
 % \section{Vector Spaces}
 % \begin{lem}[Linear dependence lemma]
 % 	Suppose $v_1,\dots,v_m$ is a linearly dependent set in $V$. Then there exists $k\in\{1,2,\dots,m\}$ such that
@@ -197,7 +186,7 @@
 
 
 \section{Linear Maps}
-% \subsection{Kernals and Images}
+% \subsection{Kernels and Images}
 % \begin{exer}
 % 	Suppose $U$ and $V$ are finite-dimensional and $S\in\L\bra{V,W}$ and $T\in\L\bra{U,V}$. Prove that
 % 	\[\dim\ker ST \leq \dim\ker S + \dim\ker T.\]
@@ -220,28 +209,6 @@
 
 
 \subsection{Products and Quotients of Vector Spaces}
-% \begin{lem}\label{lem: direct sum and product space}
-% 	Suppose $V_1,\dots,V_m$ are subspaces of $V$.%
-%     \footnote{Note that $V$ does not have to be finite-dimensional. Recall that $V_1+\cdots+V_m$ is a direct sum if and only if the only way to write $0$ as a sum of $v_1+\cdots+v_m$, where each $v_k\in V_k$, is by taking each $v_k$ equal to $0$.}
-% 	Define a linear map $\Gamma: V_1\times\cdots\times V_m \to V_1+\cdots+V_m$ by
-% 	\[\Gamma\bra{v_1,\dots,v_m} = v_1+\cdots+v_m.\]
-% 	Then $V_1+\cdots+V_m$ is a direct sum if and only if $\Gamma$ is injective.
-% \end{lem}
-
-% \begin{thm}
-% 	Suppose $V$ is finite-dimensional and $V_1,\dots,V_m$ are subspaces of $V$. Then $V_1+\cdots+V_m$ is a direct sum if and only if%
-%     \footnote{Recall Lemma~\ref{lem: direct sum and product space}.}
-% 	\[\dim\bra{V_1+\cdots+V_m} = \dim V_1+\cdots+\dim V_m.\]
-% \end{thm}
-% \begin{proof}
-% 	Recall Lemma~\ref{lem: direct sum and product space}.Because $\Gamma$ is surjective, by the fundamental theorem of linear maps, $V_1+\cdots+V_m$ is a direct sum if and only if $\dim\bra{V_1+\cdots+V_m} = \dim\bra{V_1\times\cdots\times V_m} = \dim V_1+\cdots+\dim V_m$.
-% \end{proof}
-
-% \begin{notn}
-% 	Suppose $T\in\L\bra{V,W}$. Define $\widetilde{T}: V+\ker V \to V$ by
-% 	\[\widetilde{T}\bra{v+\ker T}=Tv.\]
-% \end{notn}
-
 % \begin{exer}
 % 	Suppose $V_1,\dots,V_m$ are vector spaces. Prove that $\L\bra{V_1\times\cdots\times V_m,W}$ and $\L\bra{V_1,W}\times\cdots\times\L\bra{V_m,W}$ are isomorphic vector spaces. 
 % \end{exer}
@@ -261,11 +228,6 @@
 \begin{prop}\label{prop: test for translate}
 	A nonempty subset $A$ of $V$ is a translate of some subspace of $V$ if and only if $\lambda v+\bra{1-\lambda}w\in A$ for all $v,w\in A$ and all $\lambda\in\F$.
 \end{prop}
-
-% \begin{exer}
-% 	Suppose $A_1=v+U_1$ and $A_2=w+U_2$ for some $v,w\in V$ and some subspaces $U_1$, $U_2$ of $V$. Prove that $A_1\cap A_2$ is either the empty set or a translate of some subspace of $V$.%
-%     \footnote{Recall Proposition~\ref{prop: test for translate}.}
-% \end{exer}
 
 % \begin{prop}\label{prop: direct sum from quotient space}
 % 	Suppose $U$ is a subspace of $V$ and $v_1+U,\dots,v_m+U$ is a basis of $V/U$ and $u_1,\dots,u_n$ is a basis of $U$. Then $v_1,\dots,v_m,u_1,\dots,u_n$ is a basis of $V$. In other words, $V=\spn(v_1,\dots,v_m)\oplus U$.%
@@ -287,46 +249,11 @@
 
 
 \subsection{Duality}
-% \begin{thm}
-% 	Suppose $V$ and $W$ are finite-dimensional and $T\in\L\bra{V,W}$. Then
-% 	\begin{center}
-% 		$T$ is surjective $\iff T'$ is injective \quad and \quad $T$ is injective $\iff T'$ is surjective.%
-% 		\footnote{This result can be useful because sometimes it is easier to verify that $T'$ is injective (or surjective) than to show directly that $T$ is surjective (or injective).}
-% 	\end{center}
-% \end{thm}
-
 \begin{prop}\label{prop: relation between subspace and annihilator}
 	Suppose $V$ is finite-dimensional and $U$ is a subspace of $V$. Then%
 	\footnote{Compare this result with $\bra{U^\perp}^\perp=U$ where $U$ is a finite-dimensional subspace of inner product space $V$.}
 	\[U=\cbra{v\in V:\phi(v)=0\,\text{ for every }\,\phi\in U^0}.\]
 \end{prop}
-
-% \begin{exer}
-% 	Suppose $V$ is finite-dimensional and $U$ and $W$ are subspaces of $V$.
-% 	\begin{enumerate}
-% 		\item Prove that $W^0\subseteq U^0$ if and only if $U\subseteq W$.
-% 		\item Prove that $W^0=U^0$ if and only if $U=W$.%
-%     	\footnote{Recall Proposition~\ref{prop: relation between subspace and annihilator}.}
-% 	\end{enumerate}
-% \end{exer}
-
-% \begin{exer}
-% 	Suppose $V$ is finite-dimensional and $U$ and $W$ are subspaces of $V$.\
-% 	\begin{enumerate}
-% 		\item Prove that $\bra{U+W}^0=U^0\cap W^0$.
-% 		\item Prove that $\bra{U\cap W}^0=U^0+W^0$.
-% 	\end{enumerate}
-% \end{exer}
-
-% \begin{prop}\label{prop: matrix of dual basis}
-% 	Suppose $V$ is finite-dimensional and $v_1,\dots,v_n$ is a basis of $V$. Then $\phi_1,\dots,\phi_n\in V'$ is the dual basis of $v_1,\dots,v_n$ if and only if
-% 	\[\begin{bmatrix}
-% 		\M(\phi_1,(v_1,\dots,v_n))\\
-% 		\vdots\\
-% 		\M(\phi_n,(v_1,\dots,v_n))\\
-% 	\end{bmatrix}=I.\]
-% 	% where $\M\bra{\phi_i}$ is the $1\times n$ matrix of $\phi_i$ with respect to basis $v_1,\dots v_n$ of $V$ for each $i\in\cbra{1,\dots,n}$.
-% \end{prop}
 
 \begin{exer}
 	Suppose $V$ is finite-dimensional and $\phi_1,\dots,\phi_n$ is a basis of $V'$. Prove that there exists a basis of $V$ whose dual basis is precisely $\phi_1,\dots,\phi_n$.
@@ -336,11 +263,9 @@
 	
 	Define $S,T\in\L\bra{V,\F^n}$ by
 	\[T(v)=\bra{\phi_1(v),\dots,\phi_n(v)},\quad S(v)=\bra{\psi_1(v),\dots,\psi_n(v)}.\]
-	% Then by Proposition~\ref{prop: matrix of dual basis}, $\M\bra{S,\bra{u_1,\dots,u_n}}=I$.
 	Then $\M\bra{S,\bra{u_1,\dots,u_n}}=I$.
 	
 	Let $A$ be the change of basis matrix from $\psi$'s to $\phi$'s, i.e.,
-	% \[A=\M\bra{I,\bra{\phi_1,\dots,\phi_n},\bra{\psi_1,\dots,\psi_n}}.\]
 	\[\begin{bmatrix}\phi_1&\cdots&\phi_n\end{bmatrix}=\begin{bmatrix}\psi_1&\cdots&\psi_n\end{bmatrix}A.\]
 	Then by the definition of change of basis matrix, we have
 	\begin{align*}
@@ -361,7 +286,6 @@
     \footnote{\idea The change of basis for $V'\to V'$ corresponds to the transpose of $V\leftarrow V$, where transpose and inverse both come from duality.}
 	Thus
 	\[\M\bra{T,\bra{v_1,\dots,v_n}}=\M\bra{T,\bra{u_1,\dots,u_n}}\cdot\M\bra{I,\bra{v_1,\dots,v_n},\bra{u_1,\dots,u_n}}=I.\]
-	% Then by Proposition~\ref{prop: matrix of dual basis}, the dual basis of $v_1,\dots,v_n$ is precisely $\phi_1,\dots,\phi_n$, as desired.
 	Then the dual basis of $v_1,\dots,v_n$ is precisely $\phi_1,\dots,\phi_n$, as desired.
 \end{proof}
 
@@ -384,10 +308,6 @@
 
 
 \section{Polynomials}
-% \begin{thm}
-% 	Suppose $p\in\P(\F)$ is a nonconstant polynomial of degree $m$. Then $\lambda\in\F$ is a zero of $p$ if and only if there exists a polynomial $q\in\P(\F)$ of degree $m-1$ such that $p(z)=(z-\lambda)q(z)$ for every $z\in\F$.
-% \end{thm}
-
 \begin{thm}\label{thm: limited number of zeros of polynomials}
 	Suppose $p\in\P(\F)$ is a nonconstant polynomial of degree $m$. Then $p$ has at most $m$ zeros in $\F$.%
 	\footnote{A useful corollary of this theorem: when a polynomial $p$ has too many zeros, $p=0$.}
@@ -399,7 +319,6 @@
 
 \begin{thm}[Division algorithm for polynomials]
 	Suppose that $p,s\in\P(\F)$, with $s\neq0$. Then there exist unique polynomials $q,r\in\P(\F)$ such that $p=sq+r$.%
-	% \footnote{The division algorithm for polynomials can be proved without using any linear algebra. This proof makes a nice use of a basis of $\P_n(\F)$.}
 \end{thm}
 \begin{proof}
 	Let $n=\deg p$ and $m=\deg s$. The case where $n<m$ is trivial. Thus we now assume that $n\geq m$.
@@ -410,39 +329,10 @@
 
 	Because $p\in\P_n(\F)$, there exist unique constants $a_0,\dots,a_{m-1},b_0,\dots,b_{n-m}\in\F$ such that
 	\begin{align*}
-		p&=a_0+a_1z+\cdots+a_{m-1}z^{m-1}+b_0s+b_1zs+\cdots+b_{n-m}z^{n-m}s\\
-		&=\bra{a_0+a_1z+\cdots+a_{m-1}z^{m-1}}+s\bra{b_0+b_1z+\cdots+b_{n-m}z^{n-m}}.\qedhere
+		p&=a_0+a_1z+\dots+a_{m-1}z^{m-1}+b_0s+b_1zs+\dots+b_{n-m}z^{n-m}s\\
+		&=\bra{a_0+a_1z+\dots+a_{m-1}z^{m-1}}+s\bra{b_0+b_1z+\dots+b_{n-m}z^{n-m}}.\qedhere
 	\end{align*}
 \end{proof}
-
-% \begin{thm}[Fundamental theorem of algebra, first version]
-% 	Every nonconstant polynomial with complex coefficients has a zero in $\C$.
-% \end{thm}
-% \begin{proof}
-% 	Suppose $p\in\P(\C)$ is a nonconstant polynomial with highest-order nonzero term $c_mz^m$. Then $\abs{p(z)}\to\infty$ as $\abs{z}\to\infty$. Thus the continuous function $z\mapsto\abs{p(z)}$ has a global minimum at some $\zeta\in\C$. Assume that $p(\zeta)\neq0$.
-
-% 	Consider polynomial $q(z)=p(z+\zeta)/p(\zeta)$. The function $z\mapsto\abs{q(z)}$ has a global minimum at $z=0$. Write
-% 	\[q(z)=1+a_kz^k+\cdots+a_mz^m\]
-% 	where $k$ is the smallest positive integer such that the coefficient of $z_k$ is nonzero.
-	
-% 	Let $\beta$ be a $k^\text{th}$ root of $-1/a_k$. There is a constant $c>1$ such that if $t\in(0,1)$, then
-% 	\[\abs{q(t\beta)}\leq\abs{1+a_kt^k\beta^k}+ct^{k+1}=1-t^k(1-tc).\]
-% 	Thus taking $t$ to be $1/(2c)$ leads to $\abs{q(t\beta)}<1$.%
-% 	\footnote{\idea $z^k$ is the leading term in this infinitesimal. We hope its coefficient is negative real, and thus use de Moivre's theorem.}
-% 	The contradiction implies that $p(\zeta)=0$, as desired.
-% \end{proof}
-
-% \begin{thm}[Fundamental theorem of algebra, second version]
-% 	If $p\in\P(\C)$ is a nonconstant polynomial, then $p$ has a unique factorization of the form
-% 	\[p(z)=c(z-\lambda_1)\cdots(z-\lambda_m),\]
-% 	where $c,\lambda_1,\dots,\lambda_m\in\C$.
-% \end{thm}
-
-% \begin{thm}[Factorization of a polynomial over $\R$]
-% 	If $p\in\P(\R)$ is a nonconstant polynomial, then $p$ has a unique factorization of the form
-% 	\[p(x)=c(x-\lambda_1)\cdots(x-\lambda_m)(x^2+b_1x+c_1)\cdots(x^2+b_Mx+c_M),\]
-% 	where $m,M\in\N$ (possibly $0$) and $c,\lambda_1,\dots,\lambda_m,b_1,\dots,b_M,c_1,\dots,c_M\in\R$, with $b_k^2<4c_k$ for each $k$.
-% \end{thm}
 
 \begin{exer}
 	Suppose $p,q\in\P(\C)$ are nonconstant polynomials with no zeros in common. Let $m=\deg p$ and $n=\deg q$. Prove that there exist $r\in\P_{n-1}(\C)$ and $s\in\P_{m-1}(\C)$ such that $rp+sq=1$.%
@@ -455,24 +345,6 @@
 
 \section{Eigenvalues and Eigenvectors}
 \subsection{Invariant Subspaces}
-% \begin{thm}
-% 	Suppose $V$ is finite-dimensional, $T\in\L(V)$, and $\lambda\in\F$. Then the following are equivalent.%
-% 	\footnote{The equivalences are useful in that they allow identifying an eigenvalue without explicitly constructing an eigenvector.}
-% 	\begin{enumerate}
-% 		\item $\lambda$ is an eigenvalue of $T$.
-% 		\item $T-\lambda I$ is not injective.
-% 		\item $T-\lambda I$ is not surjective.
-% 		\item $T-\lambda I$ is not invertible.
-% 	\end{enumerate}
-% \end{thm}
-
-% \begin{exer}
-% 	Suppose $T\in\L(V)$ has no eigenvalues and $T^4=I$. Prove that $T^2=-I$.
-% \end{exer}
-% \begin{proof}
-% 	$(T^2+I)(T+I)(T-I)=0$. Because $T$ has no eigenvalues, $T+I$ and $T-I$ are both invertible. Hence $T^2+I=0$.
-% \end{proof}
-
 \begin{exer}
 	Suppose that $\lambda_1,\dots,\lambda_n\in\R$ are pairwise distinct. Prove that the list $\e^{\lambda_1x},\dots,\e^{\lambda_nx}$ is linearly independent in $\R^{\R}$.
 \end{exer}
@@ -481,12 +353,6 @@
 	\footnote{Alternatively we can let $V=D(\R)$.}
 	Define $D\in\L(V)$ by $Df=f'$. Then $\e^{\lambda x}$ is an eigenvector of $D$ corresponding to $\lambda$. A list of eigenvectors corresponding to distinct eigenvalues is linearly independent.
 \end{proof}
-
-% \begin{defn}
-% 	Suppose $V$ is finite-dimensional, $T\in\L(V)$, and $U$ is a subspace of $V$ invariant under $T$. The \emph{quotient operator} $T/U\in\L(V/U)$ is defined by
-% 	\[(T/U)(v+U)=Tv+U\]
-% 	% for each $v\in V$.
-% \end{defn}
 
 \begin{exer}
 	Suppose $V$ is finite-dimensional, $T\in\L(V)$, and $U$ is a subspace of $V$ invariant under $T$. Prove that each eigenvalue of the quotient operator $T/U$ is an eigenvalue of $T$.
@@ -520,17 +386,12 @@
 		&&&&1&-a_{n-1}\\
 	\end{bmatrix}\]
 	Prove that the minimal polynomial of $T$ is the polynomial
-	\[a_0+a_1z+\cdots+a_{n-1}z^{n-1}+z^n.\]
+	\[a_0+a_1z+\dots+a_{n-1}z^{n-1}+z^n.\]
 \end{exer}
 
 \begin{rmk}
 	This exercise implies that every monic polynomial is the minimal polynomial of some operator. Hence an algorithm that could produce exact eigenvalues for each operators on each $\F^n$ does not exist.
 \end{rmk}
-
-% \begin{prop}
-% 	Suppose $T\in\L(V)$ and $p\in\P(\F)$. Then there exists a unique $r\in\P(\F)$ such that $p(T)=r(T)$ and $\deg r$ is less than the degree of the minimal polynomial of $T$.%
-% 	\footnote{This proposition implies that every polynomial applied to an operator can be simplified to a polynomial of smaller degree.}
-% \end{prop}
 
 \begin{exer}
 	Prove that every operator on a finite-dimensional vector space of dimension at least $2$ has an invariant subspace of dimension $2$.
@@ -553,7 +414,7 @@
 \begin{proof}
 	Suppose every pair of elements of $\E$ commutes. We use induction on $n=\dim V$. The base case $n=1$ is trivial. Now suppose $n>1$ and the desired result holds for all smaller integers. Without loss of generality, suppose $\E\cap\{\lambda I:\lambda\in\F\}=\emptyset$, or else consider $\E\backslash\{\lambda I:\lambda\in\F\}$.
 
-	Let $\lambda_1,\dots,\lambda_m$ be the distinct eigenvalues of $T\in\E$. Then $V=E(\lambda_1,T)\oplus\cdots\oplus E(\lambda_m,T)$. Because $E(\lambda_k,T)$ is invariant under every $S\in\E$, it suffices to show that the desired result holds on $E(\lambda_1,T)$. Because $E(\lambda_1,T)\subsetneqq V$, it holds by induction hypothesis. The other direction is trivial.
+	Let $\lambda_1,\dots,\lambda_m$ be the distinct eigenvalues of $T\in\E$. Then $V=E(\lambda_1,T)\oplus\dots\oplus E(\lambda_m,T)$. Because $E(\lambda_k,T)$ is invariant under every $S\in\E$, it suffices to show that the desired result holds on $E(\lambda_1,T)$. Because $E(\lambda_1,T)\subsetneqq V$, it holds by induction hypothesis. The other direction is trivial.
 \end{proof}
 
 \begin{exer}
@@ -579,10 +440,6 @@
 \end{thms}
 
 \begin{exer}\label{exer: condition for a norm-induced inner product}
-	% A \emph{norm} on a vector space $U$ is a function
-	% \[\norm{\cdot}:U\to[0,\infty)\]
-	% which satisfies positive-definiteness, absolute homogeneity, and triangle inequality.
-
 	Prove that if $\norm{\cdot}$ is a norm on $U$ satisfying the parallelogram equality, then there is an inner product $\inp{\cdot}{\cdot}$ on $U$ such that $\norm{u}=\inp{u}{u}^{1/2}$ for all $u\in U$.%
 	\footnote{Recall Theorems~\ref{thm: polarization identities}.}
 \end{exer}
@@ -603,41 +460,41 @@
 	Suppose $v_1,\dots,v_m$ is a linearly independent list in $V$. Prove that the orthonormal list produced by the formulas of the Gram-Schmidt procedure is the only orthonormal list $e_1,\dots,e_m$ in $V$ such that $\inp{v_k}{e_k}>0$ and $\spn(v_1,\dots,v_k)=\spn(e_1,\dots,e_k)$ for each $k$.
 \end{exer}
 
-\begin{exer}
-	Suppose $V$ is finite-dimensional. Suppose $\inp{\cdot}{\cdot}_1,\inp{\cdot}{\cdot}_2$ are inner products on $V$ with corresponding norms $\norm{\cdot}_1$ and $\norm{\cdot}_2$. Prove that there exists $b,c>0$ such that $b\norm{v}_2\leq\norm{v}_1\leq c\norm{v}_2$ for every $v\in V$.%
-	\footnote{Note that \textit{Proof 1} does not use the hypothesis that $\norm{\cdot}_1$ and $\norm{\cdot}_2$ are associated with an inner product respectively.}
-\end{exer}
-% \begin{proof}[Proof 1]
-% 	Let $u_1,\dots,u_n$ be a basis of $V$. Without loss of generality, suppose that%
-% 	\footnote{As an alternative to infinity norm, we might also use the $2$-norm, which naturally induces an inner product by Exercise~\ref{exer: condition for a norm-induced inner product}.}
-% 	\[\norm{c_1u_1+\cdots+c_nu_n}_2=\max\{\abs{c_1},\dots,\abs{c_n}\}.\]
-% 	We interpret $\norm{\cdot}_1$ as a function $(c_1,\dots,c_n)\mapsto\norm{c_1u_1+\cdots+c_nu_n}_1$ from $\F^n$ to $\R$. It suffices to show that the desired result holds on the sphere
-% 	\[S=\cbra{(c_1,\dots,c_n)\in\F^n:\norm{c_1u_1+\cdots+c_nu_n}_2=1},\]
-% 	i.e. that $\norm{\cdot}_1$ is bounded on $S$.%
-% 	\footnote{\idea We cannot manipulate two norms simultaneously. Hence we restrict to $S$ and fix an orthonormal basis. Then $V$ behaves like $\F^n$. Nice properties of $S$ lead to proof of the continuity of $\norm{\cdot}_1$.}
-% 	Because $S$ is a closed and bounded set, it suffices to show that the function $\norm{\cdot}_1$ is continuous on $\F^n$.
+% \begin{exer}
+% 	Suppose $V$ is finite-dimensional. Suppose $\inp{\cdot}{\cdot}_1,\inp{\cdot}{\cdot}_2$ are inner products on $V$ with corresponding norms $\norm{\cdot}_1$ and $\norm{\cdot}_2$. Prove that there exists $b,c>0$ such that $b\norm{v}_2\leq\norm{v}_1\leq c\norm{v}_2$ for every $v\in V$.%
+% 	\footnote{Note that \textit{Proof 1} does not use the hypothesis that $\norm{\cdot}_1$ and $\norm{\cdot}_2$ are associated with an inner product respectively.}
+% \end{exer}
+% % \begin{proof}[Proof 1]
+% % 	Let $u_1,\dots,u_n$ be a basis of $V$. Without loss of generality, suppose that%
+% % 	\footnote{As an alternative to infinity norm, we might also use the $2$-norm, which naturally induces an inner product by Exercise~\ref{exer: condition for a norm-induced inner product}.}
+% % 	\[\norm{c_1u_1+\cdots+c_nu_n}_2=\max\{\abs{c_1},\dots,\abs{c_n}\}.\]
+% % 	We interpret $\norm{\cdot}_1$ as a function $(c_1,\dots,c_n)\mapsto\norm{c_1u_1+\cdots+c_nu_n}_1$ from $\F^n$ to $\R$. It suffices to show that the desired result holds on the sphere
+% % 	\[S=\cbra{(c_1,\dots,c_n)\in\F^n:\norm{c_1u_1+\cdots+c_nu_n}_2=1},\]
+% % 	i.e. that $\norm{\cdot}_1$ is bounded on $S$.%
+% % 	\footnote{\idea We cannot manipulate two norms simultaneously. Hence we restrict to $S$ and fix an orthonormal basis. Then $V$ behaves like $\F^n$. Nice properties of $S$ lead to proof of the continuity of $\norm{\cdot}_1$.}
+% % 	Because $S$ is a closed and bounded set, it suffices to show that the function $\norm{\cdot}_1$ is continuous on $\F^n$.
 	
-% 	Suppose $a\in\F^n$ and $e_1,\dots,e_n$ is the standard basis of $\F^n$. As $\norm{x-a}\to0$,
-% 	\begin{align*}
-% 		\abs{\norm{x}_1-\norm{a}_1}&\leq\norm{x-a}_1=\norm{\sum_{k=1}^{n}(x_k-a_k)e_k}_1\\
-% 		&\leq\sum_{k=1}^{n}\abs{x_k-a_k}\norm{e_k}_1\\
-% 		&\leq\bra{\sum_{k=1}^{n}\norm{e_k}_1^2}^{1/2}\norm{x-a}\to0,
-% 	\end{align*}
-% 	where the last inequality follows from the Cauchy-Schwarz inequality. Because every continuous function on a closed and bounded set is bounded, the proof is completed.
+% % 	Suppose $a\in\F^n$ and $e_1,\dots,e_n$ is the standard basis of $\F^n$. As $\norm{x-a}\to0$,
+% % 	\begin{align*}
+% % 		\abs{\norm{x}_1-\norm{a}_1}&\leq\norm{x-a}_1=\norm{\sum_{k=1}^{n}(x_k-a_k)e_k}_1\\
+% % 		&\leq\sum_{k=1}^{n}\abs{x_k-a_k}\norm{e_k}_1\\
+% % 		&\leq\bra{\sum_{k=1}^{n}\norm{e_k}_1^2}^{1/2}\norm{x-a}\to0,
+% % 	\end{align*}
+% % 	where the last inequality follows from the Cauchy-Schwarz inequality. Because every continuous function on a closed and bounded set is bounded, the proof is completed.
+% % \end{proof}
+% % \begin{proof}[Proof 2]
+% \begin{proof}
+% 	Without loss of generality, suppose $V=\F^n$, $\norm{x}_1^2=x^\intercal Ax$, and $\norm{x}_2^2=x^\intercal Bx$, where $A,B$ are positive-definite and $B$ is diagonal.%
+% 	\footnote{\idea Fixing an orthonormal basis naturally leads to a (simple) diagonal matrix.}
+% 	Note that $\lambda B-A$ is Hermitian and hence diagonalizable. It suffices to show that there exists $\lambda>0$ such that $\lambda B-A$ is positive-definite. Such a $\lambda$ exists by the Gershgorin disk theorem, as desired.
 % \end{proof}
-% \begin{proof}[Proof 2]
-\begin{proof}
-	Without loss of generality, suppose $V=\F^n$, $\norm{x}_1^2=x^\intercal Ax$, and $\norm{x}_2^2=x^\intercal Bx$, where $A,B$ are positive-definite and $B$ is diagonal.%
-	\footnote{\idea Fixing an orthonormal basis naturally leads to a (simple) diagonal matrix.}
-	Note that $\lambda B-A$ is Hermitian and hence diagonalizable. It suffices to show that there exists $\lambda>0$ such that $\lambda B-A$ is positive-definite. Such a $\lambda$ exists by the Gershgorin disk theorem, as desired.
-\end{proof}
 
-\begin{exer}
-	Suppose $\F=\C$ and $V$ is finite-dimensional. Prove that if $T\in\L(V)$ is such that $1$ is the only eigenvalue of $T$ and $\norm{Tv}\leq\norm{v}$ for all $v\in V$, then $T$ is the identity operator.
-\end{exer}
-\begin{proof}
-	By Schur's theorem, there exists an orthonormal basis $e_1,\dots,e_m$ of $V$ with respect to which $T$ has an upper-triangular matrix. Then all entries on the diagonal of $\M(T)$ is $1$. Any $\M(T)_{j,k}\neq0$ with $j\neq k$ would contradict $\norm{Te_k}\leq\norm{e_k}$. That proves that $\M(T)=I$, as desired.
-\end{proof}
+% \begin{exer}
+% 	Suppose $\F=\C$ and $V$ is finite-dimensional. Prove that if $T\in\L(V)$ is such that $1$ is the only eigenvalue of $T$ and $\norm{Tv}\leq\norm{v}$ for all $v\in V$, then $T$ is the identity operator.
+% \end{exer}
+% \begin{proof}
+% 	By Schur's theorem, there exists an orthonormal basis $e_1,\dots,e_m$ of $V$ with respect to which $T$ has an upper-triangular matrix. Then all entries on the diagonal of $\M(T)$ is $1$. Any $\M(T)_{j,k}\neq0$ with $j\neq k$ would contradict $\norm{Te_k}\leq\norm{e_k}$. That proves that $\M(T)=I$, as desired.
+% \end{proof}
 
 \begin{exer}
 	Suppose $v_1,\dots,v_n$ is a basis of $V$. Prove that there exists a basis $u_1,\dots,u_n$ of $V$ such that%
@@ -657,8 +514,10 @@
 	Suppose $V$ is finite-dimensional. For each $v\in V$, define $\phi_v\in V'$ by
 	\[\phi_v(u)=\inp{u}{v}\]
 	for each $u\in V$. Then $v\mapsto\phi_v$ is a one-to-one map from $V$ onto $V'$.%
-	\footnote{\idea If $\phi(u)=\inp{u}{v}$ holds for all $u\in V$, then $v\in(\ker\phi)^\perp$. However, $(\ker\phi)^\perp$ has dimension $1$ (except when $\phi=0$). Hence we can obtain the right $v$ by choosing an arbitrary nonzero $w\in(\ker\phi)^\perp$ and then multiplying by an appropriate scalar.}
 \end{thm}
+\begin{proof}[Proof Idea]
+	If $\phi(u)=\inp{u}{v}$ holds for all $u\in V$, then $v\in(\ker\phi)^\perp$. However, $(\ker\phi)^\perp$ has dimension $1$ (except when $\phi=0$). Hence we can obtain the right $v$ by choosing an arbitrary nonzero $w\in(\ker\phi)^\perp$ and then multiplying by an appropriate scalar.
+\end{proof}
 % \begin{proof}
 % 	The injectivity is trivial. We prove the surjectivity. Suppose $\phi\in V'$. The case where $\phi=0$ is trivial. Thus assume $\phi\neq0$. Hence $\ker\phi\neq V$, which implies that $(\ker\phi)^\perp\neq\{0\}$. Let $w\in(\ker\phi)^\perp$ be such that $w\neq0$. Let%
 % 	\footnote{\idea Apply $w$ to $u$ to find the supposedly right scalar $c$ in $\phi(u)=\inp{u}{cw}$.}
@@ -687,12 +546,6 @@
 		\footnote{\idea Observe that among all $v$'s with the same $Pv$, the one in $(\ker P)^\perp$ is the shortest. Applying this $v$ makes the best use of the inequality. Thus we prove that $P$ and $P_{(\ker P)^\perp}$ agree on $\ker P$ and $(\ker P)^\perp$.}
 	\end{enumerate}
 \end{exer}
-% \begin{proof}
-% 	\begin{enumerate}
-% 		\item We prove that $P=P_{\im P}$. We have $\ker P=(\im P)^\perp$. If $v\in\ker P$, then $Pv=0=P_{\im P}\,v$. If $v\in\im P$, suppose $v=Pu$ with $u\in V$. $P^2u=Pu$ implies that $Pv=v=P_{\im P}\,v$. $P$ and $P_{\im P}$ agree on $(\im P)^\perp=\ker P$ and $\im P$, and thus are equal.
-% 		\item We prove that $P=P_{(\ker P)^\perp}$. If $v\in\ker P$, then $Pv=0=P_{\,\ker P}\,v$. If $v\in(\ker P)^\perp$, $P^2v=Pv$ implies that $Pv-v\in\ker P$, which implies that $Pv=v+w$ with $w\in\ker P$. Because $v\in(\ker P)^\perp$, $\norm{Pv}^2=\norm{v}^2+\norm{w}^2$ by the Pythagorean theorem. Then $\norm{Pv}\leq\norm{v}$ leads to $w=0$, which implies that $Pv=v$. $P$ and $P_{(\ker P)^\perp}$ agree on $\ker P$ and $(\ker P)^\perp$, and thus are equal.
-% 	\end{enumerate}
-% \end{proof}
 
 \begin{props}[Algebraic properties of the pseudoinverse]
 	Suppose $V$ is finite-dimensional and $T\in\L(V,W)$.
@@ -743,8 +596,8 @@
 \subsection{Spectral Theorem}
 \begin{thms}
 	\begin{enumerate}
-		\item Suppose $T\in\L(V)$. Suppose $\F=\R$. Then $T$ is self-adjoint if and only if all pairs of eigenvectors corresponding to distinct eigenvalues of $T$ are orthogonal and $V=E(\lambda_1,T)\oplus\cdots\oplus E(\lambda_m,T)$, where $\lambda_1,\dots,\lambda_m$ denote the distinct eigenvalues of $T$.
-		\item Suppose $T\in\L(V)$. Suppose $\F=\C$. Then $T$ is normal if and only if all pairs of eigenvectors corresponding to distinct eigenvalues of $T$ are orthogonal and $V=E(\lambda_1,T)\oplus\cdots\oplus E(\lambda_m,T)$, where $\lambda_1,\dots,\lambda_m$ denote the distinct eigenvalues of $T$.
+		\item Suppose $T\in\L(V)$. Suppose $\F=\R$. Then $T$ is self-adjoint if and only if all pairs of eigenvectors corresponding to distinct eigenvalues of $T$ are orthogonal and $V=E(\lambda_1,T)\oplus\dots\oplus E(\lambda_m,T)$, where $\lambda_1,\dots,\lambda_m$ denote the distinct eigenvalues of $T$.
+		\item Suppose $T\in\L(V)$. Suppose $\F=\C$. Then $T$ is normal if and only if all pairs of eigenvectors corresponding to distinct eigenvalues of $T$ are orthogonal and $V=E(\lambda_1,T)\oplus\dots\oplus E(\lambda_m,T)$, where $\lambda_1,\dots,\lambda_m$ denote the distinct eigenvalues of $T$.
 	\end{enumerate}
 \end{thms}
 
@@ -762,20 +615,33 @@
 	For $T\in\L(V)$ and $u,v\in V$, define $\inp{u}{v}_T$ by $\inp{u}{v}_T=\inp{Tu}{v}$.
 	\begin{enumerate}
 		\item Suppose $T\in\L(V)$. Prove that $\inp{\cdot}{\cdot}_T$ is an inner product on $V$ if and only if $T$ is an invertible positive operator (with respect to the original inner product).
-		\item Prove that every inner product on $V$ is of the form $\inp{\cdot}{\cdot}_T$ for some invertible positive operator $T\in\L(V)$.%
-		\footnote{\idea Let $\inp{\cdot}{\cdot}_1$ be an inner product on $V$. We need to find $T$ such that $\inp{u}{v}_1=\inp{Tu}{v}$. Fixing $v$ is not sufficient to find the unique $Tu$. Thus we fix $u$ and consider $\inp{v}{u}_1=\inp{v}{Tu}$. The map $v\mapsto\inp{v}{u}_1$ is in $V'$. Hence we use the Riesz representation theorem to define $Tu$.}
+		\item Prove that every inner product on $V$ is of the form $\inp{\cdot}{\cdot}_T$ for some invertible positive operator $T\in\L(V)$.
+	\end{enumerate}
+\end{exer}
+\begin{proof}[Proof Idea]
+	(b) Let $\inp{\cdot}{\cdot}_1$ be an inner product on $V$. We need to find $T$ such that $\inp{u}{v}_1=\inp{Tu}{v}$. Fixing $v$ is not sufficient to find the unique $Tu$. Thus we fix $u$ and consider $\inp{v}{u}_1=\inp{v}{Tu}$. The map $v\mapsto\inp{v}{u}_1$ is in $V'$. Hence we use the Riesz representation theorem to define $Tu$.
+\end{proof}
+
+
+\subsection{Singular Value Decomposition}
+\begin{exer}
+	Suppose $T\in\L(V,W)$ and $s>0$. Prove that $s$ is a singular value of $T$ if and only if there exist nonzero vectors $v\in V$ and $w\in W$ such that%
+	\footnote{The vectors $v,w$ satisfying both equations above are called a \emph{Schmidt pair}.}
+	\[Tv=sw\quad\text{and}\quad T^*w=sv.\]
+\end{exer}
+
+\begin{exer}
+	Suppose $T\in\L(V,W)$. Suppose $s_1\geq s_2\geq\dots\geq s_m>0$ and $e_1,\dots,e_m$ is an orthonormal list in $V$ and $f_1,\dots,f_m$ is an orthonormal list in $W$ such that
+	\[Tv=s_1\inp{v}{e_1}f_1+\dots+s_m\inp{v}{e_m}f_m\]
+	for every $v\in V$.
+	\begin{enumerate}
+		\item Prove that $s_1,\dots,s_m$ are the positive singular values of $T$.
+		\item Prove that if $k\in\{1,\dots,m\}$, then $e_k$ is an eigenvector of $T^*T$ with corresponding eigenvalue $s_k^2$.
 	\end{enumerate}
 \end{exer}
 
 
 \section{Complexifcation}
-\begin{defn}
-	The complexification of $V$, denoted by $V_{\C}$, equals $V\times V$ with normal addition and real scalar multiplication for product space. But we write an element $(u,v)$ of $V_{\C}$ as $u+iv$. Complex scalar multiplication is defined by
-	\[(a+bi)(u+iv)=(au-bv)+i(av+bu)\]
-	for all $a,b\in\R$ and all $u,v\in V$.%
-	\footnote{Think of $V$ as a subset of $V_{\C}$ by identifying $u\in V$ with $u+i0$. The construction of $V_{\C}$ from $V$ can then be thought of as generalizing the construction of $\C^n$ from $\R^n$.}
-\end{defn}
-
 \begin{props}[Properties of complexification]
 	\begin{enumerate}
 		\item $\lambda\in\R$ is an eigenvalue of $T$ if and only if $\lambda$ is an eigenvalue of $T_{\C}$.
