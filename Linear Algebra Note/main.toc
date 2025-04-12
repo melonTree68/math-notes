@@ -15,5 +15,6 @@
 \contentsline {subsection}{Spectral Theorem}{9}{section*.16}%
 \contentsline {subsection}{Positive Operators}{9}{section*.17}%
 \contentsline {subsection}{Singular Value Decomposition}{9}{section*.18}%
-\contentsline {section}{Complexifcation}{10}{section*.19}%
+\contentsline {subsection}{Consequences of Singular Value Decomposition}{10}{section*.19}%
+\contentsline {section}{Complexifcation}{10}{section*.20}%
 \contentsfinish 

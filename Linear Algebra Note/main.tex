@@ -641,6 +641,21 @@
 \end{exer}
 
 
+\subsection{Consequences of Singular Value Decomposition}
+\begin{exer}
+	Suppose $T\in\L(V,W)$. Let $n=\dim V$ and let $s_1\geq\dots\geq s_n$ denote the singular values of $T$. Prove that if $1\geq k\geq n$, then
+	\[\min\{\norm{\rest{T}{U}}:U\text{ is a subspace of $V$ with $\dim U=k$}\}=s_{n-k+1}.\]
+\end{exer}
+\begin{rmk}
+	Compare the result above to that
+	\[\min\{\norm{T-S}:S\in\L(V,W)\text{ and $\dim\im S\leq k$}\}=s_{k+1}.\]
+\end{rmk}
+
+\begin{exer}
+	Suppose $T\in\L(V)$, $S\in\L(V)$ is a unitary operator, and $R\in\L(V)$ is a positive operator such that $T=SR$. Prove that $R=\sqrt{T^*T}$.
+\end{exer}
+
+
 \section{Complexifcation}
 \begin{props}[Properties of complexification]
 	\begin{enumerate}
