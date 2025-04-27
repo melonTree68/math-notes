@@ -266,19 +266,19 @@
 	Then $\M\bra{S,\bra{u_1,\dots,u_n}}=I$.
 	
 	Let $A$ be the change of basis matrix from $\psi$'s to $\phi$'s, i.e.,
-	\[\begin{bmatrix}\phi_1&\cdots&\phi_n\end{bmatrix}=\begin{bmatrix}\psi_1&\cdots&\psi_n\end{bmatrix}A.\]
+	\[\begin{pmatrix}\phi_1&\cdots&\phi_n\end{pmatrix}=\begin{pmatrix}\psi_1&\cdots&\psi_n\end{pmatrix}A.\]
 	Then by the definition of change of basis matrix, we have
 	\begin{align*}
-		\M\bra{T,\bra{u_1,\dots,u_n}}&=\begin{bmatrix}
+		\M\bra{T,\bra{u_1,\dots,u_n}}&=\begin{pmatrix}
 			\M\bra{\phi_1,\bra{u_1,\dots,u_n}}\\
 			\vdots\\
 			\M\bra{\phi_n,\bra{u_1,\dots,u_n}}\\
-		\end{bmatrix}
-		=A^\intercal\begin{bmatrix}
+		\end{pmatrix}
+		=A^\intercal\begin{pmatrix}
 			\M\bra{\psi_1,\bra{u_1,\dots,u_n}}\\
 			\vdots\\
 			\M\bra{\psi_n,\bra{u_1,\dots,u_n}}\\
-		\end{bmatrix}\\\\
+		\end{pmatrix}\\\\
 		&=A^\intercal\cdot\M\bra{S,\bra{u_1,\dots,u_n}}=A^\intercal.
 	\end{align*}
 
@@ -377,14 +377,14 @@
 \subsection{The Minimal Polynomial}
 \begin{exer}[Companion matrix of a polynomial]
 	Suppose $a_0,\dots,a_{n-1}\in\F$. Let $T\in\L(\F^n)$ be such that $\M(T)$ (with respect to the standard basis) is
-	\[\begin{bmatrix}
+	\[\begin{pmatrix}
 		0&&&&&-a_0\\
 		1&0&&&&-a_1\\
 		&1&0&&&-a_2\\
 		&&\ddots&&&\vdots\\
 		&&&&0&-a_{n-2}\\
 		&&&&1&-a_{n-1}\\
-	\end{bmatrix}\]
+	\end{pmatrix}\]
 	Prove that the minimal polynomial of $T$ is the polynomial
 	\[a_0+a_1z+\dots+a_{n-1}z^{n-1}+z^n.\]
 \end{exer}
@@ -656,6 +656,43 @@
 \end{exer}
 
 
+\section{Operators on Complex Vector Spaces}
+\subsection{Generalized Eigenvectors and Nilpotent Operators}
+\begin{exer}
+	Suppose $T\in\L(V)$. $m\in\Z^+$ is such that the minimal polynomial of $T$ is a polynomial multiple of $(z-\lambda)^m$. Prove that
+	\[\dim\ker(T-\lambda I)^m\geq m.\]
+\end{exer}
+\begin{proof}
+	Let the minimal polynomial of $T$ be $(z-\lambda)^mq(z)$. Observe that $m$ is the least integer (If $k<m$ satisfies the property then $(T-\lambda I)^kq(T)=0$.) such that
+	\[\rest{(T-\lambda I)^m}{\im q(T)}=0.\]
+	Thus $T-\lambda I$ is nilpotent on $\im q(T)$, which implies that $m\leq\dim\im q(T)$.
+
+	On the other hand,
+	\[\rest{q(T)}{\im(T-\lambda I)^m}=0.\]
+	Thus $\ker q(T)\supseteq\im(T-\lambda I)^m$. Hence
+	\[\dim\ker(T-\lambda I)^m=n-\dim\im(T-\lambda I)^m\geq n-\dim\ker q(T)=\dim\im q(T)\geq m.\]
+\end{proof}
+
+\begin{prop}
+	Suppose that $T\in\L(V)$. Then there is a basis consisting of generalized eigenvectors of $T$ if and only if the minimal polynomial of $T$ equals $(z-\lambda_1)\dots(z-\lambda_m)$ for some $\lambda_1,\dots,\lambda_m\in\F$.
+\end{prop}
+
+
+\subsection{Generalized Eigenspace Decomposition}
+\begin{exer}
+	Suppose $T\in\L(V)$ and $\lambda$ is an eigenvalue of $T$. Prove that the exponent of $z-\lambda$ in the factorization of the minimal polynomial of $T$ is the least positive integer $m$ such that $\rest{(T-\lambda I)^m}{G(\lambda,T)}=0$.
+\end{exer}
+
+\begin{exer}
+	Suppose $T\in\L(V)$ and $\lambda$ is an eigenvalue of $T$ with multiplicity $d$. Prove that $G(\lambda, T)=\ker(T-\lambda I)^d$.
+\end{exer}
+
+\begin{exer}
+	Suppose $\F=\C$ and $T\in\L(V)$. Prove that there exist $D,N\in\L(V)$ such that $T=D+N$, $D$ is diagonalizable, $N$ is nilpotent, and $DN=ND$.%
+	\footnote{The generalized eigenspace decomposition allows us to restrict our attention to a single generalized eigenspace.}
+\end{exer}
+
+
 \section{Complexifcation}
 \begin{props}[Properties of complexification]
 	\begin{enumerate}
@@ -679,6 +716,16 @@
 	\[Tu+iTv=(au-bv)+(av+bu)i.\]
 	Hence $\spn(u,v)$ is invariant under $T$, as desired.
 \end{proof}
+
+\begin{exer}
+	Suppose $\F=\R$, $T\in\L(V)$, and $\lambda\in\C$.
+	\begin{enumerate}
+		\item Prove that $u+iv\in G(\lambda,T_\C)$ if and only if $u-iv\in G(\overline{\lambda}, T_\C)$.
+		\item Prove that the multiplicity of $\lambda$ as an eigenvalue of $T_\C$ equals that of $\overline{\lambda}$.
+		\item Use (b) to show that if $\dim V$ is an odd number, then $T_\C$ has a real eigenvalue.
+		\item Use (c) to show that if $\dim V$ is an odd number, then $T$ has an eigenvalue.
+	\end{enumerate}
+\end{exer}
 
 
 \end{document}

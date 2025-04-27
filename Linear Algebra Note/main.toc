@@ -16,5 +16,8 @@
 \contentsline {subsection}{Positive Operators}{9}{section*.17}%
 \contentsline {subsection}{Singular Value Decomposition}{9}{section*.18}%
 \contentsline {subsection}{Consequences of Singular Value Decomposition}{10}{section*.19}%
-\contentsline {section}{Complexifcation}{10}{section*.20}%
+\contentsline {section}{Operators on Complex Vector Spaces}{10}{section*.20}%
+\contentsline {subsection}{Generalized Eigenvectors and Nilpotent Operators}{10}{section*.21}%
+\contentsline {subsection}{Generalized Eigenspace Decomposition}{10}{section*.22}%
+\contentsline {section}{Complexifcation}{11}{section*.23}%
 \contentsfinish 
