@@ -728,4 +728,28 @@
 \end{exer}
 
 
+\section{Primary Decomposition}
+\begin{exer}[Primary Decomposition]
+	\begin{enumerate}
+		\item Suppose $f,g$ are coprime polynomials and $T\in\L(V)$. Prove that%
+		\footnote{\idea Use Bezout's lemma.}
+		\[\ker f(T)\oplus\ker g(T)=\ker(fg)(T).\]
+		\item Suppose $T\in\L(V)$ and the minimal polynomial of $T$
+		\[p=p_1^{\alpha_1}p_2^{\alpha_2}\dots p_m^{\alpha_m},\]
+		where $p_k$'s are pairwise coprime. Prove that
+		\[V=\bigoplus_{k=1}^m\ker p_k^{\alpha_k}(T).\]
+	\end{enumerate}
+\end{exer}
+
+\begin{exer}
+	Suppose $\F=\C$. Prove the generalized eigenspace decomposition, and prove that
+	\[G(\lambda,T)=\ker(T-\lambda I)^m,\]
+	where $T\in\L(V)$, $\lambda\in\F$, and $m$ is the exponent of $z-\lambda$ in the factorization of the minimal polynomial of $T$.
+\end{exer}
+
+\begin{exer}
+	Suppose $V$ is a finite-dimensional inner product space. Suppose $P\in\L(V)$ is such that $P^2=P$ and every vector in $\ker P$ is orthogonal to every vector in $\im P$. Prove that there exists a subspace $U$ of $V$ such that $P=P_U$.
+\end{exer}
+
+
 \end{document}

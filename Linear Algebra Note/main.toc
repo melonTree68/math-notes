@@ -20,4 +20,5 @@
 \contentsline {subsection}{Generalized Eigenvectors and Nilpotent Operators}{10}{section*.21}%
 \contentsline {subsection}{Generalized Eigenspace Decomposition}{10}{section*.22}%
 \contentsline {section}{Complexifcation}{11}{section*.23}%
+\contentsline {section}{Primary Decomposition}{11}{section*.24}%
 \contentsfinish 
