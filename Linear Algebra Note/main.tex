@@ -559,7 +559,7 @@
 
 
 \section{Operators on Inner Product Spaces}
-\textbf{From now on, we suppose that $V$ and $W$ are nonzero finite-dimensional inner product spaces over $\F$.}
+% \textbf{From now on, we suppose that $V$ and $W$ are nonzero finite-dimensional inner product spaces over $\F$.}
 \subsection{Self-Adjoint and Normal Operators}
 \begin{exer}
 	Suppose $T\in\L(V)$ and $\lambda\in\F$. Prove that
@@ -594,12 +594,12 @@
 
 
 \subsection{Spectral Theorem}
-\begin{thms}
-	\begin{enumerate}
-		\item Suppose $T\in\L(V)$. Suppose $\F=\R$. Then $T$ is self-adjoint if and only if all pairs of eigenvectors corresponding to distinct eigenvalues of $T$ are orthogonal and $V=E(\lambda_1,T)\oplus\dots\oplus E(\lambda_m,T)$, where $\lambda_1,\dots,\lambda_m$ denote the distinct eigenvalues of $T$.
-		\item Suppose $T\in\L(V)$. Suppose $\F=\C$. Then $T$ is normal if and only if all pairs of eigenvectors corresponding to distinct eigenvalues of $T$ are orthogonal and $V=E(\lambda_1,T)\oplus\dots\oplus E(\lambda_m,T)$, where $\lambda_1,\dots,\lambda_m$ denote the distinct eigenvalues of $T$.
-	\end{enumerate}
-\end{thms}
+% \begin{thms}
+% 	\begin{enumerate}
+% 		\item Suppose $T\in\L(V)$. Suppose $\F=\R$. Then $T$ is self-adjoint if and only if all pairs of eigenvectors corresponding to distinct eigenvalues of $T$ are orthogonal and $V=E(\lambda_1,T)\oplus\dots\oplus E(\lambda_m,T)$, where $\lambda_1,\dots,\lambda_m$ denote the distinct eigenvalues of $T$.
+% 		\item Suppose $T\in\L(V)$. Suppose $\F=\C$. Then $T$ is normal if and only if all pairs of eigenvectors corresponding to distinct eigenvalues of $T$ are orthogonal and $V=E(\lambda_1,T)\oplus\dots\oplus E(\lambda_m,T)$, where $\lambda_1,\dots,\lambda_m$ denote the distinct eigenvalues of $T$.
+% 	\end{enumerate}
+% \end{thms}
 
 \begin{exer}
 	\begin{enumerate}
@@ -640,8 +640,6 @@
 	\end{enumerate}
 \end{exer}
 
-
-\subsection{Consequences of Singular Value Decomposition}
 \begin{exer}
 	Suppose $T\in\L(V,W)$. Let $n=\dim V$ and let $s_1\geq\dots\geq s_n$ denote the singular values of $T$. Prove that if $1\geq k\geq n$, then
 	\[\min\{\norm{\rest{T}{U}}:U\text{ is a subspace of $V$ with $\dim U=k$}\}=s_{n-k+1}.\]
@@ -690,6 +688,59 @@
 \begin{exer}
 	Suppose $\F=\C$ and $T\in\L(V)$. Prove that there exist $D,N\in\L(V)$ such that $T=D+N$, $D$ is diagonalizable, $N$ is nilpotent, and $DN=ND$.%
 	\footnote{The generalized eigenspace decomposition allows us to restrict our attention to a single generalized eigenspace.}
+\end{exer}
+
+
+\subsection{Trace: A Connection Between Matrices and Operators}
+\begin{exer}
+	Prove that the trace is the only linear functional $\tau:\L(V)\to\F$ such that
+	\[\tau(ST)=\tau(TS)\]
+	for all $S,T\in\L(V)$ and $\tau(I)=\dim V$.
+\end{exer}
+\begin{proof}[Proof Idea]
+	Define $P_{j,k}\in\L(V)$ by $P_{j,k}(a_1v_1+\dots+a_nv_n)=a_kv_j$, where $v_1,\dots,v_n$ is a basis of $V$. Prove that $\tau(P_{j,k})=1$ if $j=k$ and $0$ otherwise.
+\end{proof}
+\begin{proof}
+	Taking $S=P_{j,j},T=P_{j,k}$ leads to the desired result for $j\neq k$. For $P_{j,j}$, consider its matrix version and  use $\tau(D)=\tau(P^{-1}DP)$ where $P$ is a permutation matrix.
+\end{proof}
+
+\begin{exer}
+	Suppose $V$ and $W$ are finite-dimensional inner product spaces.
+	\begin{enumerate}
+		\item Prove that
+		\[\tr(T^*T)=\sum_{k=1}^{n}\sum_{j=1}^{m}\abs{\inp{Te_k}{f_j}}^2,\]
+		where $e_1,\dots,e_n$ is an orthonormal basis of $V$ and $f_1,\dots,f_m$ is an orthonormal basis of $W$.
+		\item Prove that $\inp{S}{T}=\tr(T^*S)$ defines an inner product on $\L(V,W)$, and it is the same as the standard inner product on $\F^{mn}$.
+	\end{enumerate}
+\end{exer}
+\begin{rmks}
+	The right-hand side of (a) is the sum of the squares of the absolute values of the matrix entries, and does not depend on the chosen orthonormal bases. The norm on $\L(V,W)$ induced by (b) is called the \emph{Frobenius norm} or the \emph{Hilbert-Schmidt norm}.
+\end{rmks}
+
+
+\section{Multilinear Algebra and Determinants}
+\subsection{Determinants}
+\begin{exer}
+	Suppose $n$ is a positive integer and $\delta:\C^{n,n}\to\C$ is a function such that
+	\[\delta(AB)=\delta(A)\cdot\delta(B)\]
+	for all $A,B\in\C^{n,n}$ and $\delta(A)$ equals the product of the diagonal entries of $A$ for each diagnonal matrix $A\in\C^{n,n}$. Prove that
+	\[\delta(A)=\det A\]
+	for all $A\in\C^{n,n}$.%
+	\footnote{\idea Use the Gaussian elimination and diagonalization.}
+\end{exer}
+
+
+\subsection{Tensor Products}
+\begin{exer}
+	Suppose $m$ and $n$ are positive integers. For $v\in\F^m$ and $w\in\F^n$, identify $v\otimes w$ with an $m$-by-$n$ matrix. With that identification, show that the set
+	\[\{v\otimes w:v\in\F^m\text{ and }w\in\F^n\}\]
+	is the set of $m$-by-$n$ matrices that have rank at most one.
+\end{exer}
+
+\begin{exer}
+	Suppose $\dim V>1$ and $\dim W>1$. Prove that
+	\[\{v\otimes w:(v,w)\in(V,W)\}\]
+	is not a subspace of $V\otimes W$.
 \end{exer}
 
 
