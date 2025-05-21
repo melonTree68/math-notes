@@ -720,6 +720,27 @@
 
 \section{Multilinear Algebra and Determinants}
 \subsection{Determinants}
+\begin{prop}[Vandermonde matrix]
+	Suppose $n>1$ and $\beta_1,\dots,\beta_n\in\F$. Then
+	\[\det\begin{pmatrix}
+		1&\beta_1&\beta_1^2&\dots&\beta_1^{n-1}\\
+		1&\beta_2&\beta_2^2&\dots&\beta_2^{n-1}\\
+		&&\ddots&&\\
+		1&\beta_n&\beta_n^2&\dots&\beta_n^{n-1}
+	\end{pmatrix}=\prod_{1\leq j<k\leq n}(\beta_k-\beta_j).\]
+\end{prop}
+\begin{proof}
+	Let $e_1,\dots,e_n$ denote the standard basis of $\F^n$. Then
+	\[A=\M(S,(1,z,\dots,z^{n-1}),(e_1,\dots,e_n)),\]
+	where $A$ is the Vandermonde matrix and $S\in\L(\P_{n-1}(\F),\F^n)$ is defined by $Sp=(p(\beta_1),\dots,p(\beta_n))$.
+
+	Let $T\in\L(\P_{n-1}(\F))$ be such that $T1=1$ and
+	\[Tz^k=(z-\beta_1)\dots(z-\beta_k)\]
+	for $k=1,\dots,n-1$. Then $B=\M(T,(1,z,\dots,z^{n-1}))$ has determinant $1$. Now
+	\[\det A=(\det A)(\det B)=\det\M(ST,(1,z,\dots,z^{n-1}),(e_1,\dots,e_n)).\]
+	Calculate $C$ and we get the desired result.
+\end{proof}
+
 \begin{exer}
 	Suppose $n$ is a positive integer and $\delta:\C^{n,n}\to\C$ is a function such that
 	\[\delta(AB)=\delta(A)\cdot\delta(B)\]

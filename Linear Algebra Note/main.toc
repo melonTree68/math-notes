@@ -22,6 +22,6 @@
 \contentsline {section}{Multilinear Algebra and Determinants}{11}{section*.23}%
 \contentsline {subsection}{Determinants}{11}{section*.24}%
 \contentsline {subsection}{Tensor Products}{11}{section*.25}%
-\contentsline {section}{Complexifcation}{11}{section*.26}%
+\contentsline {section}{Complexifcation}{12}{section*.26}%
 \contentsline {section}{Primary Decomposition}{12}{section*.27}%
 \contentsfinish 
